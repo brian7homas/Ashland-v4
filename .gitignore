@@ -2,6 +2,8 @@
 node_modules/
 app/config
 
+#OS or editor folders
+.DS_Store
 
 # Compiled source #
 ###################

@@ -86,17 +86,15 @@ class NewPlayers extends Controller {
                 if(empty($data['pla_lname_err']) && empty($data['pla_fname_err']) && empty($data['pla_phone_err']) && empty($data['pla_email_err']) && empty($data['pla_par_lname_err']) && empty($data['pla_par_fname_err']) && empty($data['pla_add_err']) && empty($data['pla_city_err']) && empty($data['pla_state_err']) && empty($data['pla_zip_err']) && empty($data['pla_bdate_err'])){
                     
                     $this->newplayerModel->add_tmp_player($Last_Name, $First_Name, $Phone, $Email, $Parent_Last_Name, $Parent_First_Name, $Address, $City, $State, $Zip, $DOB);
-                    echo "testing from the newplayers.php page after the add plyaers function<br>" ;
-                    $this->view('newplayers/newplayerreg');
+                    
+                    $this->view('newplayers/newplayerreg', $data);
                 }else{
                     $this->view('newplayers/register', $data);
                     echo "first else";
                 }
             //process form
             //sanitize data
-            if(empty($data['pla_lname_err']) && empty($data['pla_fname_err']) && empty($data['pla_phone_err']) && empty($data['pla_email_err']) && empty($data['pla_par_lname_err']) && empty($data['pla_par_fname_err']) && empty($data['pla_add_err']) && empty($data['pla_city_err']) && empty($data['pla_state_err']) && empty($data['pla_zip_err']) && empty($data['pla_bdate_err'])) {
-                echo "testing";
-            }
+           
 
         }else{
             //init data
@@ -126,7 +124,6 @@ class NewPlayers extends Controller {
                 'date_added' => '',
             ];
             //load view
-            echo "end else ";
             $this->view('newplayers/register', $data);
         }
     }
