@@ -1017,8 +1017,8 @@ label {
   margin: 0px auto;
 }
 
-* {
-  background-color: black;
+label {
+  color: red;
 }
 
 @media (max-width: 767px) {
