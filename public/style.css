@@ -1,0 +1,1615 @@
+/*
+    Theme Name: Bell
+    Theme URL: https://bootstrapmade.com/bell-free-bootstrap-4-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+*/
+@import url("https://use.typekit.net/dfu0ycd.css");
+@import url("https://use.typekit.net/dfu0ycd.css");
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+}
+
+p {
+  line-height: 1.55;
+  color: #333;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-size: 62px;
+}
+
+h2 {
+  font-size: 30px;
+  margin: 65px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+/* ==================================================
+ Error styles
+  ================================================== */
+/*span.error{*/
+/*  font-size:.9em;*/
+/*  color:#900;*/
+/*  font-family:sans-serif;*/
+/*}*/
+/* ==================================================
+  General
+  ================================================== */
+a {
+  transition: 0.5s;
+}
+
+/* ==================================================
+  Elements
+  ================================================== */
+.btn {
+  background-color: #199EB8;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  color: #fff;
+  padding: 15px 45px;
+  border-radius: 50px;
+  margin-bottom: 15px;
+}
+
+.btn:hover {
+  background-color: #E04F00;
+  color: #fff;
+}
+
+.btn:focus {
+  color: #fff;
+}
+
+.btn-ghost {
+  border: 3px solid #fff;
+  background-color: transparent;
+}
+
+.btn-ghost:hover {
+  background-color: #fff;
+  color: #199EB8;
+}
+
+section {
+  padding: 85px 0;
+}
+
+.card {
+  position: relative;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+.scrolltop {
+  display: none;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #199EB8;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+}
+
+.scrolltop:hover,
+.scrolltop:active,
+.scrolltop:focus {
+  color: #fff !important;
+  opacity: .75;
+}
+
+/* ==================================================
+  Hero Styling
+================================================== */
+.hero {
+  display: table;
+  position: relative;
+  background-image: url(../pics/cover.jpg);
+  background-size: cover;
+  padding: 150px 0;
+  color: #fff;
+  width: 100%;
+  height: 100vh;
+}
+
+.hero:after {
+  content: '';
+  z-index: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.65);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.hero-brand {
+  margin-bottom: 75px;
+  display: inline-block;
+}
+
+.hero-brand:hover {
+  opacity: .75;
+}
+
+.tagline {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-size: 26px;
+  margin: 45px 0 75px 0;
+  color: #fff;
+}
+
+/* ==================================================
+  Header Styling
+================================================== */
+#header {
+  background: #199EB8;
+  height: 70px;
+}
+
+#header #main {
+  margin: 14px 25px 0 0;
+}
+
+#header #main h1 {
+  font-size: 36px;
+  margin: 0;
+  padding: 2px 0;
+  line-height: 1;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+#header #main h1 a,
+#header #main h1 a:hover {
+  color: #fff;
+}
+
+#header #main img {
+  padding: 0;
+  margin: 0;
+  max-height: 40px;
+}
+
+#header .social-nav {
+  margin-top: 15px;
+}
+
+#header .social-nav a {
+  font-size: 24px;
+  margin-left: 15px;
+  color: #fff;
+}
+
+#header .social-nav a:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#logo.pull-left img {
+  height: 71px;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Nav Menu Essentials */
+.nav-menu,
+.nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu ul {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  z-index: 99;
+}
+
+.nav-menu li {
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-menu > li {
+  float: left;
+}
+
+.nav-menu li:hover > ul,
+.nav-menu li.sfHover > ul {
+  display: block;
+}
+
+.nav-menu ul ul {
+  top: 0;
+  left: 100%;
+}
+
+.nav-menu ul li {
+  min-width: 180px;
+}
+
+/* Nav Menu Arrows */
+.sf-arrows .sf-with-ul {
+  padding-right: 30px;
+}
+
+.sf-arrows .sf-with-ul:after {
+  content: "\f107";
+  position: absolute;
+  right: 15px;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.sf-arrows ul .sf-with-ul:after {
+  content: "\f105";
+}
+
+/* Nav Meu Container */
+#nav-menu-container {
+  margin: 0;
+}
+
+/* Nav Meu Styling */
+.nav-menu a {
+  padding: 22px 15px 18px 15px;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  outline: none;
+}
+
+.nav-menu a:hover,
+.nav-menu li:hover > a,
+.nav-menu .menu-active > a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.nav-menu ul {
+  margin: 4px 0 0 15px;
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.08);
+}
+
+.nav-menu ul li {
+  background: #fff;
+  border-top: 1px solid #f4f4f4;
+}
+
+.nav-menu ul li:first-child {
+  border-top: 0;
+}
+
+.nav-menu ul li:hover {
+  background: #199EB8;
+  transition: 0.3s;
+}
+
+.nav-menu ul li a {
+  color: #333;
+  transition: none;
+  padding: 10px 15px;
+}
+
+.nav-menu ul li a:hover {
+  color: #fff;
+}
+
+.nav-menu ul ul {
+  margin: 0;
+}
+
+/* Mobile Nav Toggle */
+#mobile-nav-toggle {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  margin: 8px 10px 0 0;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  display: none;
+  transition: all 0.4s;
+  outline: none;
+  cursor: pointer;
+}
+
+#mobile-nav-toggle i {
+  color: #fff;
+}
+
+/* Mobile Nav Styling */
+#mobile-nav {
+  position: fixed;
+  top: 0;
+  padding-top: 18px;
+  bottom: 0;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.9);
+  left: -260px;
+  width: 260px;
+  overflow-y: auto;
+  transition: 0.4s;
+}
+
+#mobile-nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#mobile-nav ul li {
+  position: relative;
+}
+
+#mobile-nav ul li a {
+  color: #fff;
+  font-size: 16px;
+  overflow: hidden;
+  padding: 10px 22px 10px 15px;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  outline: none;
+}
+
+#mobile-nav ul li a:hover {
+  color: #fff;
+}
+
+#mobile-nav ul li li {
+  padding-left: 30px;
+}
+
+#mobile-nav ul .menu-has-children i {
+  position: absolute;
+  right: 0;
+  z-index: 99;
+  padding: 15px;
+  cursor: pointer;
+  color: #fff;
+}
+
+#mobile-nav ul .menu-has-children i.fa-chevron-up {
+  color: #199EB8;
+}
+
+#mobile-nav ul .menu-item-active {
+  color: #199EB8;
+}
+
+#mobile-body-overly {
+  width: 100%;
+  height: 100%;
+  z-index: 997;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+
+/* Mobile Nav body classes */
+body.mobile-nav-active {
+  overflow: hidden;
+}
+
+body.mobile-nav-active #mobile-nav {
+  left: 0;
+}
+
+body.mobile-nav-active #mobile-nav-toggle {
+  color: #fff;
+}
+
+/* ==================================================
+  Stats Styling
+================================================== */
+.stats-row {
+  margin-top: 65px;
+}
+
+.stats-col .circle {
+  display: inline-block;
+  width: 160px;
+  height: 160px;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  color: #666;
+  border: 6px solid #199EB8;
+  border-radius: 50%;
+  padding: 55px 25px 0 25px;
+  position: relative;
+}
+
+.stats-col .circle .stats-no {
+  color: #fff;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  top: -25px;
+  right: -15px;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  background-color: #E04F00;
+  position: absolute;
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+/* ==================================================
+  Parallax Styling
+  ================================================== */
+.block {
+  color: #fff;
+  height: 490px;
+  overflow: hidden;
+  padding-top: 85px;
+}
+
+.block h2 {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.block p {
+  color: #fff;
+  margin-bottom: 45px;
+}
+
+/* ==================================================
+  Features Styling
+  ================================================== */
+.features {
+  padding-bottom: 45px;
+}
+
+.features h2 {
+  color: #199EB8;
+}
+
+.feature-col {
+  display: table;
+  padding-bottom: 45px;
+}
+
+.feature-col > div > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.feature-col > div > div:last-child {
+  padding-left: 20px;
+}
+
+.feature-col .feature-icon {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+  background: #199EB8;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  line-height: 70px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.feature-col h3 {
+  color: #199EB8;
+}
+
+.feature-col p {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #999;
+}
+
+/* ==================================================
+  Call-to-action Styling
+  ================================================== */
+.cta {
+  background-color: #199EB8;
+  padding: 25px 0;
+}
+
+.cta h2 {
+  margin-bottom: 5px;
+}
+
+.cta h2,
+.cta p {
+  color: #fff;
+}
+
+.cta p {
+  margin-bottom: 0;
+  opacity: .75;
+}
+
+.cta .btn-ghost {
+  position: relative;
+  top: 13px;
+}
+
+/* ==================================================
+  Portfolio Styling
+  ================================================== */
+.portfolio {
+  background-color: #edf6ff;
+  padding-bottom: 0;
+}
+
+.portfolio h2 {
+  color: #199EB8;
+  margin-bottom: 25px;
+}
+
+.portfolio-grid {
+  margin-top: 65px;
+}
+
+.portfolio-grid .row {
+  margin: 0;
+}
+
+.portfolio-grid .row > div {
+  padding: 0;
+}
+
+.portfolio-grid .row > div .card img {
+  width: 100%;
+}
+
+.portfolio-grid .row > div .card .portfolio-over {
+  position: absolute;
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.portfolio-grid .row > div .card .portfolio-over > div {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.portfolio-grid .row > div .card .portfolio-over .card-title {
+  color: #fff;
+  font-size: 30px;
+}
+
+.portfolio-grid .row > div .card .portfolio-over .card-text {
+  color: #fff;
+  opacity: .75;
+  padding: 0 45px;
+}
+
+.portfolio-grid .row > div .card:hover .portfolio-over {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==================================================
+  Team Styling
+  ================================================== */
+.team h2 {
+  color: #199EB8;
+}
+
+.team .col-sm-3 {
+  padding: 0;
+}
+
+.team .card > a {
+  display: block;
+}
+
+.team .card img {
+  width: 100%;
+}
+
+.team .card h4 {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.team .card p {
+  font-size: 11px;
+  color: #fff;
+  opacity: .75;
+  margin: 0;
+  padding: 0 35px;
+}
+
+.team .card .social-nav {
+  margin-bottom: 45px;
+}
+
+.team .card .social-nav a {
+  color: #fff;
+  font-size: 16px;
+  margin: 0 4px;
+}
+
+.team .card .social-nav a:hover {
+  opacity: .75;
+}
+
+.team .card:hover .team-over {
+  opacity: 1;
+  visibility: visible;
+}
+
+.team .card:hover .card-title-wrap {
+  background-color: #199EB8;
+}
+
+.team .card:hover .card-title-wrap .card-title,
+.team .card:hover .card-title-wrap .card-text {
+  color: #fff;
+}
+
+.team .team-over {
+  padding-top: 45px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.team .card-title-wrap {
+  padding: 15px 25px;
+  position: relative;
+  z-index: 9;
+  background-color: #fff;
+}
+
+.team .card-title-wrap .card-title,
+.team .card-title-wrap .card-text {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  display: block;
+  margin: 0;
+}
+
+.team .card-title-wrap .card-title {
+  font-size: 24px;
+  color: #333;
+}
+
+.team .card-title-wrap .card-text {
+  font-size: 18px;
+  color: #999;
+}
+
+/* ==================================================
+  Contact Section
+  ================================================== */
+#contact {
+  background: #f7f7f7;
+  padding: 80px 0;
+}
+
+#contact h2 {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  color: #199EB8;
+}
+
+#contact .info i {
+  font-size: 32px;
+  color: #199EB8;
+  float: left;
+}
+
+#contact > .input {
+  border: none;
+  padding: 0 0 10px 50px;
+  line-height: 24px;
+  font-size: 16px;
+  color: #199EB8;
+}
+
+#contact .info p {
+  padding: 0 0 10px 50px;
+  line-height: 24px;
+}
+
+#contact .form #sendmessage {
+  color: #199EB8;
+  border: 1px solid #199EB8;
+  display: none;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+#contact .form #errormessage {
+  color: red;
+  display: none;
+  border: 1px solid red;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+#contact .form #sendmessage.show,
+#contact .form #errormessage.show,
+#contact .form .show {
+  display: block;
+}
+
+#contact .form .validation {
+  color: red;
+  display: none;
+  margin: 0 0 20px;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+#contact .form input,
+#contact .form textarea {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#contact .form button[type="submit"] {
+  background: #199EB8;
+  /*border: 0;*/
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+}
+
+#contact .form button[type="submit"]:hover {
+  background: #23c2e1;
+}
+
+/* ==================================================
+  Footer Styling
+  ================================================== */
+.site-footer {
+  background-color: #111;
+  padding: 0;
+}
+
+.site-footer h2,
+.site-footer p {
+  color: #fff;
+}
+
+.site-footer p {
+  opacity: .75;
+  line-height: 2.0925;
+}
+
+.site-footer h2,
+.site-footer .btn {
+  margin-bottom: 25px;
+}
+
+.site-footer .social-nav a {
+  color: #fff;
+  opacity: .25;
+}
+
+.site-footer .social-nav a:hover {
+  opacity: 1;
+}
+
+.site-footer .bottom {
+  background-color: #000;
+  padding: 20px 0;
+}
+
+.site-footer .bottom .list-inline,
+.site-footer .bottom p {
+  margin: 0;
+}
+
+.site-footer .bottom .list-inline {
+  position: relative;
+  top: 5px;
+}
+
+.site-footer .bottom .list-inline a {
+  color: #fff;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  margin-right: 15px;
+}
+
+.site-footer .bottom .list-inline a:hover {
+  color: #199EB8;
+}
+
+.site-footer .credits {
+  color: #ddd;
+}
+
+.site-footer .credits a {
+  color: #199EB8;
+}
+
+/* ==================================================
+  Responsive Styling
+  ================================================== */
+@media (max-width: 768px) {
+  #header {
+    height: 50px;
+  }
+  #header #main {
+    margin: 10px 0 0 0;
+  }
+  #header #main h1 {
+    padding: 2px 0;
+    font-size: 26px;
+  }
+  #header #main img {
+    max-height: 30px;
+  }
+  #nav-menu-container {
+    display: none;
+  }
+  #mobile-nav-toggle {
+    display: inline;
+  }
+}
+
+@media (max-width: 767px) {
+  .block {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 61.9em) {
+  section,
+  .block,
+  .cta {
+    padding: 35px 0;
+  }
+  .features {
+    padding-bottom: 5px;
+  }
+  p,
+  .block p {
+    margin: 0;
+  }
+  .hero-brand {
+    margin-bottom: 35px;
+  }
+  .tagline {
+    margin: 35px 0;
+  }
+  h1 {
+    font-size: 32px;
+    margin: 0;
+  }
+  h2,
+  .tagline {
+    font-size: 24px;
+  }
+  h2 {
+    margin-bottom: 25px;
+  }
+  h3 {
+    font-size: 14px;
+  }
+  .hero {
+    padding: 75px 0;
+  }
+  .stats-col {
+    margin-bottom: 25px;
+  }
+  .block {
+    height: auto;
+  }
+  .feature-col {
+    padding-bottom: 30px;
+  }
+  .portfolio-grid .card h3.card-title {
+    font-size: 18px !important;
+  }
+  .portfolio-grid .card .card-text {
+    font-size: 13px;
+  }
+  .team .team-over {
+    padding-top: 20px;
+  }
+  .team .card .social-nav {
+    margin-bottom: 15px;
+    padding: 0;
+  }
+  .site-footer .social-nav {
+    margin-bottom: 35px;
+  }
+  .site-footer .list-inline {
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  .site-footer .list-inline li {
+    display: inline-block;
+  }
+}
+
+/* */
+#default {
+  text-align: center;
+  font-variant: small-caps;
+  margin-top: .3em;
+}
+
+/*h1{color:#990000}*/
+label {
+  color: cornsilk;
+}
+
+#roster-form {
+  border: black 1px solid;
+}
+
+#roster-form {
+  margin: 0px auto;
+  width: 400px;
+  text-align: center;
+}
+
+#roster-form input {
+  margin: 0px auto;
+}
+
+* {
+  background-color: black;
+}
+
+@media (max-width: 767px) {
+  * {
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    color: #000;
+  }
+  h1 {
+    font-size: 27px;
+    color: #fcffe8;
+  }
+  p {
+    font-family: Futura PT;
+    margin-top: 0.5em;
+  }
+  a {
+    text-decoration: none;
+    color: #090;
+    /*font-weight:bold;*/
+  }
+  a:hover {
+    color: #900;
+    text-decoration: underline;
+  }
+  #holder {
+    margin: 0 auto;
+    width: 900px;
+    border: 1px solid #000;
+    padding: 0.3em;
+  }
+  #head {
+    height: 50px;
+    background-image: url(../graphics/soccerball.gif);
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #000;
+  }
+  #head h1 {
+    text-align: center;
+    font-variant: small-caps;
+    margin-top: 0.3em;
+  }
+  .user-nav {
+    align-items: flex-end;
+  }
+  #main-wrapper {
+    background-color: #fcffe8;
+    overflow: hidden;
+    /* height of the footer */
+    padding-bottom: 100px;
+  }
+  #content {
+    text-align: center;
+  }
+  .card img {
+    z-index: -1;
+  }
+  .card h1 {
+    position: absolute;
+    right: 8rem;
+    font-size: 27px;
+    font-weight: 873;
+    text-align: left;
+    top: 2.3em;
+    left: 6.5em;
+    width: 100%;
+  }
+  .title-container {
+    display: flex;
+    justify-content: center;
+  }
+  .portfolio {
+    background-color: #fcffe8;
+  }
+  .output_tables {
+    font-size: 12px;
+    width: 650px;
+    margin: 0 auto;
+  }
+  .table {
+    margin: 0 auto;
+    width: 100%;
+    border: 1px solid #000;
+    border-collapse: collapse;
+  }
+  /*table td{*/
+  /*    border:1px dashed #000;*/
+  /*}*/
+  #listtable td {
+    text-align: center;
+  }
+  /*style to format edit player form*/
+  #form_table {
+    width: 400px;
+  }
+  #form_table td {
+    background-color: #ccc;
+    padding: 0.2em;
+  }
+  /*end styles to format edit player form*/
+  /*styles to edit new player form*/
+  #widetable {
+    width: 100%;
+    font-size: 0.7em;
+    padding: 0;
+  }
+  #widetable td {
+    text-align: center;
+  }
+  /*end styles to edit new player form*/
+  /*style for login form*/
+  #log {
+    width: 50%;
+    margin: 0 auto;
+    color: black;
+  }
+  #log label {
+    color: black;
+    display: block;
+  }
+  #log td {
+    padding: 0.2em;
+  }
+  /*end login form style*/
+  /*start styles unique to the show_team_roster.php*/
+  #sidebar {
+    float: left;
+    width: 120px;
+    border: 1px dashed #000;
+    text-align: left;
+    padding-left: 1em;
+  }
+  #sidebar p {
+    margin-top: 0;
+  }
+  #roster_col {
+    width: 755px;
+    margin: 0px auto;
+  }
+  #roster_col table {
+    border: 1px dashed #000;
+    margin: 0px auto;
+  }
+  /*end show_team_roster.php styles*/
+  .credits {
+    text-align: center;
+    font-size: 12px;
+  }
+  .centerit {
+    text-align: center;
+  }
+  .toright {
+    text-align: right;
+  }
+  /*style to format small_box areas */
+  #small_box {
+    width: 250px;
+    border: 1px solid #000;
+    padding: 1em;
+    margin: 0 auto;
+  }
+  /* end format for small_box areas */
+  .site-footer {
+    background-color: #77c3c6;
+  }
+  #footer {
+    position: relative;
+    margin-top: -3.4rem;
+    min-height: 146px;
+    clear: both;
+    color: beige;
+    padding: 0.7em;
+    overflow: hidden;
+  }
+  #footer div {
+    width: 100%;
+    color: #380236;
+    font-family: Futura-light;
+    font-size: 1rem;
+    padding-top: 0.2rem;
+  }
+  .footer-contact {
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    min-height: 2vh;
+  }
+  .footer-contact ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+  .footer-contact ul li {
+    list-style: none;
+    font-size: 10px;
+  }
+  .footer-wrapper {
+    display: flex;
+    font-size: xx-small;
+    background: #77c3c6 0% 0% no-repeat padding-box;
+  }
+  .wrapper {
+    display: flex;
+    font-family: Futura PT;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5rem;
+  }
+  #footer h4 {
+    transform: matrix(0, -1, 1, 0, 0, 0);
+    width: 1em;
+    bottom: -1.2em;
+    left: 3.2em;
+    font-size: 0.99rem;
+    font-family: "Railway";
+  }
+  #footer a {
+    color: #380236;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  #footer p {
+    display: none;
+  }
+  .footer-list {
+    list-style: none;
+  }
+  .nav {
+    flex-wrap: nowrap;
+  }
+  .mb-3 {
+    margin-bottom: 0;
+  }
+  .navigation {
+    background: #ffffff;
+  }
+  .navbar-brand {
+    display: none;
+  }
+  .logo {
+    position: absolute;
+    top: -15px;
+  }
+  .overlay {
+    background-color: black;
+    opacity: 50%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  .login {
+    background-image: url("img/login-bg.png");
+    background-color: rgba(255, 255, 255, 0);
+    height: 623px;
+    left: 0px;
+    position: absolute;
+    top: 3px;
+    width: 100%;
+  }
+  .login-card {
+    background: var(--unnamed-color-f1f9ff) 0% 0% no-repeat padding-box;
+    background: #f1f9ff 0% 0% no-repeat padding-box;
+    height: 480px;
+    box-shadow: -4px 3px 6px #00000029;
+    border-radius: 14px;
+  }
+  .reg-btn {
+    display: inline-block;
+    top: 2em;
+    left: 7em;
+    width: 12em;
+    height: 16px;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: Regular 14px/16px Helvetica Neue;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+  }
+  .login-btn {
+    left: 5em;
+    width: 112px;
+    height: 35px;
+    background: #77c3c6 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 6px #00000029;
+    border-radius: 10px;
+    opacity: 1;
+  }
+  .cancel-btn {
+    left: 1em;
+    width: 112px;
+    height: 35px;
+    background: #77c3c6 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 6px #00000029;
+    border-radius: 10px;
+    opacity: 1;
+  }
+  .user-form {
+    width: 270px;
+    margin: 0 auto;
+    border: 2px solid #bce0fd;
+    border-radius: 10px;
+    opacity: 1;
+  }
+  .form-group > label {
+    top: 1em;
+    left: 1.2em;
+    width: 100vw;
+    height: 25px;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: Bold 22px/26px Arial;
+    letter-spacing: 0px;
+    color: #27bec4;
+    opacity: 1;
+    position: relative;
+  }
+}
+
+/****************************************************************************************/
+/****************************************************************************************/
+/****************************************************************************************/
+/****************************************************************************************/
+/****************************************************************************************/
+/****************************************************************************************/
+/****************************************************************************************/
+/****************************************************************************************/
+/****************************************************************************************/
+/****************************************************************************************/
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* overidden bootstrap style (styles.css) */
+  /* sep */
+  body {
+    color: #000;
+  }
+  body .header {
+    display: block;
+    height: 45vh;
+    margin-bottom: 4em;
+  }
+  body .bt-cards {
+    margin-top: 3em;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+  }
+  .background {
+    position: absolute;
+    right: 0;
+    top: 121px;
+    z-index: -1;
+  }
+  .hero-img {
+    left: 341px;
+    width: 683px;
+    height: 454.5px;
+    position: block;
+    top: 8em;
+    z-index: -1;
+  }
+  .jumbotron {
+    margin-bottom: 1rem;
+    height: 24vh;
+  }
+  .header {
+    height: 20vh;
+  }
+  .navbar {
+    font-family: Futura-pt-bold;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 40px;
+  }
+  .logo {
+    top: -.9em;
+    width: 2.5em;
+  }
+  .user-nav li {
+    margin-right: 2em;
+  }
+  h1 {
+    font-family: Futura;
+  }
+  p {
+    margin-top: 0.5em;
+  }
+  a {
+    text-decoration: none;
+    color: #77C3C6;
+    /*font-weight:bold;*/
+  }
+  a:hover {
+    color: #900;
+    text-decoration: underline;
+  }
+  #holder {
+    margin: 0 auto;
+    width: 900px;
+    border: 1px solid #000;
+    padding: 0.3em;
+  }
+  #head {
+    height: 50px;
+    background-image: url(../graphics/soccerball.gif);
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #000;
+  }
+  #head h1 {
+    text-align: center;
+    font-variant: small-caps;
+    margin-top: 0.3em;
+  }
+  #main-wrapper {
+    overflow: hidden;
+    /* height of the footer */
+    padding-bottom: 100px;
+  }
+  #content {
+    text-align: center;
+  }
+  .output_tables {
+    font-size: 12px;
+    width: 650px;
+    margin: 0 auto;
+  }
+  .table {
+    margin: 0 auto;
+    width: 100%;
+    border: 1px solid #000;
+    border-collapse: collapse;
+  }
+  /*table td{*/
+  /*    border:1px dashed #000;*/
+  /*}*/
+  #listtable td {
+    text-align: center;
+  }
+  /*style to format edit player form*/
+  #form_table {
+    width: 400px;
+  }
+  #form_table td {
+    background-color: #ccc;
+    padding: 0.2em;
+  }
+  /*end styles to format edit player form*/
+  /*styles to edit new player form*/
+  #widetable {
+    width: 100%;
+    font-size: 0.7em;
+    padding: 0;
+  }
+  #widetable td {
+    text-align: center;
+  }
+  /*end styles to edit new player form*/
+  /*style for login form*/
+  #log {
+    width: 50%;
+    margin: 0 auto;
+    color: black;
+  }
+  #log label {
+    color: black;
+    display: block;
+  }
+  #log td {
+    padding: 0.2em;
+  }
+  /*end login form style*/
+  /*start styles unique to the show_team_roster.php*/
+  #sidebar {
+    float: left;
+    width: 120px;
+    border: 1px dashed #000;
+    text-align: left;
+    padding-left: 1em;
+  }
+  #sidebar p {
+    margin-top: 0;
+  }
+  #roster_col {
+    width: 755px;
+    margin: 0px auto;
+  }
+  #roster_col table {
+    border: 1px dashed #000;
+    margin: 0px auto;
+  }
+  /*end show_team_roster.php styles*/
+  .credits {
+    text-align: center;
+    font-size: 12px;
+  }
+  .centerit {
+    text-align: center;
+  }
+  .toright {
+    text-align: right;
+  }
+  /*style to format small_box areas */
+  #small_box {
+    width: 250px;
+    border: 1px solid #000;
+    padding: 1em;
+    margin: 0 auto;
+  }
+  /* end format for small_box areas */
+  #footer {
+    position: relative;
+    margin-top: -3.4rem;
+    min-height: 146px;
+    clear: both;
+    color: beige;
+    padding: 0.7em;
+    overflow: hidden;
+  }
+  #footer div {
+    width: 100%;
+    color: #380236;
+    font-family: Futura-light;
+    font-size: 1rem;
+    padding-top: 0.2rem;
+  }
+  .footer-contact {
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    min-height: 2vh;
+  }
+  .footer-contact ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+  .footer-contact ul li {
+    list-style: none;
+    font-size: 10px;
+  }
+  .footer-wrapper {
+    display: flex;
+    font-size: xx-small;
+    background: #77c3c6 0% 0% no-repeat padding-box;
+  }
+  .wrapper {
+    display: flex;
+    font-family: Futura PT;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5rem;
+  }
+  #footer h4 {
+    transform: matrix(0, -1, 1, 0, 0, 0);
+    width: 1em;
+    bottom: -1.2em;
+    left: 3.2em;
+    font-size: 0.99rem;
+    font-family: "Railway";
+  }
+  #footer a {
+    color: #380236;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  #footer p {
+    display: none;
+  }
+  .footer-list {
+    list-style: none;
+  }
+}
