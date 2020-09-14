@@ -1,0 +1,274 @@
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    @import url("https://use.typekit.net/dfu0ycd.css");
+  
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  
+    }
+  
+    /* overidden bootstrap style (styles.css) */
+  
+    /* sep */
+    body {
+      color: #000;
+      .header{
+        display: block;
+        height: 45vh;
+        margin-bottom: 4em;
+      }
+      .bt-cards{
+        margin-top:3em;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+      }
+    }
+    .background{
+      position: absolute;
+      right:0;
+      top: 121px;
+      z-index: -1;
+    }
+    .hero-img{
+      left: 341px;
+      width: 683px;
+      height: 454.5px;
+      position: block;
+      top: 8em;
+      z-index: -1;
+    }
+    .jumbotron{
+      margin-bottom:1rem;
+      height: 24vh;
+  
+    }
+    .header {
+      height: 20vh;
+  
+    }
+    .navbar{
+      font-family: Futura-pt-bold;
+      font-weight: 800;
+      font-style: normal;
+      font-size: 40px;
+    }
+    .logo{
+      top: -.9em;
+      width: 2.5em;
+    }
+    .user-nav li{
+      margin-right: 2em;
+    }
+  
+  
+  
+    h1{
+      font-family: Futura;
+  
+    }
+    p {
+      margin-top: 0.5em;
+    }
+    a {
+      text-decoration: none;
+      color: #77C3C6;
+      /*font-weight:bold;*/
+    }
+    a:hover {
+      color: #900;
+      text-decoration: underline;
+    }
+    #holder {
+      margin: 0 auto;
+      width: 900px;
+      border: 1px solid #000;
+      padding: 0.3em;
+    }
+    #head {
+      height: 50px;
+      
+      background-repeat: no-repeat;
+      border-bottom: 1px solid #000;
+    }
+    #head h1 {
+      text-align: center;
+      font-variant: small-caps;
+      margin-top: 0.3em;
+    }
+    #main-wrapper {
+  
+      overflow: hidden;
+      /* height of the footer */
+      padding-bottom: 100px;
+    }
+  
+    #content {
+      text-align: center;
+    }
+  
+    .output_tables {
+      font-size: 12px;
+  
+      width: 650px;
+  
+      margin: 0 auto;
+    }
+    .table {
+      margin: 0 auto;
+      width: 100%;
+      border: 1px solid #000;
+      border-collapse: collapse;
+    }
+    /*table td{*/
+    /*    border:1px dashed #000;*/
+    /*}*/
+    #listtable td {
+      text-align: center;
+    }
+    /*style to format edit player form*/
+    #form_table {
+      width: 400px;
+    }
+    #form_table td {
+      background-color: #ccc;
+      padding: 0.2em;
+    }
+    /*end styles to format edit player form*/
+    /*styles to edit new player form*/
+    #widetable {
+      width: 100%;
+      font-size: 0.7em;
+      padding: 0;
+    }
+    #widetable td {
+      text-align: center;
+    }
+    /*end styles to edit new player form*/
+    /*style for login form*/
+    #log {
+      width: 50%;
+      margin: 0 auto;
+      color: black;
+    }
+    #log label {
+      color: black;
+      display: block;
+    }
+    #log td {
+      padding: 0.2em;
+    }
+    /*end login form style*/
+  
+    /*start styles unique to the show_team_roster.php*/
+    #sidebar {
+      float: left;
+      width: 120px;
+      border: 1px dashed #000;
+      text-align: left;
+      padding-left: 1em;
+    }
+    #sidebar p {
+      margin-top: 0;
+    }
+    #roster_col {
+      width: 755px;
+      margin: 0px auto;
+    }
+    #roster_col table {
+      border: 1px dashed #000;
+      margin: 0px auto;
+    }
+    /*end show_team_roster.php styles*/
+    .credits {
+      text-align: center;
+      font-size: 12px;
+    }
+    .centerit {
+      text-align: center;
+    }
+    .toright {
+      text-align: right;
+    }
+    /*style to format small_box areas */
+    #small_box {
+      width: 250px;
+      border: 1px solid #000;
+      padding: 1em;
+      margin: 0 auto;
+    }
+    /* end format for small_box areas */
+    #footer {
+      position: relative;
+      margin-top: -3.4rem;
+      min-height: 146px;
+      clear: both;
+      color: beige;
+      padding: 0.7em;
+      overflow: hidden;
+    }
+    #footer div{
+      width:100%;
+      color: #380236;
+      font-family: Futura-light;
+      font-size: 1rem;
+      padding-top: 0.2rem;
+    }
+    .footer-contact {
+      background-color: white;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      min-height: 2vh;
+    }
+    .footer-contact ul {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-start;
+    }
+    .footer-contact ul li {
+      list-style: none;
+      font-size: 10px;
+    }
+    .footer-wrapper {
+      display: flex;
+      font-size: xx-small;
+      background: #77c3c6 0% 0% no-repeat padding-box;
+    }
+    .wrapper {
+      display: flex;
+      font-family: Futura PT;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  
+    .footer-nav {
+      display: flex;
+      flex-direction: column;
+      padding-left: 5rem;
+    }
+  
+    #footer h4 {
+      transform: matrix(0, -1, 1, 0, 0, 0);
+      width: 1em;
+      bottom: -1.2em;
+      left: 3.2em;
+      font-size: 0.99rem;
+      font-family: "Railway";
+    }
+    #footer a {
+      color: #380236;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    #footer p {
+      display: none;
+    }
+    .footer-list {
+      list-style: none;
+    }
+  }
+  

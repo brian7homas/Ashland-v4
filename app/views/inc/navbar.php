@@ -1,10 +1,12 @@
 <nav class="navbar navbar-expand-lg mb-3 navigation">
     <div class="container">
         <!-- <a class="navbar-brand" href="<?php echo URLROOT ?>"><?php echo SITENAME ?> </a> -->
-        <a href="<?php echo URLROOT ?>"><img class="logo" src="<?php  echo URLROOT ?>/public/img/smLogo.png" /></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+        <a href="<?php echo URLROOT ?>"><img class="logo" src="<?php  echo URLROOT ?>/public/img/smLo go.png" /></a>
+
+
+        <button class ="hamburger navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span><svg onClick="moveUp()" class="hamburger" xmlns="http://www.w3.org/2000/svg" width="30" height="25"
+            <span><svg onClick="moveUp()"  xmlns="http://www.w3.org/2000/svg" width="30" height="25"
                     viewBox="0 0 30 25">
                     <g id="Group_292" data-name="Group 292" transform="translate(-5 -7.5)">
                         <line id="Line_15" data-name="Line 15" x2="30" transform="translate(5 10)" fill="none"
@@ -17,12 +19,10 @@
                 </svg></span>
         </button>
 
-        <div class="navbar">
-            <ul class="navbar-nav user-nav">
-
-
+        <div class="navbar user-nav">
+            <ul class="navbar-nav ">
             </ul>
-            <ul class="navbar-nav mr-0 user-nav">
+            <ul class="user-nav-list navbar-nav mr-0 ">
                 <!-- PHP USED TO CHECK FOR SESSION VARIABLES 
                 IF THEY EXIST REGISTER AND LOGIN LINKS WILL NOT BE PRESENT -->
                 <?php if(isset($_SESSION['user_id'])): ?>

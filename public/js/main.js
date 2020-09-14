@@ -1,11 +1,12 @@
 gsap.registerPlugin(ScrollTrigger, CSSRulePlugin);
 const cardTitle = $(".card-title");
 
-// //click event for toggle list and list div
+
+// // //click event for toggle list and list div
 // toggleList.addEventListener("click", () => {
-//   //conditional needs a double equals
+// //   //conditional needs a double equals
 //   if (listDiv.style.display == "none") {
-//     //if the display is set to none it will display block
+// //     //if the display is set to none it will display block
 //     toggleList.textContent = "Hide list";
 //     listDiv.style.display = "block";
 //   } else {
@@ -14,7 +15,10 @@ const cardTitle = $(".card-title");
 //   }
 // });
 // gsap.fromTo(".hamburger", 2, { duration: 3, yPercent: -200 }, { yPercent: 30 });
-
+function moveUp(){
+  const hamburger = $('.hamburger');
+  gsap.to(hamburger, {yPercent: -100});
+}
 //CARD HOVER ANIMATIONS( HOMEPAGE )
 
 cardTitle.hover(
