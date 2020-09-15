@@ -1,26 +1,20 @@
-gsap.registerPlugin(ScrollTrigger, CSSRulePlugin);
+// gsap.registerPlugin(ScrollTrigger, CSSRulePlugin);
 const cardTitle = $(".card-title");
 
 
-// // //click event for toggle list and list div
-// toggleList.addEventListener("click", () => {
-// //   //conditional needs a double equals
-//   if (listDiv.style.display == "none") {
-// //     //if the display is set to none it will display block
-//     toggleList.textContent = "Hide list";
-//     listDiv.style.display = "block";
-//   } else {
-//     toggleList.textContent = "Show list";
-//     listDiv.style.display = "none";
-//   }
-// });
-// gsap.fromTo(".hamburger", 2, { duration: 3, yPercent: -200 }, { yPercent: 30 });
-function moveUp(){
-  const hamburger = $('.hamburger');
-  gsap.to(hamburger, {yPercent: -100});
-}
-//CARD HOVER ANIMATIONS( HOMEPAGE )
+let tween = TweenLite.from (".user-nav-list", {xPercent: 200, paused: true, reversed:true});
+let hamburger = TweenLite.from (".hamburger", {xPercent: -200, paused: true, reversed:true});
+document.querySelector(".user-nav").addEventListener("click", doCoolStuff);
 
+function doCoolStuff() {
+  
+    hamburger.reversed() ? hamburger.play() : hamburger.reverse();
+    tween.reversed() ? tween.play() : tween.reverse();
+}
+
+
+
+//CARD HOVER ANIMATIONS( HOMEPAGE )
 cardTitle.hover(
   function () {
     // index of card

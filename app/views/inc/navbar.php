@@ -6,7 +6,7 @@
 
         <button class ="hamburger navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span><svg onClick="moveUp()"  xmlns="http://www.w3.org/2000/svg" width="30" height="25"
+            <span><svg   xmlns="http://www.w3.org/2000/svg" width="30" height="25"
                     viewBox="0 0 30 25">
                     <g id="Group_292" data-name="Group 292" transform="translate(-5 -7.5)">
                         <line id="Line_15" data-name="Line 15" x2="30" transform="translate(5 10)" fill="none"

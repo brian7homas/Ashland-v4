@@ -1027,14 +1027,21 @@ label {
     height: 10vh;
   }
   .user-nav {
-    display: none;
+    display: block;
     height: 10vh;
     align-items: flex-end;
+    z-index: 1;
   }
   .user-nav .user-ul {
     display: flex;
   }
+  .user-nav-list {
+    border: 1px solid #e0e0e0;
+    background-color: #10455b;
+    box-shadow: 0 2px 4px #e0e0e0;
+  }
   .hamburger {
+    right: -10em;
     display: flex;
     position: relative;
   }
