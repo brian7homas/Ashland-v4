@@ -25,7 +25,7 @@ require APPROOT . '/views/inc/header.php';
         <!-- TEAM PAGE LINK -->
         <div class="row">
             <div class="bt-cards container-fluid  col-sm-6 col-xs-12">
-                <div class="card card-block">
+                <div class="card card-block" style="background-color: transparent" >
                     <a class="card-title" href="<?php echo URLROOT?>/pages/teams"><img alt="img" src="pics/teams.jpg">
                     </a>
 
@@ -37,7 +37,7 @@ require APPROOT . '/views/inc/header.php';
 
                 </div>
 
-                <div class="card card-block">
+                <div class="card card-block" style="background-color: transparent">
                     <a class="card-title" href="<?php URLROOT?>/pages/action"><img alt="img" src="pics/action.jpg">
                     </a>
 
@@ -49,7 +49,7 @@ require APPROOT . '/views/inc/header.php';
 
                 </div>
 
-                <div class="card card-block">
+                <div class="card card-block" style="background-color: transparent">
                     <a class="card-title" href="<?php echo URLROOT;?>/pages/maps"><img alt="img" src="pics/maps.jpg">
                     </a>
                     <h1>
@@ -60,7 +60,7 @@ require APPROOT . '/views/inc/header.php';
 
                 </div>
 
-                <div class="card card-block">
+                <div class="card card-block" style="background-color: transparent">
                     <a class="card-title" href="<?php echo URLROOT?>/pages/schedule"><img alt="img" src="pics/gm-schedule-cover.jpg">
                     </a>
                     <h1>

@@ -22,7 +22,7 @@
         <div class="navbar user-nav">
             <!-- <ul class="navbar-nav ">
             </ul> -->
-            <ul class="user-nav-list navbar-nav mr-0 ">
+            <ul class="user-nav-list navbar-nav">
                 <!-- PHP USED TO CHECK FOR SESSION VARIABLES 
                 IF THEY EXIST REGISTER AND LOGIN LINKS WILL NOT BE PRESENT -->
                 <?php if(isset($_SESSION['user_id'])): ?>
@@ -43,13 +43,13 @@
                 </li>
                 <?php else:?>
                 <li class="nav-item ">
-                    <a class="nav-link" href="<?php echo URLROOT?>/users/register">Register User</a>
+                    <a class="user-nav-link" href="<?php echo URLROOT?>/users/register">Register User</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URLROOT;?>/newplayers/register">Newplayers</a>
+                    <a class="user-nav-link" href="<?php echo URLROOT;?>/newplayers/register">New players</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URLROOT;?>/users/login">Login</a>
+                    <a class="user-nav-link" href="<?php echo URLROOT;?>/users/login">Login</a>
                 </li>
 
                 <?php endif; ?>

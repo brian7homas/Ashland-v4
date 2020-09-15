@@ -1,19 +1,32 @@
+gsap.config(
+  {
+    nullTargetWarn : false,
+  }
+)
 
 gsap.registerPlugin(ScrollTrigger, CSSRulePlugin);
 const cardTitle = $(".card-title");
-const menu = $(".user-nav-list");
+
 
 
 
 // HAMBURGER/MENU  ANIMATION
- var tween = TweenLite.from (menu, { xPercent: 350, paused: true, reversed:true});
+ var tween = TweenLite.from ('.user-nav-list', { height: 0, opacity: 0, xPercent: 5, paused: true, reversed:true});
 let hamburger = TweenLite.from (".hamburger", {xPercent: -50, paused: true, reversed:true});
 document.querySelector("button").addEventListener("click", doCoolStuff);
 function doCoolStuff() {
-    gsap.set("nav", {overflow: "visible"});
-
-    hamburger.reversed() ? hamburger.play() : hamburger.reverse();
-    tween.reversed() ? tween.play() : tween.reverse();
+  hamburger.reversed() ? hamburger.play() : hamburger.reverse();
+  tween.reversed() ? tween.play() : tween.reverse();
+  
+  // if($( "nav" ).css( 'overflow') !== "visible"){
+  //     console.log("hidden");
+  //     $( "nav" ).css( 'overflow' , 'visible')
+  // }else{
+  //   console.log("not hidden");
+  //   $( "nav" ).css( 'overflow' , 'hidden')
+  // }
+  
+  
 }
 
 

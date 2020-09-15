@@ -1,7 +1,7 @@
 <?php 
 require APPROOT . '/views/inc/header.php';
 ?>
-
+<img class="background" src="<?php URLROOT ?>/img/team.png" />
 <div class="jumbotron jumbotron-fluid text-center">
     <div class="container">
         <h1 class="display-3">

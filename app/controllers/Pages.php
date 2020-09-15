@@ -24,7 +24,7 @@ class Pages extends Controller{
     }
     public function teams(){
         $data = [
-            'title' => 'Welcome to the About Us Page',
+            'title' => 'Welcome to the Ashland website login to see more information.',
             'description' => 'teams'
         ];
         $this->view('pages/teams', $data);
