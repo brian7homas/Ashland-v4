@@ -20,8 +20,8 @@
         </button>
 
         <div class="navbar user-nav">
-            <ul class="navbar-nav ">
-            </ul>
+            <!-- <ul class="navbar-nav ">
+            </ul> -->
             <ul class="user-nav-list navbar-nav mr-0 ">
                 <!-- PHP USED TO CHECK FOR SESSION VARIABLES 
                 IF THEY EXIST REGISTER AND LOGIN LINKS WILL NOT BE PRESENT -->

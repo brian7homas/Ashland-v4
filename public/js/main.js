@@ -1,13 +1,17 @@
-// gsap.registerPlugin(ScrollTrigger, CSSRulePlugin);
+
+gsap.registerPlugin(ScrollTrigger, CSSRulePlugin);
 const cardTitle = $(".card-title");
+const menu = $(".user-nav-list");
 
 
-let tween = TweenLite.from (".user-nav-list", {xPercent: 200, paused: true, reversed:true});
-let hamburger = TweenLite.from (".hamburger", {xPercent: -200, paused: true, reversed:true});
-document.querySelector(".user-nav").addEventListener("click", doCoolStuff);
 
+// HAMBURGER/MENU  ANIMATION
+ var tween = TweenLite.from (menu, { xPercent: 250, paused: true, reversed:true});
+let hamburger = TweenLite.from (".hamburger", {xPercent: -50, paused: true, reversed:true});
+document.querySelector("button").addEventListener("click", doCoolStuff);
 function doCoolStuff() {
-  
+    gsap.set("nav", {overflow: "visible"});
+
     hamburger.reversed() ? hamburger.play() : hamburger.reverse();
     tween.reversed() ? tween.play() : tween.reverse();
 }

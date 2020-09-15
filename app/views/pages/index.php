@@ -38,10 +38,10 @@ require APPROOT . '/views/inc/header.php';
                 </div>
 
                 <div class="card card-block">
-                    <a href="<?php URLROOT?>/pages/action"><img alt="img" src="pics/action.jpg">
+                    <a class="card-title" href="<?php URLROOT?>/pages/action"><img alt="img" src="pics/action.jpg">
                     </a>
 
-                    <h1 class="card-title">
+                    <h1>
                         Action
                     </h1>
                     <p class-"card-text">
@@ -50,9 +50,9 @@ require APPROOT . '/views/inc/header.php';
                 </div>
 
                 <div class="card card-block">
-                    <a href="<?php echo URLROOT;?>/pages/maps"><img alt="img" src="pics/maps.jpg">
+                    <a class="card-title" href="<?php echo URLROOT;?>/pages/maps"><img alt="img" src="pics/maps.jpg">
                     </a>
-                    <h1 class="card-title">
+                    <h1>
                         Maps
                     </h1>
                     <p class-"card-text">
@@ -61,9 +61,9 @@ require APPROOT . '/views/inc/header.php';
                 </div>
 
                 <div class="card card-block">
-                    <a href="<?php echo URLROOT?>/pages/schedule"><img alt="img" src="pics/gm-schedule-cover.jpg">
+                    <a class="card-title" href="<?php echo URLROOT?>/pages/schedule"><img alt="img" src="pics/gm-schedule-cover.jpg">
                     </a>
-                    <h1 class="card-title">
+                    <h1>
                         Schedule
                     </h1>
                     <p class-"card-text">
