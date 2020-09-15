@@ -12,21 +12,18 @@
         height: 10vh;
         align-items: flex-end;
         padding: 0;
-        z-index: 0;
-            
-        
+        z-index: 1;
         transform: translateX(-25%);
-        // transform: translateX(-50%);
-        
         .user-ul{
             display: flex;
         }        
     }    
     .user-nav-list{
-      // overflow: hidden;
+      
+      margin-top: 5em;
       height: 50vh;
       border: 1px solid #e0e0e0;
-      background-color: rgba(16,69, 91,0.75);
+      background-color: rgba(16,69, 91,0.85);
       // background-color: #10455b ;
       box-shadow: 0 2px 4px #e0e0e0;
       line-height: 7em;
@@ -34,6 +31,9 @@
       width: 150%;
       text-align: right;
       padding: 1em;
+      a{
+        color: $mainLight;
+      }
         }
     .hamburger{
       right:-11.7em;
@@ -42,10 +42,14 @@
       z-index: 2;
       
   }
+    .background{
+      position: absolute;
+      transform: translate(-2em, -10em);
+    }
     #main-wrapper {
         background-color: #fcffe8;
         overflow: hidden;
-        z-index: -1;
+        
         /* height of the footer */
         padding-bottom: 100px;
         .hero-img{
@@ -53,6 +57,13 @@
         }
         #content {
          display: block;
+
+         .card-block{
+           padding: 2em 0;
+           .card{
+             background-color: transparent;
+           }
+         }
         }
       }
 
@@ -60,13 +71,22 @@
 
 
     
-    .background{
-      position:fixed;
-      right:0;
-      top: 121px;
-      z-index: -1;
-    }
-  
+    
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
     body {
       
       background-color: #fff;
@@ -84,7 +104,7 @@
   
     a {
       text-decoration: none;
-      color: #090;
+      
       /*font-weight:bold;*/
     }
     a:hover {
@@ -257,6 +277,7 @@
       align-items: flex-start;
     }
     .footer-contact ul li {
+      color: $primaryDark;
       list-style: none;
       font-size: 10px;
     }
@@ -276,6 +297,15 @@
       display: flex;
       flex-direction: column;
       padding-left: 5rem;
+      nav{
+        height: 10vh;
+        ul{
+          padding: 1px;
+          li{
+            padding: 2px;
+          }
+        }
+      }
     }
   
     #footer h4 {

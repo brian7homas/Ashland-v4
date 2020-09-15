@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg mb-3 navigation">
     <div class="container">
         <!-- <a class="navbar-brand" href="<?php echo URLROOT ?>"><?php echo SITENAME ?> </a> -->
-        <a href="<?php echo URLROOT ?>"><img class="logo" src="<?php  echo URLROOT ?>/public/img/smLo go.png" /></a>
+        <a href="<?php echo URLROOT ?>"><img class="logo" src="<?php  echo URLROOT ?>/public/img/smLogo.png" /></a>
 
 
         <button class ="hamburger navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"

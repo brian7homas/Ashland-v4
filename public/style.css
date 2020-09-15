@@ -3,7 +3,7 @@
   font-family: 'Roboto' sans-serif;
   padding: 0;
   margin: 0;
-  color: green;
+  color: #FCFFE8;
 }
 
 @media (max-width: 767px) {
@@ -26,9 +26,10 @@
     display: flex;
   }
   .user-nav-list {
+    margin-top: 5em;
     height: 50vh;
     border: 1px solid #e0e0e0;
-    background-color: rgba(16, 69, 91, 0.75);
+    background-color: rgba(16, 69, 91, 0.85);
     box-shadow: 0 2px 4px #e0e0e0;
     line-height: 7em;
     right: 32px;
@@ -36,16 +37,22 @@
     text-align: right;
     padding: 1em;
   }
+  .user-nav-list a {
+    color: #FCFFE8;
+  }
   .hamburger {
     right: -11.7em;
     display: flex;
     position: relative;
     z-index: 2;
   }
+  .background {
+    position: absolute;
+    transform: translate(-2em, -10em);
+  }
   #main-wrapper {
     background-color: #fcffe8;
     overflow: hidden;
-    z-index: -1;
     /* height of the footer */
     padding-bottom: 100px;
   }
@@ -55,12 +62,27 @@
   #main-wrapper #content {
     display: block;
   }
-  .background {
-    position: fixed;
-    right: 0;
-    top: 121px;
-    z-index: -1;
+  #main-wrapper #content .card-block {
+    padding: 2em 0;
   }
+  #main-wrapper #content .card-block .card {
+    background-color: transparent;
+  }
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
   body {
     background-color: #fff;
     color: #000;
@@ -75,7 +97,6 @@
   }
   a {
     text-decoration: none;
-    color: #090;
     /*font-weight:bold;*/
   }
   a:hover {
@@ -238,6 +259,7 @@
     align-items: flex-start;
   }
   .footer-contact ul li {
+    color: #000000;
     list-style: none;
     font-size: 10px;
   }
@@ -256,6 +278,15 @@
     display: flex;
     flex-direction: column;
     padding-left: 5rem;
+  }
+  .footer-nav nav {
+    height: 10vh;
+  }
+  .footer-nav nav ul {
+    padding: 1px;
+  }
+  .footer-nav nav ul li {
+    padding: 2px;
   }
   #footer h4 {
     transform: matrix(0, -1, 1, 0, 0, 0);

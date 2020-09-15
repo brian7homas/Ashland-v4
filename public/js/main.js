@@ -6,7 +6,7 @@ const menu = $(".user-nav-list");
 
 
 // HAMBURGER/MENU  ANIMATION
- var tween = TweenLite.from (menu, { xPercent: 250, paused: true, reversed:true});
+ var tween = TweenLite.from (menu, { xPercent: 350, paused: true, reversed:true});
 let hamburger = TweenLite.from (".hamburger", {xPercent: -50, paused: true, reversed:true});
 document.querySelector("button").addEventListener("click", doCoolStuff);
 function doCoolStuff() {
@@ -26,7 +26,7 @@ cardTitle.hover(
     // sets the index to card variable
     var card = $(`.card`).get(card);
     // animaition
-    TweenLite.to(card, { scale: 1.5, ease: Power1.easeInOut });
+    TweenLite.to(card, { scale: 1.1, ease: Power1.easeInOut });
   },
   //scale back to 1 animaiton
   function () {

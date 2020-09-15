@@ -2,9 +2,9 @@
 require APPROOT . '/views/inc/header.php';
 
 ?>
+<img class="background" src="<?php URLROOT ?>/img/bg.png" />
 <!-- <div class="overlay"></div> -->
 <div class="header jumbotron-fluid text-center">
-    <img class="background" src="<?php URLROOT ?>/img/bg.png" />
     <img class="hero-img" src="<?php URLROOT ?>/img/cover@2x.png" />
     <div class="container">
         <h1 class="display-3">
@@ -26,13 +26,13 @@ require APPROOT . '/views/inc/header.php';
         <div class="row">
             <div class="bt-cards container-fluid  col-sm-6 col-xs-12">
                 <div class="card card-block">
-                    <a class="team-img" href="<?php echo URLROOT?>/pages/teams"><img alt="img" src="pics/teams.jpg">
+                    <a class="card-title" href="<?php echo URLROOT?>/pages/teams"><img alt="img" src="pics/teams.jpg">
                     </a>
 
-                    <h1 class="card-title">
+                    <h1>
                         Teams
                     </h1>
-                    <p class-"card-text">
+                    <p class="card-text">
                     </p>
 
                 </div>
