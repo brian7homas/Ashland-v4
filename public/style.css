@@ -5,6 +5,7 @@
     Author URL: https://bootstrapmade.com
 */
 @import url("https://use.typekit.net/dfu0ycd.css");
+@import url("https://use.typekit.net/dfu0ycd.css");
 /* line 10, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/modules/_bootstrap.scss */
 h1,
 h2,
@@ -1194,178 +1195,123 @@ label {
   color: #FCFFE8;
 }
 
-@media (max-width: 767px) {
-  /* line 2, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  /* overidden bootstrap style (styles.css) */
+  /* sep */
+  /* line 11, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   body {
-    background-color: #fff;
-    color: #000000;
+    color: #000;
   }
-  /* line 7, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  nav {
-    height: 10vh;
-  }
-  /* line 11, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .user-nav-link {
-    padding-right: 2em;
-  }
-  /* line 14, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  button {
-    z-index: 2;
-  }
-  /* line 17, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .user-nav {
+  /* line 13, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
+  body .header {
     display: block;
-    height: 100px;
-    width: unset;
-    align-items: flex-end;
-    padding: 0px;
-    z-index: 1;
-    transform: translateX(-25%);
+    height: 45vh;
+    margin-bottom: 4em;
   }
-  /* line 25, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .user-nav .user-ul {
+  /* line 18, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
+  body .bt-cards {
+    margin-top: 3em;
     display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
   }
-  /* line 29, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .user-nav-list {
-    margin-top: 5em;
-    height: 100vh;
-    opacity: 1;
-    background-image: url("/public/svg/overlay.svg");
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: cover;
-    line-height: 7em;
-    right: 32px;
-    width: 174%;
-    text-align: right;
-    padding-left: 0em;
-  }
-  /* line 42, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .user-nav-list a {
-    color: #000000;
-  }
-  /* line 46, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .hamburger {
-    right: -11.7em;
-    display: flex;
-    position: relative;
-    z-index: 2;
-  }
-  /* line 53, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 25, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   .background {
     position: absolute;
-    transform: translate(-2em, -10em);
+    right: 0;
+    top: 121px;
+    z-index: -1;
   }
-  /* line 57, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  #main-wrapper {
-    background-color: #fcffe8;
-    overflow: hidden;
-    /* height of the footer */
-    padding-bottom: 100px;
+  /* line 31, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
+  .hero-img {
+    left: 341px;
+    width: 683px;
+    height: 454.5px;
+    position: block;
+    top: 8em;
+    z-index: -1;
   }
-  /* line 63, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  #main-wrapper .hero-img {
-    max-width: 100%;
+  /* line 39, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
+  .jumbotron {
+    margin-bottom: 1rem;
+    height: 24vh;
   }
-  /* line 66, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  #main-wrapper #content {
-    display: block;
+  /* line 44, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
+  .header {
+    height: 20vh;
   }
-  /* line 69, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  #main-wrapper #content .card-block {
-    padding: 2em 0;
+  /* line 48, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
+  .navbar {
+    font-family: Futura-pt-bold;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 40px;
   }
-  /* line 71, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  #main-wrapper #content .card-block .card {
-    background-color: green;
+  /* line 54, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
+  .logo {
+    top: -.9em;
+    width: 2.5em;
   }
-  /*****************************************************************/
-  /*****************************************************************/
-  /*****************************************************************/
-  /*****************************************************************/
-  /*****************************************************************/
-  /*****************************************************************/
-  /*****************************************************************/
-  /*****************************************************************/
-  /*****************************************************************/
-  /*****************************************************************/
-  /*****************************************************************/
-  /*****************************************************************/
-  /*****************************************************************/
-  /*****************************************************************/
-  /*****************************************************************/
-  /* line 99, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 58, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
+  .user-nav li {
+    margin-right: 2em;
+  }
+  /* line 64, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   h1 {
-    font-size: 27px;
-    color: #fcffe8;
+    font-family: Futura;
   }
-  /* line 104, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 68, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   p {
-    font-family: Futura PT;
     margin-top: 0.5em;
   }
-  /* line 109, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 71, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   a {
     text-decoration: none;
+    color: #77C3C6;
     /*font-weight:bold;*/
   }
-  /* line 114, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 76, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   a:hover {
     color: #900;
     text-decoration: underline;
   }
-  /* line 118, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 80, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #holder {
     margin: 0 auto;
     width: 900px;
     border: 1px solid #000;
     padding: 0.3em;
   }
-  /* line 124, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 86, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #head {
     height: 50px;
     background-repeat: no-repeat;
     border-bottom: 1px solid #000;
   }
-  /* line 130, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 92, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #head h1 {
     text-align: center;
     font-variant: small-caps;
     margin-top: 0.3em;
   }
-  /* line 139, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .card img {
-    z-index: -1;
+  /* line 97, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
+  #main-wrapper {
+    overflow: hidden;
+    /* height of the footer */
+    padding-bottom: 100px;
   }
-  /* line 142, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .card h1 {
-    position: absolute;
-    right: 8rem;
-    font-size: 27px;
-    font-weight: 873;
-    text-align: left;
-    top: 2.3em;
-    left: 6.5em;
-    width: 100%;
-    z-index: -1;
+  /* line 104, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
+  #content {
+    text-align: center;
   }
-  /* line 153, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .title-container {
-    display: flex;
-    justify-content: center;
-  }
-  /* line 157, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .portfolio {
-    background-color: #fcffe8;
-  }
-  /* line 161, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 108, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   .output_tables {
     font-size: 12px;
     width: 650px;
     margin: 0 auto;
   }
-  /* line 168, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 115, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   .table {
     margin: 0 auto;
     width: 100%;
@@ -1375,52 +1321,52 @@ label {
   /*table td{*/
   /*    border:1px dashed #000;*/
   /*}*/
-  /* line 177, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 124, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #listtable td {
     text-align: center;
   }
   /*style to format edit player form*/
-  /* line 181, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 128, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #form_table {
     width: 400px;
   }
-  /* line 184, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 131, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #form_table td {
     background-color: #ccc;
     padding: 0.2em;
   }
   /*end styles to format edit player form*/
   /*styles to edit new player form*/
-  /* line 190, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 137, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #widetable {
     width: 100%;
     font-size: 0.7em;
     padding: 0;
   }
-  /* line 195, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 142, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #widetable td {
     text-align: center;
   }
   /*end styles to edit new player form*/
   /*style for login form*/
-  /* line 200, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 147, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #log {
     width: 50%;
     margin: 0 auto;
     color: black;
   }
-  /* line 205, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 152, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #log label {
     color: black;
     display: block;
   }
-  /* line 209, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 156, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #log td {
     padding: 0.2em;
   }
   /*end login form style*/
   /*start styles unique to the show_team_roster.php*/
-  /* line 215, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 162, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #sidebar {
     float: left;
     width: 120px;
@@ -1428,36 +1374,36 @@ label {
     text-align: left;
     padding-left: 1em;
   }
-  /* line 222, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 169, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #sidebar p {
     margin-top: 0;
   }
-  /* line 225, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 172, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #roster_col {
     width: 755px;
     margin: 0px auto;
   }
-  /* line 229, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 176, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #roster_col table {
     border: 1px dashed #000;
     margin: 0px auto;
   }
   /*end show_team_roster.php styles*/
-  /* line 234, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 181, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   .credits {
     text-align: center;
     font-size: 12px;
   }
-  /* line 238, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 185, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   .centerit {
     text-align: center;
   }
-  /* line 241, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 188, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   .toright {
     text-align: right;
   }
   /*style to format small_box areas */
-  /* line 245, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 192, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #small_box {
     width: 250px;
     border: 1px solid #000;
@@ -1465,11 +1411,7 @@ label {
     margin: 0 auto;
   }
   /* end format for small_box areas */
-  /* line 253, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .site-footer {
-    background-color: #77c3c6;
-  }
-  /* line 256, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 199, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #footer {
     position: relative;
     margin-top: -3.4rem;
@@ -1479,7 +1421,7 @@ label {
     padding: 0.7em;
     overflow: hidden;
   }
-  /* line 265, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 208, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #footer div {
     width: 100%;
     color: #380236;
@@ -1487,7 +1429,7 @@ label {
     font-size: 1rem;
     padding-top: 0.2rem;
   }
-  /* line 272, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 215, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   .footer-contact {
     background-color: white;
     position: absolute;
@@ -1495,50 +1437,37 @@ label {
     right: 0;
     min-height: 2vh;
   }
-  /* line 279, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 222, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   .footer-contact ul {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
   }
-  /* line 284, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 227, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   .footer-contact ul li {
-    color: #000000;
     list-style: none;
     font-size: 10px;
   }
-  /* line 289, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 231, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   .footer-wrapper {
     display: flex;
     font-size: xx-small;
     background: #77c3c6 0% 0% no-repeat padding-box;
   }
-  /* line 294, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 236, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   .wrapper {
     display: flex;
     font-family: Futura PT;
     align-items: center;
     justify-content: flex-end;
   }
-  /* line 301, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 243, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   .footer-nav {
     display: flex;
     flex-direction: column;
     padding-left: 5rem;
   }
-  /* line 305, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .footer-nav nav {
-    height: 10vh;
-  }
-  /* line 307, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .footer-nav nav ul {
-    padding: 1px;
-  }
-  /* line 309, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .footer-nav nav ul li {
-    padding: 2px;
-  }
-  /* line 316, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 249, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #footer h4 {
     transform: matrix(0, -1, 1, 0, 0, 0);
     width: 1em;
@@ -1547,122 +1476,20 @@ label {
     font-size: 0.99rem;
     font-family: "Railway";
   }
-  /* line 324, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 257, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #footer a {
     color: #380236;
     margin: 0;
     padding: 0;
     text-align: center;
   }
-  /* line 330, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 263, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   #footer p {
     display: none;
   }
-  /* line 333, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
+  /* line 266, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_tablet.scss */
   .footer-list {
     list-style: none;
-  }
-  /* line 337, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .nav {
-    flex-wrap: nowrap;
-  }
-  /* line 340, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .mb-3 {
-    margin-bottom: 0;
-  }
-  /* line 343, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .navigation {
-    background: #ffffff;
-  }
-  /* line 346, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .navbar-brand {
-    display: none;
-  }
-  /* line 349, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .logo {
-    position: absolute;
-    top: -15px;
-  }
-  /* line 353, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .overlay {
-    background-color: black;
-    opacity: 50%;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-  }
-  /* line 361, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .login {
-    background-color: rgba(255, 255, 255, 0);
-    height: 623px;
-    left: 0px;
-    position: absolute;
-    top: 3px;
-    width: 100%;
-  }
-  /* line 370, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .login-card {
-    background: var(--unnamed-color-f1f9ff) 0% 0% no-repeat padding-box;
-    background: #f1f9ff 0% 0% no-repeat padding-box;
-    height: 480px;
-    box-shadow: -4px 3px 6px #00000029;
-    border-radius: 14px;
-  }
-  /* line 378, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .reg-btn {
-    display: inline-block;
-    top: 2em;
-    left: 7em;
-    width: 12em;
-    height: 16px;
-    letter-spacing: var(--unnamed-character-spacing-0);
-    text-align: left;
-    font: Regular 14px/16px Helvetica Neue;
-    letter-spacing: 0px;
-    color: #707070;
-    opacity: 1;
-  }
-  /* line 392, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .login-btn {
-    left: 5em;
-    width: 112px;
-    height: 35px;
-    background: #77c3c6 0% 0% no-repeat padding-box;
-    box-shadow: 0px 6px 6px #00000029;
-    border-radius: 10px;
-    opacity: 1;
-  }
-  /* line 401, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .cancel-btn {
-    left: 1em;
-    width: 112px;
-    height: 35px;
-    background: #77c3c6 0% 0% no-repeat padding-box;
-    box-shadow: 0px 6px 6px #00000029;
-    border-radius: 10px;
-    opacity: 1;
-  }
-  /* line 410, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .user-form {
-    width: 270px;
-    margin: 0 auto;
-    border: 2px solid #bce0fd;
-    border-radius: 10px;
-    opacity: 1;
-  }
-  /* line 417, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/sizes/_mobile.scss */
-  .form-group > label {
-    top: 1em;
-    left: 1.2em;
-    width: 100vw;
-    height: 25px;
-    letter-spacing: var(--unnamed-character-spacing-0);
-    text-align: left;
-    font: Bold 22px/26px Arial;
-    letter-spacing: 0px;
-    color: #27bec4;
-    opacity: 1;
-    position: relative;
   }
 }
 
@@ -1676,5 +1503,599 @@ label {
 /****************************************************************************************/
 /****************************************************************************************/
 /****************************************************************************************/
+/* line 16, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+* {
+  color: #000000;
+}
+
+/* line 20, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+body {
+  background-color: #fff;
+  color: #000000;
+}
+
+/* line 24, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+nav {
+  height: 10vh;
+}
+
+/* line 28, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.user-nav-link {
+  padding-right: 2em;
+}
+
+/* line 31, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.button {
+  z-index: 2;
+  color: black;
+}
+
+/* line 34, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.button__position {
+  display: block;
+  height: 3em;
+  width: 100%;
+  margin-top: 6em;
+}
+
+/* line 40, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.button__mt {
+  margin-top: 4em;
+}
+
+/* line 45, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.user-nav {
+  display: block;
+  height: 100px;
+  width: unset;
+  align-items: flex-end;
+  padding: 0px;
+  z-index: 1;
+  transform: translateX(-25%);
+}
+
+/* line 53, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.user-nav .user-ul {
+  display: flex;
+}
+
+/* line 57, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.user-nav-list {
+  margin-top: 5em;
+  height: 100vh;
+  opacity: 1;
+  background-image: url("/public/svg/overlay.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: cover;
+  line-height: 7em;
+  right: 32px;
+  width: 174%;
+  text-align: right;
+  padding-left: 0em;
+}
+
+/* line 70, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.user-nav-list a {
+  color: #000000;
+}
+
+/* line 74, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.hamburger {
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+
+/* line 81, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.background {
+  position: absolute;
+  transform: translate(-2em, -10em);
+}
+
+/* line 85, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#main-wrapper {
+  background-color: #fcffe8;
+  overflow: hidden;
+  height: 100%;
+  /* height of the footer */
+  padding-bottom: 100px;
+}
+
+/* line 93, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#main-wrapper .hero-img {
+  max-width: 100%;
+}
+
+/* line 96, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#main-wrapper #content {
+  display: block;
+}
+
+/* line 99, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#main-wrapper #content .card-block {
+  padding: 2em 0;
+}
+
+/* line 101, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#main-wrapper #content .card-block .card {
+  background-color: green;
+}
+
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/* line 129, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+h1 {
+  font-size: 27px;
+  color: #fcffe8;
+}
+
+/* line 134, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+p {
+  font-family: Futura PT;
+  margin-top: 0.5em;
+}
+
+/* line 139, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+a {
+  text-decoration: none;
+  /*font-weight:bold;*/
+}
+
+/* line 144, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+a:hover {
+  color: #900;
+  text-decoration: underline;
+}
+
+/* line 148, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#holder {
+  margin: 0 auto;
+  width: 900px;
+  border: 1px solid #000;
+  padding: 0.3em;
+}
+
+/* line 154, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#head {
+  height: 50px;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid #000;
+}
+
+/* line 160, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#head h1 {
+  text-align: center;
+  font-variant: small-caps;
+  margin-top: 0.3em;
+}
+
+/* line 169, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.card img {
+  z-index: -1;
+}
+
+/* line 172, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.card h1 {
+  position: absolute;
+  right: 8rem;
+  font-size: 27px;
+  font-weight: 873;
+  text-align: left;
+  top: 2.3em;
+  left: 6.5em;
+  width: 100%;
+  z-index: -1;
+}
+
+/* line 183, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.title-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 187, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.portfolio {
+  background-color: #fcffe8;
+}
+
+/* line 191, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.output_tables {
+  font-size: 12px;
+  width: 650px;
+  margin: 0 auto;
+}
+
+/* line 198, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.table {
+  margin: 0 auto;
+  width: 100%;
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+
+/*table td{*/
+/*    border:1px dashed #000;*/
+/*}*/
+/* line 207, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#listtable td {
+  text-align: center;
+}
+
+/*style to format edit player form*/
+/* line 211, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#form_table {
+  width: 400px;
+}
+
+/* line 214, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#form_table td {
+  background-color: #ccc;
+  padding: 0.2em;
+}
+
+/*end styles to format edit player form*/
+/*styles to edit new player form*/
+/* line 220, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#widetable {
+  width: 100%;
+  font-size: 0.7em;
+  padding: 0;
+}
+
+/* line 225, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#widetable td {
+  text-align: center;
+}
+
+/*end styles to edit new player form*/
+/*style for login form*/
+/* line 230, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#log {
+  width: 50%;
+  margin: 0 auto;
+  color: black;
+}
+
+/* line 235, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#log label {
+  color: black;
+  display: block;
+}
+
+/* line 239, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#log td {
+  padding: 0.2em;
+}
+
+/*end login form style*/
+/*start styles unique to the show_team_roster.php*/
+/* line 245, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#sidebar {
+  float: left;
+  width: 120px;
+  border: 1px dashed #000;
+  text-align: left;
+  padding-left: 1em;
+}
+
+/* line 252, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#sidebar p {
+  margin-top: 0;
+}
+
+/* line 255, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#roster_col {
+  width: 755px;
+  margin: 0px auto;
+}
+
+/* line 259, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#roster_col table {
+  border: 1px dashed #000;
+  margin: 0px auto;
+}
+
+/*end show_team_roster.php styles*/
+/* line 264, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.credits {
+  text-align: center;
+  font-size: 12px;
+}
+
+/* line 268, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.centerit {
+  text-align: center;
+}
+
+/* line 271, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.toright {
+  text-align: right;
+}
+
+/*style to format small_box areas */
+/* line 275, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#small_box {
+  width: 250px;
+  border: 1px solid #000;
+  padding: 1em;
+  margin: 0 auto;
+}
+
+/* end format for small_box areas */
+/* line 283, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.site-footer {
+  background-color: #77c3c6;
+}
+
+/* line 286, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#footer {
+  position: relative;
+  margin-top: -3.4rem;
+  min-height: 146px;
+  clear: both;
+  color: beige;
+  padding: 0.7em;
+  overflow: hidden;
+}
+
+/* line 295, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#footer div {
+  width: 100%;
+  color: #380236;
+  font-family: Futura-light;
+  font-size: 1rem;
+  padding-top: 0.2rem;
+}
+
+/* line 302, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.footer-contact {
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  min-height: 2vh;
+}
+
+/* line 309, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.footer-contact ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+/* line 314, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.footer-contact ul li {
+  color: #000000;
+  list-style: none;
+  font-size: 10px;
+}
+
+/* line 319, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.footer-wrapper {
+  display: flex;
+  font-size: xx-small;
+  background: #77c3c6 0% 0% no-repeat padding-box;
+}
+
+/* line 324, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.wrapper {
+  display: flex;
+  font-family: Futura PT;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* line 331, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5rem;
+}
+
+/* line 335, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.footer-nav nav {
+  height: 10vh;
+}
+
+/* line 337, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.footer-nav nav ul {
+  padding: 1px;
+}
+
+/* line 339, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.footer-nav nav ul li {
+  padding: 2px;
+}
+
+/* line 346, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#footer h4 {
+  transform: matrix(0, -1, 1, 0, 0, 0);
+  width: 1em;
+  bottom: -1.2em;
+  left: 3.2em;
+  font-size: 0.99rem;
+  font-family: "Railway";
+}
+
+/* line 354, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#footer a {
+  color: #380236;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* line 360, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+#footer p {
+  display: none;
+}
+
+/* line 363, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.footer-list {
+  list-style: none;
+}
+
+/* line 367, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.nav {
+  flex-wrap: nowrap;
+}
+
+/* line 370, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.mb-3 {
+  margin-bottom: 0;
+}
+
+/* line 373, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.navigation {
+  background: #ffffff;
+}
+
+/* line 376, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.navbar-brand {
+  display: none;
+}
+
+/* line 379, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.logo {
+  position: absolute;
+  top: -15px;
+}
+
+/* line 383, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.overlay {
+  background-color: black;
+  opacity: 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+/* line 391, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.login {
+  background-color: rgba(255, 255, 255, 0);
+  height: 623px;
+  left: 0px;
+  position: absolute;
+  top: 3px;
+  width: 100%;
+}
+
+/* line 400, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.login-card {
+  background: var(--unnamed-color-f1f9ff) 0% 0% no-repeat padding-box;
+  background: #f1f9ff 0% 0% no-repeat padding-box;
+  box-shadow: -4px 3px 6px #00000029;
+  border-radius: 14px;
+}
+
+/* line 406, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.login-card__position {
+  display: block;
+}
+
+/* line 410, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.reg-btn {
+  display: inline-block;
+  top: 2em;
+  left: 7em;
+  width: 12em;
+  height: 16px;
+  letter-spacing: var(--unnamed-character-spacing-0);
+  text-align: left;
+  font: Regular 14px/16px Helvetica Neue;
+  letter-spacing: 0px;
+  color: #707070;
+  opacity: 1;
+}
+
+/* line 424, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.login-btn {
+  left: 5em;
+  width: 112px;
+  height: 35px;
+  background: #77c3c6 0% 0% no-repeat padding-box;
+  box-shadow: 0px 6px 6px #00000029;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+/* line 433, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.cancel-btn {
+  left: 1em;
+  width: 112px;
+  height: 35px;
+  background: #77c3c6 0% 0% no-repeat padding-box;
+  box-shadow: 0px 6px 6px #00000029;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+/* line 442, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.user-form {
+  margin: 0 auto;
+  border: 2px solid #bce0fd;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+/* line 448, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.user-form__login {
+  width: 30%;
+}
+
+/* line 455, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+input[name="ad_username"], input[name="ad_password"] {
+  right: 5em;
+}
+
+/* line 464, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.form-group__button {
+  display: flex;
+  align-items: center;
+  margin-top: 6em;
+}
+
+/* line 469, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.form-group label {
+  left: .5em;
+  width: 100vw;
+  height: 25px;
+  letter-spacing: var(--unnamed-character-spacing-0);
+  text-align: left;
+  font: Bold 22px/26px Arial;
+  letter-spacing: 0px;
+  color: #27bec4;
+  opacity: 1;
+  position: relative;
+}
+
+/* line 482, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.form-group input {
+  width: 50%;
+}
+
+/* line 487, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.form-group__login {
+  height: 7em;
+}
+
+/* line 491, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/style.scss */
+.form-group__hidden {
+  display: none;
+}
 
 /*# sourceMappingURL=style.css.map */

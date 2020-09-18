@@ -26,9 +26,9 @@
 
         // Validate Email
         if(empty($data['email'])){
-          $data['email_err'] = 'Pleae enter email';
+          $data['email_err'] = 'Pleas eenter email';
         } else {
-          // Check email
+          // Check database for email
           if($this->userModel->findUserByEmail($data['email'])){
             $data['email_err'] = 'Email is already taken';
           }

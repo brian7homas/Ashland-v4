@@ -52,6 +52,9 @@
           }else{
               return $row;
           }
+
+
+
 //          if(password_verify($ad_password, $result)){
 //              return $row;
 //          }else{
@@ -59,6 +62,8 @@
 //          }
 
       }
+
+
     // Find user by email
     public function findUserByEmail($email){
       $this->db->query('SELECT * FROM users WHERE email = :email');
@@ -86,16 +91,5 @@
       return $row;
     }
 
-    public function findUserByUsername($ad_username){
-        $this->db->query('SELECT * FROM admin WHERE ad_username = :ad_username');
-        $this->db->bind(':ad_username', $ad_username);
-        $row = $this->db->single();
-
-        // Check row
-        if($this->db->rowCount() > 0){
-            return true;
-        } else {
-            return false;
-        }
-    }
+    
   }

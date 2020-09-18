@@ -1,7 +1,7 @@
 @import "modules/bootstrap";
 @import "base/config";
 @import "sizes/mobile";
-// @import "sizes/tablet";
+@import "sizes/tablet";
 
 /****************************************************************************************/
 /****************************************************************************************/
@@ -13,3 +13,483 @@
 /****************************************************************************************/
 /****************************************************************************************/
 /****************************************************************************************/
+*{
+  color: $primaryDark;
+}
+
+body {
+    background-color: #fff;
+    color: $primaryDark;
+  }
+  nav{
+    height: 10vh;
+    // overflow: hidden;
+  }
+  .user-nav-link{
+    padding-right: 2em;
+  }
+  .button {
+    z-index: 2;
+    color: black;
+    &__position{
+      display: block;
+      height: 3em;
+      width: 100%;
+      margin-top: 6em;
+    }
+    &__mt{
+      margin-top: 4em;
+    }
+  }
+  
+    .user-nav{
+        display:block;
+        height:100px;
+        width: unset;
+        align-items: flex-end;
+        padding: 0px;
+        z-index: 1;
+        transform: translateX(-25%);
+        .user-ul{
+            display: flex;
+        }        
+    }    
+    .user-nav-list{
+      margin-top: 5em;
+      height: 100vh;
+      opacity: 1;
+      background-image: url('/public/svg/overlay.svg');
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: cover;
+      line-height: 7em;
+      right: 32px; 
+      width: 174%;
+      text-align: right;
+      padding-left: 0em;
+      a{
+        color: $primaryDark;
+      }
+        }
+    .hamburger{
+      
+      display: flex;
+      position: relative;
+      z-index: 2;
+      
+  }
+    .background{
+      position: absolute;
+      transform: translate(-2em, -10em);
+    }
+    #main-wrapper {
+        background-color: #fcffe8;
+        overflow: hidden;
+        height: 100%;
+
+        
+        /* height of the footer */
+        padding-bottom: 100px;
+        .hero-img{
+          max-width: 100%;
+        }
+        #content {
+         display: block;
+
+         .card-block{
+           padding: 2em 0;
+           .card{
+             background-color: green;
+           }
+         }
+        }
+      }
+
+
+
+
+    
+    
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+  /*****************************************************************/
+    
+    h1 {
+  
+      font-size: 27px;
+      color: #fcffe8;
+    }
+    p {
+      font-family: Futura PT;
+      margin-top: 0.5em;
+    }
+  
+    a {
+      text-decoration: none;
+      
+      /*font-weight:bold;*/
+    }
+    a:hover {
+      color: #900;
+      text-decoration: underline;
+    }
+    #holder {
+      margin: 0 auto;
+      width: 900px;
+      border: 1px solid #000;
+      padding: 0.3em;
+    }
+    #head {
+      height: 50px;
+      
+      background-repeat: no-repeat;
+      border-bottom: 1px solid #000;
+    }
+    #head h1 {
+      text-align: center;
+      font-variant: small-caps;
+      margin-top: 0.3em;
+    }
+    
+    
+  
+    
+    .card img {
+      z-index: -1;
+    }
+    .card h1 {
+      position: absolute;
+      right: 8rem;
+      font-size: 27px;
+      font-weight: 873;
+      text-align: left;
+      top: 2.3em;
+      left: 6.5em;
+      width: 100%;
+      z-index: -1;
+    }
+    .title-container {
+      display: flex;
+      justify-content: center;
+    }
+    .portfolio {
+      background-color: #fcffe8;
+    }
+  
+    .output_tables {
+      font-size: 12px;
+  
+      width: 650px;
+  
+      margin: 0 auto;
+    }
+    .table {
+      margin: 0 auto;
+      width: 100%;
+      border: 1px solid #000;
+      border-collapse: collapse;
+    }
+    /*table td{*/
+    /*    border:1px dashed #000;*/
+    /*}*/
+    #listtable td {
+      text-align: center;
+    }
+    /*style to format edit player form*/
+    #form_table {
+      width: 400px;
+    }
+    #form_table td {
+      background-color: #ccc;
+      padding: 0.2em;
+    }
+    /*end styles to format edit player form*/
+    /*styles to edit new player form*/
+    #widetable {
+      width: 100%;
+      font-size: 0.7em;
+      padding: 0;
+    }
+    #widetable td {
+      text-align: center;
+    }
+    /*end styles to edit new player form*/
+    /*style for login form*/
+    #log {
+      width: 50%;
+      margin: 0 auto;
+      color: black;
+    }
+    #log label {
+      color: black;
+      display: block;
+    }
+    #log td {
+      padding: 0.2em;
+    }
+    /*end login form style*/
+  
+    /*start styles unique to the show_team_roster.php*/
+    #sidebar {
+      float: left;
+      width: 120px;
+      border: 1px dashed #000;
+      text-align: left;
+      padding-left: 1em;
+    }
+    #sidebar p {
+      margin-top: 0;
+    }
+    #roster_col {
+      width: 755px;
+      margin: 0px auto;
+    }
+    #roster_col table {
+      border: 1px dashed #000;
+      margin: 0px auto;
+    }
+    /*end show_team_roster.php styles*/
+    .credits {
+      text-align: center;
+      font-size: 12px;
+    }
+    .centerit {
+      text-align: center;
+    }
+    .toright {
+      text-align: right;
+    }
+    /*style to format small_box areas */
+    #small_box {
+      width: 250px;
+      border: 1px solid #000;
+      padding: 1em;
+      margin: 0 auto;
+    }
+  
+    /* end format for small_box areas */
+    .site-footer {
+      background-color: #77c3c6;
+    }
+    #footer {
+      position: relative;
+      margin-top: -3.4rem;
+      min-height: 146px;
+      clear: both;
+      color: beige;
+      padding: 0.7em;
+      overflow: hidden;
+    }
+    #footer div {
+      width: 100%;
+      color: #380236;
+      font-family: Futura-light;
+      font-size: 1rem;
+      padding-top: 0.2rem;
+    }
+    .footer-contact {
+      background-color: white;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      min-height: 2vh;
+    }
+    .footer-contact ul {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-start;
+    }
+    .footer-contact ul li {
+      color: $primaryDark;
+      list-style: none;
+      font-size: 10px;
+    }
+    .footer-wrapper {
+      display: flex;
+      font-size: xx-small;
+      background: #77c3c6 0% 0% no-repeat padding-box;
+    }
+    .wrapper {
+      display: flex;
+      font-family: Futura PT;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  
+    .footer-nav {
+      display: flex;
+      flex-direction: column;
+      padding-left: 5rem;
+      nav{
+        height: 10vh;
+        ul{
+          padding: 1px;
+          li{
+            padding: 2px;
+          }
+        }
+      }
+    }
+  
+    #footer h4 {
+      transform: matrix(0, -1, 1, 0, 0, 0);
+      width: 1em;
+      bottom: -1.2em;
+      left: 3.2em;
+      font-size: 0.99rem;
+      font-family: "Railway";
+    }
+    #footer a {
+      color: #380236;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    #footer p {
+      display: none;
+    }
+    .footer-list {
+      list-style: none;
+    }
+  
+    .nav {
+      flex-wrap: nowrap;
+    }
+    .mb-3 {
+      margin-bottom: 0;
+    }
+    .navigation {
+      background: #ffffff;
+    }
+    .navbar-brand {
+      display: none;
+    }
+    .logo {
+      position: absolute;
+      top: -15px;
+    }
+    .overlay {
+      background-color: black;
+      opacity: 50%;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+  
+    .login {
+      
+      background-color: rgba(255, 255, 255, 0);
+      height: 623px;
+      left: 0px;
+      position: absolute;
+      top: 3px;
+      width: 100%;
+    }
+    .login-card {
+      background: var(--unnamed-color-f1f9ff) 0% 0% no-repeat padding-box;
+      background: #f1f9ff 0% 0% no-repeat padding-box;
+      
+      box-shadow: -4px 3px 6px #00000029;
+      border-radius: 14px;
+      &__position{
+        display: block;
+      }
+    }
+    .reg-btn {
+      display: inline-block;
+      top: 2em;
+      left: 7em;
+      width: 12em;
+      height: 16px;
+      letter-spacing: var(--unnamed-character-spacing-0);
+      text-align: left;
+      font: Regular 14px/16px Helvetica Neue;
+      letter-spacing: 0px;
+      color: #707070;
+      opacity: 1;
+    }
+  
+    .login-btn {
+      left: 5em;
+      width: 112px;
+      height: 35px;
+      background: #77c3c6 0% 0% no-repeat padding-box;
+      box-shadow: 0px 6px 6px #00000029;
+      border-radius: 10px;
+      opacity: 1;
+    }
+    .cancel-btn {
+      left: 1em;
+      width: 112px;
+      height: 35px;
+      background: #77c3c6 0% 0% no-repeat padding-box;
+      box-shadow: 0px 6px 6px #00000029;
+      border-radius: 10px;
+      opacity: 1;
+    }
+    .user-form {
+      margin: 0 auto;
+      border: 2px solid #bce0fd;
+      border-radius: 10px;
+      opacity: 1;
+
+      &__login{
+        width: 30%;
+      }
+    
+    }
+    //LOGIN PAGE SPECIFIIC 
+    input {
+        &[name="ad_username"], 
+        &[name="ad_password"]{
+          right: 5em;
+          }
+
+      }
+    
+    .form-group {
+      //CONTAINER FOR THE CANCEL AND LOGIN BUTTON ON USERS/LOGIN PAGE
+      &__button{
+        display: flex;
+        align-items: center;
+        margin-top: 6em;
+      }
+      label{
+      left: .5em;
+      width: 100vw;
+      height: 25px;
+      letter-spacing: var(--unnamed-character-spacing-0);
+      text-align: left;
+      font: Bold 22px/26px Arial;
+      letter-spacing: 0px;
+      color: #27bec4;
+      opacity: 1;
+      position: relative;
+
+      }
+      input{
+        width: 50%;
+      }
+
+
+      &__login{
+        height: 7em;
+      }
+      
+      &__hidden{
+        display:none;
+      }
+
+    }

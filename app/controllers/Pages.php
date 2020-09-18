@@ -17,7 +17,8 @@ class Pages extends Controller{
                 'teams' => 'Teams',
                 'action' => 'Action',
                 'maps' => 'Maps',
-                'signup' => 'Register'
+                'signup' => 'Register',
+                // 'admin' => 'Admin'
 
                 ];        
         $this->view('pages/index', $data);
@@ -52,4 +53,13 @@ class Pages extends Controller{
         ];
         $this->view('pages/schedule', $data);
     }
+
+    // public function admin(){
+    //     $data = [
+    //         'title' =>'Admin',
+    //         'description' => 'Signup for an admin profile here'    
+    //     ];
+    //     $this->view('adminUsers/register', $data);
+    // }
+
 }

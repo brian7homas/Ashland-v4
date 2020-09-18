@@ -3,13 +3,17 @@ require APPROOT . '/views/inc/header.php';
 
 ?>
 
-<div class="row">
-    <div class="col-md-6 mx-auto">
-        <div class="card card-body bg-light mt-5">
+<!-- <div class="row"> -->
+<div id="main-wrapper">
+    <!-- <div class="col-md-6 mx-auto"> -->
+    <div id="content">
+        <!-- <div class="card card-body bg-light"> -->
+        <div>
             <h2>Register a New Player</h2>
-            <p>Pleasse fill out to regsiter</p>
-            <form action="<?php echo URLROOT; ?>/newplayers/register" method="POST">
+            <p>Please fill out to register</p>
+            <form class="user-form" action="<?php echo URLROOT; ?>/newplayers/register" method="POST">
                 <div class="form-group">
+                
                     <label for="pla_lname">Last Name: <sup class="fa">*</sup>
                         <input type="text" name="pla_lname" class="form-control form-control-lg
                             <?php echo(!empty($data['pla_lname_err'])) ? 'is-invalid': ''; ?>"
@@ -17,6 +21,7 @@ require APPROOT . '/views/inc/header.php';
                     </label>
                     <span class="invalid-feedback"><?php echo $data['pla_lname_err'];?></span>
                 </div>
+
                 <div class="form-group">
                     <label for="pla_fname">First Name: <sup class="fa">*</sup>
                         <input type="text" name="pla_fname" class="form-control form-control-lg
@@ -98,6 +103,11 @@ require APPROOT . '/views/inc/header.php';
                     <span class="invalid-feedback"><?php echo $data['pla_bdate_err'];?></span>
                 </div>
                 <div class="form-group">
+                    <div class="button button__position">
+                        <input type="submit" value="Register" class="user-btn" />
+                    </div>
+                </div>
+                <div class="form-group form-group__hidden">
                     <label for="date_added">Date Added: <sup class="fa">*</sup>
                         <input  name="date_added" class="form-control form-control-lg
                             <?php echo(!empty($data['date_added_err'])) ? 'is-invalid': ''; ?>"
@@ -105,15 +115,7 @@ require APPROOT . '/views/inc/header.php';
                     </label>
                     <span class="invalid-feedback"><?php echo $data['date_added_err'];?></span>
                 </div>
-
-
-                <div class="row">
-                    <div class="col">
-                        <input type="submit" value="Register" class="btn btn-success btn-block">
-
-                    </div>
-                </div>
-            </form>
+                </form>
         </div>
 
     </div>

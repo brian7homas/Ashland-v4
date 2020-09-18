@@ -11,9 +11,11 @@ const cardTitle = $(".card-title");
 
 
 // HAMBURGER/MENU  ANIMATION
- var tween = TweenLite.from ('.user-nav-list', { height: 0, opacity: 0, xPercent: 5, paused: true, reversed:true});
-let hamburger = TweenLite.from (".hamburger", {xPercent: -50, paused: true, reversed:true});
+ var tween = TweenLite.from ('.user-nav-list', { height: 0, opacity: 0, display: "none", xPercent: 5, paused: true, reversed:true});
+
+let hamburger = TweenLite.from (".hamburger", {xPercent: 260, paused: true, reversed:true});
 document.querySelector("button").addEventListener("click", doCoolStuff);
+
 function doCoolStuff() {
   hamburger.reversed() ? hamburger.play() : hamburger.reverse();
   tween.reversed() ? tween.play() : tween.reverse();

@@ -1,4 +1,5 @@
 const path = require('path');
+('svg-spritemap-webpack-plugin');
 const postCSSPlugins = 
     // list of plugins we need
     //! this line breaks the webpack build!!!
@@ -37,7 +38,7 @@ module.exports = {
                 test: /\.css$/i,
                 //use the css-loader
                 //      use               , understand
-                use: ['style-loader', 'css-loader', {loader: 'postcss-loader', options: {postcssOptions: {plugins: [postCSSPlugins, require.resolve('postcss-simple-vars'),
+                use: ['style-loader', 'css-loader', {loader: 'postcss-loader', options: {postcssOptions: {plugins: [ postCSSPlugins, require.resolve('postcss-simple-vars'),
                 require.resolve('postcss-nested'), require.resolve('autoprefixer'), postCSSPlugins({ myOption: true })]}}}]
               }
             ]

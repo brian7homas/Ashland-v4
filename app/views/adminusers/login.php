@@ -1,5 +1,6 @@
 <?php 
 require APPROOT . '/views/inc/header.php';
+
 ?>
 <div class="content">
     <img class="login" src="<?php URLROOT?>/img/login-bg.png" />
@@ -8,7 +9,7 @@ require APPROOT . '/views/inc/header.php';
             <?php flash('register_success'); ?>
             <h2>Login to your Account</h2>
             <p>Pleasse fill in your creditentials</p>
-            <form class="user-form user-form__login" action="<?php echo URLROOT; ?>/users/login" method="POST">
+            <form class="user-form user-form__login" action="<?php echo URLROOT; ?>/adminusers/login" method="POST">
                 <div class="form-group form-group__login">
                     <label for="ad_username">Username:
                         <sup class="fa" style="right:-2.9em; top: -1.3em;">*</sup>
