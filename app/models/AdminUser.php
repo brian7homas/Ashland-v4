@@ -8,22 +8,35 @@ class AdminUser{
     public function register($data){
         //query
         $this->db->query('INSERT INTO admin(adminid, ad_lname, ad_fname, ad_username, ad_password) VALUES(:adminid, :ad_lname, :ad_fname, :ad_username, :ad_password)');
-        echo "testing";
+        
         //bind
         $this->db->bind(':adminid', $data['adminid']);
         $this->db->bind(':ad_lname', $data['ad_lname']);
         $this->db->bind(':ad_fname', $data['ad_fname']);
         $this->db->bind(':ad_username', $data['ad_username']);
         $this->db->bind(':ad_password', $data['ad_password']);
-        // echo "testing";
+        
         if($this->db->execute()){
             return true;
         }else{
             return false;
         }
+        
     }
 
+    public function login($username, $password){
+      $this->db->query('SELECT * FROM admin WHERE ad_username = :username');
+      $this->db->bind(':ad_username', $username);
 
+      $row = $this->db->single();
+
+      $hashed_password = $row->password;
+      if(password_verify($password, $hashed_password)){
+        return $row;
+      } else {
+        return false;
+      }
+    }
 
     public function findUserByUsername($username){
         

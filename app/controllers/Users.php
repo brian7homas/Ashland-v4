@@ -72,7 +72,6 @@
           // Load view with errors
           $this->view('users/register', $data);
         }
-
       } else {
         // Init data
         $data =[
@@ -115,11 +114,11 @@
           $data['ad_password_err'] = 'Please enter password';
         }
 
-        //Check for user/email
+// Check for user/email
 //        if($this->userModel->findUserByUsername($data['ad_username'])){
 //          //user found
 //          echo 'user found';
-//
+
 //        }else{
 //          $data['ad_username_err'] = "No user found";
 //        }
@@ -157,6 +156,9 @@
         $this->view('users/login', $data);
       }
     }
+
+
+
     public function createUserSession($user){
       //setting user id to session variable
       $_SESSION['user_id'] =$user->id;

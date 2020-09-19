@@ -1,6 +1,6 @@
 <?php 
 require APPROOT . '/views/inc/header.php';
-echo "hello";
+
 ?>
 
 <div id="content">
@@ -8,7 +8,7 @@ echo "hello";
         <div >
             <h2>Create An Admin Account</h2>
             <p>Pleasse fill out to regsiter</p>
-            <form class="user-form" action="<?php echo URLROOT; ?>/adminUsers/register" method="POST">
+            <form class="user-form" action="<?php echo URLROOT; ?>/adminusers/register" method="POST">
 
             <div class="form-group">
                     <label for="name">Admin ID: <sup class="fa">*</sup>

@@ -63,11 +63,11 @@ class Database{
                     break;
                 case (is_bool($value)):
                     $type = PDO::PARAM_BOOL;
-                    echo "is bool";
+                    // echo "is bool";
                     break;
                 case (is_null($value)):
                     $type = PDO::PARAM_NULL;
-                    echo "is null";
+                    // echo "is null";
                     break;
                 default:
                     $type = PDO::PARAM_STR;
