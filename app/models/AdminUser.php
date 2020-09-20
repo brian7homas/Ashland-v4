@@ -25,25 +25,28 @@ class AdminUser{
     }
 
     public function login($username, $password){
-      $this->db->query('SELECT * FROM admin WHERE ad_username = :username');
+      // echo "<br>inside login function adminuser.php";
+      $this->db->query('SELECT * FROM admin WHERE ad_username = :ad_username');
       $this->db->bind(':ad_username', $username);
-
       $row = $this->db->single();
-
-      $hashed_password = $row->password;
+      var_dump($row);
+      $hashed_password = $row->ad_password;
+      var_dump($hashed_password);
+      var_dump($password);
       if(password_verify($password, $hashed_password)){
         return $row;
       } else {
+        echo "<br><br><br>false";
         return false;
       }
     }
 
-    public function findUserByUsername($username){
-        echo $username;
+    public function findUserByUsername($ad_username){
+        echo 'INSIDE THE FIND USERNAME FUNCTION';
         $this->db->query('SELECT * FROM admin WHERE ad_username = :ad_username');
         
         //bind values
-        $this->db->bind(':ad_username', $username);
+        $this->db->bind(':ad_username', $ad_username);
   
         $row = $this->db->single();
   

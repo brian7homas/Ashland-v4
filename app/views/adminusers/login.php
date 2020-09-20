@@ -8,7 +8,7 @@ require APPROOT . '/views/inc/header.php';
             <?php flash('register_success'); ?>
             <h2>Administrator Login</h2>
             <p>Fill in your creditentials</p>
-            <form class="user-form user-form__login" action="<?php echo URLROOT; ?>/adminusers/login" method="POST">
+            <form class="user-form" action="<?php echo URLROOT; ?>/adminusers/login" method="POST">
                 <div class="form-group form-group__login">
                     <label for="ad_username">Username:
                         <sup class="fa" style="right:-2.9em; top: -1.3em;">*</sup>
@@ -29,9 +29,10 @@ require APPROOT . '/views/inc/header.php';
                 </div>
 
                 <div class="form-group form-group__button">
-                            <input type="submit" value="Cancel" >
+                            <input  value="Cancel" >
                             <input type="submit" value="Login">
                 </div>
+                
                     <a href="<?php echo URLROOT; ?>/users/register" class="reg-btn">No account?
                         REGISTER.</a>
             </form>

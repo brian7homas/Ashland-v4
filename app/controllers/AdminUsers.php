@@ -110,10 +110,10 @@ class AdminUsers extends Controller{
         }
         }
         public function login(){
-          echo "entering login function line 118";
+          // echo "entering login function line 118";
           // Check for POST
           if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            echo "enter request methd";
+            
             // Process form
             // Sanitize POST data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -135,32 +135,40 @@ class AdminUsers extends Controller{
             if(empty($data['ad_password'])){
               $data['ad_password_err'] = 'Please enter password';
             }
-            echo " line 142 after validation";
-    // Check for user/email
-          if($this->userModel->findUserByUsername($data['ad_username'])){
-            //user found
-            echo 'user found';
-          }else{
-            $data['ad_username_err'] = "No user found";
-          }
-          echo "before err check line 151";
+
+            
+    
+          // if($this->userModel->findUserByUsername($data['ad_username'])){
+          //   //user found
+          //   var_dump($data['ad_username']);
+          // }else{
+          //   $data['ad_username_err'] = "No user found";
+          // }
+          
             // Make sure errors are empty
+          
+
           if(empty($data['ad_username_err']) && empty($data['ad_password_err'])){
             // Validated
             // Check and set logged in user
-            $loggedInUser = $this->userModel->login($data['ad_username'], $data['ad_password']);
-            echo "before loggedInUser var is checked line 156";
+          
+            $loggedInUser = $this->adminModel->login($data['ad_username'], $data['ad_password']);
+            var_dump($loggedInUser);
+            // var_dump(is_null($loggedInUser));
+            // var_dump(is_string($loggedInUser));
+            // var_dump(is_bool($loggedInUser));
+          
             if($loggedInUser){
               //create session vars
               $this->createUserSession($loggedInUser);
+              var_dump($this->createUserSession($loggedInUser));
             }else{
-              echo "else block line 160";
+              echo "<br> else block line 160";
               $data['ad_password_err'] = 'Password incorrect';
               $this->view('adminusers/login', $data);
             }
           } else {
-  
-            echo "else block line 166";
+            echo "<br> else block line 166";
             // Load view with errors
             $this->view('adminusers/login', $data);
           }
@@ -183,10 +191,11 @@ class AdminUsers extends Controller{
         
         public function createUserSession($user){
           //setting user id to session variable
+          echo "create user session";
           $_SESSION['adminid'] =$user->id;
           $_SESSION['ad_usernamel'] =$user->username;
           $_SESSION['ad_fname'] =$user->name;
-          redirect('posts');
+          redirect('index');
         }
         public function logout(){
           unset($_SESSION['adminid']);
