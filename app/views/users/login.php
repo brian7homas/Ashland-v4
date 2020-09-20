@@ -2,7 +2,7 @@
 require APPROOT . '/views/inc/header.php';
 ?>
 <div class="content">
-    <img class="login" src="<?php URLROOT?>/img/login-bg.png" />
+    <!-- <img class="login" src="<?php URLROOT?>/img/login-bg.png" /> -->
     <div>
         <div class="login-card login-card__position">
             <?php flash('register_success'); ?>

@@ -78,15 +78,11 @@ class AdminUsers extends Controller{
         //register user
         if($this->adminModel->register($data)){
             flash('register_success', "You are registered and can log in");
-            
             echo "testing AFTER THE ADMINMODEL CALL";
-            
-
             //REDIRECT TAKES YOU TO BLANK PAGE
             $this->view("adminusers/login");
             redirect( 'adminusers/login');
         }else{
-          // Load view with errors
           die("something went wrong in the AdminUsers file ");
         }
       }
@@ -95,7 +91,6 @@ class AdminUsers extends Controller{
         
         }
       }
-      
         else{
           $data =[
             'ad_fname' => '',
@@ -118,6 +113,7 @@ class AdminUsers extends Controller{
           echo "entering login function line 118";
           // Check for POST
           if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            echo "enter request methd";
             // Process form
             // Sanitize POST data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -141,41 +137,37 @@ class AdminUsers extends Controller{
             }
             echo " line 142 after validation";
     // Check for user/email
-           if($this->userModel->findUserByUsername($data['ad_username'])){
-             //user found
-             echo 'user found';
-    
-           }else{
-             $data['ad_username_err'] = "No user found";
-           }
-           echo "before err check line 151";
+          if($this->userModel->findUserByUsername($data['ad_username'])){
+            //user found
+            echo 'user found';
+          }else{
+            $data['ad_username_err'] = "No user found";
+          }
+          echo "before err check line 151";
             // Make sure errors are empty
-            if(empty($data['ad_username_err']) && empty($data['ad_password_err'])){
-              // Validated
-              // Check and set logged in user
-              $loggedInUser = $this->userModel->login($data['ad_username'], $data['ad_password']);
-              echo "before loggedInUser var is checked line 156";
-              if($loggedInUser){
-                //create session vars
-                $this->createUserSession($loggedInUser);
-              }else{
-                echo "else block line 160";
-                $data['ad_password_err'] = 'Password incorrect';
-                $this->view('adminusers/login', $data);
-              }
-            } else {
-    
-              echo "else block line 166";
-              // Load view with errors
+          if(empty($data['ad_username_err']) && empty($data['ad_password_err'])){
+            // Validated
+            // Check and set logged in user
+            $loggedInUser = $this->userModel->login($data['ad_username'], $data['ad_password']);
+            echo "before loggedInUser var is checked line 156";
+            if($loggedInUser){
+              //create session vars
+              $this->createUserSession($loggedInUser);
+            }else{
+              echo "else block line 160";
+              $data['ad_password_err'] = 'Password incorrect';
               $this->view('adminusers/login', $data);
             }
-    
-            //! THIS NEEDS TO BE BELOW LOGIN FUNCTION 
-
-
-            //! THIS NEEDS TO BE BELOW LOGIN FUNCTION 
-
           } else {
+  
+            echo "else block line 166";
+            // Load view with errors
+            $this->view('adminusers/login', $data);
+          }
+            //! THIS NEEDS TO BE BELOW LOGIN FUNCTION 
+            //! THIS NEEDS TO BE BELOW LOGIN FUNCTION 
+          } else {
+            echo "else block line 174";
             // Init data
             $data =[    
               'ad_username' => '',
@@ -185,7 +177,7 @@ class AdminUsers extends Controller{
             ];
     
             // Load view
-            $this->view('users/login', $data);
+            $this->view('adminusers/login', $data);
           }
         }
         

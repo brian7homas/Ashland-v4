@@ -39,7 +39,7 @@ class AdminUser{
     }
 
     public function findUserByUsername($username){
-        
+        echo $username;
         $this->db->query('SELECT * FROM admin WHERE ad_username = :ad_username');
         
         //bind values

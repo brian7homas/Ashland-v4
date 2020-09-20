@@ -3,12 +3,11 @@ require APPROOT . '/views/inc/header.php';
 
 ?>
 <div class="content">
-    
     <div>
         <div class="login-card login-card__position">
             <?php flash('register_success'); ?>
-            <h2>Login to your Account</h2>
-            <p>Pleasse fill in your creditentials</p>
+            <h2>Administrator Login</h2>
+            <p>Fill in your creditentials</p>
             <form class="user-form user-form__login" action="<?php echo URLROOT; ?>/adminusers/login" method="POST">
                 <div class="form-group form-group__login">
                     <label for="ad_username">Username:
