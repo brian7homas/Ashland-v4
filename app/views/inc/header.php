@@ -10,7 +10,7 @@
     </title>
     <!-- ashland font imports -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.typekit.net/dfu0ycd.css">
+    
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"

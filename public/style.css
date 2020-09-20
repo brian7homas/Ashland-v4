@@ -4,8 +4,6 @@
     Author: BootstrapMade.com
     Author URL: https://bootstrapmade.com
 */
-@import url("https://use.typekit.net/dfu0ycd.css");
-@import url("https://use.typekit.net/dfu0ycd.css");
 /* line 10, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/modules/_bootstrap.scss */
 h1,
 h2,
@@ -1187,7 +1185,7 @@ label {
   margin: 0px auto;
 }
 
-/* line 12, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/base/_config.scss */
+/* line 11, ../../../../MAMP/htdocs/ashland-working-copy/public/sass/base/_config.scss */
 * {
   font-family: 'Roboto' sans-serif;
   padding: 0;
