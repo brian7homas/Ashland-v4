@@ -191,11 +191,10 @@ class AdminUsers extends Controller{
         
         public function createUserSession($user){
           //setting user id to session variable
-          echo "create user session";
           $_SESSION['adminid'] =$user->id;
           $_SESSION['ad_usernamel'] =$user->username;
           $_SESSION['ad_fname'] =$user->name;
-          redirect('index');
+          redirect('adminpages/index');
         }
         public function logout(){
           unset($_SESSION['adminid']);

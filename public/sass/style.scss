@@ -3,6 +3,7 @@
 @import "sizes/mobile";
 @import "sizes/tablet";
 
+
 /****************************************************************************************/
 /****************************************************************************************/
 /****************************************************************************************/
@@ -55,15 +56,14 @@ body {
         }        
     }    
     .user-nav-list{
+      position: relative;
       margin-top: 5em;
-      height: 100vh;
-      opacity: 1;
-      // background-image: url('/public/svg/overlay.svg');
+      background-image: url('/public/svg/overlay.svg');
       background-repeat: no-repeat;
       background-position: left center;
       background-size: cover;
       line-height: 7em;
-      right: 32px; 
+      right: 4em; 
       width: 174%;
       text-align: right;
       padding-left: 0em;
@@ -72,11 +72,10 @@ body {
       }
         }
     .hamburger{
-      
-      display: flex;
-      position: relative;
+      position: absolute;
+      top: 1em;
+      right: 8em;
       z-index: 2;
-      
   }
     .background{
       position: absolute;
