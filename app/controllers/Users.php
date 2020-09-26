@@ -115,13 +115,13 @@
         }
 
 // Check for user/email
-//        if($this->userModel->findUserByUsername($data['ad_username'])){
-//          //user found
-//          echo 'user found';
+       if($this->userModel->findUserByUsername($data['ad_username'])){
+         //user found
+         echo 'user found';
 
-//        }else{
-//          $data['ad_username_err'] = "No user found";
-//        }
+       }else{
+         $data['ad_username_err'] = "No user found";
+       }
 
         // Make sure errors are empty
         if(empty($data['ad_username_err']) && empty($data['ad_password_err'])){

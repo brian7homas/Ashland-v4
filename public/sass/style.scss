@@ -58,7 +58,8 @@ body {
     .user-nav-list{
       position: relative;
       margin-top: 5em;
-      background-image: url('/public/svg/overlay.svg');
+      
+      //! background-image: url('/public/svg/overlay.svg'); THIS LINE BREAKS WEBPACK
       background-repeat: no-repeat;
       background-position: left center;
       background-size: cover;
@@ -77,9 +78,10 @@ body {
       right: 8em;
       z-index: 2;
   }
-    .background{
+    .img-background{
       position: absolute;
       transform: translate(-2em, -10em);
+      z-index: -1;
     }
     #main-wrapper {
         background-color: #fcffe8;

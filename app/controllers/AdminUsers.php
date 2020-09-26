@@ -108,7 +108,8 @@ class AdminUsers extends Controller{
           ];
           $this->view('adminusers/register', $data);    
         }
-        }
+}
+    
         public function login(){
           // echo "entering login function line 118";
           // Check for POST
@@ -153,6 +154,7 @@ class AdminUsers extends Controller{
             // Check and set logged in user
           
             $loggedInUser = $this->adminModel->login($data['ad_username'], $data['ad_password']);
+            echo 'logged in USER var:';
             var_dump($loggedInUser);
             // var_dump(is_null($loggedInUser));
             // var_dump(is_string($loggedInUser));
@@ -194,7 +196,7 @@ class AdminUsers extends Controller{
           $_SESSION['adminid'] =$user->id;
           $_SESSION['ad_usernamel'] =$user->username;
           $_SESSION['ad_fname'] =$user->name;
-          redirect('adminpages/index');
+          redirect('adminpages', $data);
         }
         public function logout(){
           unset($_SESSION['adminid']);

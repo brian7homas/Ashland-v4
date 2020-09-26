@@ -24,13 +24,14 @@ function flash($name = '', $message = '', $class = 'alert alert-success'){
 
         }
     }
-    
-}
+}    
+
 
 function isLoggedIn(){
-    if(isset($_SESSION['user_id'])){
+    if(isset($_SESSION['user_id']) || isset($_SESSION['adminid'])){
       return true;
     }else{
       return false;
     }
   }
+

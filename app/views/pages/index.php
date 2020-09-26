@@ -1,8 +1,8 @@
 <?php 
 require APPROOT . '/views/inc/header.php';
-
+var_dump($isLoggedIn);
 ?>
-<img class="background" src="<?php URLROOT ?>/img/bg.png" />
+<img class="wtf" src="<?php URLROOT ?>/img/bg.png" />
 <!-- <div class="overlay"></div> -->
 <div class="header jumbotron-fluid text-center">
     <img class="hero-img" src="<?php URLROOT ?>/img/cover@2x.png" />

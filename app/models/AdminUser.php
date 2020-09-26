@@ -29,7 +29,7 @@ class AdminUser{
       $this->db->query('SELECT * FROM admin WHERE ad_username = :ad_username');
       $this->db->bind(':ad_username', $username);
       $row = $this->db->single();
-      var_dump($row);
+      // var_dump($row);
       $hashed_password = $row->ad_password;
       var_dump($hashed_password);
       var_dump($password);

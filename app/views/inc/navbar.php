@@ -8,9 +8,9 @@
             <ul class="user-nav-list navbar-nav">
                 <!-- PHP USED TO CHECK FOR SESSION VARIABLES 
                 IF THEY EXIST REGISTER AND LOGIN LINKS WILL NOT BE PRESENT -->
-                <?php if(isset($_SESSION['user_id'])): ?>
+                <?php if(is_null($_SESSION['adminid'])): ?>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">How's it going? <?php echo $_SESSION['user_name'];?> </a>
+                    <a class="nav-link" href="#">How's it going? <?php echo $_SESSION['ad_username'];?> </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
@@ -48,16 +48,6 @@
     </div>
     <button class ="hamburger navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span><svg   xmlns="http://www.w3.org/2000/svg" width="30" height="25"
-                    viewBox="0 0 30 25">
-                    <g id="Group_292" data-name="Group 292" transform="translate(-5 -7.5)">
-                        <line id="Line_15" data-name="Line 15" x2="30" transform="translate(5 10)" fill="none"
-                            stroke="#000" stroke-width="5" />
-                        <line id="Line_16" data-name="Line 16" x2="30" transform="translate(5 20)" fill="none"
-                            stroke="#000" stroke-width="5" />
-                        <line id="Line_17" data-name="Line 17" x2="30" transform="translate(5 30)" fill="none"
-                            stroke="#000" stroke-width="5" />
-                    </g>
-                </svg></span>
+            <span><img src="<?php echo URLROOT;?>/img/menu.svg"</span>
         </button>
 </nav>
