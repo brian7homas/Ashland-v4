@@ -52,9 +52,6 @@
           }else{
               return $row;
           }
-
-
-
 //          if(password_verify($ad_password, $result)){
 //              return $row;
 //          }else{

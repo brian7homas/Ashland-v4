@@ -8,7 +8,7 @@
             <ul class="user-nav-list navbar-nav">
                 <!-- PHP USED TO CHECK FOR SESSION VARIABLES 
                 IF THEY EXIST REGISTER AND LOGIN LINKS WILL NOT BE PRESENT -->
-                <?php if(is_null($_SESSION['adminid'])): ?>
+                <?php if($_SESSION['adminid']): ?>
                 <li class="nav-item ">
                     <a class="nav-link" href="#">How's it going? <?php echo $_SESSION['ad_username'];?> </a>
                 </li>
@@ -22,7 +22,7 @@
                     </div>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="<?php echo URLROOT?>/users/logout">Logout </a>
+                    <a class="nav-link" href="<?php echo URLROOT?>/adminusers/logout">Logout </a>
                 </li>
                 <?php else:?>
                 <li class="nav-item ">

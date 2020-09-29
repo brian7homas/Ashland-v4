@@ -1345,7 +1345,7 @@ nav {
   z-index: 2;
 }
 
-.wtf{
+.img-background {
   position: absolute;
   transform: translate(-2em, -10em);
   z-index: -1;

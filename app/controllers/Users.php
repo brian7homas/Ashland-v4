@@ -114,6 +114,7 @@
           $data['ad_password_err'] = 'Please enter password';
         }
 
+
 // Check for user/email
        if($this->userModel->findUserByUsername($data['ad_username'])){
          //user found
@@ -132,17 +133,13 @@
             //create session vars
             $this->createUserSession($loggedInUser);
           }else{
-
             $data['ad_password_err'] = 'Password incorrect';
             $this->view('users/login', $data);
           }
         } else {
-
           // Load view with errors
           $this->view('users/login', $data);
         }
-
-
       } else {
         // Init data
         $data =[    

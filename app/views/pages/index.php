@@ -1,14 +1,14 @@
 <?php 
 require APPROOT . '/views/inc/header.php';
-var_dump($isLoggedIn);
 ?>
 <img class="wtf" src="<?php URLROOT ?>/img/bg.png" />
 <!-- <div class="overlay"></div> -->
 <div class="header jumbotron-fluid text-center">
     <img class="hero-img" src="<?php URLROOT ?>/img/cover@2x.png" />
     <div class="container">
-        <h1 class="display-3">
+        <h1 class="display-2">
             <?php 
+
                 echo $data['title']."<br>";
                 
             ?>

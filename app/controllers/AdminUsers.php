@@ -78,12 +78,12 @@ class AdminUsers extends Controller{
         //register user
         if($this->adminModel->register($data)){
             flash('register_success', "You are registered and can log in");
-            echo "testing AFTER THE ADMINMODEL CALL";
+            // echo "testing AFTER THE ADMINMODEL CALL";
             //REDIRECT TAKES YOU TO BLANK PAGE
             $this->view("adminusers/login");
             redirect( 'adminusers/login');
         }else{
-          die("something went wrong in the AdminUsers file ");
+          die("Could not register user. ");
         }
       }
       else{
@@ -110,93 +110,99 @@ class AdminUsers extends Controller{
         }
 }
     
-        public function login(){
-          // echo "entering login function line 118";
-          // Check for POST
-          if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            
-            // Process form
-            // Sanitize POST data
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            
-            // Init data
-            $data =[
-              'ad_username' => trim($_POST['ad_username']),
-              'ad_password' => trim($_POST['ad_password']),
-              'ad_username_err' => '',
-              'ad_password_err' => '',
-            ];
-    
-            // Validate Email
-            if(empty($data['ad_username'])){
-              $data['ad_username_err'] = 'Pleae enter email';
-            }
-    
-            // Validate Password
-            if(empty($data['ad_password'])){
-              $data['ad_password_err'] = 'Please enter password';
-            }
-
-            
-    
-          // if($this->userModel->findUserByUsername($data['ad_username'])){
-          //   //user found
-          //   var_dump($data['ad_username']);
-          // }else{
-          //   $data['ad_username_err'] = "No user found";
-          // }
-          
-            // Make sure errors are empty
-          
-
-          if(empty($data['ad_username_err']) && empty($data['ad_password_err'])){
-            // Validated
-            // Check and set logged in user
-          
-            $loggedInUser = $this->adminModel->login($data['ad_username'], $data['ad_password']);
-            echo 'logged in USER var:';
-            var_dump($loggedInUser);
-            // var_dump(is_null($loggedInUser));
-            // var_dump(is_string($loggedInUser));
-            // var_dump(is_bool($loggedInUser));
-          
-            if($loggedInUser){
-              //create session vars
-              $this->createUserSession($loggedInUser);
-              var_dump($this->createUserSession($loggedInUser));
-            }else{
-              echo "<br> else block line 160";
-              $data['ad_password_err'] = 'Password incorrect';
-              $this->view('adminusers/login', $data);
-            }
-          } else {
-            echo "<br> else block line 166";
-            // Load view with errors
-            $this->view('adminusers/login', $data);
-          }
-            //! THIS NEEDS TO BE BELOW LOGIN FUNCTION 
-            //! THIS NEEDS TO BE BELOW LOGIN FUNCTION 
-          } else {
-            echo "else block line 174";
-            // Init data
-            $data =[    
-              'ad_username' => '',
-              'ad_password' => '',
-              'ad_username_err' => '',
-              'ad_password_err' => '',
-            ];
-    
-            // Load view
-            $this->view('adminusers/login', $data);
-          }
+    public function login(){
+      
+      // Check for POST
+      if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        
+        
+        // Process form
+        // Sanitize POST data
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        
+        // Init data
+        $data =[
+          'ad_username' => trim($_POST['ad_username']),
+          'ad_password' => trim($_POST['ad_password']),
+          'ad_username_err' => '',
+          'ad_password_err' => '',
+        ];
+        
+        // Validate Email
+        if(empty($data['ad_username'])){
+          $data['ad_username_err'] = 'Pleae enter email';
         }
+
+        // Validate Password
+        if(empty($data['ad_password'])){
+          $data['ad_password_err'] = 'Please enter password';
+        }
+
+        
+
+      if($this->adminModel->findUserByUsername($data['ad_username'])){
+        //user found
+        // echo "user found";
+      }else{
+        $data['ad_username_err'] = "No user found";
+      }
+      
+        // Make sure errors are empty
+      
+
+      if(empty($data['ad_username_err']) && empty($data['ad_password_err'])){
+        // Validated
+        // Check and set logged in user
+      
+        $loggedInUser = $this->adminModel->login($data['ad_username'], $data['ad_password']);
+        // var_dump($loggedInUser->ad_password);
+        // echo '<br>';
+        // echo 'logged in USER var:';
+        // echo '<br>';
+        // var_dump($loggedInUser);
+        // echo '<br>';
+        // echo 'END OF logged in USER var:';
+        // echo '<br>';
+        // var_dump(is_null($loggedInUser)); false 
+        // var_dump(is_string($loggedInUser)); false
+        // var_dump(is_bool($loggedInUser)); true
+        // var_dump(is_array($loggedInUser)); false
+        // var_dump(is_object($loggedInUser)); false
+        // var_dump($loggedInUser);
+        if($loggedInUser){
+          //create session vars
+          // var_dump($this->createUserSession($loggedInUser));
+          $this->createUserSession($loggedInUser);
+          
+        }else{
+          $data['ad_password_err'] = 'Password incorrect';
+          $this->view('adminusers/login', $data);
+        }
+      } else {
+        // Load view with errors
+        $this->view('adminusers/login', $data);
+      }
+      } else {
+        // Init data
+        $data =[    
+          'ad_username' => '',
+          'ad_password' => '',
+          'ad_username_err' => '',
+          'ad_password_err' => '',
+        ];
+
+        // Load view
+        $this->view('adminusers/login', $data);
+      }
+    }
         
         public function createUserSession($user){
           //setting user id to session variable
-          $_SESSION['adminid'] =$user->id;
-          $_SESSION['ad_usernamel'] =$user->username;
-          $_SESSION['ad_fname'] =$user->name;
-          redirect('adminpages', $data);
+          $_SESSION['adminid'] = $user->adminid;
+          $_SESSION['ad_username'] = $user->ad_username;
+          $_SESSION['ad_fname'] = $user->ad_fname;
+          // isLoggedIn($user);
+          redirect('adminpages/index');
         }
         public function logout(){
           unset($_SESSION['adminid']);
@@ -205,7 +211,12 @@ class AdminUsers extends Controller{
           session_destroy();
           redirect('adminusers/login');
         }
-
+        // Check Logged In
+        public function isLoggedIn(){
+          if($_SESSION['adminid']){
+            return true;
+          } else {
+            return false;
+          }
+        }
   }
-
-    

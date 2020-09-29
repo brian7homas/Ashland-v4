@@ -80,7 +80,7 @@ class Database{
     public function execute(){
         // var_dump($this->stmt);
         //  var_dump($this->stmt);
-        //  var_dump(is_bool($this->stmt));
+        //  var_dump(is_null($this->stmt));
         return $this->stmt->execute();
     }
     // //get result set as array of objects
