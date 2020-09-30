@@ -25,23 +25,23 @@ class Pages extends Controller{
     }
     public function teams(){
         $data = [
-            'title' => 'Welcome to the Ashland website login to see more information.',
-            'description' => 'teams'
+            'title' => 'Teams',
+            'description' => 'Modify team data here.'
         ];
         $this->view('pages/teams', $data);
     }
     public function action(){
         $data = [
-            'title' => 'Welcome to the Action Page',
-            'description' => 'Action!!!'
+            'title' => 'ACTION',
+            'description' => 'See some of the action!!'
         ];
         $this->view('pages/action', $data);
     }
 
     public function maps(){
         $data = [
-            'title' => 'Find Where Your Next Game Is',
-            'description' => 'Maps'
+            'title' => 'Maps',
+            'description' => 'Find Where Your Next Game Is'
         ];
         $this->view('pages/maps', $data);
     }
@@ -49,7 +49,7 @@ class Pages extends Controller{
     public function schedule(){
         $data = [
             'title' => 'Schedules',
-            'description' => 'Find the directions you need'
+            'description' => 'Find specific information about each game here.'
         ];
         $this->view('pages/schedule', $data);
     }

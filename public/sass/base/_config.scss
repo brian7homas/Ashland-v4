@@ -7,11 +7,23 @@ $altLight: #F1F9FF;
 $primaryDark: #000000;
 $card-bg: transparent;
 
-
+html,body{
+    position: static;
+    overflow-y: auto;
+    overflow-x:hidden;
+}
 *{
-    font-family: 'Roboto' sans-serif;    
+    font-family: Futura;    
     padding: 0;
     margin: 0;
     color: $mainLight;
+    box-sizing: border-box;;
+}
+
+img{
+    max-width: 100%;
+}
+li{
+    list-style-type: none;
 }
 

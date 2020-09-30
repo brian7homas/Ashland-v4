@@ -29,7 +29,7 @@ require APPROOT . '/views/inc/header.php';
                 </div>
 
                 <div class="form-group form-group__button">
-                            <input  value="Cancel" >
+                            <input onClick="clear()" value="Cancel" >
                             <input type="submit" value="Login">
                 </div>
                 

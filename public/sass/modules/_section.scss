@@ -1,0 +1,7 @@
+.section{
+    display: flex;
+    width:100%;
+    &__half{
+        width: 50vw;
+    }
+}

@@ -7,18 +7,27 @@ gsap.config(
 gsap.registerPlugin(ScrollTrigger, CSSRulePlugin);
 const cardTitle = $(".card-title");
 
+// gsap.set(".hamburger",{xPercent:240, paused:true, reversed:true, ease: Power1.easeInOut})
 
+let tl = gsap.timeline({ease: Power3.easeInOut});
+tl.from(".user-nav-list", {height: 0, display:"none", xPercent:0, reversed:true, ease: Power1.easeInOut })
+  .from(".hamburger",{xPercent:240, reversed:false})
+  .from(".nav-item", { opacity:0, reversed:true}, "-=1")
+  
 
 
 // HAMBURGER/MENU  ANIMATION
- var tween = TweenLite.from ('.user-nav-list', { height: 0, opacity: 0, display: "none", xPercent: 0, paused: true, reversed:true});
-
+var tween = TweenLite.from ('.user-nav-list', { height: 0,  display: "none", xPercent: 0, paused: true, reversed:true});
 let hamburger = TweenLite.from (".hamburger", {xPercent: 240, paused: true, reversed:true, ease: Power1.easeInOut });
-document.querySelector("button").addEventListener("click", doCoolStuff);
+
+
+
+document.querySelector(".navbar").addEventListener("click", doCoolStuff);
 
 function doCoolStuff() {
-  hamburger.reversed() ? hamburger.play() : hamburger.reverse();
-  tween.reversed() ? tween.play() : tween.reverse();
+  tl.reversed() ? tl.play() : tl.reverse();
+  // hamburger.reversed() ? hamburger.play() : hamburger.reverse();
+  // tween.reversed() ? tween.play() : tween.reverse();
   
   // if($( "nav" ).css( 'overflow') !== "visible"){
   //     console.log("hidden");

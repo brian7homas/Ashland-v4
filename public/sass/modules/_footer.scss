@@ -1,0 +1,21 @@
+footer{
+    background-color: $primaryDark;
+    a{
+        text-decoration: none;
+    }
+    .footer-wrapper{
+        
+        text-align:center;
+        padding:1.5em 0;
+    }
+    .footer-contact{
+        display:block;
+        width: 100%;
+        font-size:12px;
+        ul{
+            padding:1em 0 ;
+            display:flex;
+            justify-content: space-evenly;
+        }
+    }   
+}

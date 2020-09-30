@@ -1,30 +1,32 @@
 <?php 
 require APPROOT . '/views/inc/header.php';
 ?>
-<img class="wtf" src="<?php URLROOT ?>/img/bg.png" />
+
+<img id="main__img" src="<?php URLROOT ?>/img/bg.png" />
 <!-- <div class="overlay"></div> -->
-<div class="header jumbotron-fluid text-center">
+<div class="user-header">
     <img class="hero-img" src="<?php URLROOT ?>/img/cover@2x.png" />
-    <div class="container">
-        <h1 class="display-2">
+    <div class="user-header__container-inner">
+        <h1 class="user-header__headline">
             <?php 
 
                 echo $data['title']."<br>";
                 
             ?>
         </h1>
-        <p class="lead">
+        <p class="user-header__sub-headline">
             <?php 
                 echo $data['description'] . "<br>";
             ?>
         </p>
     </div>
 </div>
-<section class="" id="content" class="container text-center">
+
+<section id="" class="content">
     <div class='portfolio-grid'>
         <!-- TEAM PAGE LINK -->
         <div class="row">
-            <div class="bt-cards container-fluid  col-sm-6 col-xs-12">
+            <div class="grid">
                 <div class="card card-block" style="background-color: transparent" >
                     <a class="card-title" href="<?php echo URLROOT?>/pages/teams"><img alt="img" src="pics/teams.jpg">
                     </a>
@@ -43,17 +45,6 @@ require APPROOT . '/views/inc/header.php';
 
                     <h1>
                         Action
-                    </h1>
-                    <p class-"card-text">
-                    </p>
-
-                </div>
-
-                <div class="card card-block" style="background-color: transparent">
-                    <a class="card-title" href="<?php echo URLROOT;?>/pages/maps"><img alt="img" src="pics/maps.jpg">
-                    </a>
-                    <h1>
-                        Maps
                     </h1>
                     <p class-"card-text">
                     </p>

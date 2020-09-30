@@ -1,15 +1,10 @@
-<nav class="navbar navbar-expand-lg mb-3 navigation">
-    <div class="container">
-        <!-- <a class="navbar-brand" href="<?php echo URLROOT ?>"><?php echo SITENAME ?> </a> -->
+<nav class="navbar">
+    <div class="navbar__container-inner">
         <a href="<?php echo URLROOT ?>"><img class="logo" src="<?php  echo URLROOT ?>/public/img/smLogo.png" /></a>
-        <div class="navbar user-nav">
-            <!-- <ul class="navbar-nav ">
-            </ul> -->
-            <ul class="user-nav-list navbar-nav">
-                <!-- PHP USED TO CHECK FOR SESSION VARIABLES 
-                IF THEY EXIST REGISTER AND LOGIN LINKS WILL NOT BE PRESENT -->
+        <div class="user-nav">
+            <ul class="user-nav-list">
                 <?php if($_SESSION['adminid']): ?>
-                <li class="nav-item ">
+                <li class="nav-item">
                     <a class="nav-link" href="#">How's it going? <?php echo $_SESSION['ad_username'];?> </a>
                 </li>
                 <li class="nav-item dropdown">
@@ -43,11 +38,10 @@
 
                 <?php endif; ?>
             </ul>
-
         </div>
     </div>
     <button class ="hamburger navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span><img src="<?php echo URLROOT;?>/img/menu.svg"</span>
-        </button>
+    </button>
 </nav>

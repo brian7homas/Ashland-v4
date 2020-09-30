@@ -2,10 +2,9 @@
 ?>
 
 <?php flash('post_message'); ?>
-<div class="header jumbotron-fluid text-center">
-    
+<div class="header jumbotron-fluid text-center">    
     <div class="container">
-        <h1 style="color: black"class="display-2">
+        <h1 style="color: black" class="display-2">
             <?php 
                 echo $data['title']."<br>";
             ?>
@@ -17,10 +16,12 @@
         </p>
     </div>
 </div>
-<section class="" id="content" class="container text-center">
-     <h1 style="color:black" ><a href="<?php echo URLROOT; ?>/adminpages/team">Team Manager</a></h1>
-     <h1 style="color:black" ><a href="<?php echo URLROOT; ?>/adminpages/player">Player Manager</a></h1>
-     <h1 style="color:black" ><a href="<?php echo URLROOT; ?>/adminpages/games">Game Manager</a></h1>
+<section id="content" class="container container__margin-top text-center">
+    <div class="portfolio-grid">
+        <h1 style="color:black" ><a href="<?php echo URLROOT; ?>/adminpages/team">Team Manager</a></h1>
+        <h1 style="color:black" ><a href="<?php echo URLROOT; ?>/adminpages/player">Player Manager</a></h1>
+        <h1 style="color:black" ><a href="<?php echo URLROOT; ?>/adminpages/games">Game Manager</a></h1>
+    </div>
 </section>
 <?php 
     

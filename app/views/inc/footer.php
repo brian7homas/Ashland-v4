@@ -1,8 +1,8 @@
-</div>
+</main>
 
-<footer id="footer" class="site-footer bottom">
-    <div class="footer-wrapper">
-        <div class="wrapper">
+<footer id="footer" >
+    <div class="footer-wrapper section">
+        <div class="wrapper section__half">
             <h4>
                 <a href="#"><strong>Ashland</strong> Soccer</a>
             </h4>
@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <div class="wrapper">
+        <div class="wrapper section__half">
             <h4>
                 <a href="#"><strong>Ashland</strong> Soccer</a>
             </h4>
@@ -56,12 +56,12 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
 </script> 
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-</script>
+</script> -->
 
 <script src="<?php echo URLROOT;  ?>/js/gsap.min.js"></script>
 <script src="<?php echo URLROOT;  ?>/js/ScrollTrigger.min.js"></script>
@@ -70,7 +70,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/EasePack.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/CSSRulePlugin.min.js"></script>
 
-<script src="<?php echo URLROOT;  ?>/js/bundled.js"></script>
+<!-- <script src="<?php echo URLROOT;  ?>/js/bundled.js"></script> -->
 <script src="<?php echo URLROOT;  ?>/js/main.js"></script>
 </body>
 
