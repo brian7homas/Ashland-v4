@@ -1,0 +1,43 @@
+.user-form{
+    display:flex;
+    flex-flow: column;
+    border: 1px solid black;
+    align-items: center;
+    .form-control{
+        border-radius: 25px;
+        width: 100%;
+    }
+    .form-group{
+        display:flex;
+        margin: 2em 1em;
+        height: 2em;
+        label{
+            color: $primaryDark;
+            padding: .5em;
+            width: 100%;
+            
+        }
+        &__button{
+            display:flex;
+            width: 80%;
+        }
+        input{
+            width: 50%;
+        }
+        input[type="submit"]{
+            
+            border-radius: 23px;;
+            background-color: $mainBlue;
+        }
+        input[type="button"]{
+        
+            border-radius: 23px;;
+            background-color: $purple;
+        }
+        .invalid-feedback{
+            display:block;
+            color:red;
+            font-size:.5rem;
+        }
+    }   
+}

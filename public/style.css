@@ -1191,3 +1191,56 @@ footer .footer-contact ul {
   font-size: 3rem;
   color: #000000;
 }
+
+.headline-text-center {
+  text-align: center;
+}
+
+.user-form {
+  display: flex;
+  flex-flow: column;
+  border: 1px solid black;
+  align-items: center;
+}
+
+.user-form .form-control {
+  border-radius: 25px;
+  width: 100%;
+}
+
+.user-form .form-group {
+  display: flex;
+  margin: 2em 1em;
+  height: 2em;
+}
+
+.user-form .form-group label {
+  color: #000000;
+  padding: .5em;
+  width: 100%;
+}
+
+.user-form .form-group__button {
+  display: flex;
+  width: 80%;
+}
+
+.user-form .form-group input {
+  width: 50%;
+}
+
+.user-form .form-group input[type="submit"] {
+  border-radius: 23px;
+  background-color: #77C3C6;
+}
+
+.user-form .form-group input[type="button"] {
+  border-radius: 23px;
+  background-color: #380236;
+}
+
+.user-form .form-group .invalid-feedback {
+  display: block;
+  color: red;
+  font-size: .5rem;
+}

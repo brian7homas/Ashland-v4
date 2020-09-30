@@ -20,12 +20,6 @@
                     <a class="nav-link" href="<?php echo URLROOT?>/adminusers/logout">Logout </a>
                 </li>
                 <?php else:?>
-                <li class="nav-item ">
-                    <a class="user-nav-link" href="<?php echo URLROOT?>/users/register">Register User</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="user-nav-link" href="<?php echo URLROOT?>/adminusers/register">Register Admin User</a>
-                </li>
                 <li class="nav-item">
                     <a class="user-nav-link" href="<?php echo URLROOT;?>/newplayers/register">New players</a>
                 </li>

@@ -1,4 +1,7 @@
 .headline-text{
     font-size:3rem;
     color: $primaryDark;
+    &-center{
+        text-align:center;
+    }
 }
