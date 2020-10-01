@@ -1,0 +1,17 @@
+.subheadline{
+        color: $primaryDark;
+        text-align: center;
+        margin: 0 auto;
+    &__large{
+        font-size: 1.3rem;
+        color: $primaryDark;
+    }
+    &__med{
+        font-size: .9rem;
+        color: $primaryDark;
+    }
+    &__sm{
+        font-size: .5rem;
+        color: $primaryDark;
+    }
+}

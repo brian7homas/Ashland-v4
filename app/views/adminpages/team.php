@@ -10,27 +10,50 @@
                 echo $data['title'] . "<br>";
             ?>
         </h1>
-        <p class="lead">
+        <p class="subheadline__large">
             <?php 
                 echo $data['description'] . "<br>";
             ?>
         </p>
     </div>
 </div>
-<section class="container text-center">
-     <h1 style="color:black" ><a href="<?php echo URLROOT; ?>/adminpages/">Home</a></h1>
-     <ul>
-        <li><a href="#"><?php echo $data['add'] ?></a></li>
-        <li><a href="#"><?php echo $data['remove'] ?></a></li>
-        <li><a href="#"><?php echo $data['edit'] ?></a></li>
-     </ul>
+
+<section class="content">
+    <div class="row">
+        <div class="section">
+            <h1 class="headline-text">Team menu</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="section">
+            <form class="user-form">
+                <div class="form-group">
+                    <label>Team</label>
+                    
+                    <div class="dropdown">
+                    <button class="dropbtn">Dropdown</button>    
+                        <div class="dropdown-content">
+                            <a href="#"><?php echo $data['aardvarks']; ?></a>
+                            <a href="#"><?php echo $data['antelopes']; ?></a>
+                            <a href="#"><?php echo $data['boxeers']; ?></a>
+                            <a href="#"><?php echo $data['broncos']; ?></a>
+                            <a href="#"><?php echo $data['buffalos']; ?></a>
+                            <a href="#"><?php echo $data['culdesacs']; ?></a>
+                        </div>
+                    </div>
+                </div>            
+            </form>
+        </div>
+    </div>
 </section>
-<?php 
-    
+    <ul>
+    <li><a href="#"><?php echo $data['add'] ?></a></li>
+    <li><a href="#"><?php echo $data['remove'] ?></a></li>
+    <li><a href="#"><?php echo $data['edit'] ?></a></li>
+    </ul>
 
-?>
 
 
-<!-- foreach had to be pasted in to work -->
+
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>

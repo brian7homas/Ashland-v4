@@ -5,7 +5,13 @@ class AdminPage{
     public function __construct(){
         $this->db = new Database;
     }
-    
+    public function getTeams(){
+      $this->db->query('SELECT team_name FROM team');
+
+      $results = $this->db->resultSet();
+
+      return $results;
+    }
   }
 //     public function register($data){
 //         //query
@@ -43,22 +49,7 @@ class AdminPage{
 //       }
 //     }
 
-//     public function findUserByUsername($ad_username){
-//         echo 'INSIDE THE FIND USERNAME FUNCTION';
-//         $this->db->query('SELECT * FROM admin WHERE ad_username = :ad_username');
-        
-//         //bind values
-//         $this->db->bind(':ad_username', $ad_username);
-  
-//         $row = $this->db->single();
-  
-//         // Check row
-//         if($this->db->rowCount() > 0){
-//           return true;
-//         } else {
-//           return false;
-//         }
-//       }
+
 
 // }
            

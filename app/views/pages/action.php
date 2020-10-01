@@ -20,7 +20,29 @@ require APPROOT . '/views/inc/header.php';
 </div>
 
 <section class="content">
-
+    <div class="portfolio-grid">
+        <div class="row">
+            <div class="gird-full">
+                <div class="card">
+                    <img src="<?php URLROOT ?>/pics/dit.jpg" />
+                </div>
+                
+                <div class="card">
+                    <img src="<?php URLROOT ?>/pics/jsc.jpg" />
+                </div>
+                
+                <div class="row-flex">
+                    <div class="card">
+                        <img src="<?php URLROOT ?>/pics/krst.jpg" />
+                    </div>
+                    <div class="card">
+                        <img src="<?php URLROOT ?>/pics/kath.jpg" />
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 </section>
 
 <?php require APPROOT . '/views/inc/footer.php';?>

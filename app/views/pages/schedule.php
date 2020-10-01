@@ -20,14 +20,149 @@ require APPROOT . '/views/inc/header.php';
 </div>
 
 <section class="content">
+
     <div class="row">
-        <h1 class="headline-text">Maps</h1>
+        <form class="schedule">
+            <div class="form-group">
+                <label>the <strong class="subheadline__med">Aardvarks</strong></label>
+                <input class="dropdown" value=""/>
+                <span>span</span>
+            </div>
+            
+            <div class="form-group">
+                <p class="align-center padding-1 subheadline__large">will be facing..</p>
+            </div>
+            
+            <div class="row-flex">
+                <table>
+                    <tr>
+                        <th>
+                            <label>Who?</label>
+                        </th>
+                        <td>
+                            <label for="opponent1">Broncos</label>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>When?</label>
+                        </th>
+                        <td>
+                            <label for="opponent1">July 1st</label>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>Where?</label>
+                        </th>
+                        <td>
+                            <label for="opponent1">Whalburg Park</label>
+                        </td>
+                    </tr>
+                </table>
+                
+                <table>
+                    <tr>
+                        <th>
+                            <label>Who?</label>
+                        </th>
+                        <td>
+                            <label for="opponent1">Aardvarks</label>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>When?</label>
+                        </th>
+                        <td>
+                            <label for="opponent1">July 11th</label>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>Where?</label>
+                        </th>
+                        <td>
+                            <label for="opponent1">Shicct's creek</label>
+                        </td>
+                    </tr>
+                </table>
+            
+            </div>
+            <div class="row-flex">
+                <table>
+                    <tr>
+                        <th>
+                            <label>Who?</label>
+                        </th>
+                        <td>
+                            <label for="opponent1">Broncos</label>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>When?</label>
+                        </th>
+                        <td>
+                            <label for="opponent1">July 1st</label>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>Where?</label>
+                        </th>
+                        <td>
+                            <label for="opponent1">Whalburg Park</label>
+                        </td>
+                    </tr>
+                </table>
+                
+                <table>
+                    <tr>
+                        <th>
+                            <label>Who?</label>
+                        </th>
+                        <td>
+                            <label for="opponent1">Aardvarks</label>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>When?</label>
+                        </th>
+                        <td>
+                            <label for="opponent1">July 11th</label>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>Where?</label>
+                        </th>
+                        <td>
+                            <label for="opponent1">Shicct's creek</label>
+                        </td>
+                    </tr>
+                </table>
+            
+            </div>
+        </form>
     </div>
-    <div class="row">
-    <h1 class="headline-text">Locations</h1>
+    
+    <div class="section row-flex-column">
+        <h1 class="subheadline__med align-center">Maps</h1>
+        <h1 class="subheadline__med align-center">Locations</h1>
+        <h1 class="subheadline__med align-center">Directions</h1>
     </div>
-    <div class="row">
-    <h1 class="headline-text">Directions</h1>
+    
+        
     </div>
 </section>
 <?php require APPROOT . '/views/inc/footer.php';?>

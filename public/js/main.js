@@ -5,7 +5,7 @@ gsap.config(
 )
 
 gsap.registerPlugin(ScrollTrigger, CSSRulePlugin);
-const cardTitle = $(".card-title");
+const cardTitle = $(".card-block");
 
 // gsap.set(".hamburger",{xPercent:240, paused:true, reversed:true, ease: Power1.easeInOut})
 
@@ -25,19 +25,7 @@ let hamburger = TweenLite.from (".hamburger", {xPercent: 240, paused: true, reve
 document.querySelector(".navbar").addEventListener("click", doCoolStuff);
 
 function doCoolStuff() {
-  tl.reversed() ? tl.play() : tl.reverse();
-  // hamburger.reversed() ? hamburger.play() : hamburger.reverse();
-  // tween.reversed() ? tween.play() : tween.reverse();
-  
-  // if($( "nav" ).css( 'overflow') !== "visible"){
-  //     console.log("hidden");
-  //     $( "nav" ).css( 'overflow' , 'visible')
-  // }else{
-  //   console.log("not hidden");
-  //   $( "nav" ).css( 'overflow' , 'hidden')
-  // }
-  
-  
+  tl.reversed() ? tl.play() : tl.reverse();  
 }
 
 
@@ -60,40 +48,11 @@ cardTitle.hover(
   }
 );
 
-// functioning hover statement
-// $(".card-block").hover(
-//   function () {
-//     $(this).
-//   },
-//   function () {
-//     title.reverse();
-//   }
-// );
-
-//adds hidden class to all card-blck els
-// $(".card-block").each(function (i, obj) {
-//   $(this).addClass("hidden");
-
-// });
-/********************************** */
-// document.querySelector(".card-block").onmouseleave = () => this.twwen.reverse();
-
-// $(".card-title").hover(
-//   function () {
-//     $(this).css("background-color", "yellow");
-//     $(this).css("transform", "scaleY(1.1)");
-//   },
-//   function () {
-//     $(this).css("transform", "scale(1)");
-//     $(this).css("background-color", "none");
-//   }
-// );
-
 gsap.from(".card-block", {
   scrollTrigger: {
     trigger: ".content",
     start: "top",
-    end: "center",
+    end: "top",
   },
   y: 100,
   stagger: 0.5,

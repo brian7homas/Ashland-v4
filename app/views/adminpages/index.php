@@ -2,27 +2,39 @@
 ?>
 
 <?php flash('post_message'); ?>
-<div class="header jumbotron-fluid text-center">    
+
+<div class="user-header">    
     <div class="container">
-        <h1 style="color: black" class="display-2">
+        <h1 class="headline-text">
             <?php 
                 echo $data['title']."<br>";
             ?>
         </h1>
-        <p class="lead">
+        <p class="subheadline__large">
             <?php 
                 echo $data['description'] . "<br>";
             ?>
         </p>
     </div>
 </div>
-<section id="content" class="container container__margin-top text-center">
-    <div class="portfolio-grid">
-        <h1 style="color:black" ><a href="<?php echo URLROOT; ?>/adminpages/team">Team Manager</a></h1>
-        <h1 style="color:black" ><a href="<?php echo URLROOT; ?>/adminpages/player">Player Manager</a></h1>
-        <h1 style="color:black" ><a href="<?php echo URLROOT; ?>/adminpages/games">Game Manager</a></h1>
+
+<section class="content">
+    <div class="row">
+        <div class="section">
+            <form class="user-form">
+                <div class="form-group">
+                    <h1> lable</h1>
+                </div>
+                
+            </form>
+        </div>
     </div>
 </section>
+        <h1><a class="color-pd" href="<?php echo URLROOT; ?>/adminpages/team">Team Manager</a></h1>
+        <h1><a class="color-pd" href="<?php echo URLROOT; ?>/adminpages/player">Player Manager</a></h1>
+        <h1><a class="color-pd" href="<?php echo URLROOT; ?>/adminpages/games">Game Manager</a></h1>
+    
+
 <?php 
     
 

@@ -1,0 +1,27 @@
+p{
+    font-size: 1rem;
+}
+.color{
+    &-pd{
+        color: $primaryDark;
+    }
+    
+}
+a{
+    color: $mainBlue;
+    list-style: none;
+    text-decoration: none;
+}
+.align{
+    &-center{
+        text-align:center;
+    }
+    &-left{
+        text-align:left;
+    }
+}
+.padding{
+    &-1{
+        padding:1em;
+    }
+}

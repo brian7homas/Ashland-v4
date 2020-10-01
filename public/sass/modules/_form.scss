@@ -2,27 +2,73 @@
     display:flex;
     flex-flow: column;
     border: 1px solid black;
-    align-items: center;
+    align-items: stretch;
     .form-control{
         border-radius: 25px;
         width: 100%;
+        .is-invalid{
+            color: red;
+        }
     }
     .form-group{
         display:flex;
         margin: 2em 1em;
         height: 2em;
+        &__hidden{
+            display:none;
+        }
         label{
             color: $primaryDark;
             padding: .5em;
-            width: 100%;
+            width: 50%;
             
         }
         &__button{
             display:flex;
             width: 80%;
+            margin:2em auto;
+        }
+        .dropdown{
+            display:block;
+            position: relative;
+            z-index: 2;
+            width: 150px;
+            cursor: pointer;
+            a:hover{
+                background-color: $purple;
+            }
+            .dropbtn{
+                z-index: 3;
+            }
+        }
+        .dropdown-content{
+            display:none;
+            position:absolute;
+            min-width: 200px;
+            z-index: 5;
+            a{
+                font-size: 1rem;
+            }
+        }
+        
+        
+        .dropdown:hover {
+            .dropdown-content{
+                display: block;
+                z-index: 5;
+                background-color: $primaryDark;
+            }
+            
+        }
+        .dropdown:hover .dropdown-content{
+            display: block;
+            z-index: 5;
         }
         input{
             width: 50%;
+            color: $primaryDark;
+            padding: 3px;
+            text-align:center;
         }
         input[type="submit"]{
             
@@ -30,14 +76,19 @@
             background-color: $mainBlue;
         }
         input[type="button"]{
-        
+            color: $secondaryLight;
             border-radius: 23px;;
             background-color: $purple;
         }
         .invalid-feedback{
             display:block;
+            position: absolute;
             color:red;
-            font-size:.5rem;
+            font-size:.7rem;
+            width: 64px;
+            left: 3.6em;
+            margin-top: 2.3em;
+            
         }
     }   
 }

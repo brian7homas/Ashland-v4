@@ -1161,9 +1161,15 @@ footer .footer-contact ul {
   display: block;
 }
 
-.card h1 {
-  color: #000000;
+.card-block-text {
+  display: flex;
+  flex-flow: column nowrap;
   text-align: right;
+}
+
+.card-block-text h1 {
+  color: #000000;
+  text-align: center;
 }
 
 .grid {
@@ -1200,12 +1206,16 @@ footer .footer-contact ul {
   display: flex;
   flex-flow: column;
   border: 1px solid black;
-  align-items: center;
+  align-items: stretch;
 }
 
 .user-form .form-control {
   border-radius: 25px;
   width: 100%;
+}
+
+.user-form .form-control .is-invalid {
+  color: red;
 }
 
 .user-form .form-group {
@@ -1214,19 +1224,65 @@ footer .footer-contact ul {
   height: 2em;
 }
 
+.user-form .form-group__hidden {
+  display: none;
+}
+
 .user-form .form-group label {
   color: #000000;
   padding: .5em;
-  width: 100%;
+  width: 50%;
 }
 
 .user-form .form-group__button {
   display: flex;
   width: 80%;
+  margin: 2em auto;
+}
+
+.user-form .form-group .dropdown {
+  display: block;
+  position: relative;
+  z-index: 2;
+  width: 150px;
+  cursor: pointer;
+}
+
+.user-form .form-group .dropdown a:hover {
+  background-color: #380236;
+}
+
+.user-form .form-group .dropdown .dropbtn {
+  z-index: 3;
+}
+
+.user-form .form-group .dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 200px;
+  z-index: 5;
+}
+
+.user-form .form-group .dropdown-content a {
+  font-size: 1rem;
+}
+
+.user-form .form-group .dropdown:hover .dropdown-content {
+  display: block;
+  z-index: 5;
+  background-color: #000000;
+}
+
+.user-form .form-group .dropdown:hover .dropdown-content {
+  display: block;
+  z-index: 5;
 }
 
 .user-form .form-group input {
   width: 50%;
+  color: #000000;
+  padding: 3px;
+  text-align: center;
 }
 
 .user-form .form-group input[type="submit"] {
@@ -1235,12 +1291,111 @@ footer .footer-contact ul {
 }
 
 .user-form .form-group input[type="button"] {
+  color: #FFFFFF;
   border-radius: 23px;
   background-color: #380236;
 }
 
 .user-form .form-group .invalid-feedback {
   display: block;
+  position: absolute;
   color: red;
+  font-size: .7rem;
+  width: 64px;
+  left: 3.6em;
+  margin-top: 2.3em;
+}
+
+.subheadline {
+  color: #000000;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.subheadline__large {
+  font-size: 1.3rem;
+  color: #000000;
+}
+
+.subheadline__med {
+  font-size: .9rem;
+  color: #000000;
+}
+
+.subheadline__sm {
   font-size: .5rem;
+  color: #000000;
+}
+
+.schedule {
+  padding: 10px;
+  display: block;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: .7rem;
+}
+
+.schedule label {
+  color: #000000;
+}
+
+.schedule input {
+  width: 50%;
+}
+
+table {
+  display: flex;
+  border-collapse: collapse;
+  width: max-content;
+  border: 1px solid black;
+  margin: 3px;
+}
+
+table tr:nth-child(even) {
+  background-color: #77C3C6;
+}
+
+table td, table th {
+  text-align: left;
+  padding: 8px;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.color-pd {
+  color: #000000;
+}
+
+a {
+  color: #77C3C6;
+  list-style: none;
+  text-decoration: none;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.padding-1 {
+  padding: 1em;
+}
+
+.row-flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.row-flex-column {
+  flex-flow: column nowrap;
+}
+
+.row-flex-column-center {
+  align-items: center;
 }

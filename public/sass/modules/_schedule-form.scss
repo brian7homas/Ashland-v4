@@ -1,0 +1,31 @@
+.schedule{
+    padding: 10px;
+    display:block;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: .7rem;
+    
+    
+    label{
+        color: $primaryDark;
+    }
+    input{
+        width: 50%;
+    }
+    
+}
+
+table{
+    display:flex;
+    border-collapse: collapse;
+    width: max-content;
+    border: 1px solid black;
+    margin: 3px;
+    tr:nth-child(even){
+        background-color: $mainBlue;
+    }
+    td, th{
+        text-align: left;
+        padding: 8px;
+    }
+}

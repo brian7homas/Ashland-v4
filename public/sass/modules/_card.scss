@@ -1,7 +1,14 @@
 .card{
     display: block;
+    
+
+}
+.card-block-text{
+    display: flex;
+    flex-flow: column nowrap;
+    text-align:right;;
     h1{
         color: $primaryDark;
-        text-align: right;
+        text-align: center;
     }
 }

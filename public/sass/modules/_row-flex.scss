@@ -1,0 +1,11 @@
+.row-flex{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    &-column{
+        flex-flow: column nowrap;
+        &-center{
+            align-items: center;
+        }
+    }
+}
