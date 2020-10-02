@@ -1,42 +1,30 @@
 </main>
 
 <footer id="footer" >
-    <div class="footer-wrapper section">
-        <div class="wrapper section__half">
+    <div class="footer-wrapper ">
+        <div class="footer-links">
             <h4>
                 <a href="#"><strong>Ashland</strong> Soccer</a>
             </h4>
             <p><a href="#">555.555.5555</a></p>
             <div>
                 <div class="footer-nav">
-                    <h3>Register</h3>
+                    <h3>Administrator</h3>
                     <nav>
                         <ul class="footer-list">
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Sign-In</a></li>
+                        <?php if($_SESSION['adminid']): ?>
+                                <li><a href="<?php echo URLROOT;?>/adminusers/logout">Admin Logout</a></li>
+                            <?php else:?>
+                                <li><a href="#">Login</a></li>
+                                <li><a href="#">Sign-In</a></li>
+                            <?php endif; ?>
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
 
-        <div class="wrapper section__half">
-            <h4>
-                <a href="#"><strong>Ashland</strong> Soccer</a>
-            </h4>
-            <p><a href="#">555.555.5555</a></p>
-            <div>
-                <div class="footer-nav">
-                    <h3>Register</h3>
-                    <nav>
-                        <ul class="footer-list">
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Sign-In</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
+        
 
     </div>
     <div class="footer-contact">

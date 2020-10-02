@@ -34,6 +34,7 @@ class NewPlayers extends Controller {
                 ];
 
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            
             $First_Name = trim(filter_input(INPUT_POST, 'pla_fname', FILTER_SANITIZE_STRING));
             $Last_Name = trim(filter_input(INPUT_POST, 'pla_lname', FILTER_SANITIZE_STRING));
             $DOB = trim(filter_input(INPUT_POST, 'pla_bdate', FILTER_SANITIZE_STRING));

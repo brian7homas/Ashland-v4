@@ -10,7 +10,7 @@ require APPROOT . '/views/inc/header.php';
             <p>fill out to regsiter</p>
             <form class="user-form" action="<?php echo URLROOT; ?>/adminusers/register" method="POST">
 
-            <div class="form-group">
+                <div class="form-group">
                     <label for="name">Admin ID: <sup class="fa">*</sup>
                     <input type="text" name="adminid" class="form-control form-control-lg 
                         <?php echo(!empty($data['adminid_err'])) ? 'is-invalid': ''; ?>"

@@ -38,32 +38,14 @@
                 background-color: $purple;
             }
             .dropbtn{
+                display: block;
+                width: 100%;
+                background-color: $primaryDark;
+                color: $mainBlue;
                 z-index: 3;
             }
         }
-        .dropdown-content{
-            display:none;
-            position:absolute;
-            min-width: 200px;
-            z-index: 5;
-            a{
-                font-size: 1rem;
-            }
-        }
         
-        
-        .dropdown:hover {
-            .dropdown-content{
-                display: block;
-                z-index: 5;
-                background-color: $primaryDark;
-            }
-            
-        }
-        .dropdown:hover .dropdown-content{
-            display: block;
-            z-index: 5;
-        }
         input{
             width: 50%;
             color: $primaryDark;
@@ -90,5 +72,9 @@
             margin-top: 2.3em;
             
         }
-    }   
+    }
+    select{
+        color: $primaryDark;
+        text-align:center;
+    }
 }

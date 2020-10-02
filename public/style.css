@@ -1086,6 +1086,10 @@ li {
   padding: .6em;
 }
 
+.user-nav-list .nav-item .dropdown {
+  display: none;
+}
+
 .user-header {
   display: block;
   padding: 1em;
@@ -1117,6 +1121,20 @@ footer a {
 footer .footer-wrapper {
   text-align: center;
   padding: 1.5em 0;
+  display: block;
+}
+
+footer .footer-links {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+footer .footer-links div {
+  padding: 1em 0;
+}
+
+footer .footer-links p, footer .footer-links h4 {
+  padding: .01em 0;
 }
 
 footer .footer-contact {
@@ -1253,29 +1271,11 @@ footer .footer-contact ul {
 }
 
 .user-form .form-group .dropdown .dropbtn {
-  z-index: 3;
-}
-
-.user-form .form-group .dropdown-content {
-  display: none;
-  position: absolute;
-  min-width: 200px;
-  z-index: 5;
-}
-
-.user-form .form-group .dropdown-content a {
-  font-size: 1rem;
-}
-
-.user-form .form-group .dropdown:hover .dropdown-content {
   display: block;
-  z-index: 5;
+  width: 100%;
   background-color: #000000;
-}
-
-.user-form .form-group .dropdown:hover .dropdown-content {
-  display: block;
-  z-index: 5;
+  color: #77C3C6;
+  z-index: 3;
 }
 
 .user-form .form-group input {
@@ -1304,6 +1304,11 @@ footer .footer-contact ul {
   width: 64px;
   left: 3.6em;
   margin-top: 2.3em;
+}
+
+.user-form select {
+  color: #000000;
+  text-align: center;
 }
 
 .subheadline {
@@ -1386,6 +1391,10 @@ a {
   padding: 1em;
 }
 
+.padding-2 {
+  padding: 2em;
+}
+
 .row-flex {
   display: flex;
   justify-content: space-between;
@@ -1398,4 +1407,12 @@ a {
 
 .row-flex-column-center {
   align-items: center;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.width-half {
+  width: 50%;
 }

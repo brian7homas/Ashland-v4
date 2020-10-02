@@ -5,13 +5,25 @@ class AdminPage{
     public function __construct(){
         $this->db = new Database;
     }
+    
     public function getTeams(){
       $this->db->query('SELECT team_name FROM team');
-
       $results = $this->db->resultSet();
-
       return $results;
     }
+    
+      public function getTeam($team){
+      
+      $this->db->query('SELECT pla_fname,pla_lname, pla_phone 
+                        FROM player
+                        JOIN team ON player.teamid=team.teamid
+                        WHERE team.team_name = :team');
+      $this->db->bind(':team', $team);
+      $results = $this->db->resultSet();
+      
+      return $results;
+    }
+    
   }
 //     public function register($data){
 //         //query

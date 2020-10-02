@@ -55,13 +55,11 @@
           // Load view with errors
           $this->view('posts/add', $data);
         }
-
       } else {
         $data = [
           'title' => '',
           'body' => ''
         ];
-  
         $this->view('posts/add', $data);
       }
     }
@@ -152,4 +150,5 @@
         redirect('post');
       }
     }
+    
   }

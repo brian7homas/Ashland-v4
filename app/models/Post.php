@@ -22,6 +22,7 @@
 
       return $results;
     }
+    
     public function addPost($data){
       $this->db->query('INSERT INTO posts (title, user_id, body) VALUES(:title, :user_id, :body)');
       //Bind values
@@ -36,6 +37,7 @@
           return false;
       }
     }
+    
     public function updatePost($data){
       $this->db->query('UPDATE posts SET title = :title, body = :body WHERE id = :id');
       // Bind values
@@ -50,6 +52,7 @@
         return false;
       }
     }
+    
     public function getPostById($id){
       $this->db->query('SELECT * FROM posts WHERE id = :id');
       $this->db->bind(':id', $id);
@@ -71,4 +74,5 @@
       }
 
     }
+    
   }
