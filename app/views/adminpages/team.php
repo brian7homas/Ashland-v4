@@ -29,7 +29,7 @@ require APPROOT . '/views/inc/header.php';
                 <label class="subheadline__sm align-center margin-1" for="currentTeam" >Select a team
                 </label>            
                 <select name="currentTeam">
-                    <option selected="<?php echo $data['currentTeam'];?>"  value="<?php echo $data['currentTeam'];?>"><?php echo $data['aardvarks']; ?></option>
+                    <option selected="<?php echo $data['currentTeam'];?>"  value="aardvarks"><?php echo $data['aardvarks']; ?></option>
                     <option  value="antelopes"><?php echo $data['antelopes']; ?></option>
                     <option  value="boxers"><?php echo $data['boxers']; ?></option>
                     <option  value="broncos"><?php echo $data['broncos']; ?></option>

@@ -32,7 +32,7 @@ class AdminPages extends Controller{
                     'buffalos' => $teams[4]->team_name,
                     'culdesacs' => $teams[5]->team_name,
                     'currentTeam' => trim($_POST['currentTeam']),
-                    'newTeam' => trim($_POST['team']),
+                    'newTeam' => trim($_POST['newTeam']),
                     'team_name' => $teams->team_name, 
                     'team_err' => '',
                     'player' => trim($_POST['player[]']),
@@ -52,7 +52,7 @@ class AdminPages extends Controller{
                         'buffalos' => $teams[4]->team_name,
                         'culdesacs' => $teams[5]->team_name,
                         'currentTeam' => trim($_POST['currentTeam']),
-                        'newTeam' => trim($_POST['team']),
+                        'newTeam' => trim($_POST['newTeam']),
                         'team_name' => $teams->team_name, 
                         'team_err' => '',
                         'error' => '',
@@ -60,23 +60,25 @@ class AdminPages extends Controller{
                         ];
                     
                     
-                    var_dump(isset($_POST['currentTeam']));
-                    var_dump(isset($_POST['newTeam']));
-                    var_dump(isset($_POST['player']));
-                    
-                    if(isset($_POST['currentTeam'])){
-                        echo "current team post var is set";
-                        $this->view('adminpages/team', $data);
-                    }else(
-                        $data['error'] = 'Session is not set'
-                    );
+                    // var_dump(isset($_POST['currentTeam']));
+                    // var_dump(isset($_POST['newTeam']));
+                    // var_dump($_POST['newTeam']);
+                    // var_dump(isset($_POST['player']));
+                    // var_dump($data['player']);
                     echo $data['error'];
+                    
                     
                     if(isset($_POST['player'])){
                             // var_dump(is_array($_POST['player']));
-                            // foreach($_POST['player'] as $playerid){
-                            //     var_dump($playerid);
-                            // }
+                            
+                            foreach($_POST['player'] as $playerid){
+                                // var_dump($data['newTeam']);
+
+                                $teamid= $this->adminpageModel->getTeamID($data['newTeam']);
+                                var_dump($teamid);
+                                $this->adminpageModel->updatePlayer($playerid, $teamid);
+                                
+                            }
                         }
                     // echo 'inside post in adminpages controller';
                     
@@ -84,12 +86,10 @@ class AdminPages extends Controller{
                     if(empty($data['currentTeam'])){
                         $data['team_err'] = "something went wrong";
                     }
-                    if(empty($data['team_err']) && empty($data['error'])){
-                        if(isset($_POST['player'])){
-                            $this->adminpageModel->getPlayer($_POST['player']);
-                            echo "TESTING";
-                            $this->view('adminPages/team', $data);
-                        }
+                    
+                    if(empty($data['team_err']) && empty($data['error'])){                        
+                        // $this->adminpageModel->getPlayer($playerid);
+                        $this->view('adminPages/team', $data);
                         if($this->adminpageModel->getTeam($data['currentTeam'])){
                             $this->view('adminPages/team', $data);
                         }else{
@@ -128,7 +128,7 @@ class AdminPages extends Controller{
             public function moveSelection($newTeam){
                 //setting newTeam variable in post tot asession var
                 $_SESSION['newTeam'] = $_POST['newTeam'];
-                var_dump($newTeam);
+
                 return $newTeam;
             }
             public function createUserSession($user){

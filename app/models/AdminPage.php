@@ -19,10 +19,34 @@ class AdminPage{
       $results = $this->db->resultSet();
       return $results;
     }
-    public function getPlayer($player){
-      $this->db->query('SELECT * FROM player WHERE playerid = :player');
-      $row = $this->db->single();
+    public function getTeamID($team){
+      var_dump($team);
+      $this->db->query('SELECT teamid FROM team WHERE team_name = :team');
+      $row = $this->db->bind(':team', $team);
+      
       return $row;
+    }
+    public function getPlayer($player){
+      
+      echo "inside player function";
+      $this->db->query('SELECT * FROM player WHERE playerid = :player');
+      $row = $this->db->bind(':player', $player);
+      
+      
+      return $row;
+    }
+    public function updatePlayer($playerid,  $newTeamID){
+      // var_dump($playerid);
+      // var_dump($newTeamID);
+      $this->db->query('UPDATE player SET teamid = :newTeamID WHERE playerid = :playerid');
+      $this->db->bind(':playerid', $playerid);
+      $this->db->bind(':newTeamID', $newTeamID);
+      if($this->db->execute()){
+        return true;
+      }else{
+        return false;
+      }
+      
     }
   }
 //     public function register($data){
