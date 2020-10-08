@@ -1175,6 +1175,10 @@ footer .footer-contact ul {
   width: 50vw;
 }
 
+.section__justify-around {
+  justify-content: space-around;
+}
+
 .card {
   display: block;
 }
@@ -1306,9 +1310,17 @@ footer .footer-contact ul {
   margin-top: 2.3em;
 }
 
+.user-form .input-width {
+  width: 60%;
+}
+
 .user-form select {
   color: #000000;
   text-align: center;
+}
+
+.user-form select option {
+  color: #000000;
 }
 
 .subheadline {
@@ -1393,6 +1405,14 @@ a {
 
 .padding-2 {
   padding: 2em;
+}
+
+.margin-1 {
+  margin: 1em auto;
+}
+
+.margin-2 {
+  margin: 2em auto;
 }
 
 .row-flex {

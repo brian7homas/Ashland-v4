@@ -2,7 +2,7 @@
   class Posts extends Controller {
     
     public function __construct(){
-      if(!isLoggedIn()){
+      if(!user_isLoggedIn()){
         redirect('users/login');
       }
 

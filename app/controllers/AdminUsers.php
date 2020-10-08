@@ -4,7 +4,6 @@ class AdminUsers extends Controller{
     public function __construct(){
         $this->adminModel = $this->model('AdminUser');
     }
-
     public function register(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             // echo "testing start";
@@ -108,7 +107,7 @@ class AdminUsers extends Controller{
           ];
           $this->view('adminusers/register', $data);    
         }
-}
+    }
     
     public function login(){
       
@@ -195,28 +194,28 @@ class AdminUsers extends Controller{
         $this->view('adminusers/login', $data);
       }
     }
-        
-        public function createUserSession($user){
-          //setting user id to session variable
-          $_SESSION['adminid'] = $user->adminid;
-          $_SESSION['ad_username'] = $user->ad_username;
-          $_SESSION['ad_fname'] = $user->ad_fname;
-          // isLoggedIn($user);
-          redirect('adminpages/index');
-        }
-        public function logout(){
-          unset($_SESSION['adminid']);
-          unset($_SESSION['ad_username']);
-          unset($_SESSION['ad_fname']);
-          session_destroy();
-          redirect('adminusers/login');
-        }
-        // Check Logged In
-        public function isLoggedIn(){
-          if($_SESSION['adminid']){
-            return true;
-          } else {
-            return false;
-          }
-        }
+    
+    public function createUserSession($user){
+      //setting user id to session variable
+      $_SESSION['adminid'] = $user->adminid;
+      $_SESSION['ad_username'] = $user->ad_username;
+      $_SESSION['ad_fname'] = $user->ad_fname;
+      // isLoggedIn($user);
+      redirect('adminpages/index');
+    }
+    public function logout(){
+      unset($_SESSION['adminid']);
+      unset($_SESSION['ad_username']);
+      unset($_SESSION['ad_fname']);
+      session_destroy();
+      redirect('adminusers/login');
+    }
+    // Check Logged In
+    public function isLoggedIn(){
+      if($_SESSION['adminid']){
+        return true;
+      } else {
+        return false;
+      }
+    }
   }

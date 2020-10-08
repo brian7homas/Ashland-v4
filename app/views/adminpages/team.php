@@ -1,4 +1,8 @@
-<?php require APPROOT . '/views/inc/header.php'; 
+<?php 
+$team = $this->adminpageModel->getTeam($data['team_name']);
+$players = $this->adminpageModel->getTeam($data['currentTeam']);
+
+require APPROOT . '/views/inc/header.php'; 
 ?>
 
 
@@ -21,49 +25,77 @@
     <div class="row">
         <div class="row-flex row-flex-column row-flex-column-center">
             <h1 class="subheadline__med">Select a Team to modify it</h1>    
-            <form class="user-form section__half padding-1" action="<?php echo URLROOT;?>/adminpages/team" method="POST">
-                <label class="subheadline__sm" for="team" ><?php echo $data['dropdown'];?>
+            <form class="user-form  padding-1" action="<?php echo URLROOT;?>/adminpages/team" method="POST">
+                <label class="subheadline__sm align-center margin-1" for="currentTeam" >Select a team
                 </label>            
-                <select name="team">
-                    <option selected value="aardvarks"><?php echo $data['aardvarks']; ?></option>
+                <select name="currentTeam">
+                    <option selected="<?php echo $data['currentTeam'];?>"  value="<?php echo $data['currentTeam'];?>"><?php echo $data['aardvarks']; ?></option>
                     <option  value="antelopes"><?php echo $data['antelopes']; ?></option>
-                    <option   value="boxers"><?php echo $data['boxers']; ?></option>
+                    <option  value="boxers"><?php echo $data['boxers']; ?></option>
                     <option  value="broncos"><?php echo $data['broncos']; ?></option>
                     <option  value="buffalos"><?php echo $data['buffalos']; ?></option>
                     <option  value="culdesacs"><?php echo $data['culdesacs']; ?></option>
                 </select>
-                <input class="color-pd width-half row" type="submit" value="select team"/>            
+                <input class="color-pd row margin-2 input-width" type="submit" value="See the team"/>            
                 <span><?php 
                     if(isset($data['team_err'])){
                         echo $data['team_err'];
-                }; ?></span>                
+                }; ?></span>
+                <h1 class="color-pd"><?php echo $data['currentTeam'];?></h1>    
+                <div class="row row-flex-column-center">
+                    <?php
+                    foreach($players as $key  => $object):?>
+                        <?php
+                        $playerFirstName = $object->pla_fname;
+                        $playerLastName = $object->pla_lname;
+                        $playerPhone = $object->pla_phone;
+                        $playerid = $object->playerid;
+                        ?>
+                        <div class="row-flex row-flex-column-center section">
+                            <input type="checkbox" id="player" name="player[]" value="<?php echo $playerid; ?>">
+                            <label  class="color-pd" for="pla_fname" ><?php echo $playerFirstName; ?></label><br>
+                            <label  class="color-pd" for="pla_lname" ><?php echo $playerLastName; ?></label><br>
+                            <label  class="color-pd" for="pla_phone" ><?php echo $playerPhone; ?></label><br>
+                            <label  class="color-pd" for="pla_phone" ><?php echo $playerid; ?></label><br>
+                        </div>
+                    <?php endforeach;?>
+                </div>
+                <?php 
+                    if(isset($_POST['currentTeam'])){ ?>
+                    <div class="content">
+                    <p class="color-pd">Select players from above to move them to a selcted team below</p>
+                    <ul class="section section__justify-around">
+                        <li>
+                            <label class="subheadline__sm align-center margin-1" for="team" >
+                                Team to move player to
+                            </label>            
+                            <select name="newTeam">
+                                <option selected value="aardvarks"><?php echo $data['aardvarks']; ?></option>
+                                <option  value="antelopes"><?php echo $data['antelopes']; ?></option>
+                                <option  value="boxers"><?php echo $data['boxers']; ?></option>
+                                <option  value="broncos"><?php echo $data['broncos']; ?></option>
+                                <option  value="buffalos"><?php echo $data['buffalos']; ?></option>
+                                <option  value="culdesacs"><?php echo $data['culdesacs']; ?></option>
+                            </select>
+                            <input class="color-pd" type="submit" value="Move player"/>   
+                        </li>
+                        <li>
+                            <input class="color-pd" type="submit" value="Delete selected" href="#">
+                        </li>
+                    </ul>
+                </div>
+                <?php }
+                    
+                    
+                ?>
+                
             </form>
         </div>
     </div>  
-    <div class="row">
-        <div class="row">
-            <?php  
-                $players = $this->adminpageModel->getTeam($data['team']);
-                foreach($players as $key  => $object):?>
-                    <?php
-                    $playerFirstName = $object->pla_fname;
-                    $playerLastName = $object->pla_lname;
-                    $playerPhone = $object->pla_phone;
-                    ?>
-                    <div class="row-flex row-flex-column-center">
-                        <p class="color-pd"><?php echo $playerFirstName; ?></p>
-                        <p class="color-pd"><?php echo $playerLastName; ?></p>
-                        <p class="color-pd"><?php echo $playerPhone; ?></p>
-                    </div>
-                <?php endforeach;?>
-        </div>
-    </div>
+    <!-- PLAYER OUTPUT -->
 </div>
-    <ul class="content">
-        <li><a href="#"><?php echo $data['add'] ?></a></li>
-        <li><a href="#"><?php echo $data['remove'] ?></a></li>
-        <li><a href="#"><?php echo $data['edit'] ?></a></li>
-    </ul>
+
+
 
 
 

@@ -28,3 +28,12 @@ a{
         padding:2em;
     }
 }
+.margin{
+    &-1{
+        margin:1em auto;
+    }
+    &-2{
+        margin:2em auto;
+    }
+    
+}

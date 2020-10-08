@@ -2,28 +2,28 @@
 
 class AdminPage{
     public $db;
-    public function __construct(){
-        $this->db = new Database;
-    }
-    
-    public function getTeams(){
-      $this->db->query('SELECT team_name FROM team');
-      $results = $this->db->resultSet();
-      return $results;
-    }
-    
+      public function __construct(){
+          $this->db = new Database;
+      }
+      public function getTeams(){
+        $this->db->query('SELECT team_name FROM team');
+        $results = $this->db->resultSet();
+        return $results;
+      }
       public function getTeam($team){
-      
-      $this->db->query('SELECT pla_fname,pla_lname, pla_phone 
+      $this->db->query('SELECT pla_fname,pla_lname, pla_phone, playerid 
                         FROM player
                         JOIN team ON player.teamid=team.teamid
                         WHERE team.team_name = :team');
       $this->db->bind(':team', $team);
       $results = $this->db->resultSet();
-      
       return $results;
     }
-    
+    public function getPlayer($player){
+      $this->db->query('SELECT * FROM player WHERE playerid = :player');
+      $row = $this->db->single();
+      return $row;
+    }
   }
 //     public function register($data){
 //         //query

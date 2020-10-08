@@ -13,6 +13,7 @@ class AdminPages extends Controller{
                 $data = [
                         'title' => 'Ashland admin',
                         'description' => 'This is the admin page',
+                        'error' => 'general error'
                         ];        
                 $this->view('adminpages/index', $data);
             }
@@ -20,39 +21,28 @@ class AdminPages extends Controller{
             public function team(){
                 $teams = $this->adminpageModel->getTeams();
                 sort($teams);
+                $data = [
+                    'title' => 'Team Manager',
+                    'description' => 'This page allows you to add/remove and view players on a specific team.',
+                    'dropdown' => 'Select a Team',
+                    'aardvarks' => $teams[0]->team_name,
+                    'antelopes' => $teams[1]->team_name,
+                    'boxers' => $teams[2]->team_name,
+                    'broncos' => $teams[3]->team_name,
+                    'buffalos' => $teams[4]->team_name,
+                    'culdesacs' => $teams[5]->team_name,
+                    'currentTeam' => trim($_POST['currentTeam']),
+                    'newTeam' => trim($_POST['team']),
+                    'team_name' => $teams->team_name, 
+                    'team_err' => '',
+                    'player' => trim($_POST['player[]']),
+                    'error' => 'something went south'
+                ];
                 
-                //? outputs each team name 
-                //! need to figure out how to put each into seperate variables (for loop?)
-                // foreach ($teams as $key  => $object) {
-                    
-                //     $team = $object->team_name;
-                //     echo $team;
-                // }
-                
-                $data = ['title' => 'Team Manager',
-                        'add' => 'Add players',
-                        'remove' => 'Remove players',
-                        'edit' => 'Edit player info',
-                        'description' => 'This page allows you to add/remove and view players on a specific team.',
-                        'dropdown' => 'Select a Team',
-                        'aardvarks' => $teams[0]->team_name,
-                        'antelopes' => $teams[1]->team_name,
-                        'boxers' => $teams[2]->team_name,
-                        'broncos' => $teams[3]->team_name,
-                        'buffalos' => $teams[4]->team_name,
-                        'culdesacs' => $teams[5]->team_name,
-                        ];
-                
-                //when the form is submitted
                 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                    
-                    // echo 'inside post in adminpages controller';
                     $POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
                     $data = [
                         'title' => 'Team Manager',
-                        'add' => 'Add players',
-                        'remove' => 'Remove players',
-                        'edit' => 'Edit player info',
                         'description' => 'This page allows you to add/remove and view players on a specific team.',
                         'dropdown' => 'Select a Team',
                         'aardvarks' => $teams[0]->team_name,
@@ -61,17 +51,47 @@ class AdminPages extends Controller{
                         'broncos' => $teams[3]->team_name,
                         'buffalos' => $teams[4]->team_name,
                         'culdesacs' => $teams[5]->team_name,
-                        'team' => trim($_POST['team']), 
-                        'team_err' => ''
+                        'currentTeam' => trim($_POST['currentTeam']),
+                        'newTeam' => trim($_POST['team']),
+                        'team_name' => $teams->team_name, 
+                        'team_err' => '',
+                        'error' => '',
+                        'player' => trim($_POST['player[]'])
                         ];
+                    
+                    
+                    var_dump(isset($_POST['currentTeam']));
+                    var_dump(isset($_POST['newTeam']));
+                    var_dump(isset($_POST['player']));
+                    
+                    if(isset($_POST['currentTeam'])){
+                        echo "current team post var is set";
+                        $this->view('adminpages/team', $data);
+                    }else(
+                        $data['error'] = 'Session is not set'
+                    );
+                    echo $data['error'];
+                    
+                    if(isset($_POST['player'])){
+                            // var_dump(is_array($_POST['player']));
+                            // foreach($_POST['player'] as $playerid){
+                            //     var_dump($playerid);
+                            // }
+                        }
+                    // echo 'inside post in adminpages controller';
+                    
                     //check for input
-                    if(empty($data['team'])){
+                    if(empty($data['currentTeam'])){
                         $data['team_err'] = "something went wrong";
                     }
-                    if(empty($data['team_err'])){
-                        if($this->adminpageModel->getTeam($data['team'])){
-                            flash("getTeams", 'hereyou go' );
-                            $this->view('adminPages/team', $data);         
+                    if(empty($data['team_err']) && empty($data['error'])){
+                        if(isset($_POST['player'])){
+                            $this->adminpageModel->getPlayer($_POST['player']);
+                            echo "TESTING";
+                            $this->view('adminPages/team', $data);
+                        }
+                        if($this->adminpageModel->getTeam($data['currentTeam'])){
+                            $this->view('adminPages/team', $data);
                         }else{
                             echo "getTeam function is on the fritz";
                             $this->view('adminPages/team', $data);         
@@ -82,7 +102,7 @@ class AdminPages extends Controller{
                     }
                     $this->view('adminPages/team', $data);
                 }else{
-                    echo "post is NOT working";
+                    echo "post request is NOT working";
                     $this->view('adminPages/team', $data);
                 }
                 $this->view('adminPages/team', $data);
@@ -104,6 +124,12 @@ class AdminPages extends Controller{
                     'description' => 'This page allows you to add/edit games data.',
                     ];        
                 $this->view('adminPages/games', $data);
+            }
+            public function moveSelection($newTeam){
+                //setting newTeam variable in post tot asession var
+                $_SESSION['newTeam'] = $_POST['newTeam'];
+                var_dump($newTeam);
+                return $newTeam;
             }
             public function createUserSession($user){
                 //setting user id to session variable

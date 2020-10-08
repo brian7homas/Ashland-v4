@@ -1,6 +1,6 @@
 <nav class="navbar">
     <div class="navbar__container-inner">
-        <a href="<?php echo URLROOT ?>"><img class="logo" src="<?php  echo URLROOT ?>/public/img/smLogo.png" /></a>
+        <a href="<?php if($_SESSION['adminid']){echo URLROOT . "/adminpages/index";}else{echo URLROOT;} ?>"><img class="logo" src="<?php  echo URLROOT ?>/public/img/smLogo.png" /></a>
         <div class="user-nav">
             <ul class="user-nav-list">
                 <?php if($_SESSION['adminid']): ?>
@@ -29,8 +29,16 @@
                 <li class="nav-item">
                     <a class="user-nav-link" href="<?php echo URLROOT;?>/adminusers/login">Admin Login</a>
                 </li>
-
                 <?php endif; ?>
+                <li class="nav-item">
+                    <a class="user-nav-link" href="<?php echo URLROOT;?>/pages/teams">Teams</a>
+                </li>
+                <li class="nav-item">
+                    <a class="user-nav-link" href="<?php echo URLROOT;?>/pages/action">Action</a>
+                </li>
+                <li class="nav-item">
+                    <a class="user-nav-link" href="<?php echo URLROOT;?>/pages/schedule">Schedule</a>
+                </li>
             </ul>
         </div>
     </div>
