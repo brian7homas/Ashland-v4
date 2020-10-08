@@ -75,8 +75,8 @@ class AdminPages extends Controller{
                                 // var_dump($data['newTeam']);
 
                                 $teamid= $this->adminpageModel->getTeamID($data['newTeam']);
-                                var_dump($teamid);
-                                $this->adminpageModel->updatePlayer($playerid, $teamid);
+                                var_dump($teamid->teamid);
+                                $this->adminpageModel->updatePlayer($playerid, $teamid->teamid);
                                 
                             }
                         }

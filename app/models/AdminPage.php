@@ -20,10 +20,10 @@ class AdminPage{
       return $results;
     }
     public function getTeamID($team){
-      var_dump($team);
+      // var_dump($team);
       $this->db->query('SELECT teamid FROM team WHERE team_name = :team');
-      $row = $this->db->bind(':team', $team);
-      
+      $this->db->bind(':team', $team);
+      $row = $this->db->single();
       return $row;
     }
     public function getPlayer($player){
@@ -37,7 +37,7 @@ class AdminPage{
     }
     public function updatePlayer($playerid,  $newTeamID){
       // var_dump($playerid);
-      // var_dump($newTeamID);
+      var_dump($newTeamID);
       $this->db->query('UPDATE player SET teamid = :newTeamID WHERE playerid = :playerid');
       $this->db->bind(':playerid', $playerid);
       $this->db->bind(':newTeamID', $newTeamID);
