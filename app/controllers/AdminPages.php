@@ -22,21 +22,29 @@ class AdminPages extends Controller{
                 $teams = $this->adminpageModel->getTeams();
                 sort($teams);
                 $data = [
+                    // post values
+                    'currentTeam' => trim($_POST['currentTeam']),
+                    'newTeam' => trim($_POST['newTeam']),
+                    'player' => trim($_POST['player[]']),
+                    
+                    // page data
                     'title' => 'Team Manager',
                     'description' => 'This page allows you to add/remove and view players on a specific team.',
                     'dropdown' => 'Select a Team',
+                    'newPlayers' => '',
+                    
+                    // from the $teams array
                     'aardvarks' => $teams[0]->team_name,
                     'antelopes' => $teams[1]->team_name,
                     'boxers' => $teams[2]->team_name,
                     'broncos' => $teams[3]->team_name,
                     'buffalos' => $teams[4]->team_name,
                     'culdesacs' => $teams[5]->team_name,
-                    'currentTeam' => trim($_POST['currentTeam']),
-                    'newTeam' => trim($_POST['newTeam']),
                     'team_name' => $teams->team_name, 
+                    
+                    // Error values
                     'team_err' => '',
                     'error' => '',
-                    'player' => trim($_POST['player[]'])
                     ];
                 if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     $POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);

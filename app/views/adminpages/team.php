@@ -35,13 +35,14 @@ require APPROOT . '/views/inc/header.php';
                     <option  value="broncos"><?php echo $data['broncos']; ?></option>
                     <option  value="buffalos"><?php echo $data['buffalos']; ?></option>
                     <option  value="culdesacs"><?php echo $data['culdesacs']; ?></option>
+                    <option  value="newPlayers"><?php echo $data['newPlayers']; ?></option>
                 </select>
                 <input class="color-pd row margin-2 input-width" type="submit" value="See the team"/>            
                 <span><?php 
                     if(isset($data['team_err'])){
                         echo $data['team_err'];
                 }; ?></span>
-                <h1 class="color-pd"><?php echo $data['currentTeam'];?></h1>    
+                <h1 class="color-pd"><?php echo $data['currentTeam'];?></h1> 
                 <div class="row row-flex-column-center">
                     <?php
                     foreach($players as $key  => $object):?>

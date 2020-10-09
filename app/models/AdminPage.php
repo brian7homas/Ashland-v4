@@ -5,6 +5,9 @@ class AdminPage{
       public function __construct(){
           $this->db = new Database;
       }
+      public function getNewPlayers(){
+        $this->db->query('SELECT * from new_player_tmp');
+      }
       // get team name
       public function getTeams(){
         $this->db->query('SELECT team_name FROM team');
@@ -57,7 +60,6 @@ class AdminPage{
       } else {
         return false;
       }
-
     }
   }
 //     public function register($data){
