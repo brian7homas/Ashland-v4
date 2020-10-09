@@ -35,61 +35,29 @@ class AdminPages extends Controller{
                     'newTeam' => trim($_POST['newTeam']),
                     'team_name' => $teams->team_name, 
                     'team_err' => '',
-                    'player' => trim($_POST['player[]']),
-                    'error' => 'something went south'
-                ];
-                
+                    'error' => '',
+                    'player' => trim($_POST['player[]'])
+                    ];
                 if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     $POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-                    $data = [
-                        'title' => 'Team Manager',
-                        'description' => 'This page allows you to add/remove and view players on a specific team.',
-                        'dropdown' => 'Select a Team',
-                        'aardvarks' => $teams[0]->team_name,
-                        'antelopes' => $teams[1]->team_name,
-                        'boxers' => $teams[2]->team_name,
-                        'broncos' => $teams[3]->team_name,
-                        'buffalos' => $teams[4]->team_name,
-                        'culdesacs' => $teams[5]->team_name,
-                        'currentTeam' => trim($_POST['currentTeam']),
-                        'newTeam' => trim($_POST['newTeam']),
-                        'team_name' => $teams->team_name, 
-                        'team_err' => '',
-                        'error' => '',
-                        'player' => trim($_POST['player[]'])
-                        ];
-                    
-                    
-                    // var_dump(isset($_POST['currentTeam']));
-                    // var_dump(isset($_POST['newTeam']));
-                    // var_dump($_POST['newTeam']);
-                    // var_dump(isset($_POST['player']));
-                    // var_dump($data['player']);
                     echo $data['error'];
-                    
-                    
+                    //check for player varialble checkboxes 
                     if(isset($_POST['player'])){
-                            // var_dump(is_array($_POST['player']));
-                            
                             foreach($_POST['player'] as $playerid){
-                                // var_dump($data['newTeam']);
-
                                 $teamid= $this->adminpageModel->getTeamID($data['newTeam']);
-                                var_dump($teamid->teamid);
                                 $this->adminpageModel->updatePlayer($playerid, $teamid->teamid);
+                                if($_POST['delete']){
+                                    $this->adminpageModel->deletePlayer($playerid);
+                                }
                                 
                             }
                         }
-                    // echo 'inside post in adminpages controller';
-                    
-                    //check for input
                     if(empty($data['currentTeam'])){
                         $data['team_err'] = "something went wrong";
                     }
-                    
-                    if(empty($data['team_err']) && empty($data['error'])){                        
+                    if(empty($data['team_err']) && empty($data['error']) && !isset($data['currentTeam'])){                        
                         // $this->adminpageModel->getPlayer($playerid);
-                        $this->view('adminPages/team', $data);
+                        // $this->view('adminPages/team', $data);
                         if($this->adminpageModel->getTeam($data['currentTeam'])){
                             $this->view('adminPages/team', $data);
                         }else{
@@ -100,9 +68,10 @@ class AdminPages extends Controller{
                         echo "team_err is set";
                         $this->view('adminPages/team', $data);
                     }
+                    echo "passed error validation";
                     $this->view('adminPages/team', $data);
                 }else{
-                    echo "post request is NOT working";
+                    echo "welcome";
                     $this->view('adminPages/team', $data);
                 }
                 $this->view('adminPages/team', $data);

@@ -80,7 +80,7 @@ require APPROOT . '/views/inc/header.php';
                             <input class="color-pd" type="submit" value="Move player"/>   
                         </li>
                         <li>
-                            <input class="color-pd" type="submit" value="Delete selected" href="#">
+                            <input name="delete" class="color-pd" type="submit" value="Delete selected" href="#">
                         </li>
                     </ul>
                 </div>

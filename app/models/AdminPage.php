@@ -5,11 +5,13 @@ class AdminPage{
       public function __construct(){
           $this->db = new Database;
       }
+      // get team name
       public function getTeams(){
         $this->db->query('SELECT team_name FROM team');
         $results = $this->db->resultSet();
         return $results;
       }
+      // get team members
       public function getTeam($team){
       $this->db->query('SELECT pla_fname,pla_lname, pla_phone, playerid 
                         FROM player
@@ -19,6 +21,7 @@ class AdminPage{
       $results = $this->db->resultSet();
       return $results;
     }
+    // returns team id
     public function getTeamID($team){
       // var_dump($team);
       $this->db->query('SELECT teamid FROM team WHERE team_name = :team');
@@ -26,17 +29,15 @@ class AdminPage{
       $row = $this->db->single();
       return $row;
     }
+    // get specifc player based on playerid 
     public function getPlayer($player){
-      
       echo "inside player function";
       $this->db->query('SELECT * FROM player WHERE playerid = :player');
       $row = $this->db->bind(':player', $player);
-      
-      
       return $row;
     }
+    // update player -- move player to new team 
     public function updatePlayer($playerid,  $newTeamID){
-      // var_dump($playerid);
       var_dump($newTeamID);
       $this->db->query('UPDATE player SET teamid = :newTeamID WHERE playerid = :playerid');
       $this->db->bind(':playerid', $playerid);
@@ -46,7 +47,17 @@ class AdminPage{
       }else{
         return false;
       }
-      
+    }
+    // delete player 
+    public function deletePlayer($playerid){
+      $this->db->query('DELETE FROM player WHERE playerid = :playerid');
+      $this->db->bind(':playerid', $playerid);
+      if($this->db->execute()){
+        return true;
+      } else {
+        return false;
+      }
+
     }
   }
 //     public function register($data){
