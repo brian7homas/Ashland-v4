@@ -18,9 +18,12 @@ class AdminPages extends Controller{
                 $this->view('adminpages/index', $data);
             }
             
-            public function team(){
+            public function team(){    
                 $teams = $this->adminpageModel->getTeams();
                 sort($teams);
+                
+                // var_dump($players);
+                
                 $data = [
                     // post values
                     'currentTeam' => trim($_POST['currentTeam']),
@@ -31,7 +34,8 @@ class AdminPages extends Controller{
                     'title' => 'Team Manager',
                     'description' => 'This page allows you to add/remove and view players on a specific team.',
                     'dropdown' => 'Select a Team',
-                    'newPlayers' => '',
+                    'newPlayers' => 'New Players',
+                    
                     
                     // from the $teams array
                     'aardvarks' => $teams[0]->team_name,
@@ -46,43 +50,82 @@ class AdminPages extends Controller{
                     'team_err' => '',
                     'error' => '',
                     ];
-                if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                    $POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-                    echo $data['error'];
-                    //check for player varialble checkboxes 
-                    if(isset($_POST['player'])){
-                            foreach($_POST['player'] as $playerid){
-                                $teamid= $this->adminpageModel->getTeamID($data['newTeam']);
-                                $this->adminpageModel->updatePlayer($playerid, $teamid->teamid);
-                                if($_POST['delete']){
-                                    $this->adminpageModel->deletePlayer($playerid);
-                                }
-                                
+                //setting current team new team strings and player id
+                // var_dump($data['currentTeam']);
+                //? CURRENT TEAAM
+                
+                if(($data['currentTeam'])){
+                    //KEEP THE PAGE FROM LOADING THE MOVE/DELETE PLAYER SECTION 
+                    //ACCEPT THE POST REQUEST TO SELECT CURRENT TEAM
+                    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                        $POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+                        
+                        //? TEAM STRINGS NEW AND OLD
+                        foreach($POST as $key => $value){
+                            $teams = $value . '<br>';
+                        }
+                        //? PLAYER ID
+                        foreach($_POST['player'] as $key=>$value){
+                            $id = $value;
+                            $teamid = $this->adminpageModel->getTeamID($data['newTeam']);
+                                    $this->adminpageModel->updatePlayer($id, $teamid->teamid);
+                                    if($_POST['delete']){
+                                        $this->adminpageModel->deletePlayer($id);
+                                    }
+                        }
+                        var_dump($teams);
+                        var_dump($id);
+                        // var_dump ($data['player']);
+                        //check for player varialble checkboxes 
+                        // if(($data['player']) != NULL ){
+                        //     echo "TESTGIN";
+                        //         foreach($_POST['player'] as $playerid){
+                                    
+                                    
+                        //         }
+                        //     }
+                        if(empty($data['currentTeam'])){
+                            $data['team_err'] = "something went wrong";
+                        }
+                        if($data['team_err'] = '' && $data['error'] == ''){                        
+                            // $this->adminpageModel->getPlayer($playerid);
+                            // $this->view('adminPages/team', $data);
+                            echo `before currentTeam is checked`;
+                            //returns team members
+                            
+                            if($data['currentTeam'] == 'newPlayers'){
+                                $newPlayers = $this->adminpageModel->getNewPlayers();
+                                echo "$data currentTeam == newPlayers";
                             }
-                        }
-                    if(empty($data['currentTeam'])){
-                        $data['team_err'] = "something went wrong";
-                    }
-                    if(empty($data['team_err']) && empty($data['error']) && !isset($data['currentTeam'])){                        
-                        // $this->adminpageModel->getPlayer($playerid);
-                        // $this->view('adminPages/team', $data);
-                        if($this->adminpageModel->getTeam($data['currentTeam'])){
-                            $this->view('adminPages/team', $data);
+                            if($this->adminpageModel->getTeam($data['currentTeam'])){
+                                $this->view('adminPages/team', $data);
+                            }else{
+                                echo "getTeam function is on the fritz";
+                                $this->view('adminPages/team', $data);         
+                            }
                         }else{
-                            echo "getTeam function is on the fritz";
-                            $this->view('adminPages/team', $data);         
+                            echo "either team_err and error are set";
+                            $this->view('adminPages/team', $data);
                         }
-                    }else{
-                        echo "team_err is set";
+                        echo "passed error validation";
                         $this->view('adminPages/team', $data);
                     }
-                    echo "passed error validation";
-                    $this->view('adminPages/team', $data);
+                    
+                    //IF THE MOVE OR DELETE VARIABLES ARE NOT SET 
+                    //KEEP THE CURRENT TEAM SET TO WHAT IT IS UNTIL THE MOVE 
+                    //OR DELETE VARIABLES ARE CHANGED
                 }else{
+                    //LISTEN FOR PLAYER VARIABLE
+                    //ONLY ACCEPT DATA FROM THE DELETE/MOVE FUNCITONS
+                    //IF PLAYER VAR IS ACCECPTED 
+                    //RESET CURRENT TEAM VAR
+                    echo "currentTeam is set<br>";
+                    $data['currentTeam'] = NULL;
+                    var_dump($data['currentTeam']) ;
+                    //? default state when page is first visted
                     echo "welcome";
                     $this->view('adminPages/team', $data);
-                }
-                $this->view('adminPages/team', $data);
+                    }
             }
             public function player(){
                 $data = ['title' => 'Player Manager',

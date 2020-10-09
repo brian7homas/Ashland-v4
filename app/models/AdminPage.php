@@ -6,7 +6,9 @@ class AdminPage{
           $this->db = new Database;
       }
       public function getNewPlayers(){
-        $this->db->query('SELECT * from new_player_tmp');
+        $this->db->query('SELECT * FROM new_player_tmp');
+        $results = $this->db->resultSet();
+        return $results;
       }
       // get team name
       public function getTeams(){
