@@ -1,6 +1,4 @@
 <?php 
-$team = $this->adminpageModel->getTeam($data['team_name']);
-$players = $this->adminpageModel->getTeam($data['currentTeam']);
 
 require APPROOT . '/views/inc/header.php'; 
 ?>
@@ -29,7 +27,7 @@ require APPROOT . '/views/inc/header.php';
                 <label class="subheadline__sm align-center margin-1" for="currentTeam" >Select a team
                 </label>            
                 <select name="currentTeam">
-                    <option selected="<?php echo $data['currentTeam'];?>"  value="aardvarks"><?php echo $data['aardvarks']; ?></option>
+                <option selected="<?php echo $data['currentTeam'];?>"  value="aardvarks"><?php echo $data['aardvarks']; ?></option>
                     <option  value="antelopes"><?php echo $data['antelopes']; ?></option>
                     <option  value="boxers"><?php echo $data['boxers']; ?></option>
                     <option  value="broncos"><?php echo $data['broncos']; ?></option>
@@ -45,12 +43,17 @@ require APPROOT . '/views/inc/header.php';
                 <h1 class="color-pd"><?php echo $data['currentTeam'];?></h1> 
                 <div class="row row-flex-column-center">
                     <?php
-                    foreach($players as $key  => $object):?>
+                    // PUT THE PLAYER DATA INTO VARIABLES TO BE ECHOED OUT
+                    foreach($data['player'] as $key  => $object):?>
                         <?php
                         $playerFirstName = $object->pla_fname;
                         $playerLastName = $object->pla_lname;
                         $playerPhone = $object->pla_phone;
                         $playerid = $object->playerid;
+                        // REPLACED THE PLAYERID TO ID FOR NEWPLAYERS TABLE
+                        if(!isset($playerid)){
+                            $playerid = $object->ID;
+                        }
                         ?>
                         <div class="row-flex row-flex-column-center section">
                             <input type="checkbox" id="player" name="player[]" value="<?php echo $playerid; ?>">
@@ -92,7 +95,7 @@ require APPROOT . '/views/inc/header.php';
                         </li>
                     </ul>
                 </div>
-                <?php }
+                    <?php };
                     
                     
                 ?>

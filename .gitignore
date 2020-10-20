@@ -1,6 +1,7 @@
 # Don't track content of these folders
 node_modules/
 app/config
+.vscode
 
 #OS or editor folders
 .DS_Store

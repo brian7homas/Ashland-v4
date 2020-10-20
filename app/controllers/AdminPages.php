@@ -20,10 +20,7 @@ class AdminPages extends Controller{
             
             public function team(){    
                 $teams = $this->adminpageModel->getTeams();
-                sort($teams);
-                
-                // var_dump($players);
-                
+                        sort($teams);
                 $data = [
                     // post values
                     'currentTeam' => trim($_POST['currentTeam']),
@@ -58,44 +55,41 @@ class AdminPages extends Controller{
                     //KEEP THE PAGE FROM LOADING THE MOVE/DELETE PLAYER SECTION 
                     //ACCEPT THE POST REQUEST TO SELECT CURRENT TEAM
                     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                        $POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
                         
-                        //? TEAM STRINGS NEW AND OLD
-                        foreach($POST as $key => $value){
-                            $teams = $value . '<br>';
-                        }
-                        //? PLAYER ID
-                        foreach($_POST['player'] as $key=>$value){
-                            $id = $value;
-                            $teamid = $this->adminpageModel->getTeamID($data['newTeam']);
-                                    $this->adminpageModel->updatePlayer($id, $teamid->teamid);
-                                    if($_POST['delete']){
-                                        $this->adminpageModel->deletePlayer($id);
-                                    }
-                        }
-                        var_dump($teams);
-                        var_dump($id);
-                        // var_dump ($data['player']);
-                        //check for player varialble checkboxes 
-                        // if(($data['player']) != NULL ){
-                        //     echo "TESTGIN";
-                        //         foreach($_POST['player'] as $playerid){
-                                    
-                                    
-                        //         }
-                        //     }
+                        $POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+                        //? TEAMS (NEW AND OLD) - strings
+                        
                         if(empty($data['currentTeam'])){
-                            $data['team_err'] = "something went wrong";
+                            $data['team_err'] = "currentTeam is empty";
                         }
-                        if($data['team_err'] = '' && $data['error'] == ''){                        
-                            // $this->adminpageModel->getPlayer($playerid);
-                            // $this->view('adminPages/team', $data);
-                            echo `before currentTeam is checked`;
-                            //returns team members
+                        if(!$data['team_err'] = '' && !$data['error'] == ''){                        
+                            foreach($POST as $key => $value){
+                                $teams = $value . '<br>';
+                                echo $teams;
+                            }
+                            $data['player'] = $this->adminpageModel->getTeam($data['currentTeam']);
+                            $data['team'] = $this->adminpageModel->getTeam($data['team_name']);
+                            //? PLAYER ID - string
+                            foreach($_POST['player'] as $key=>$value){
+                                echo "testgin";
+                                $id = $value;
+                                if($_POST['player'] == 'newPlayers'){
+                                    echo 'newPlayers is set';
+                                }
+                                $teamid = $this->adminpageModel->getTeamID($data['newTeam']);
+                                        $this->adminpageModel->updatePlayer($id, $teamid->teamid);
+                                        if($_POST['delete']){
+                                            $this->adminpageModel->deletePlayer($id);
+                                        }
+                            }
                             
+                            //returns team members
                             if($data['currentTeam'] == 'newPlayers'){
-                                $newPlayers = $this->adminpageModel->getNewPlayers();
-                                echo "$data currentTeam == newPlayers";
+                                
+                                if($_POST['currentTeam'] == "newPlayers" && $data['players'] && $data['newTeam']){
+                                    $this->adminpageModel->moveNewPlayer($data);
+                                }
+                                $data['player'] = $this->adminpageModel->getNewPlayers();
                             }
                             if($this->adminpageModel->getTeam($data['currentTeam'])){
                                 $this->view('adminPages/team', $data);
@@ -103,12 +97,15 @@ class AdminPages extends Controller{
                                 echo "getTeam function is on the fritz";
                                 $this->view('adminPages/team', $data);         
                             }
+                            
                         }else{
                             echo "either team_err and error are set";
                             $this->view('adminPages/team', $data);
                         }
                         echo "passed error validation";
+                        $data['currentTeam'] = '';
                         $this->view('adminPages/team', $data);
+                        
                     }
                     
                     //IF THE MOVE OR DELETE VARIABLES ARE NOT SET 
@@ -119,9 +116,9 @@ class AdminPages extends Controller{
                     //ONLY ACCEPT DATA FROM THE DELETE/MOVE FUNCITONS
                     //IF PLAYER VAR IS ACCECPTED 
                     //RESET CURRENT TEAM VAR
-                    echo "currentTeam is set<br>";
+                    echo "currentTeam is not set<br>";
                     $data['currentTeam'] = NULL;
-                    var_dump($data['currentTeam']) ;
+                    // var_dump($data['currentTeam']) ;
                     //? default state when page is first visted
                     echo "welcome";
                     $this->view('adminPages/team', $data);

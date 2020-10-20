@@ -5,6 +5,24 @@ class AdminPage{
       public function __construct(){
           $this->db = new Database;
       }
+      // get all new players
+      public function moveNewPlayer($data){
+        echo "MOVING PLAYER";
+        var_dump($newTeamID);
+        $this->db->query('INSERT INTO 
+                        player (playerid, pla_lname, pla_fname, pla_phone, pla_par_lname, pla_par_fname, pla_add, pla_city, pla_state, pla_zip, pla_bdate, teamid)
+                        SELECT ID, pla_lname, pla_fname, pla_phone, pla_par_lname, pla_par_fname, pla_add, pla_city, pla_state, pla_zip, pla_bdate
+                        FROM new_player_tmp');
+        $this->db->bind(':playerid', $data['ID']);
+        $this->db->bind(':pla_lname', $data['pla_lname']);
+        
+        $this->db->bind(':newTeamID', $newTeamID);
+        if($this->db->execute()){
+          return true;
+        }else{
+          return false;
+        }
+      }
       public function getNewPlayers(){
         $this->db->query('SELECT * FROM new_player_tmp');
         $results = $this->db->resultSet();
@@ -43,7 +61,7 @@ class AdminPage{
     }
     // update player -- move player to new team 
     public function updatePlayer($playerid,  $newTeamID){
-      var_dump($newTeamID);
+      // var_dump($newTeamID);
       $this->db->query('UPDATE player SET teamid = :newTeamID WHERE playerid = :playerid');
       $this->db->bind(':playerid', $playerid);
       $this->db->bind(':newTeamID', $newTeamID);
