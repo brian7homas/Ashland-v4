@@ -43,6 +43,7 @@ class AdminPages extends Controller{
                     'team_err' => '',
                     'error' => '',
                     ];
+                
                     // POST REQUEST RECIEVEED
                     if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -51,41 +52,57 @@ class AdminPages extends Controller{
                             'currentTeam' => trim($_POST['currentTeam']),
                             'newTeam' => trim($_POST['newTeam']),
                             'player' => trim($_POST['player[]']),
+                            'newTeamID' => '',
+                            'newPlayerID' => '',
+                            'pla_lname' => ''
                         ];
                         
-                        // ADD ERROR CHECKS SET VARIABLES 
-                        echo $data['currentTeam'];
-                        echo "<br>";
-                        echo $data['newTeam'];
-                        echo "<br>";
-                        
-                        var_dump($_POST['player']);
+                        //! ADD ERROR CHECKS SET VARIABLES 
+                        // echo $data['currentTeam'];
+                        // echo "<br>";
+                        // echo $data['newTeam'];
+                        // echo "<br>";
+                        //! var_dump($_POST['player']);
                         
                         // ADD CONDITIONALS 
                         
-                        // IF CURRENT TEAM  IS SE TO NEW PLAYERS
+                        // IF CURRENT TEAM  IS SET TO NEW PLAYERS
                         if($data['currentTeam'] == 'newPlayers'){
                             // ? IF NEW PLAYERS ARE SELECTED
                             
                             
                             //! TEAM VARIABLE HAS TO BE SET
-                            // PULLS ALL NEW PLAYERS
+                            // DISPLAY ALL NEW PLAYERS 
                             $data['team'] = $this->adminpageModel->getNewPlayers();
                             
+                            //HOW TO ACCESS SEPERATE DATA POINTS IN THE TEAM VAR
+                            // var_dump($data['team'][42]->pla_fname);
                             
-                            // TODO: REWRITE MOVENEWPLAYER FUNCTION 
-                            /*
-                                TODO: FUNCTION WILL NEED TO TAKE PARAMETERS 
-                                TODO: TO MOVE PLAYER FROM ONE TABLE TO ANOTHER 
-                                TODO: MAY NEED TO HAVE SEVERAL INDIVIDUAL FUNCTIONS TO 
-                                TODO: RETRIEVE IDs, AND NAMES 
-                            */
-                            if($_POST['player'] != ''){
-                                $this->adminpageModel->moveNewPlayer($_POST['player']);
+                            
+                            
+                            
+                            // CHECK FOR PLAYER POST VALUE 
+                            if($_POST['player'] != '' AND $data['newTeam'] != ''){
+                                
+                                //GET TEAM ID FROM TEAM NAME
+                                $data['newTeamID'] = $this->adminpageModel->getTeamID($data['newTeam']);
+                                // echo "new TEam ID";
+                                // var_dump($data['newTeamID']);
+                                
+                                // for($i =0; $i< count($_POST[player]); $i++){
+                                //     $this->adminpageModel->moveNewPlayer($data);       
+                                // }
+                                
+                                foreach($_POST['player'] as $data['newPlayerID']){
+                                    $this->adminpageModel->moveNewPlayer($data); 
+                                } 
+                                
+                                $this->view('adminPages/team', $data);
+                            }else{
+                                // IF POST PLAYER OR DATA NEWTEAM ARE NOT SET
+                                echo "post player is empty or newteam data is empty";
+                                $this->view('adminPages/team', $data);
                             }
-                            
-                            // var_dump($data['team']);
-                            
                             // ? DIRECTED BACK TO TEAM PAGE
                             $this->view('adminPages/team', $data);
                         }else{
@@ -97,7 +114,7 @@ class AdminPages extends Controller{
                         $data['newTeam'] = '';
                         $_POST['player'] = '';
                     }
-                    $this->view('adminPages/team', $data);
+                $this->view('adminPages/team', $data);
             }
             public function player(){
                 $data = ['title' => 'Player Manager',
