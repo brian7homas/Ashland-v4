@@ -83,12 +83,16 @@ class AdminPages extends Controller{
                             ////  var_dump($data['team'][42]->pla_fname);
                             // If players are selected and there is a selection for the new team
                             //? ANOTHER FORK IF NEW PLYAERS ARE SELECT AND A NEW TEAM IS SELECTED (LAYER 2)
+                            //? AND POST VALUE DELETE IS NOT SET
                             if($_POST['player'] != '' AND $data['newTeam'] != '' AND !isset($_POST['delete'])){ 
                                 // GET TEAM teamid FROM team_name
                                 $data['newTeamID'] = $this->adminpageModel->getTeamID($data['newTeam']);
                                 // INSERT INTO SELECT foreach player selected
                                 foreach($_POST['player'] as $data['newPlayerID']){
                                     $this->adminpageModel->moveNewPlayer($data); 
+                                    $player = $data['newPlayerID'];
+                                    $player = (int)$player;
+                                    $this->adminpageModel->deleteNewPlayer($player);
                                 } 
                                 // If the $_POST variable is set 
                                 if(isset($_POST)){
@@ -97,6 +101,7 @@ class AdminPages extends Controller{
                                     //unset player selections
                                     unset($_POST['player']);
                                 }
+                                $data['team'] = $this->adminpageModel->getNewPlayers();
                             }//? IF PLAYERS ARE SELECTED AND DELETE VALUE EXISTS IN POST VARIABLE
                             elseif($_POST['player'] != '' AND $_POST['delete']){
                                 // $player = (int)$_POST['player'];
@@ -105,7 +110,8 @@ class AdminPages extends Controller{
                                 foreach($_POST['player'] as $data['playerid']){
                                     $this->adminpageModel->deleteNewPlayer($data['playerid']);
                                 }
-                                $this->view('adminPages/team');
+                                // keeps from needing to reload page to see delettion
+                                $data['team'] = $this->adminpageModel->getNewPlayers();
                             }else{
                                 //!error block IF NEW PLAYER IS SELCTED AND NO PLAYERS OR NEW TEAM IS SELECTED 
                                 // TODO: THIS IS THE DEFAULT STATE OF THE PAGE WHEN NEWPLAYERS ARE VIEWD 
@@ -132,6 +138,7 @@ class AdminPages extends Controller{
                                     $team = (int)$data['newTeamID']->teamid; 
                                     $this->adminpageModel->updatePlayer($player, $team); 
                                 } 
+                                
                                 // If the $_POST variable is set 
                                 if(isset($_POST)){
                                     //unset newTeam var
@@ -139,6 +146,7 @@ class AdminPages extends Controller{
                                     //unset player selections
                                     unset($_POST['player']);
                                 }
+                                $data['team'] =  $this->adminpageModel->getTeam($data['currentTeam']);
                             }
                             //? IF PLAYERS ARE SELECTED AND POST VALUE DELETE EXIST (DELEETE SUBMITTED)
                             elseif($_POST['player'] != '' AND $_POST['delete']){
@@ -148,7 +156,8 @@ class AdminPages extends Controller{
                                     (int)$data['playerid'];
                                     $this->adminpageModel->deletePlayer($data['playerid']);
                                 }
-                                $this->view('adminPages/team', $data);
+                                // keeps from needing to reload page to see delettion
+                                $data['team'] =  $this->adminpageModel->getTeam($data['currentTeam']);
                             }else{
                                 //!error block IF NEW PLAYER IS SELCTED AND NO PLAYERS OR NEW TEAM IS SELECTED 
                                 // TODO: THIS IS THE DEFAULT STATE OF THE PAGE WHEN NEWPLAYERS ARE VIEWD 
