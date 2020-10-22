@@ -89,8 +89,12 @@ class AdminPages extends Controller{
                                 // echo "new TEam ID";
                                 // var_dump($data['newTeamID']);
                                 
-                                // for($i =0; $i< count($_POST[player]); $i++){
-                                //     $this->adminpageModel->moveNewPlayer($data);       
+                                // for($i = $data['newPlayerID']; $i< count($_POST['player']); $i++){
+                                //     var_dump($data['team'][$i]->ID);
+                                //     echo "<br>";
+                                //     var_dump($data['team'][$i])->pla_lname;
+                                //     echo "<br>";
+                                //     // $this->adminpageModel->moveNewPlayer($data);       
                                 // }
                                 
                                 foreach($_POST['player'] as $data['newPlayerID']){
