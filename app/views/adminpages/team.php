@@ -1,6 +1,11 @@
 <?php 
 
 require APPROOT . '/views/inc/header.php'; 
+// var_dump($data['team']);
+// var_dump($data['newTeam']);
+// foreach(($data['player']) as $key->$value){
+//     echo $value;
+// };
 ?>
 
 
@@ -24,16 +29,35 @@ require APPROOT . '/views/inc/header.php';
         <div class="row-flex row-flex-column row-flex-column-center">
             <h1 class="subheadline__med">Select a Team to modify it</h1>    
             <form class="user-form  padding-1" action="<?php echo URLROOT;?>/adminpages/team" method="POST">
-                <label class="subheadline__sm align-center margin-1" for="currentTeam" >Select a team
-                </label>            
+                
+                <label class="subheadline__sm align-center margin-1" for="currentTeam" >
+                        Select a team
+                </label>
+                            
                 <select name="currentTeam">
-                <option selected="<?php echo $data['currentTeam'];?>"  value="aardvarks"><?php echo $data['aardvarks']; ?></option>
-                    <option  value="antelopes"><?php echo $data['antelopes']; ?></option>
-                    <option  value="boxers"><?php echo $data['boxers']; ?></option>
-                    <option  value="broncos"><?php echo $data['broncos']; ?></option>
-                    <option  value="buffalos"><?php echo $data['buffalos']; ?></option>
-                    <option  value="culdesacs"><?php echo $data['culdesacs']; ?></option>
-                    <option  value="newPlayers"><?php echo $data['newPlayers']; ?></option>
+                    <option <?php if($data['currentTeam'] == 'aardvarks'){
+                        echo "selected";
+                    } ?> value="aardvarks">
+                        Aardvarks
+                    </option>
+                    <option <?php if($data['currentTeam'] == 'antelopes'){echo "selected";} ?> value="antelopes">
+                        Antelopes
+                    </option>
+                    <option <?php if($data['currentTeam'] == 'boxers'){echo "selected";} ?>  value="boxers">
+                        Boxers
+                    </option>
+                    <option <?php if($data['currentTeam'] == 'broncos'){echo "selected";} ?> value="broncos">
+                        Broncos
+                    </option>
+                    <option <?php if($data['currentTeam'] == 'buffalos'){echo "selected";} ?> value="buffalos">
+                        Buffalos
+                    </option>
+                    <option <?php if($data['currentTeam'] == 'culdesacs'){echo "selected";} ?> value="culdesacs">
+                        Culdesacs
+                    </option>
+                    <option <?php if($data['currentTeam'] == 'newPlayers'){echo "selected";} ?> value="newPlayers">
+                        New Players
+                    </option>
                 </select>
                 <input class="color-pd row margin-2 input-width" type="submit" value="See the team"/>            
                 <span><?php 
@@ -43,8 +67,9 @@ require APPROOT . '/views/inc/header.php';
                 <h1 class="color-pd"><?php echo $data['currentTeam'];?></h1> 
                 <div class="row row-flex-column-center">
                     <?php
-                    // PUT THE PLAYER DATA INTO VARIABLES TO BE ECHOED OUT
-                    foreach($data['player'] as $key  => $object):?>
+                // CHECK FOR TEAM DATA 
+                if(count($data['team']) > 0){
+                    foreach($data['team'] as $key  => $object):?>
                         <?php
                         $playerFirstName = $object->pla_fname;
                         $playerLastName = $object->pla_lname;
@@ -69,7 +94,10 @@ require APPROOT . '/views/inc/header.php';
                             <label  class="color-pd" for="pla_phone" ><?php echo $playerPhone; ?></label><br>
                             <label  class="color-pd" for="pla_phone" ><?php echo $playerid; ?></label><br>
                         </div>
-                    <?php endforeach;?>
+                    <?php endforeach;
+                        }else{
+                            echo "<p>". "no players on this team" . "</p>" ;
+                        } ?>
                 </div>
                 <?php 
                     if(isset($_POST['currentTeam'])){ ?>
@@ -81,12 +109,13 @@ require APPROOT . '/views/inc/header.php';
                                 Team to move player to
                             </label>            
                             <select name="newTeam">
-                                <option selected value="aardvarks"><?php echo $data['aardvarks']; ?></option>
-                                <option  value="antelopes"><?php echo $data['antelopes']; ?></option>
-                                <option  value="boxers"><?php echo $data['boxers']; ?></option>
-                                <option  value="broncos"><?php echo $data['broncos']; ?></option>
-                                <option  value="buffalos"><?php echo $data['buffalos']; ?></option>
-                                <option  value="culdesacs"><?php echo $data['culdesacs']; ?></option>
+                                <option value="">Select a new team</option>
+                                <option  <?php if($data['newTeam'] == 'aardvarks'){echo "selected";} ?> value="aardvarks">Aardvarks</option>
+                                <option  <?php if($data['newTeam'] == 'antelopes'){echo "selected";} ?> value="antelopes">Antelopes</option>
+                                <option  <?php if($data['newTeam'] == 'boxers'){echo "selected";} ?> value="boxers">Boxers</option>
+                                <option  <?php if($data['newTeam'] == 'broncos'){echo "selected";} ?> value="broncos">Broncos</option>
+                                <option  <?php if($data['newTeam'] == 'buffalos'){echo "selected";} ?> value="buffalos">Buffalos</option>
+                                <option  <?php if($data['newTeam'] == 'culdesacs'){echo "selected";} ?> value="culdesacs">Culdesacs</option>
                             </select>
                             <input class="color-pd" type="submit" value="Move player"/>   
                         </li>

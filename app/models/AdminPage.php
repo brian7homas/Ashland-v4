@@ -6,29 +6,52 @@ class AdminPage{
           $this->db = new Database;
       }
       // get all new players
-      public function moveNewPlayer($data){
-        echo "MOVING PLAYER";
-        var_dump($newTeamID);
-        $this->db->query('INSERT INTO 
-                        player (playerid, pla_lname, pla_fname, pla_phone, pla_par_lname, pla_par_fname, pla_add, pla_city, pla_state, pla_zip, pla_bdate, teamid)
-                        SELECT ID, pla_lname, pla_fname, pla_phone, pla_par_lname, pla_par_fname, pla_add, pla_city, pla_state, pla_zip, pla_bdate
-                        FROM new_player_tmp');
-        $this->db->bind(':playerid', $data['ID']);
-        $this->db->bind(':pla_lname', $data['pla_lname']);
+        public function moveNewPlayer($data){
+        $player = $data['newPlayerID'];
+        // var_dump($player);
+        $player = (int)$player;
+        // $player--;
         
-        $this->db->bind(':newTeamID', $newTeamID);
+        $team = $data['newTeamID']->teamid; 
+        var_dump(is_int($team));
+        $team = (int)$team;
+        try{
+          $this->db->query('INSERT INTO player (playerid, pla_lname, pla_fname, pla_phone, pla_par_lname, pla_par_fname, pla_add, pla_city, pla_state, pla_zip, pla_bdate, teamid)
+                            SELECT '. $player . ', pla_lname, pla_fname, pla_phone, pla_par_lname, pla_par_fname, pla_add, pla_city, pla_state, pla_zip, pla_bdate,'. $team .
+                            ' FROM new_player_tmp');
+        $this->db->bind(':playerid', $data['team'][$player]->ID);
+        $this->db->bind(':pla_lname', $data['team'][$player]->pla_lname);
+        $this->db->bind(':pla_fname', $data['team'][$player]->pla_fname);
+        $this->db->bind(':pla_phone', $data['team'][$player]->pla_phone);
+        $this->db->bind(':pla_par_lname', $data['team'][$player]->pla_par_lname);
+        $this->db->bind(':pla_par_fname', $data['team'][$player]->pla_par_fname);
+        $this->db->bind(':pla_add', $data['team'][$player]->pla_add);
+        $this->db->bind(':pla_city', $data['team'][$player]->pla_city);
+        $this->db->bind(':pla_state', $data['team'][$player]->pla_state);
+        $this->db->bind(':pla_zip', $data['team'][$player]->pla_zip);
+        $this->db->bind(':pla_bdate', $data['team'][$player]->pla_bdate);
+        $this->db->bind(':teamid', $team);  
+        
         if($this->db->execute()){
           return true;
         }else{
-          return false;
+          return false;  
         }
+          
+        }catch(Exception $e){
+          echo $e->getMessage();
+          echo "wtf";
+        }
+        
+        
+      
       }
       public function getNewPlayers(){
         $this->db->query('SELECT * FROM new_player_tmp');
         $results = $this->db->resultSet();
         return $results;
       }
-      // get team name
+    // get team name
       public function getTeams(){
         $this->db->query('SELECT team_name FROM team');
         $results = $this->db->resultSet();
@@ -36,7 +59,7 @@ class AdminPage{
       }
       // get team members
       public function getTeam($team){
-      $this->db->query('SELECT pla_fname,pla_lname, pla_phone, playerid 
+      $this->db->query('SELECT pla_fname,pla_lname, pla_phone, playerid
                         FROM player
                         JOIN team ON player.teamid=team.teamid
                         WHERE team.team_name = :team');
@@ -46,7 +69,8 @@ class AdminPage{
     }
     // returns team id
     public function getTeamID($team){
-      // var_dump($team);
+      //! DEBUG
+      //! var_dump($team);
       $this->db->query('SELECT teamid FROM team WHERE team_name = :team');
       $this->db->bind(':team', $team);
       $row = $this->db->single();

@@ -42,8 +42,8 @@ class Database{
     public function query($sql){
         $this->stmt = $this->dbh->prepare($sql);
         //test stmt and sql
-//         var_dump($this->stmt);
-//         echo $stmt . 'from query function database file';
+        var_dump($this->stmt);
+        // echo $stmt . 'from query function database file';
     }
     // prepare statemnt used to add players to add_tmp_player table
     public function prepare($query){
@@ -60,27 +60,37 @@ class Database{
             switch (true) {
                 case (is_int($value)):
                     $type = PDO::PARAM_INT;
+                    //echo "is int";
                     break;
                 case (is_bool($value)):
                     $type = PDO::PARAM_BOOL;
-                    // echo "is bool";
+                    //echo "is bool";
                     break;
                 case (is_null($value)):
                     $type = PDO::PARAM_NULL;
-                    // echo "is null";
+                    //echo "is null";
                     break;
                 default:
                     $type = PDO::PARAM_STR;
-
+                    //echo "is str";
+                    
             }
+            //! echo "<br>";
+            //! echo $param;
+            //! echo $value;
+            
+            
         }
-        $this->stmt->bindValue($param, $value, $type);
+        //! var_dump($type);
+        return $this->stmt->bindvalue($param, $value, $type);
     }
     //execute the prepared stmt
     public function execute(){
-        // var_dump($this->stmt);
-        //  var_dump($this->stmt);
-        //  var_dump(is_null($this->stmt));
+        //!DEBUG
+        //! var_dump($this->stmt);
+        //! var_dump(is_null($this->stmt));
+        //! var_dump(is_object($this->stmt));
+        //! var_dump($this->stmt);
         return $this->stmt->execute();
     }
     // //get result set as array of objects
