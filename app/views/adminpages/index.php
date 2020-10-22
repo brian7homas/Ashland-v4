@@ -4,10 +4,10 @@
 <?php flash('post_message'); ?>
 
 <div class="user-header">    
-    <div class="container">
-        <h1 class="headline-text">
-            <?php 
-                echo $data['title']."<br>";
+    <div class="user-header__container-inner">
+        <h1 style="color: black"class="display-4">
+        <?php 
+                echo $data['title'] . "<br>";
             ?>
         </h1>
         <p class="subheadline__large">
@@ -19,22 +19,10 @@
 </div>
 
 <section class="content">
-    <div class="row">
-        <div class="section">
-            <form class="user-form">
-                <div class="form-group">
-                    <h1> lable</h1>
-                </div>
-                
-            </form>
-        </div>
-    </div>
+    <h1><a class="color-pd" href="<?php echo URLROOT; ?>/adminpages/team">Team Manager</a></h1>
+    <h1><a class="color-pd" href="<?php echo URLROOT; ?>/adminpages/player">Player Manager</a></h1>
+    <h1><a class="color-pd" href="<?php echo URLROOT; ?>/adminpages/games">Game Manager</a></h1>
 </section>
-        <h1><a class="color-pd" href="<?php echo URLROOT; ?>/adminpages/team">Team Manager</a></h1>
-        <h1><a class="color-pd" href="<?php echo URLROOT; ?>/adminpages/player">Player Manager</a></h1>
-        <h1><a class="color-pd" href="<?php echo URLROOT; ?>/adminpages/games">Game Manager</a></h1>
-    
-
 <?php 
     
 

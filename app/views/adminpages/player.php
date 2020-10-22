@@ -2,22 +2,21 @@
 ?>
 
 
-<div class="header jumbotron-fluid text-center">
-    
-    <div class="container">
+<div class="user-header">    
+    <div class="user-header__container-inner">
         <h1 style="color: black"class="display-4">
         <?php 
                 echo $data['title'] . "<br>";
             ?>
         </h1>
-        <p class="lead">
+        <p class="subheadline__large">
             <?php 
                 echo $data['description'] . "<br>";
             ?>
         </p>
     </div>
 </div>
-<section id="content" class="container text-center">
+<section class="content">
      <h1 style="color:black" ><a href="<?php echo URLROOT; ?>/adminpages/">Home</a></h1>
      <ul>
         <li><a href="#"><?php echo $data['add'] ?></a></li>

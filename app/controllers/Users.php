@@ -115,19 +115,20 @@
         }
 
 
-// Check for user/email
-       if($this->userModel->findUserByUsername($data['ad_username'])){
-         //user found
-         echo 'user found';
+      // Check for user/email
+      if($this->userModel->findUserByUsername($data['ad_username'])){
+        //user found
+        // echo 'user found';
 
-       }else{
-         $data['ad_username_err'] = "No user found";
-       }
-
-        // Make sure errors are empty
+      }else{
+        $data['ad_username_err'] = "No user found";
+      }
+        //? FORK Make sure errors are empty
         if(empty($data['ad_username_err']) && empty($data['ad_password_err'])){
+          // echo "validtaed";
           // Validated
           // Check and set logged in user
+          
           $loggedInUser = $this->userModel->adminLogin($data['ad_username'], $data['ad_password']);
           if($loggedInUser){
             //create session vars
@@ -161,7 +162,7 @@
       $_SESSION['user_id'] =$user->id;
       $_SESSION['user_email'] =$user->email;
       $_SESSION['user_name'] =$user->name;
-      redirect('posts');
+      redirect('post');
     }
     public function logout(){
       unset($_SESSION['user_id']);

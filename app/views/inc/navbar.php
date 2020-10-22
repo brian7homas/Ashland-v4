@@ -3,9 +3,9 @@
         <a href="<?php if($_SESSION['adminid']){echo URLROOT . "/adminpages/index";}else{echo URLROOT;} ?>"><img class="logo" src="<?php  echo URLROOT ?>/public/img/smLogo.png" /></a>
         <div class="user-nav">
             <ul class="user-nav-list">
-                <?php if($_SESSION['adminid']): ?>
+                <?php if($_SESSION['adminid'] OR $_SESSION['user_name']): ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">How's it going? <?php echo $_SESSION['ad_username'];?> </a>
+                    <a class="nav-link" href="#">How's it going? <?php echo $_SESSION['user_name']; echo $_SESSION['ad_username']; ?> </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
@@ -17,7 +17,18 @@
                     </div>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="<?php echo URLROOT?>/adminusers/logout">Logout </a>
+                    <a class="nav-link" href="<?php 
+                            if(isset($_SESSION)){
+                                switch(true){
+                                    case ($_SESSION['adminid']):
+                                        echo URLROOT . "/adminusers/logout";
+                                        break;
+                                    case($_SESSION['user_name']):
+                                        echo URLROOT . "/users/logout";
+                                }
+                            } 
+                    ?>">Logout 
+                    </a>
                 </li>
                 <?php else:?>
                 <li class="nav-item">

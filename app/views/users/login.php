@@ -9,7 +9,7 @@ require APPROOT . '/views/inc/header.php';
                 <h1 class="headline-text headline-text-center">Users Login</h1>
                 <p class="headline-text-center">Fill in your creditentials</p>
             </div>
-            <form class="user-form" action="<?php echo URLROOT; ?>/adminusers/login" method="POST">
+            <form class="user-form" action="<?php echo URLROOT; ?>/users/login" method="POST">
                 <div class="form-group">
                     <label for="ad_username">Username:
                         <sup class="fa" style="right:-2.9em; top: -1.3em;">*</sup>

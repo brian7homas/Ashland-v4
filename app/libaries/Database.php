@@ -90,7 +90,7 @@ class Database{
         //! var_dump($this->stmt);
         //! var_dump(is_null($this->stmt));
         //! var_dump(is_object($this->stmt));
-        //! var_dump($this->stmt);
+            var_dump($this->stmt);
         return $this->stmt->execute();
     }
     // //get result set as array of objects
@@ -100,6 +100,7 @@ class Database{
     }
     //get single record as object
     public function single(){
+        // var_dump($this->execute());
         $this->execute();
         return $this->stmt->fetch(PDO::FETCH_OBJ);
     }

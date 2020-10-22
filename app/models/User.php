@@ -6,7 +6,8 @@
     }
     //register
     public function register($data){
-        
+      try{
+        var_dump($data['password']);
         $this->db->query('INSERT INTO users (name, email, password) VALUES(:name, :email, :password)');
         //Bind values
         
@@ -19,12 +20,17 @@
         }else{
             return false;
         }
+      }catch(Exception $e){
+        echo $e->getMessage(); 
+      }
+        
     }
 
     // Login User
     public function login($email, $password){
-      $this->db->query('SELECT * FROM users WHERE email = :email');
-      $this->db->bind(':email', $email);
+      try{
+        $this->db->query('SELECT * FROM users WHERE name = :name');
+      $this->db->bind(':name', $email);
 
       $row = $this->db->single();
 
@@ -34,38 +40,42 @@
       } else {
         return false;
       }
+        
+      }catch(Exception $e){
+        echo $e->getMessage();
+      }
+      
     }
 
     //Login admin user
-      public function adminLogin($ad_username, $ad_password){
-          $this->db->query('SELECT * FROM admin WHERE ad_username = :ad_username');
-          $this->db->query('SELECT * FROM admin WHERE ad_password = :ad_password');
+      public function adminLogin($ad_username, $password){
+        try{
+          // var_dump($password);
+          $this->db->query('SELECT * FROM users WHERE name =  :ad_username');
           $this->db->bind(':ad_username', $ad_username);
-          $this->db->bind(':ad_password', $ad_password);
-
-
           $row = $this->db->single();
-
-          $result = $row->password;
-          if($ad_password != $result){
-              return false;
-          }else{
-              return $row;
+          var_dump($row);
+          $hashed_password = $row->password;
+          $var = password_verify($password, $hashed_password);
+          // var_dump($var);
+          // var_dump($hashed_password);
+          if(password_verify($password, $hashed_password)){
+            return $row;
+          } else {
+            return false;
           }
-//          if(password_verify($ad_password, $result)){
-//              return $row;
-//          }else{
-//              return false;
-//          }
-
+        }catch(Exception $e){
+          echo $e->getMessage();
+        }
       }
 
 
     // Find user by email
-    public function findUserByEmail($email){
-      $this->db->query('SELECT * FROM users WHERE email = :email');
+    public function findUserByUsername($username){
+      try{
+        $this->db->query('SELECT * FROM users WHERE name = :username');
       //bind values
-      $this->db->bind(':email', $email);
+      $this->db->bind(':username', $username);
 
       $row = $this->db->single();
 
@@ -75,7 +85,12 @@
       } else {
         return false;
       }
-    }
+      }catch(Exception $e){
+        echo $e->getMessage();
+      }
+      
+    }//end findUserByUsername
+    
     // user by id
     public function getUserById($id){
       $this->db->query('SELECT * FROM users WHERE id = :id');

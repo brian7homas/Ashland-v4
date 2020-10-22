@@ -2,15 +2,14 @@
 ?>
 
 
-<div class="header jumbotron-fluid text-center">
-    
-    <div class="container">
+<div class="user-header">    
+    <div class="user-header__container-inner">
         <h1 style="color: black"class="display-4">
         <?php 
                 echo $data['title'] . "<br>";
             ?>
         </h1>
-        <p class="lead">
+        <p class="subheadline__large">
             <?php 
                 echo $data['description'] . "<br>";
             ?>
