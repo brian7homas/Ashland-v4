@@ -28,8 +28,9 @@ require APPROOT . '/views/inc/header.php';
     <div class="row">
         <div class="row-flex row-flex-column row-flex-column-center">
             <h1 class="subheadline__med">Select a Team to modify it</h1>    
+            <span style="color:red"><?php   if(isset($data['post_err'])){echo $data['post_err'];}; ?></span>
             <form class="user-form  padding-1" action="<?php echo URLROOT;?>/adminpages/team" method="POST">
-                
+                <span style="color:red"><?php   if(isset($data['team_err'])){echo $data['team_err'];}; ?></span>
                 <label class="subheadline__sm align-center margin-1" for="currentTeam" >
                         Select a team
                 </label>
@@ -59,11 +60,9 @@ require APPROOT . '/views/inc/header.php';
                         New Players
                     </option>
                 </select>
-                <input class="color-pd row margin-2 input-width" type="submit" value="See the team"/>            
-                <span><?php 
-                    if(isset($data['team_err'])){
-                        echo $data['team_err'];
-                }; ?></span>
+                <input class="color-pd row margin-2 input-width" type="submit" value="See the team"/>       
+                    <!-- PLAYERS DISPLAYED BELOW -->
+                <span style="color: blue"><?php   if(isset($data['pla_info'])){echo $data['pla_info'];}; ?></span>
                 <h1 class="color-pd"><?php echo $data['currentTeam'];?></h1> 
                 <div class="row row-flex-column-center">
                     <?php

@@ -41,9 +41,9 @@ class Database{
     //prepare statement with query
     public function query($sql){
         $this->stmt = $this->dbh->prepare($sql);
-        //test stmt and sql
-        var_dump($this->stmt);
-        // echo $stmt . 'from query function database file';
+        //! TEST
+        //! var_dump($this->stmt);
+        //! echo $stmt . 'from query function database file';
     }
     // prepare statemnt used to add players to add_tmp_player table
     public function prepare($query){

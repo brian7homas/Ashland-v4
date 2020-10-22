@@ -5,20 +5,24 @@ class AdminPage{
       public function __construct(){
           $this->db = new Database;
       }
-      // get all new players
+      
+        // MOVE NEW PLAYERS TO PLAYERS TABLE
         public function moveNewPlayer($data){
+        // store speciic values in $data
         $player = $data['newPlayerID'];
-        // var_dump($player);
-        $player = (int)$player;
-        // $player--;
-        
         $team = $data['newTeamID']->teamid; 
-        var_dump(is_int($team));
+        // convert those values to ints
+        // because they are returned in arrays
+        $player = (int)$player;
         $team = (int)$team;
+        //! TEST
+        //! var_dump($player);
+        //! var_dump($team);
+        
         try{
-          $this->db->query('INSERT INTO player (playerid, pla_lname, pla_fname, pla_phone, pla_par_lname, pla_par_fname, pla_add, pla_city, pla_state, pla_zip, pla_bdate, teamid)
-                            SELECT '. $player . ', pla_lname, pla_fname, pla_phone, pla_par_lname, pla_par_fname, pla_add, pla_city, pla_state, pla_zip, pla_bdate,'. $team .
-                            ' FROM new_player_tmp');
+        $this->db->query('INSERT INTO player (playerid, pla_lname, pla_fname, pla_phone, pla_par_lname, pla_par_fname, pla_add, pla_city, pla_state, pla_zip, pla_bdate, teamid)
+                          SELECT '. $player . ', pla_lname, pla_fname, pla_phone, pla_par_lname, pla_par_fname, pla_add, pla_city, pla_state, pla_zip, pla_bdate,'. $team .
+                          ' FROM new_player_tmp');
         $this->db->bind(':playerid', $data['team'][$player]->ID);
         $this->db->bind(':pla_lname', $data['team'][$player]->pla_lname);
         $this->db->bind(':pla_fname', $data['team'][$player]->pla_fname);
@@ -36,16 +40,13 @@ class AdminPage{
           return true;
         }else{
           return false;  
-        }
-          
-        }catch(Exception $e){
-          echo $e->getMessage();
-          echo "wtf";
-        }
-        
-        
-      
-      }
+        } 
+          }catch(Exception $e){
+              echo $e->getMessage();
+              echo "Catch block AdminPage.php line 43";
+            }
+      }//?end moveNewPlayer
+      // GET ALL NEW PLAYERS
       public function getNewPlayers(){
         $this->db->query('SELECT * FROM new_player_tmp');
         $results = $this->db->resultSet();
@@ -85,26 +86,53 @@ class AdminPage{
     }
     // update player -- move player to new team 
     public function updatePlayer($playerid,  $newTeamID){
-      // var_dump($newTeamID);
-      $this->db->query('UPDATE player SET teamid = :newTeamID WHERE playerid = :playerid');
-      $this->db->bind(':playerid', $playerid);
-      $this->db->bind(':newTeamID', $newTeamID);
-      if($this->db->execute()){
-        return true;
-      }else{
-        return false;
-      }
-    }
+      
+      try{
+        var_dump($playerid);
+        var_dump($newTeamID);
+        $this->db->query('UPDATE player SET teamid = :newTeamID WHERE playerid = :playerid');
+        $this->db->bind(':playerid', $playerid);
+        $this->db->bind(':newTeamID', $newTeamID);
+        if($this->db->execute()){
+          return true;
+        }else{
+          return false;
+        }
+      }catch(Exception $e){
+        echo $e->getMessage();
+      }      
+    }//end updataPlayer()
     // delete player 
     public function deletePlayer($playerid){
+      try{
+        var_dump($playerid);
       $this->db->query('DELETE FROM player WHERE playerid = :playerid');
       $this->db->bind(':playerid', $playerid);
       if($this->db->execute()){
         return true;
-      } else {
-        return false;
+        } else {
+          return false;
+        }
+      }catch(Exception $e){
+        echo $e->getMessage();
       }
-    }
+      
+    }//end deletePlayer
+    public function deleteNewPlayer($playerid){
+      try{
+      // var_dump($playerid);
+      $this->db->query('DELETE FROM new_player_tmp WHERE ID =' . $playerid);
+      $this->db->bind(':ID', $playerid);
+      if($this->db->execute()){
+        return true;
+        } else {
+        return false;
+        }
+      }catch(Exception $e){
+        echo $e->getMessage();
+      }
+      
+    }//end deleteNewPlayer
   }
 //     public function register($data){
 //         //query
