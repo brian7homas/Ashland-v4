@@ -5,7 +5,6 @@ class Pages extends Controller{
         // How we load models 
         // $this->postModel = $this->model('Post');
         
-
     }
     //defualt method
     public function index(){

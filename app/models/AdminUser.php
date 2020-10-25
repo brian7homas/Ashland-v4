@@ -5,6 +5,7 @@ class AdminUser{
     public function __construct(){
         $this->db = new Database;
     }
+    
     public function register($data){
         //query
         $this->db->query('INSERT INTO admin(adminid, ad_lname, ad_fname, ad_username, ad_password) VALUES(:adminid, :ad_lname, :ad_fname, :ad_username, :ad_password)');
@@ -65,5 +66,27 @@ class AdminUser{
           return false;
         }
       }
+
+    //Login admin user
+    public function adminLogin($ad_username, $password){
+      try{
+        // var_dump($password);
+        $this->db->query('SELECT * FROM users WHERE name =  :ad_username');
+        $this->db->bind(':ad_username', $ad_username);
+        $row = $this->db->single();
+        var_dump($row);
+        $hashed_password = $row->password;
+        $var = password_verify($password, $hashed_password);
+        // var_dump($var);
+        // var_dump($hashed_password);
+        if(password_verify($password, $hashed_password)){
+          return $row;
+        } else {
+          return false;
+        }
+      }catch(Exception $e){
+        echo $e->getMessage();
+      }
+    }
 
 }

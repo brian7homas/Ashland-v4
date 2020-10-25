@@ -83,6 +83,7 @@ class AdminPages extends Controller{
                         //? ANOTHER FORK IF NEW PLYAERS ARE SELECT AND A NEW TEAM IS SELECTED (LAYER 2)
                         //? AND POST VALUE DELETE IS NOT SET
                         if($_POST['player'] != '' AND $data['newTeam'] != '' AND !isset($_POST['delete'])){ 
+                            
                             // GET TEAM teamid FROM team_name
                             $data['newTeamID'] = $this->adminpageModel->getTeamID($data['newTeam']);
                             // INSERT INTO SELECT foreach player selected
