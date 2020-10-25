@@ -175,12 +175,36 @@ class AdminPages extends Controller{
                 $this->view('adminPages/team', $data);
             }
             public function player(){
-                $data = ['title' => 'Player Manager',
+                $allTeams = $this->adminpageModel->getAllPlayers();
+                $data = [
+                        // page values
+                        'title' => 'Player Manager',
                         'add' => 'Add players',
                         'remove' => 'Remove players',
                         'edit' => 'Edit player info',
                         'description' => 'This page allows you to edit/view the status of players as well as add new players to teams.',
-                        ];        
+                        'player' => $allTeams,
+                        
+                        'edit' => trim($_POST['edit']),
+                        'delete' => trim($_POST['delete']),
+                        ];
+                
+                        //TODO: add an edit page for the user to go to the post value is edit
+                        //TODO: recycle delete funciton to delete player
+                        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+                            if($data['edit']){
+                                echo "edit";
+                            }
+                            if($data['delete']){
+                                echo 'delete';
+                            }
+                            
+                            
+                        }else{
+                            echo "Post request failed";
+                        }
+                //? Default page load
                 $this->view('adminPages/player', $data);
             }
             public function games(){

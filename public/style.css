@@ -1436,3 +1436,13 @@ a {
 .width-half {
   width: 50%;
 }
+
+.id {
+  max-width: 10px;
+  margin-right: .8em;
+  margin-left: -1em;
+}
+
+.name {
+  min-width: 120px;
+}
