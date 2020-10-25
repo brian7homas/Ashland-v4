@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/joyreacher/ashland-working-copy#readme",
   "dependencies": {
+    "jshint": "^2.12.0",
     "lodash": "^4.17.20",
     "normalize.css": "^8.0.1"
   },

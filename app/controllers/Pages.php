@@ -10,7 +10,7 @@ class Pages extends Controller{
     //defualt method
     public function index(){
         if(isLoggedIn()){
-            redirect('posts');
+            redirect('adminpages/index');
         }
         $data = ['title' => 'Ashland',
                 'description' => 'Welcome to the Ashland Valley Soccer League Web Site - Your source for complete information on League game schedules, registration, field directions, and photos of recent games and teams.',
