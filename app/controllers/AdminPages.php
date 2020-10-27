@@ -208,14 +208,32 @@ class AdminPages extends Controller{
                 $this->view('adminPages/player', $data);
             }
             public function games(){
+                $teams = $this->adminpageModel->getTeams();
+                sort($teams);
                 $data = ['title' => 'Game Manager',
                         'add' => 'Add players',
                         'remove' => 'Remove players',
                         'edit' => 'Edit player info',
-                    'description' => 'This page allows you to add/edit games data.',
-                    ];        
+                        'description' => 'This page allows you to add/edit games data.',
+                        
+                        'aardvarks' => $teams[0]->team_name,
+                        'antelopes' => $teams[1]->team_name,
+                        'boxers' => $teams[2]->team_name,
+                        'broncos' => $teams[3]->team_name,
+                        'buffalos' => $teams[4]->team_name,
+                        'culdesacs' => $teams[5]->team_name,
+                        'team_name' => $teams->team_name, 
+                        'teams' => $teams
+                    ];
+                    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+                        if($_POST['team']){
+                            echo $_POST['team'];
+                        }
+                    }
                 $this->view('adminPages/games', $data);
             }
+            
             public function moveSelection($newTeam){
                 //setting newTeam variable in post tot asession var
                 $_SESSION['newTeam'] = $_POST['newTeam'];

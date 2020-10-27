@@ -16,13 +16,27 @@
         </p>
     </div>
 </div>
-<section id="content" class="container text-center">
-     <h1 style="color:black" ><a href="<?php echo URLROOT; ?>/adminpages/">Home</a></h1>
-     <ul>
-        <li><a href="#"><?php echo $data['add'] ?></a></li>
-        <li><a href="#"><?php echo $data['remove'] ?></a></li>
-        <li><a href="#"><?php echo $data['edit'] ?></a></li>
-     </ul>
+<section class="content">
+    <div class="row">
+        <div class="row-flex-column row-flex-column-center">
+            <h1 class="headline-text headline-text-center">All Players</h1>
+                <form class="user-form margin-1 padding-1" method='POST'>      
+                    <?php
+                        foreach($data['teams'] as $key => $value): 
+                            $team = $value->team_name;
+                        ?>
+                            <div class="align-center">
+                                <label for="team" class="color-pd id"><a href=""><?php echo $team; ?></a></label>
+                                <input id="team" name="team" type="submit" style="display:none"/>
+                            </div>
+                            
+                            
+                        <?php endforeach;
+                    ?>
+                </form>
+        </div>
+    </div>
+
 </section>
 <?php 
     
