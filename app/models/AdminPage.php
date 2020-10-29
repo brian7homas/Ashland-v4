@@ -5,7 +5,6 @@ class AdminPage{
       public function __construct(){
           $this->db = new Database;
       }
-      
         // MOVE NEW PLAYERS TO PLAYERS TABLE
         public function moveNewPlayer($data){
         // store speciic values in $data
@@ -70,13 +69,12 @@ class AdminPage{
     }
     // returns team id
     public function getTeamID($team){
-      //! DEBUG
-      //! var_dump($team);
       $this->db->query('SELECT teamid FROM team WHERE team_name = :team');
       $this->db->bind(':team', $team);
       $row = $this->db->single();
       return $row;
-    }
+    }//end getTeamID
+    
     // get specifc player based on playerid 
     public function getPlayer($player){
       echo "inside player function";
@@ -140,5 +138,48 @@ class AdminPage{
         $this->db->query('SELECT * FROM player');
         $results = $this->db->resultSet();
         return $results;
+    }
+    //returns the gameid from team_game table
+    public function getGameID($teamid){
+      try{
+        $this->db->query('SELECT gameid FROM team_game WHERE teamid = :teamid');
+        $this->db->bind(':teamid', $teamid);
+        $results = $this->db->resultSet();
+        return $results;
+      }catch(Excecption $e){
+        $e->getMessage();
+      }
+      
+    }//end getGameID
+    
+    public function getTeamByGameID($gameid){
+      try{
+        $this->db->query('SELECT teamid FROM team_game WHERE gameid = :gameid');
+        $this->db->bind(':gameid', $gameid);
+        $results = $this->db->resultSet();
+        return $results;
+      }catch(Excecption $e){
+        $e->getMessage();
+      }
+    }//end getTeamByGameID
+    
+    //return all teamid with the same gameid
+    //
+    public function getSchedule($gamesid, $currentTeam){
+      // var_dump($currentTeam);
+      try{
+        $this->db->query('SELECT team.team_name, game.gm_date
+                        FROM team
+                        JOIN team_game ON team_game.teamid=team.teamid
+                        JOIN game ON game.gameid = team_game.gameid
+                        WHERE game.gameid = :gameid AND team.team_name != :team_name');
+        $this->db->bind(':gameid', $gamesid);
+        $this->db->bind(':team_name', $currentTeam);
+        $results = $this->db->resultSet();
+        return $results;
+      }catch(Excecption $e){
+        $e->getMessage();
+      }
+      
     }
   }

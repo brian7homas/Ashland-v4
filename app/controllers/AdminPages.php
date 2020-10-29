@@ -228,7 +228,48 @@ class AdminPages extends Controller{
                     if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
                         if($_POST['team']){
-                            echo $_POST['team'];
+                            $data = [
+                                'team' => trim($_POST['team']),
+                                'teams' => $teams,
+                                'team_err' =>'',
+                                'game_data' => '',
+                                'game_date' => '',
+                            ];
+                            if(!$data['team_err']){
+                                if($this->adminpageModel->getTeamID($data["team"])){
+                                    
+                                    //get the selected team id 
+                                    $teamid = $this->adminpageModel->getTeamID($data["team"]);
+                                    
+                                    //use that teamid to return gameid's from team_game
+                                    //that have the same assigned teamid
+                                    try{
+                                        $gameid = $this->adminpageModel->getGameID($teamid->teamid);
+                                    }catch(Exception $e){
+                                        $e->getMessage();
+                                        echo "wtf";
+                                    }
+                                    
+                                    foreach($gameid as $key=>$value){
+                                        $gamesid = $value->gameid;
+                                        $data['game_data'] = $this->adminpageModel->getSchedule($gamesid, $data['team']);
+                                        sort($data['game_data']);
+                                        var_dump($data['game_data']);
+                                        foreach($data['game_data'] as $key => $value){
+                                            array_push($data['game_data'], $value);
+                                            $data['game_data'] = $value->team_name;
+                                            $data['game_date'] = $value->gm_date;
+                                            // $data['game_date'] = $value->gm_date;
+                                            echo "<p>". $data['game_data'] ."</p>";
+                                            echo "<p>". $data['game_date'] ."</p>";
+                                        }
+                                        
+                                    }
+                                    
+                                }
+                            }else{
+                                echo "Team Err is set";
+                            }
                         }
                     }
                 $this->view('adminPages/games', $data);
