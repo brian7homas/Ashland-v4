@@ -20,7 +20,6 @@ require APPROOT . '/views/inc/header.php';
 </div>
 
 <section class="content">
-
     <div class="row">
         <form class="schedule">
             <div class="form-group">

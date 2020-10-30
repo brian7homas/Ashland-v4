@@ -1,0 +1,15 @@
+.admin-games-page{
+    &__table-labels{
+        justify-content: center;
+        margin-bottom: -2em;
+    }
+    &__table{
+        justify-content: center;
+        table{
+            width:100%;
+            td{
+                min-width: 100px; 
+            }
+        }
+    }
+}
