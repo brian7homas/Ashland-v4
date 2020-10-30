@@ -264,17 +264,18 @@ class AdminPages extends Controller{
                                             $gameTime[] = $value->gm_time;
                                             $field[] = $value->fieldid;
                                             
-                                            $data['game_data'] = $value->team_name;
+                                            // $data['game_data'] = $value->team_name;
                                             $data['game_date'] = $value->gm_date;
                                         }
+                                        // var_dump($data['game_data']);
                                         //? PASS THE VALUES IN TEAMNAMES TO GAME DATA ARRAY
                                         $data['game_date'] = $gameDay;
                                         //? PASS THE VALUES IN TEAMNAMES TO GAME DATA ARRAY
                                         $data['opp'] = $teamNames;
                                         
                                         
-                                        var_dump($field);
-                                        var_dump($gameTime);
+                                        // var_dump($field);
+                                        // var_dump($gameTime);
                                         $data['game_time'] = $gameTime; 
                                         $data['field'] = $field; 
                                     }

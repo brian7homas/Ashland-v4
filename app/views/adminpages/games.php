@@ -34,41 +34,65 @@
                                 </label>    
                             </div>
                         <?php endforeach;?>    
-                        
-                        <?php 
-                            //? test Values coming from controllor (AdminPages.php)
-                            
-                            // var_dump($teamNames);
-                            // var_dump($value);
-                            // var_dump($data['game_data']);
-                            // var_dump($data['game_date']);
-                            var_dump($data['game_time']);
-                            foreach($data['game_date'] as $key=>$value){
-                                $date = $value; 
-                            }
-                            foreach($data['game_time'] as $key=>$value){
-                                $time = $value; 
-                            }
-                            foreach($data['field'] as $key=>$value){
-                                $field = $value; 
-                            }
-                            foreach($data['opp'] as $key=>$value):
-                                $opp = $value;?>
-                                <div class="align-center">
-                                    <label for="team" class="color-pd id">
-                                        <p><?php echo $opp; ?></p>
-                                        <p><?php echo $date; ?></p>
-                                        <p><?php echo $time; ?></p>
-                                        <p><?php echo $field; ?></p>
-                                    </label>    
-                                </div>      
-                        <?php endforeach;
-                            
-                            
-                        ?>
-                        
-                        
                 </form>
+                    
+                        <?php 
+                        //! Team name
+                        $Opp = array();
+                        foreach($data['opp'] as $key=>$value):  
+                                array_push($Opp, $value);
+                                //$Opp = $value;?>
+                                            <!-- //!test value -->
+                                <!-- <p><?php //var_dump($Opp); ?></p> -->
+                        <?php 
+                        endforeach; 
+                        
+                        
+                        //!Game time
+                        $Time = array(); 
+                        foreach($data['game_time'] as $key=>$value):
+                            array_push($Time, $value);
+                            //$Time = $value;?>
+                                        <!-- //!test value -->
+                                <!-- <p><?php //var_dump($Time); ?></p> -->
+                        <?php endforeach;
+                        
+                        
+                        //!Game date
+                        $Date = array(); 
+                        foreach($data['game_date'] as $key=>$value): 
+                            array_push($Date, $value);
+                            //$Date = $value; ?>
+                                        <!-- //!test value -->
+                                        <!-- <p><?php // var_dump($Date); ?></p> -->
+                        <?php endforeach;?>
+                        <table style=" width: 100%; height: 300px;">
+                            <!-- TEAM COLUMN -->
+                                <td>
+                                    <ul>
+                                        <?php foreach($Opp as $key=>$team):?>
+                                            <li class="color: color-pd"><?php echo $team; ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </td>
+                            <!-- DATE COLUMN -->
+                                <td>
+                                    <ul>
+                                        <?php foreach($Date as $key=>$date):?>
+                                            <li class="color: color-pd"><?php echo $date; ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </td>
+                            <!-- TIME COLUMN -->
+                                <td>
+                                    <ul>
+                                        <?php foreach($Time as $key=>$time):?>
+                                            <li class="color: color-pd"><?php echo $time; ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </td>                              
+                    </table>
+              
         </div>
     </div>
 
