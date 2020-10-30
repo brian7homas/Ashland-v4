@@ -1446,3 +1446,20 @@ a {
 .name {
   min-width: 120px;
 }
+
+.admin-games-page__table-labels {
+  justify-content: center;
+  margin-bottom: -2em;
+}
+
+.admin-games-page__table {
+  justify-content: center;
+}
+
+.admin-games-page__table table {
+  width: 100%;
+}
+
+.admin-games-page__table table td {
+  min-width: 100px;
+}
