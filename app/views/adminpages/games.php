@@ -31,32 +31,42 @@
                             <div class="align-center">
                                 <label for="team" class="color-pd id">
                                     <input id="team" name="team" type="submit" style="cursor: hover; color: black; border:none" value='<?php echo $team?>'/>
-                                </label>
-                                
+                                </label>    
                             </div>
                         <?php endforeach;?>    
                         
                         <?php 
-                        foreach($gameid as $key=>$value){
-                            $gamesid = $value->gameid;
-                            $data['game_data'] = $this->adminpageModel->getSchedule($gamesid, $data['team']);
-                            sort($data['game_data']);
-                            var_dump($data['game_data']);
-                            foreach($data['game_data'] as $key => $value){
-                                array_push($data['game_data'], $value);
-                                $data['game_data'] = $value->team_name;
-                                // $data['game_date'] = $value->gm_date;
-                                echo "<p>". $data['game_data'] ."</p>";
-                                var_dump($data['game_data']);
-                            }
+                            //? test Values coming from controllor (AdminPages.php)
                             
-                        }
-                        
-                        
+                            // var_dump($teamNames);
+                            // var_dump($value);
+                            // var_dump($data['game_data']);
+                            // var_dump($data['game_date']);
+                            var_dump($data['game_time']);
+                            foreach($data['game_date'] as $key=>$value){
+                                $date = $value; 
+                            }
+                            foreach($data['game_time'] as $key=>$value){
+                                $time = $value; 
+                            }
+                            foreach($data['field'] as $key=>$value){
+                                $field = $value; 
+                            }
+                            foreach($data['opp'] as $key=>$value):
+                                $opp = $value;?>
+                                <div class="align-center">
+                                    <label for="team" class="color-pd id">
+                                        <p><?php echo $opp; ?></p>
+                                        <p><?php echo $date; ?></p>
+                                        <p><?php echo $time; ?></p>
+                                        <p><?php echo $field; ?></p>
+                                    </label>    
+                                </div>      
+                        <?php endforeach;
+                            
+                            
                         ?>
-                        //TODO:Bring formated opponet and date of the game
-                        //TODO: AdminPages currently is outputting opponet data and game date
-                        //! Not ablle to pull it into this page tho
+                        
                         
                 </form>
         </div>
