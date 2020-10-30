@@ -86,13 +86,7 @@ require APPROOT . '/views/inc/header.php';
                             <label  class="color-pd" for="pla_phone" ><?php echo $playerPhone; ?></label><br>
                             <label  class="color-pd" for="pla_phone" ><?php echo $playerid; ?></label><br>
                         </div>
-                        <div class="row-flex row-flex-column-center section">
-                            <input type="checkbox" id="player" name="player[]" value="<?php echo $playerid; ?>">
-                            <label  class="color-pd" for="pla_fname" ><?php echo $playerFirstName; ?></label><br>
-                            <label  class="color-pd" for="pla_lname" ><?php echo $playerLastName; ?></label><br>
-                            <label  class="color-pd" for="pla_phone" ><?php echo $playerPhone; ?></label><br>
-                            <label  class="color-pd" for="pla_phone" ><?php echo $playerid; ?></label><br>
-                        </div>
+                        
                     <?php endforeach;
                         }else{
                             echo "<p>". "no players on this team" . "</p>" ;
