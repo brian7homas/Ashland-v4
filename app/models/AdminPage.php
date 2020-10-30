@@ -164,11 +164,12 @@ class AdminPage{
     }//end getTeamByGameID
     
     //return all teamid with the same gameid
-    //
+    //! getSchedule needs to have unique gamesid variable to pull each opponent and game date
+    //! getSchedule also needs to have a currentTeam selected
     public function getSchedule($gamesid, $currentTeam){
       // var_dump($currentTeam);
       try{
-        $this->db->query('SELECT team.team_name, game.gm_date
+        $this->db->query('SELECT *
                         FROM team
                         JOIN team_game ON team_game.teamid=team.teamid
                         JOIN game ON game.gameid = team_game.gameid

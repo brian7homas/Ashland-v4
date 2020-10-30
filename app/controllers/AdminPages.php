@@ -232,40 +232,53 @@ class AdminPages extends Controller{
                                 'team' => trim($_POST['team']),
                                 'teams' => $teams,
                                 'team_err' =>'',
+                                
                                 'game_data' => '',
+                                
                                 'game_date' => '',
+                                'opp' => '',
+                                'game_time' => '',
+                                'field' => ''
                             ];
                             if(!$data['team_err']){
                                 if($this->adminpageModel->getTeamID($data["team"])){
-                                    
                                     //get the selected team id 
                                     $teamid = $this->adminpageModel->getTeamID($data["team"]);
-                                    
                                     //use that teamid to return gameid's from team_game
                                     //that have the same assigned teamid
-                                    try{
-                                        $gameid = $this->adminpageModel->getGameID($teamid->teamid);
-                                    }catch(Exception $e){
-                                        $e->getMessage();
-                                        echo "wtf";
-                                    }
-                                    
+                                    $gameid = $this->adminpageModel->getGameID($teamid->teamid);
+                                    //! use these arrays to bring game data to front end
+                                    $teamNames = array();
+                                    $gameDay = array();
+                                    $gameTime = array();
+                                    $field = array();
+                                    //! provides gameid's to get game_data
                                     foreach($gameid as $key=>$value){
-                                        $gamesid = $value->gameid;
-                                        $data['game_data'] = $this->adminpageModel->getSchedule($gamesid, $data['team']);
+                                        //returns every gameid matching the currently selected team 
+                                        $gamesid = $value->gameid;   
+                                        $data['game_data']= $this->adminpageModel->getSchedule($gamesid, $data['team']);
                                         sort($data['game_data']);
-                                        var_dump($data['game_data']);
                                         foreach($data['game_data'] as $key => $value){
-                                            array_push($data['game_data'], $value);
-                                            $data['game_data'] = $value->team_name;
+                                            $teamNames[] = $value->team_name;
+                                            $gameDay[] = $value->gm_date;
+                                            $gameTime[] = $value->gm_time;
+                                            $field[] = $value->fieldid;
+                                            
+                                            // $data['game_data'] = $value->team_name;
                                             $data['game_date'] = $value->gm_date;
-                                            // $data['game_date'] = $value->gm_date;
-                                            echo "<p>". $data['game_data'] ."</p>";
-                                            echo "<p>". $data['game_date'] ."</p>";
                                         }
+                                        // var_dump($data['game_data']);
+                                        //? PASS THE VALUES IN TEAMNAMES TO GAME DATA ARRAY
+                                        $data['game_date'] = $gameDay;
+                                        //? PASS THE VALUES IN TEAMNAMES TO GAME DATA ARRAY
+                                        $data['opp'] = $teamNames;
                                         
+                                        
+                                        // var_dump($field);
+                                        // var_dump($gameTime);
+                                        $data['game_time'] = $gameTime; 
+                                        $data['field'] = $field; 
                                     }
-                                    
                                 }
                             }else{
                                 echo "Team Err is set";
