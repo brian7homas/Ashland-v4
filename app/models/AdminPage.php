@@ -173,6 +173,7 @@ class AdminPage{
                         FROM team
                         JOIN team_game ON team_game.teamid=team.teamid
                         JOIN game ON game.gameid = team_game.gameid
+                        JOIN field ON field.fieldid=game.fieldid
                         WHERE game.gameid = :gameid AND team.team_name != :team_name');
         $this->db->bind(':gameid', $gamesid);
         $this->db->bind(':team_name', $currentTeam);

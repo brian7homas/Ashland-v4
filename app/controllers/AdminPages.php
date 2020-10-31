@@ -262,7 +262,7 @@ class AdminPages extends Controller{
                                             $teamNames[] = $value->team_name;
                                             $gameDay[] = $value->gm_date;
                                             $gameTime[] = $value->gm_time;
-                                            $field[] = $value->fieldid;
+                                            $field[] = $value->fld_name;
                                             
                                             // $data['game_data'] = $value->team_name;
                                             $data['game_date'] = $value->gm_date;
@@ -272,6 +272,8 @@ class AdminPages extends Controller{
                                         $data['game_date'] = $gameDay;
                                         //? PASS THE VALUES IN TEAMNAMES TO GAME DATA ARRAY
                                         $data['opp'] = $teamNames;
+                                        //? PASS THE VALUES IN TEAMNAMES TO GAME DATA ARRAY
+                                        $data['field'] = $field;
                                         
                                         
                                         // var_dump($field);

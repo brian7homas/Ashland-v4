@@ -53,8 +53,16 @@
                             <!-- <p><?php // var_dump($Date); ?></p> -->
             <?php endforeach;
             
-            //!comibining overrides keys
-            // $dateTime = array_combine($Date, $Time);
+            
+            $Field = array();
+            foreach($data['field'] as $key=>$value):  
+                    array_push($Field, $value);
+                    //$Opp = $value;?>
+                                <!-- //!test value -->
+                    <!-- <p><?php //var_dump($Opp); ?></p> -->
+            <?php 
+            endforeach; 
+            
             
             //! Team name
             $Opp = array();
@@ -76,7 +84,8 @@
             // var_dump($container);
             ?>
             <!-- END PHP CODE SORTING DATA VARIABLE -->
-            <form class="schedule" action="<?php echo URLROOT;?>/adminpages/games" method="POST">
+            <?php if($data['game_data']): ?>
+                <form class="schedule" action="<?php echo URLROOT;?>/adminpages/games" method="POST">
                 <div class="form-group">
                     <h1 class="headline-text headline-text-center"><?php if(isset($data['team'])){
                         echo $data['team'];
@@ -88,163 +97,164 @@
                     <p class="align-center padding-1 subheadline__large">will be facing..</p>
                 </div>
                 
-            <div class="row-flex">
-                
-                <table>
-                    <tr>
-                        <th>
-                            <label>Who?</label>
-                        </th>
-                        <td>
-                            <label for="opponent1"><?php echo $Opp[0];?></label>
-                        </td>
-                        
-                    </tr>
-                    <tr>
-                        <th>
-                            <label>When?</label>
-                        </th>
-                        <td>
-                            <label for="opponent1"><?php echo $Date[0]. " @ ". $Time[0]; ?></label>
-                        </td>
-                        
-                    </tr>
-                    <tr>
-                        <th>
-                            <label>Where?</label>
-                        </th>
-                        <td>
-                            <label for="opponent1">Whalburg Park</label>
-                        </td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <th>
-                            <label>Who?</label>
-                        </th>
-                        <td>
-                            <label for="opponent1"><?php echo $Opp[1];?></label>
-                        </td>
-                        
-                    </tr>
-                    <tr>
-                        <th>
-                            <label>When?</label>
-                        </th>
-                        <td>
-                            <label for="opponent1"><?php echo $Date[1]. " @ ". $Time[1]; ?></label>
-                        </td>
-                        
-                    </tr>
-                    <tr>
-                        <th>
-                            <label>Where?</label>
-                        </th>
-                        <td>
-                            <label for="opponent1">Whalburg Park</label>
-                        </td>
-                    </tr>
-                </table>
-
-            </div>
-            
-            <div class="row-flex">
-                
-                <table>
-                    <tr>
-                        <th>
-                            <label>Who?</label>
-                        </th>
-                        <td>
-                            <label for="opponent1"><?php echo $Opp[2];?></label>
-                        </td>
-                        
-                    </tr>
-                    <tr>
-                        <th>
-                            <label>When?</label>
-                        </th>
-                        <td>
-                            <label for="opponent1"><?php echo $Date[2]. " @ ". $Time[2]; ?></label>
-                        </td>
-                        
-                    </tr>
-                    <tr>
-                        <th>
-                            <label>Where?</label>
-                        </th>
-                        <td>
-                            <label for="opponent1">Whalburg Park</label>
-                        </td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <th>
-                            <label>Who?</label>
-                        </th>
-                        <td>
-                            <label for="opponent1"><?php echo $Opp[3];?></label>
-                        </td>
-                        
-                    </tr>
-                    <tr>
-                        <th>
-                            <label>When?</label>
-                        </th>
-                        <td>
-                            <label for="opponent1"><?php echo $Date[3]. " @ ". $Time[3]; ?></label>
-                        </td>
-                        
-                    </tr>
-                    <tr>
-                        <th>
-                            <label>Where?</label>
-                        </th>
-                        <td>
-                            <label for="opponent1">Whalburg Park</label>
-                        </td>
-                    </tr>
-                </table>
-
-            </div>
-                
-            <div class="row-flex">
-            <table>
-                    <tr>
-                        <th>
-                            <label>Who?</label>
-                        </th>
-                        <td>
-                            <label for="opponent1"><?php echo $Opp[4];?></label>
-                        </td>
-                        
-                    </tr>
-                    <tr>
-                        <th>
-                            <label>When?</label>
-                        </th>
-                        <td>
-                            <label for="opponent1"><?php echo $Date[4]. " @ ". $Time[4]; ?></label>
-                        </td>
-                        
-                    </tr>
-                    <tr>
-                        <th>
-                            <label>Where?</label>
-                        </th>
-                        <td>
-                            <label for="opponent1">Whalburg Park</label>
-                        </td>
-                    </tr>
-                </table>
-
-            </div>
+                <div class="row-flex">
+                    <table>
+                        <tr>
+                            <th>
+                                <label>Who?</label>
+                            </th>
+                            <td>
+                                <label for="opponent1"><?php echo $Opp[0];?></label>
+                            </td>
                             
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>When?</label>
+                            </th>
+                            <td>
+                                <label for="opponent1"><?php echo $Date[0]. " @ ". $Time[0]; ?></label>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>Where?</label>
+                            </th>
+                            <td>
+                                <label for="opponent1"><?php echo $Field[0]; ?></label>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <th>
+                                <label>Who?</label>
+                            </th>
+                            <td>
+                                <label for="opponent1"><?php echo $Opp[1];?></label>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>When?</label>
+                            </th>
+                            <td>
+                                <label for="opponent1"><?php echo $Date[1]. " @ ". $Time[1]; ?></label>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>Where?</label>
+                            </th>
+                            <td>
+                                <label for="opponent1"><?php echo $Field[1]; ?></label>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+                
+                <div class="row-flex">
+                    
+                    <table>
+                        <tr>
+                            <th>
+                                <label>Who?</label>
+                            </th>
+                            <td>
+                                <label for="opponent1"><?php echo $Opp[2];?></label>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>When?</label>
+                            </th>
+                            <td>
+                                <label for="opponent1"><?php echo $Date[2]. " @ ". $Time[2]; ?></label>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>Where?</label>
+                            </th>
+                            <td>
+                                <label for="opponent1"><?php echo $Field[2]; ?></label>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <th>
+                                <label>Who?</label>
+                            </th>
+                            <td>
+                                <label for="opponent1"><?php echo $Opp[3];?></label>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>When?</label>
+                            </th>
+                            <td>
+                                <label for="opponent1"><?php echo $Date[3]. " @ ". $Time[3]; ?></label>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>Where?</label>
+                            </th>
+                            <td>
+                                <label for="opponent1"><?php echo $Field[3]; ?></label>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+                    
+                <div class="row-flex">
+                <table>
+                        <tr>
+                            <th>
+                                <label>Who?</label>
+                            </th>
+                            <td>
+                                <label for="opponent1"><?php echo $Opp[4];?></label>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>When?</label>
+                            </th>
+                            <td>
+                                <label for="opponent1"><?php echo $Date[4]. " @ ". $Time[4]; ?></label>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>Where?</label>
+                            </th>
+                            <td>
+                                <label for="opponent1"><?php echo $Field[4]; ?></label>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+                
             </form>
+            <?php endif;?>
+            
         </div>
     </div>
 

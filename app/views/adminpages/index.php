@@ -19,9 +19,11 @@
 </div>
 
 <section class="content">
-    <h1><a class="color-pd" href="<?php echo URLROOT; ?>/adminpages/team">Team Manager</a></h1>
-    <h1><a class="color-pd" href="<?php echo URLROOT; ?>/adminpages/player">Player Manager</a></h1>
-    <h1><a class="color-pd" href="<?php echo URLROOT; ?>/adminpages/games">Game Manager</a></h1>
+    <div class="row-flex-column-center">
+        <h1 class="align-center"><a class="color-pd" href="<?php echo URLROOT; ?>/adminpages/team">Team Manager</a></h1>
+        <h1 class="align-center"><a class="color-pd" href="<?php echo URLROOT; ?>/adminpages/player">Player Manager</a></h1>
+        <h1 class="align-center"><a class="color-pd" href="<?php echo URLROOT; ?>/adminpages/games">Game Manager</a></h1>
+    </div>
 </section>
 <?php 
     
