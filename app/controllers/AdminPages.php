@@ -185,16 +185,22 @@ class AdminPages extends Controller{
                         'description' => 'This page allows you to edit/view the status of players as well as add new players to teams.',
                         'player' => $allTeams,
                         
+                        'team_name' => $teamNames,
                         'edit' => trim($_POST['edit']),
                         'delete' => trim($_POST['delete']),
+                        
+                        'teamids' => ''
                         ];
-                
                         //TODO: add an edit page for the user to go to the post value is edit
                         //TODO: recycle delete funciton to delete player
                         if($_SERVER['REQUEST_METHOD'] == 'POST'){
                             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-                            if($data['edit']){
-                                echo "edit";
+                            
+                            
+                            //? IF THE EDIT BUTTON IS SELECTED 
+                            if($data['edit']){        
+                                $this->view('adminPages/editPlayer', $data);
+                            die();
                             }
                             if($data['delete']){
                                 echo 'delete';
