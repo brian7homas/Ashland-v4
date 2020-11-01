@@ -135,7 +135,7 @@ class AdminPage{
     }//end deleteNewPlayer
     
     public function getAllPlayers(){
-        $this->db->query('SELECT * FROM player');
+        $this->db->query('SELECT * FROM player JOIN team ON team.teamid=player.teamid');
         $results = $this->db->resultSet();
         return $results;
     }
@@ -162,6 +162,25 @@ class AdminPage{
         $e->getMessage();
       }
     }//end getTeamByGameID
+    
+
+
+    public function getTeamByTeamID($teamid){
+      // var_dump($teamid);
+      try{
+        $this->db->query('SELECT team_name FROM team WHERE teamid = :teamid');
+        $this->db->bind(':teamid', $teamid);
+        $results = $this->db->resultSet();
+        // var_dump($results);
+        return $results;
+      }catch(Excecption $e){
+        $e->getMessage();
+      }
+    }//end getTeamByGameID
+
+
+
+
     
     //return all teamid with the same gameid
     //! getSchedule needs to have unique gamesid variable to pull each opponent and game date
