@@ -17,10 +17,10 @@ module.exports = {
         //what the bundled file should be named
         filename: 'bundled.js',
         //where it should be saved
-        path: path.resolve(__dirname, 'public/js')
+        path: path.resolve(__dirname, 'public/scripts')
     },
     devServer:{
-        contentBase: path.join(__dirname, 'app'),
+        contentBase: path.join(__dirname, 'app/views'),
         hot: true, 
         port: 3000,
         host: '0.0.0.0',
@@ -40,7 +40,7 @@ module.exports = {
                 //      use               , understand
                 use: ['style-loader', 'css-loader', {loader: 'postcss-loader', options: {postcssOptions: {plugins: [ postCSSPlugins, require.resolve('postcss-simple-vars'),
                 require.resolve('postcss-nested'), require.resolve('autoprefixer'), postCSSPlugins({ myOption: true })]}}}]
-              }
+                }
             ]
-          }
+            }
         }
