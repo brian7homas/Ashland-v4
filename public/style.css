@@ -1042,6 +1042,7 @@ li {
 }
 
 .navbar {
+  background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
@@ -1054,18 +1055,66 @@ li {
   display: block;
 }
 
+@media only screen and (min-width: 899px) and (max-width: 1199px) {
+  .navbar__container-inner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
 .navbar .hamburger {
   display: inline;
 }
 
+@media only screen and (min-width: 899px) and (max-width: 1199px) {
+  .navbar .hamburger {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .navbar .hamburger {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 899px) and (max-width: 1199px) {
+  .user-nav {
+    display: flex;
+    align-items: center;
+  }
+}
+
 .user-nav-list {
+  display: block;
   position: absolute;
   z-index: 3;
   right: 0;
   padding: 2em 0;
-  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 3px;
   top: 5.3em;
+}
+
+@media only screen and (min-width: 899px) and (max-width: 1199px) {
+  .user-nav-list {
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    top: 0;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .user-nav-list {
+    padding: 15px;
+    display: flex;
+    right: 0;
+    top: 0;
+    height: 10vh;
+  }
 }
 
 .user-nav-list li {
@@ -1084,6 +1133,12 @@ li {
   font-size: 1.5rem;
   font-weight: 900;
   padding: .6em;
+}
+
+@media only screen and (min-width: 899px) and (max-width: 1199px) {
+  .user-nav-list .nav-item a {
+    font-size: 1.2rem;
+  }
 }
 
 .user-nav-list .nav-item .dropdown {

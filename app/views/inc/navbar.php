@@ -1,11 +1,13 @@
 <nav class="navbar">
     <div class="navbar__container-inner">
-        <a href="<?php if($_SESSION['adminid']){echo URLROOT . "/adminpages/index";}else{echo URLROOT;} ?>"><img class="logo" src="<?php  echo URLROOT ?>/public/img/smLogo.png" /></a>
+        <a href="<?php if($_SESSION['adminid']){echo URLROOT . "/adminpages/index";}else{echo URLROOT;} ?>"><img
+                class="logo" src="<?php  echo URLROOT ?>/public/img/smLogo.png" /></a>
         <div class="user-nav">
             <ul class="user-nav-list">
                 <?php if($_SESSION['adminid'] OR $_SESSION['user_name']): ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">How's it going? <?php echo $_SESSION['user_name']; echo $_SESSION['ad_username']; ?> </a>
+                    <a class="nav-link" href="#">How's it going?
+                        <?php echo $_SESSION['user_name']; echo $_SESSION['ad_username']; ?> </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
@@ -27,7 +29,7 @@
                                         echo URLROOT . "/users/logout";
                                 }
                             } 
-                    ?>">Logout 
+                    ?>">Logout
                     </a>
                 </li>
                 <?php else:?>
@@ -53,8 +55,8 @@
             </ul>
         </div>
     </div>
-    <button class ="hamburger navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span><img src="<?php echo URLROOT;?>/img/menu.svg"</span>
+    <button class="hamburger navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span><img src="<?php echo URLROOT;?>/img/menu.svg" </span>
     </button>
 </nav>
