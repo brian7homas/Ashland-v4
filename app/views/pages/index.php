@@ -3,7 +3,7 @@
 require APPROOT . '/views/inc/header.php';
 ?>
 
-<img id="main__img" src="<?php URLROOT ?>/img/bg.png" />
+
 <!-- <div class="overlay"></div> -->
 <div class="user-header">
     <img class="hero-img" src="<?php URLROOT ?>/img/cover@2x.png" />
