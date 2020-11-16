@@ -92,6 +92,7 @@ class AdminUsers extends Controller{
       }
         else{
           $data =[
+            
             'ad_fname' => '',
             'ad_lname' => '',
             'ad_username' => '',
@@ -121,6 +122,9 @@ class AdminUsers extends Controller{
         
         // Init data
         $data =[
+          // page info
+          'title' => 'Admin login',
+          
           'ad_username' => trim($_POST['ad_username']),
           'ad_password' => trim($_POST['ad_password']),
           'ad_username_err' => '',
@@ -184,6 +188,9 @@ class AdminUsers extends Controller{
       } else {
         // Init data
         $data =[    
+          // page info
+          'title' => 'Admin login',
+          
           'ad_username' => '',
           'ad_password' => '',
           'ad_username_err' => '',

@@ -2,37 +2,20 @@
 require APPROOT . '/views/inc/header.php';
 ?>
 
-<div class="user-header">
-    <img class="hero-img" src="<?php URLROOT ?>/pics/maps-cover.jpg" />
-    <div class="user-header__container-inner">
-        <h1 class="user-header__headline">
-            <?php 
-                echo $data['title']."<br>";                
-            ?>
-        </h1>
-        <p class="user-header__sub-headline">
-            <?php
-                echo $data['description'] . "<br>";
-                echo "version: " . APPVERSION; 
-            ?>
-        </p>
-    </div>
-</div>
-
-<section class="content">
-    <div class="row">
+<section class="container">
+    
         <form class="schedule">
-            <div class="form-group">
+            <div class="form-group text-center">
                 <label>the <strong class="subheadline__med">Aardvarks</strong></label>
                 <input class="dropdown" value=""/>
-                <span>span</span>
+                <!-- <span>span</span> -->
             </div>
             
-            <div class="form-group">
-                <p class="align-center padding-1 subheadline__large">will be facing..</p>
+            <div class="form-group text-center">
+                <p class="">will be facing..</p>
             </div>
             
-            <div class="row-flex">
+            <div class="row justify-content-around">
                 <table>
                     <tr>
                         <th>
@@ -91,8 +74,6 @@ require APPROOT . '/views/inc/header.php';
                     </tr>
                 </table>
             
-            </div>
-            <div class="row-flex">
                 <table>
                     <tr>
                         <th>
@@ -150,18 +131,7 @@ require APPROOT . '/views/inc/header.php';
                         </td>
                     </tr>
                 </table>
-            
             </div>
         </form>
-    </div>
-    
-    <div class="section row-flex-column">
-        <h1 class="subheadline__med align-center">Maps</h1>
-        <h1 class="subheadline__med align-center">Locations</h1>
-        <h1 class="subheadline__med align-center">Directions</h1>
-    </div>
-    
-        
-    </div>
 </section>
 <?php require APPROOT . '/views/inc/footer.php';?>

@@ -1,3 +1,4 @@
+</main>
 <!-- ======= Footer ======= -->
 <footer class="site-footer">
     <div class="bottom">
@@ -5,9 +6,9 @@
         <div class="row">
 
           <div class="col-lg-6 col-xs-12 text-lg-left text-center">
-            <p class="copyright-text">
+            <span class="copyright-text">
               <a href="<?php echo URLROOT; ?>">&copy; Copyright <strong>Ashland</strong></a>. All Rights Reserved
-            </p>
+            </span>
             <div class="credits">
               <!--
               All the links in the footer should remain intact.
@@ -61,6 +62,8 @@
   
     <script src="<?php //echo URLROOT;  ?>/js/gsap.min.js"></script>
     <script src="<?php //echo URLROOT;  ?>/js/ScrollTrigger.min.js"></script>
+    <script  src="<?php //echo URLROOT; ?>/assets/bundled.js"></script>
+    
   <!-- Vendor JS Files -->
   <script src="<?php echo URLROOT; ?>/assets/vendor/jquery/jquery.min.js"></script>
   <script src="<?php echo URLROOT; ?>/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -77,6 +80,7 @@
 
   <!-- Template Main JS File -->
   <script src="<?php echo URLROOT; ?>/assets/js/main.js"></script>
+  
 
 </body>
 

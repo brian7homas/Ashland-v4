@@ -18,21 +18,30 @@ class Pages extends Controller{
                 'maps' => 'Maps',
                 'signup' => 'Register',
                 // 'admin' => 'Admin'
-
+                'bg-img' => '/pics/cover.jpg',
+                'dropdown' => true
                 ];        
         $this->view('pages/index', $data);
     }
     public function teams(){
         $data = [
             'title' => 'Teams',
-            'description' => 'Modify team data here.'
+            'description' => 'Modify team data here.',
+            
+            //dropdown only appears on pages not page/index
+            'dropdown' => false,
+            //dynamic hero img
+            'bg-img' => '/pics/main.jpg'
         ];
         $this->view('pages/teams', $data);
     }
     public function action(){
         $data = [
             'title' => 'ACTION',
-            'description' => 'See some of the action!!'
+            'description' => 'See some of the action!!',
+            
+            'dropdown' => false,
+            'bg-img' => '/pics/action_cover.jpg'
         ];
         $this->view('pages/action', $data);
     }
@@ -40,7 +49,10 @@ class Pages extends Controller{
     public function maps(){
         $data = [
             'title' => 'Maps',
-            'description' => 'Find Where Your Next Game Is'
+            'description' => 'Find Where Your Next Game Is',
+            
+            'dropdown' => false,
+            'bg-img' => '/pics/maps-cover.jpg'
         ];
         $this->view('pages/maps', $data);
     }
@@ -48,17 +60,14 @@ class Pages extends Controller{
     public function schedule(){
         $data = [
             'title' => 'Schedules',
-            'description' => 'Find specific information about each game here.'
+            'description' => 'Find specific information about each game here.',
+            
+            'dropdown' => false,
+            'bg-img' => '/pics/maps-cover.jpg'
+            
         ];
         $this->view('pages/schedule', $data);
     }
 
-    // public function admin(){
-    //     $data = [
-    //         'title' =>'Admin',
-    //         'description' => 'Signup for an admin profile here'    
-    //     ];
-    //     $this->view('adminUsers/register', $data);
-    // }
 
 }

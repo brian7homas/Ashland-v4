@@ -55,10 +55,11 @@ class AdminPages extends Controller{
                         'post_err' => '',
                         'pla_info' => '',
                         'team_err' => '',
-                        'playerid' => ''
+                        'playerid' => '',
+                        'team' => ''
+                        
                     ];
                     
-                    //! ADD ERROR CHECKS SET VARIABLES 
                     
                     //? MAKE SURE THE CURRENT TEAM IS NOT THE NEW TEAM 
                     if($data['currentTeam'] === $data['newTeam']) {
@@ -79,7 +80,7 @@ class AdminPages extends Controller{
                         $data['team'] = $this->adminpageModel->getNewPlayers();
                         //// HOW TO ACCESS SEPERATE DATA POINTS IN THE TEAM VAR
                         ////  var_dump($data['team'][42]->pla_fname);
-                        // If players are selected and there is a selection for the new team
+                        // If players are selected and there is a selection for the new team AND delete is not selected
                         //? ANOTHER FORK IF NEW PLYAERS ARE SELECT AND A NEW TEAM IS SELECTED (LAYER 2)
                         //? AND POST VALUE DELETE IS NOT SET
                         if($_POST['player'] != '' AND $data['newTeam'] != '' AND !isset($_POST['delete'])){ 
@@ -117,9 +118,11 @@ class AdminPages extends Controller{
                             // TODO: THIS BLOCK NEEDS TO RUN ONLY WHEN THE NEWPLAYERS EVENT IS FIRED
                             // IF POST PLAYER OR DATA NEWTEAM ARE NOT SET
                             // echo "post player is empty or newteam data is empty";
+                            echo "line 121";
                             $this->view('adminPages/team', $data);
                         }
                         // ? DIRECTED BACK TO TEAM PAGE
+                        echo 'line 124';
                         $this->view('adminPages/team', $data);
                     }else{
                         // ? IF A REGULAR TEAM IS SELECTED
@@ -127,6 +130,7 @@ class AdminPages extends Controller{
                         //!  $data['team'] !!DO NOT REMOVE
                         $data['team'] =  $this->adminpageModel->getTeam($data['currentTeam']);
                         //? IF A REGULAR TEAM AND A NEW TEAM ARE SELECTED
+                        
                         if($_POST['player'] != '' AND $data['newTeam'] != ''){ 
                             // GET TEAM teamid FROM team_name
                             $data['newTeamID'] = $this->adminpageModel->getTeamID($data['newTeam']);
@@ -140,12 +144,15 @@ class AdminPages extends Controller{
                             
                             // If the $_POST variable is set 
                             if(isset($_POST)){
+                                
                                 //unset newTeam var
                                 unset($data['newTeam']);
                                 //unset player selections
                                 unset($_POST['player']);
                             }
+                            
                             $data['team'] =  $this->adminpageModel->getTeam($data['currentTeam']);
+                            
                         }
                         //? IF PLAYERS ARE SELECTED AND POST VALUE DELETE EXIST (DELEETE SUBMITTED)
                         elseif($_POST['player'] != '' AND $_POST['delete']){
@@ -156,22 +163,33 @@ class AdminPages extends Controller{
                                 $this->adminpageModel->deletePlayer($data['playerid']);
                             }
                             // keeps from needing to reload page to see delettion
+                            // var_dump($data['currentTeam']);
                             $data['team'] =  $this->adminpageModel->getTeam($data['currentTeam']);
+                            $this->view('adminPages/team', $data);
                         }else{
                             //!error block IF NEW PLAYER IS SELCTED AND NO PLAYERS OR NEW TEAM IS SELECTED 
                             // TODO: THIS IS THE DEFAULT STATE OF THE PAGE WHEN NEWPLAYERS ARE VIEWD 
                             // TODO: THIS BLOCK NEEDS TO RUN ONLY WHEN THE NEWPLAYERS EVENT IS FIRED
                             // IF POST PLAYER OR DATA NEWTEAM ARE NOT SET
                             // echo "post player is empty or newteam data is empty";
+                            echo "Select players and a new team";
+                            echo "else block line 173";
                             $this->view('adminPages/team', $data);
                         }
                     }
-                    
                     //reset newTeam var
                     $data['newTeam'] = '';
                     //reset player selections
                     $_POST['player'] = '';
                 }
+                $data = [
+                    'title' => 'Team Manager',
+                    'description' => 'This page allows you to add/remove and view players on a specific team.',
+                    'dropdown' => 'Select a Team',
+                    'newPlayers' => 'New Players',
+                ];
+                $data['team'] =  $this->adminpageModel->getTeam($_POST['currentTeam']);
+                echo "bottom of team function line 188";
                 $this->view('adminPages/team', $data);
             }
             public function player(){
@@ -182,25 +200,51 @@ class AdminPages extends Controller{
                         'add' => 'Add players',
                         'remove' => 'Remove players',
                         'edit' => 'Edit player info',
-                        'description' => 'This page allows you to edit/view the status of players as well as add new players to teams.',
+                        'description' => 'This page allows you to edit/view specifics of players personal profile.',
                         'player' => $allTeams,
+                        'editTitle' => 'Edit Player',
+                        'editInfo' => 'Edit specific player values',
                         
                         'team_name' => $teamNames,
-                        'edit' => trim($_POST['edit']),
+                        'playerid' => trim($_POST['edit']),
+                        'pla_fname' => trim($_POST['pla_fname']),
+                        'pla_lname' => trim($_POST['pla_lname']),
+                        'pla_phone' => trim($_POST['phone']),
+                        'pla_par_fname' => trim($_POST['pla_par_fname']),
+                        'pla_par_lname' => trim($_POST['pla_par_lname']),
+                        'pla_add' => trim($_POST['pla_add']),
+                        'pla_city' => trim($_POST['pla_city']),
+                        'pla_state' => trim($_POST['pla_state']),
+                        
+                        'pla_zip' => trim($_POST['pla_zip']),
+                        'pla_bdate' => trim($_POST['pla_bdate']),
+                        
+                        'teamid' => trim($_POST['teamid']),
                         'delete' => trim($_POST['delete']),
                         
                         'teamids' => ''
                         ];
-                        //TODO: add an edit page for the user to go to the post value is edit
-                        //TODO: recycle delete funciton to delete player
+                        var_dump($data['playerid']);
                         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-                            
-                            
+                            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);  
                             //? IF THE EDIT BUTTON IS SELECTED 
-                            if($data['edit']){        
-                                $this->view('adminPages/editPlayer', $data);
-                            die();
+                            // $data = [
+                            //     'phone' => trim($_POST['phone'])
+                            // ];
+                            if($data['playerid']){        
+                                
+                                if($this->adminpageModel->getPlayer($data['playerid'])){
+                                    var_dump($data['playerid']);
+                                    
+                                    
+                                    $this->view('adminPages/editPlayer', $data);
+                                    die();
+                                }else{
+                                    echo "did not get player";
+                                    $this->view('adminPages/editPlayer', $data);
+                                    die();
+                                }
+                                
                             }
                             if($data['delete']){
                                 echo 'delete';

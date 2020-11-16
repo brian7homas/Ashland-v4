@@ -12,15 +12,15 @@ const postCSSPlugins =
 
 //!  tell webpack what we want it to do
 module.exports = {
-    entry: './public/scripts/App.js',
+    entry: './public/assets/App.js',
     output: {
         //what the bundled file should be named
         filename: 'bundled.js',
         //where it should be saved
-        path: path.resolve(__dirname, 'public/scripts')
+        path: path.resolve(__dirname, 'public/assets')
     },
     devServer:{
-        contentBase: path.join(__dirname, 'app/views'),
+        contentBase: path.join(__dirname, 'public/assets/App.js'),
         hot: true, 
         port: 3000,
         host: '0.0.0.0',

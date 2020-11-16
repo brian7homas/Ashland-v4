@@ -1,4 +1,4 @@
-import '../style.css';
+// import '../style.css';
 import Hamburger from '../js/Hamburger';
 import CardHover from '../js/CardHover';
 

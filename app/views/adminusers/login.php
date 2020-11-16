@@ -2,48 +2,60 @@
 require APPROOT . '/views/inc/header.php';
 
 ?>
-<div class="content">    
-        <div class="row">
-            <?php flash('register_success'); ?>
-            <div class="row">
-                <h1 class="headline-text headline-text-center">Administrator Login</h1>
-                <p class="headline-text-center">Fill in your creditentials</p>
-            </div>
-            <form class="user-form" action="<?php echo URLROOT; ?>/adminusers/login" method="POST">
-                <div class="form-group">
-                    <label for="ad_username">Username:
-                        <sup class="fa" style="right:-2.9em; top: -1.3em;">*</sup>
-                        <span class="invalid-feedback"><?php echo $data['ad_username_err'];?></span>
-                    </label>
-                    <input type="text" name="ad_username" class="user-form form-control" 
-                        <?php echo(!empty($data['ad_username_err'])) ? 'is-invalid': ''; ?>"
-                        value="<?php echo $data['ad_username'];?>" />
-                </div>
-                
-
-                <div class="form-group">
-                    <label for="ad_password">Password: 
-                        <span class="invalid-feedback"><?php echo $data['ad_password_err'];?></span>
-                    </label>
-                    
-                    <input type="password" name="ad_password" class="user-form form-control" 
-                        <?php echo(!empty($data['ad_password_err'])) ? 'is-invalid': ''; ?>"
-                        value="<?php echo $data['ad_password'];?>" />
-                </div>
-
-                <div class="form-group form-group__button">
-                            <input type="button" value="Cancel" >
-                            <input type="submit" value="Login">
-                </div>
-                
-                    <a href="<?php echo URLROOT; ?>/users/register" class="reg-btn">No account?
-                        REGISTER.</a>
-            </form>
-        </div>
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2 class="section-title"><?php echo $data['title']; ?></h2>
+      </div>
     </div>
 
-</div>
-</div>
+    <div class="row justify-content-center">
+      <div class="col-lg-3 col-md-4">
+        <div class="info">
+          <div>
+            <i class="fa fa-map-marker"></i>
+            <p>A108 Adam Street<br>New York, NY 535022</p>
+          </div>
 
+          <div>
+            <i class="fa fa-envelope"></i>
+            <p>info@example.com</p>
+          </div>
+
+          <div>
+            <i class="fa fa-phone"></i>
+            <p>+1 5589 55488 55s</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-lg-5 col-md-8">
+        <div class="form">
+          <form action="<?php echo URLROOT; ?>/adminusers/login" method="post" role="form">
+          
+            <div class="form-group">
+              <input type="text" name="ad_username" class="user-form form-control" <?php echo(!empty($data['ad_username_err'])) ? 'is-invalid': ''; ?>" value="<?php echo $data['ad_username'];?>" />
+              <div class="validate"></div>
+            </div>
+            
+            <div class="form-group">
+              <input type="password" name="ad_password" class="user-form form-control" <?php echo(!empty($data['ad_password_err'])) ? 'is-invalid': ''; ?>" value="<?php echo $data['ad_password'];?>" />
+              <div class="validate"></div>
+            </div>
+            
+            
+            <div class="mb-3">
+                
+            </div>
+            <div class="text-center"><input type="submit" value="Login"></input></div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section><!-- End Contact Section -->
 
 <?php require APPROOT . '/views/inc/footer.php';?>
