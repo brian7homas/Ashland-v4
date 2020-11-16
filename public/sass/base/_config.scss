@@ -8,7 +8,7 @@ $primaryDark: #000000;
 $card-bg: transparent;
 
 html,body{
-    position: static;
+    // position: static;
     overflow-y: auto;
     overflow-x:hidden;
 }
@@ -16,7 +16,7 @@ html,body{
     font-family: Futura;    
     padding: 0;
     margin: 0;
-    color: $mainLight;
+    color: $purple;
     box-sizing: border-box;;
 }
 

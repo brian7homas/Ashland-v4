@@ -1,0 +1,16 @@
+{
+	"version": 3,
+	"file": "style.css",
+	"sources": [
+		"sass/style.scss",
+		"sass/base/_config.scss",
+		"sass/modules/_table.scss"
+	],
+	"sourcesContent": [
+		"@import \"base/config\";\n\n@import \"modules/table\";",
+		"$mainLight: #FCFFE8;;\n$secondaryLight: #FFFFFF;\n$grey: #707070;\n$mainBlue: #77C3C6;\n$purple: #380236;\n$altLight: #F1F9FF;\n$primaryDark: #000000;\n$card-bg: transparent;\n\nhtml,body{\n    // position: static;\n    overflow-y: auto;\n    overflow-x:hidden;\n}\n*{\n    font-family: Futura;    \n    padding: 0;\n    margin: 0;\n    color: $purple;\n    box-sizing: border-box;;\n}\n\nimg{\n    max-width: 100%;\n}\nli{\n    list-style-type: none;\n}\n\n",
+		"\ntable{\n    display:flex;\n    border-collapse: collapse;\n    width: max-content;\n    border: 1px solid black;\n    margin: 3px;\n    tr:nth-child(even){\n        background-color: $mainBlue;\n    }\n    td, th{\n        text-align: left;\n        padding: 8px;\n    }\n}"
+	],
+	"names": [],
+	"mappings": ";ACSA,AAAA,IAAI,EAAC,IAAI,CAAA;EAEL,UAAU,EAAE,IAAI;EAChB,UAAU,EAAC,MAAM;CACpB;;;AACD,AAAA,CAAC,CAAA;EACG,WAAW,EAAE,MAAM;EACnB,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;EACT,KAAK,EAdA,OAAO;EAeZ,UAAU,EAAE,UAAU;CACzB;;;AAED,AAAA,GAAG,CAAA;EACC,SAAS,EAAE,IAAI;CAClB;;;AACD,AAAA,EAAE,CAAA;EACE,eAAe,EAAE,IAAI;CACxB;;;AC1BD,AAAA,KAAK,CAAA;EACD,OAAO,EAAC,IAAI;EACZ,eAAe,EAAE,QAAQ;EACzB,KAAK,EAAE,WAAW;EAClB,MAAM,EAAE,eAAe;EACvB,MAAM,EAAE,GAAG;CAQd;;;AAbD,AAMI,KANC,CAMD,EAAE,AAAA,UAAW,CAAA,IAAI,EAAC;EACd,gBAAgB,EDLb,OAAO;CCMb;;;AARL,AASI,KATC,CASD,EAAE,EATN,KAAK,CASG,EAAE,CAAA;EACF,UAAU,EAAE,IAAI;EAChB,OAAO,EAAE,GAAG;CACf"
+}

@@ -77,10 +77,12 @@ class AdminPage{
     
     // get specifc player based on playerid 
     public function getPlayer($player){
+      var_dump($player);
       echo "inside player function";
       $this->db->query('SELECT * FROM player WHERE playerid = :player');
       $row = $this->db->bind(':player', $player);
       return $row;
+      var_dump($row);
     }
     // update player -- move player to new team 
     public function updatePlayer($playerid,  $newTeamID){
