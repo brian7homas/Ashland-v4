@@ -45,6 +45,9 @@ class AdminPage{
               echo "Catch block AdminPage.php line 43";
             }
       }//?end moveNewPlayer
+        
+      //TODO: add edit function copy move new player
+      
       // GET ALL NEW PLAYERS
       public function getNewPlayers(){
         $this->db->query('SELECT * FROM new_player_tmp');
@@ -77,12 +80,12 @@ class AdminPage{
     
     // get specifc player based on playerid 
     public function getPlayer($player){
-      var_dump($player);
-      echo "inside player function";
+      // var_dump($player);
+      // echo "inside player function";
       $this->db->query('SELECT * FROM player WHERE playerid = :player');
       $row = $this->db->bind(':player', $player);
       return $row;
-      var_dump($row);
+      // var_dump($row);
     }
     // update player -- move player to new team 
     public function updatePlayer($playerid,  $newTeamID){
@@ -179,10 +182,6 @@ class AdminPage{
         $e->getMessage();
       }
     }//end getTeamByGameID
-
-
-
-
     
     //return all teamid with the same gameid
     //! getSchedule needs to have unique gamesid variable to pull each opponent and game date
@@ -203,6 +202,54 @@ class AdminPage{
       }catch(Excecption $e){
         $e->getMessage();
       }
+      
+    }
+    
+    
+    public function editPlayer($data){
+        // echo "player ID: ";
+        // var_dump($data['edit_playerid']);
+        // echo '<br>';
+        // print_r($data['edit_playerid']);
+        
+        
+          try{
+            $this->db->query('UPDATE player 
+                              SET pla_lname = ' . '"'. $data['edit_pla_lname'] .'"' .
+                              ', pla_fname=' . '"'. $data['edit_pla_fname'] .'"' .
+                              ', pla_phone='.'"' .$data['edit_pla_phone'].'"' .
+                              ', pla_par_lname='.'"' .$data['edit_pla_par_lname'].'"' . 
+                              ', pla_par_fname='.'"' .$data['edit_pla_par_fname'].'"' .
+                              ', pla_add='.'"' .$data['edit_pla_add'].'"' .
+                              ', pla_city='.'"' .$data['edit_pla_city'].'"' . 
+                              ', pla_state='.'"' .$data['edit_pla_state'].'"' .
+                              ', pla_zip='.'"' .$data['edit_pla_zip'].'"' .
+                              ', pla_bdate='.'"' .$data['edit_pla_bdate'].'"' .
+                              ', teamid='.'"' .$data['edit_pla_team'].'"' .
+                              ' WHERE playerid='.'"' .$data['edit_playerid'].'"');
+            
+            $this->db->bind(':playerid', $data['edit_playerid']);
+            $this->db->bind(':pla_lname', $data['edit_pla_lname']);
+            $this->db->bind(':pla_fname', $data['edit_pla_fname']);
+            $this->db->bind(':pla_phone', $data['edit_pla_phone']);
+            $this->db->bind(':pla_par_lname', $data['edit_pla_par_lname']);
+            $this->db->bind(':pla_par_fname', $data['edit_pla_par_fname']);
+            $this->db->bind(':pla_add', $data['edit_pla_add']);
+            $this->db->bind(':pla_city', $data['edit_pla_city']);
+            $this->db->bind(':pla_state', $data['edit_pla_state']);
+            $this->db->bind(':pla_zip', $data['edit_pla_zip']);
+            $this->db->bind(':pla_bdate', $data['edit_pla_bdate']);
+            $this->db->bind(':teamid', $data['edit_pla_team']);  
+          
+            if($this->db->execute()){
+              return true;
+            }else{
+              return false;  
+          } 
+            }catch(Exception $e){
+              echo $e->getMessage();
+              echo "Catch block AdminPage.php line 258";
+            }
       
     }
   }

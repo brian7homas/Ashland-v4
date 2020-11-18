@@ -206,38 +206,47 @@ class AdminPages extends Controller{
                         'editInfo' => 'Edit specific player values',
                         
                         'team_name' => $teamNames,
-                        'playerid' => trim($_POST['edit']),
-                        'pla_fname' => trim($_POST['pla_fname']),
-                        'pla_lname' => trim($_POST['pla_lname']),
-                        'pla_phone' => trim($_POST['phone']),
-                        'pla_par_fname' => trim($_POST['pla_par_fname']),
-                        'pla_par_lname' => trim($_POST['pla_par_lname']),
-                        'pla_add' => trim($_POST['pla_add']),
-                        'pla_city' => trim($_POST['pla_city']),
-                        'pla_state' => trim($_POST['pla_state']),
+                        
+                        
+                        // edit page
+                        'edit_playerid' => trim($_POST['edit_playerid']),
+                        'edit_team_name' => trim($_POST['edit_team_name']),
+                        'edit_teamid' => trim($_POST['edit_teamid']),
+                        'edit_pla_fname' => trim($_POST['edit_pla_fname']),
+                        'edit_pla_lname' => trim($_POST['edit_pla_lname']),
+                        'edit_pla_phone' => trim($_POST['edit_pla_phone']),
+                        'edit_pla_par_fname' => trim($_POST['edit_pla_par_fname']),
+                        'edit_pla_par_lname' => trim($_POST['edit_pla_par_lname']),
+                        'edit_pla_add' => trim($_POST['edit_pla_add']),
+                        'edit_pla_city' => trim($_POST['edit_pla_city']),
+                        'edit_pla_state' => trim($_POST['edit_pla_state']),
+                        'edit_pla_zip' => trim($_POST['edit_pla_zip']),
+                        'edit_pla_bdate' => trim($_POST['edit_pla_bdate']),
+                        
+                        
                         
                         'pla_zip' => trim($_POST['pla_zip']),
                         'pla_bdate' => trim($_POST['pla_bdate']),
                         
+                        'team_name' => trim($_POST['team_name']),
                         'teamid' => trim($_POST['teamid']),
                         'delete' => trim($_POST['delete']),
                         
                         'teamids' => ''
                         ];
-                        var_dump($data['playerid']);
+                
                         if($_SERVER['REQUEST_METHOD'] == 'POST'){
                             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);  
-                            //? IF THE EDIT BUTTON IS SELECTED 
-                            // $data = [
-                            //     'phone' => trim($_POST['phone'])
-                            // ];
-                            if($data['playerid']){        
-                                
-                                if($this->adminpageModel->getPlayer($data['playerid'])){
-                                    var_dump($data['playerid']);
-                                    
+                            
+                            
+                            //? FROM THE PLAYER PAGE IF THE EDIT BUTTON IS SELECTED 
+                            if($data['edit']){        
+                                echo 'edit'; 
+                                //TODO: add delete function and edit rewrite values to the database
+                                if($this->adminpageModel->getPlayer((int)$data['playerid'])){
                                     
                                     $this->view('adminPages/editPlayer', $data);
+                                    redirect('adminpages/editPlayer', $data);
                                     die();
                                 }else{
                                     echo "did not get player";
@@ -250,12 +259,50 @@ class AdminPages extends Controller{
                                 echo 'delete';
                             }
                             
+                            //? FROM THE EDIT PLAYER PAGE
+                            echo "default page load";
+                            if($data['edit_pla_fname']){
+                                $this->view('adminPages/player', $data);
+                            }
+                            
                             
                         }else{
-                            echo "Post request failed";
+                            echo "DEFAULT LOAD/POST REQUEST FAILDED";
                         }
                 //? Default page load
                 $this->view('adminPages/player', $data);
+            }
+            public function editPlayer(){
+                if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                    $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+                    
+                    $allTeams = $this->adminpageModel->getAllPlayers();
+                    $data = [
+                        // edit page
+                        'edit_playerid' => trim($_POST['edit_playerid']),
+                        'edit_pla_team' => trim($_POST['edit_pla_teamid']),
+                        'edit_pla_fname' => trim($_POST['edit_pla_fname']),
+                        'edit_pla_lname' => trim($_POST['edit_pla_lname']),
+                        'edit_pla_phone' => trim($_POST['edit_pla_phone']),
+                        'edit_pla_par_fname' => trim($_POST['edit_pla_par_fname']),
+                        'edit_pla_par_lname' => trim($_POST['edit_pla_par_lname']),
+                        'edit_pla_add' => trim($_POST['edit_pla_add']),
+                        'edit_pla_city' => trim($_POST['edit_pla_city']),
+                        'edit_pla_state' => trim($_POST['edit_pla_state']),
+                        'edit_pla_zip' => trim($_POST['edit_pla_zip']),
+                        'edit_pla_bdate' => trim($_POST['edit_pla_bdate']),
+                        ];
+                    
+                    if(isset($data['edit_pla_fname'])){
+                        
+                        // add changes to the player
+                        $this->adminpageModel->editPlayer($data);
+                        
+                        // $this->view("adminpages/player", $data);
+                        redirect('adminpages/player');
+                    }
+                }
+                $this->view('adminpages/player', $data);
             }
             public function games(){
                 $teams = $this->adminpageModel->getTeams();
