@@ -17,6 +17,7 @@ var_dump($data['edit_team_name']);
                     <?php echo $data['editInfo'];; ?>
                 </h4>
             </div>
+            <a href="<?php echo URLROOT; ?>/adminpages/player">&lt&ltBack</a>
         </div>
     </div>
 </section>

@@ -199,7 +199,6 @@ class AdminPages extends Controller{
                         'title' => 'Player Manager',
                         'add' => 'Add players',
                         'remove' => 'Remove players',
-                        'edit' => 'Edit player info',
                         'description' => 'This page allows you to edit/view specifics of players personal profile.',
                         'player' => $allTeams,
                         'editTitle' => 'Edit Player',
@@ -231,6 +230,7 @@ class AdminPages extends Controller{
                         'team_name' => trim($_POST['team_name']),
                         'teamid' => trim($_POST['teamid']),
                         'delete' => trim($_POST['delete']),
+                        'edit' => trim($_POST['edit']),
                         
                         'teamids' => ''
                         ];
@@ -256,7 +256,9 @@ class AdminPages extends Controller{
                                 
                             }
                             if($data['delete']){
-                                echo 'delete';
+                                var_dump($data['edit_playerid']);
+                                $this->adminpageModel->deletePlayer((int)$data['edit_playerid']);
+                                $this->view('adminpages/player', $data);
                             }
                             
                             //? FROM THE EDIT PLAYER PAGE
@@ -266,8 +268,6 @@ class AdminPages extends Controller{
                             }
                             
                             
-                        }else{
-                            echo "DEFAULT LOAD/POST REQUEST FAILDED";
                         }
                 //? Default page load
                 $this->view('adminPages/player', $data);
