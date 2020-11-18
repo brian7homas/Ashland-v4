@@ -36,7 +36,7 @@ require APPROOT . '/views/inc/header.php';
           <form action="<?php echo URLROOT; ?>/adminusers/login" method="post" role="form">
           
             <div class="form-group">
-              <input type="text" name="ad_username" class="user-form form-control" <?php echo(!empty($data['ad_username_err'])) ? 'is-invalid': ''; ?>" value="<?php echo $data['ad_username'];?>" />
+              <input autofocus type="text" name="ad_username" class="user-form form-control" <?php echo(!empty($data['ad_username_err'])) ? 'is-invalid': ''; ?>" value="<?php echo $data['ad_username'];?>" />
               <div class="validate"></div>
             </div>
             
