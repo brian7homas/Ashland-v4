@@ -37,8 +37,9 @@
 
   <!-- Template Main CSS File -->
   
-  <link href="<?php echo URLROOT ?>/assets/css/style.css" rel="stylesheet">
   <link href="<?php echo URLROOT ?>/style.css" rel="stylesheet">
+  <link href="<?php echo URLROOT ?>/assets/css/style.css" rel="stylesheet">
+  
 
   <!-- =======================================================
   * Template Name: Bell - v2.1.0

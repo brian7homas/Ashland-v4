@@ -23,24 +23,62 @@ li {
   list-style-type: none;
 }
 
-/* line 2, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_table.scss */
-table {
-  display: flex;
-  border-collapse: collapse;
-  width: max-content;
-  border: 1px solid black;
-  margin: 3px;
+@media only screen and (max-width: 767px), (min-device-width: 768px) and (max-device-width: 1920px) {
+  /* line 3, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_table.scss */
+  table {
+    background-color: #FCFFE8;
+  }
+  /* line 6, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_table.scss */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  /* line 9, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_table.scss */
+  thead tr {
+    position: absolute;
+  }
+  /* line 15, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_table.scss */
+  tr {
+    margin: 0 0 1rem 0;
+    padding: 1rem;
+  }
+  /* line 19, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_table.scss */
+  th {
+    position: relative;
+    z-index: 2;
+  }
+  /* line 24, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_table.scss */
+  td:nth-child(odd) {
+    background: #77C3C6;
+  }
+  /* line 27, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_table.scss */
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #000000;
+    position: relative;
+    padding-left: 50%;
+  }
+  /* line 35, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_table.scss */
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 0;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
 }
 
-/* line 8, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_table.scss */
-table tr:nth-child(even) {
+/* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_form.scss */
+.form {
   background-color: #77C3C6;
 }
 
-/* line 11, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_table.scss */
-table td, table th {
-  text-align: left;
-  padding: 8px;
+/* line 3, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_form.scss */
+.form input {
+  background-color: #FCFFE8;
 }
 
 /*# sourceMappingURL=style.css.map */
