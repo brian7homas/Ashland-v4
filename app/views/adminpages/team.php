@@ -11,6 +11,7 @@ require APPROOT . '/views/inc/header.php';
         <h2 class="section-title"><?php echo $data['title']; ?></h2>
         <h4><?php echo $data['description']; ?></h4>
       </div>
+      <a href="<?php echo URLROOT; ?>/adminpages/index">&lt&ltBack</a>
     </div>
 
     <div class="row justify-content-center">

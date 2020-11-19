@@ -15,6 +15,7 @@ require APPROOT . '/views/inc/header.php';
                 </h4>
                 <h1 class="">All Players</h1>
             </div>
+            <a href="<?php echo URLROOT; ?>/adminpages/index">&lt&ltBack</a>
         </div>
         
         
@@ -32,19 +33,19 @@ require APPROOT . '/views/inc/header.php';
                     <?php
                     // var_dump($data['player'][0]);
                     foreach($data['player'] as $key => $value): 
-                        $id = $value->playerid; 
+                        $id        = $value->playerid;
                         $firstName = $value->pla_fname;
-                        $lastName = $value->pla_lname;
-                        $phone = (int)$value->pla_phone;
-                        $par_fname = $value->pla_par_fname; 
-                        $par_lname = $value->pla_par_lname; 
-                        $add = $value->pla_add; 
-                        $city = $value->pla_city; 
-                        $state = $value->pla_state;
-                        $zip = $value->pla_zip;
-                        $bdate = $value->pla_bdate;
+                        $lastName  = $value->pla_lname;
+                        $phone     = (int)$value->pla_phone;
+                        $par_fname = $value->pla_par_fname;
+                        $par_lname = $value->pla_par_lname;
+                        $add       = $value->pla_add;
+                        $city      = $value->pla_city;
+                        $state     = $value->pla_state;
+                        $zip       = $value->pla_zip;
+                        $bdate     = $value->pla_bdate;
                         $team_name = $value->team_name;
-                        $teamid = $value->teamid;
+                        $teamid    = $value->teamid;
                     ?>
                     
                         <!-- ! MOBILE html strucure -->

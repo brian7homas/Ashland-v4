@@ -81,4 +81,30 @@ li {
   background-color: #FCFFE8;
 }
 
+/* line 2, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_games-table.scss */
+.games-table th {
+  border-bottom: 2px solid #77C3C6;
+}
+
+/* line 5, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_games-table.scss */
+.games-table td {
+  font-size: .6rem;
+}
+
+@media only screen and (min-width: 599px) and (max-width: 1199px) {
+  /* line 9, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_games-table.scss */
+  .games-table td {
+    font-size: 1rem;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  /* line 15, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_games-table.scss */
+  .games-table td {
+    font-size: 1.2rem;
+    min-width: 100%;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -2,11 +2,14 @@ class FormReset{
     constructor(){
         console.log("form reset");
         this.form = document.querySelector('#form');
-        this.button = document.querySelector('#clear');
+        this.button = document.getElementById('clear');
+        console.log(this.button);
         this.events();
+        
     }
     events(){
-        document.getElementById('clear').addEventListener('click', ()=>this.clear());
+        
+        this.button.addEventListener('click', ()=>this.clear());
         
     }
     clear(){

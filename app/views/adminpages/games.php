@@ -1,268 +1,194 @@
 <?php require APPROOT . '/views/inc/header.php'; 
 ?>
 
-
-<div class="user-header">    
-    <div class="user-header__container-inner">
-        <h1 style="color: black"class="display-4">
-        <?php 
-                echo $data['title'] . "<br>";
-            ?>
-        </h1>
-        <p class="subheadline__large">
-            <?php 
-                echo $data['description'] . "<br>";
-            ?>
-        </p>
-    </div>
-</div>
-<section class="content">
-    <div class="row">
-        <div class="row-flex-column row-flex-column-center">
-            <form class="schedule" action="<?php echo URLROOT;?>/adminpages/games" method='POST'>      
-                <?php
-                    foreach($data['teams'] as $key => $value): 
-                        $team = $value->team_name;
+<section id="">
+    <div class="container">
+        <div class="row">    
+            <div class="col-12 text-center">
+                <h2 class="display-2">
+                    <?php 
+                            echo $data['title'] . "<br>";
+                        ?>
+                </h2>
+                <h4 class="h4">
+                    <?php 
+                        echo $data['description'] . "<br>";
                     ?>
-                        <div class="align-center">
-                            <label for="team" class="color-pd id">
-                                <input id="team" name="team" type="submit" style="cursor: hover; color: black; border:none" value='<?php echo $team?>'/>
-                            </label>    
-                        </div>
-                    <?php endforeach;?>    
-            </form>
-            
-            <!-- PHP CODE SORTING $DATA VARIABLE AND STORING THEIR VALUES INTO NEW ARRAYS -->
-            <?php 
-            //!Game time
-            $Time = array(); 
-            foreach($data['game_time'] as $key=>$value):
-                array_push($Time, $value);
-                //$Time = $value;?>
-                            <!-- //!test value -->
-                    <!-- <p><?php //var_dump($Time); ?></p> -->
-            <?php endforeach;
-            
-            
-            //!Game date
-            $Date = array(); 
-            foreach($data['game_date'] as $key=>$value): 
-                array_push($Date, $value);
-                //$Date = $value; ?>
-                            <!-- //!test value -->
-                            <!-- <p><?php // var_dump($Date); ?></p> -->
-            <?php endforeach;
-            
-            
-            $Field = array();
-            foreach($data['field'] as $key=>$value):  
-                    array_push($Field, $value);
-                    //$Opp = $value;?>
-                                <!-- //!test value -->
-                    <!-- <p><?php //var_dump($Opp); ?></p> -->
-            <?php 
-            endforeach; 
-            
-            
-            //! Team name
-            $Opp = array();
-            foreach($data['opp'] as $key=>$value):  
-                    array_push($Opp, $value);
-                    //$Opp = $value;?>
-                                <!-- //!test value -->
-                    <!-- <p><?php //var_dump($Opp); ?></p> -->
-            <?php 
-            endforeach; ?>
-            
-            <?php 
-            
-            // $TeamAsKey = array_combine($Opp, $Date);
-            
-            $container = array_merge($Opp,$Date, $Time);
-            //!TEST VALUES
-            // print_r($container);
-            // var_dump($container);
-            ?>
-            <!-- END PHP CODE SORTING DATA VARIABLE -->
-            <?php if($data['game_data']): ?>
-                <form class="schedule" action="<?php echo URLROOT;?>/adminpages/games" method="POST">
-                <div class="form-group">
-                    <h1 class="headline-text headline-text-center"><?php if(isset($data['team'])){
-                        echo $data['team'];
-                    };?></h1>
-                    <span><?php echo $data['team_err']; ?></span>
-                </div>
-                
-                <div class="form-group">
-                    <p class="align-center padding-1 subheadline__large">will be facing..</p>
-                </div>
-                
-                <div class="row-flex">
-                    <table>
-                        <tr>
-                            <th>
-                                <label>Who?</label>
-                            </th>
-                            <td>
-                                <label for="opponent1"><?php echo $Opp[0];?></label>
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <th>
-                                <label>When?</label>
-                            </th>
-                            <td>
-                                <label for="opponent1"><?php echo $Date[0]. " @ ". $Time[0]; ?></label>
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <th>
-                                <label>Where?</label>
-                            </th>
-                            <td>
-                                <label for="opponent1"><?php echo $Field[0]; ?></label>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <table>
-                        <tr>
-                            <th>
-                                <label>Who?</label>
-                            </th>
-                            <td>
-                                <label for="opponent1"><?php echo $Opp[1];?></label>
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <th>
-                                <label>When?</label>
-                            </th>
-                            <td>
-                                <label for="opponent1"><?php echo $Date[1]. " @ ". $Time[1]; ?></label>
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <th>
-                                <label>Where?</label>
-                            </th>
-                            <td>
-                                <label for="opponent1"><?php echo $Field[1]; ?></label>
-                            </td>
-                        </tr>
-                    </table>
-
-                </div>
-                
-                <div class="row-flex">
-                    
-                    <table>
-                        <tr>
-                            <th>
-                                <label>Who?</label>
-                            </th>
-                            <td>
-                                <label for="opponent1"><?php echo $Opp[2];?></label>
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <th>
-                                <label>When?</label>
-                            </th>
-                            <td>
-                                <label for="opponent1"><?php echo $Date[2]. " @ ". $Time[2]; ?></label>
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <th>
-                                <label>Where?</label>
-                            </th>
-                            <td>
-                                <label for="opponent1"><?php echo $Field[2]; ?></label>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <table>
-                        <tr>
-                            <th>
-                                <label>Who?</label>
-                            </th>
-                            <td>
-                                <label for="opponent1"><?php echo $Opp[3];?></label>
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <th>
-                                <label>When?</label>
-                            </th>
-                            <td>
-                                <label for="opponent1"><?php echo $Date[3]. " @ ". $Time[3]; ?></label>
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <th>
-                                <label>Where?</label>
-                            </th>
-                            <td>
-                                <label for="opponent1"><?php echo $Field[3]; ?></label>
-                            </td>
-                        </tr>
-                    </table>
-
-                </div>
-                    
-                <div class="row-flex">
-                <table>
-                        <tr>
-                            <th>
-                                <label>Who?</label>
-                            </th>
-                            <td>
-                                <label for="opponent1"><?php echo $Opp[4];?></label>
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <th>
-                                <label>When?</label>
-                            </th>
-                            <td>
-                                <label for="opponent1"><?php echo $Date[4]. " @ ". $Time[4]; ?></label>
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <th>
-                                <label>Where?</label>
-                            </th>
-                            <td>
-                                <label for="opponent1"><?php echo $Field[4]; ?></label>
-                            </td>
-                        </tr>
-                    </table>
-
-                </div>
-                
-            </form>
-            <?php endif;?>
-            
+                </h4>
+            </div>
+            <a href="<?php echo URLROOT; ?>/adminpages/index">&lt&ltBack</a>
         </div>
-    </div>
+        
+        <section class="row justify-content-center">
+            <div class="container">
+                <div class="form py-5">
+                    <form class="" action="<?php echo URLROOT;?>/adminpages/games" method='POST'>      
+                        <?php
+                            foreach($data['teams'] as $key => $value): 
+                                $team = $value->team_name;
+                            ?>
+                                <div class="text-center m-2 py-2">
+                                    <label for="team" class="w-">
+                                        <input id="team" name="team" type="submit" class="display-4" style="cursor: hover; color: black; border:none" value='<?php echo $team?>'/>
+                                    </label>    
+                                </div>
+                            <?php endforeach;?>    
+                    </form>
+                    
+                    <!-- PHP CODE SORTING $DATA VARIABLE AND STORING THEIR VALUES INTO NEW ARRAYS -->
+                    <!-- TIME GAME DATE FIELD OPP  = NEW ARRAYS TO STROE VALUES TO BE DISPLAYED -->
+                    <?php 
+                    //!Game time
+                    $Time = array(); 
+                    foreach($data['game_time'] as $key=>$value):
+                        array_push($Time, $value);
+                        //$Time = $value;?>
+                                    <!-- //!test value -->
+                            <!-- <p><?php //var_dump($Time); ?></p> -->
+                    <?php endforeach;
+                    
+                    
+                    //!Game date
+                    $Date = array(); 
+                    foreach($data['game_date'] as $key=>$value): 
+                        array_push($Date, $value);
+                        //$Date = $value; ?>
+                                    <!-- //!test value -->
+                                    <!-- <p><?php // var_dump($Date); ?></p> -->
+                    <?php endforeach;
+                    
+                    
+                    $Field = array();
+                    foreach($data['field'] as $key=>$value):  
+                            array_push($Field, $value);
+                            //$Opp = $value;?>
+                                        <!-- //!test value -->
+                            <!-- <p><?php //var_dump($Opp); ?></p> -->
+                    <?php 
+                    endforeach; 
+                    
+                    
+                    //! Team name
+                    $Opp = array();
+                    foreach($data['opp'] as $key=>$value):  
+                            array_push($Opp, $value);
+                            //$Opp = $value;?>
+                                        <!-- //!test value -->
+                            <!-- <p><?php //var_dump($Opp); ?></p> -->
+                    <?php 
+                        endforeach;  
+                        // $TeamAsKey = array_combine($Opp, $Date);
+                        $container = array_merge($Opp,$Date, $Time);
+                        //!TEST VALUES
+                        // print_r($container);
+                        // var_dump($container);
+                    ?>
+                    <!-- END PHP CODE SORTING DATA VARIABLE -->
+                    <?php if($data['game_data']): 
+                            // foreach($Opp as $var){
+                            //     echo $var;
+                            //     echo "<br>";
+                            // }
+                            // foreach($Date as $date){       
+                            //     echo $date; 
+                            //     echo "<br>";
+                            // }
+                            // foreach($Field as $field){       
+                            //     echo $field; 
+                            //     echo "<br>";
+                            // }
+                            // foreach($Time as $time){       
+                            //     echo $time; 
+                            //     echo "<br>";
+                            // }
+                    ?>
+                    
+                    <div class="container">
+                        <div class="row mt-5">
+                            <div class="col-md-12 text-center">
+                                <p class="pt-5">The..</p>
+                                <h1 class="display-1">
+                                    <?php if(isset($data['team'])){
+                                        echo $data['team'];
+                                    };?>
+                                    </h1>
+                                <span><?php echo $data['team_err']; ?></span>
+                                <p class="py-4">will be facing..</p>
+                            </div>
+                        </div>
+                        <form class="form" action="<?php echo URLROOT;?>/adminpages/games" method="POST">
+                        
+                            <div class="row-flex">
+                                <table class="table-responsive table-bordered games-table">
+                                    <tbody class="d-flex row-cols-sm-4">
+                                            <tr class="col">                
+                                                    <!-- WHO -->
+                                                    <th class="text-center">
+                                                        <label>Who?</label>
+                                                    </th>
+                                                    <?php foreach($Opp as $opp):?>
+                                                    <td class="text-center pl-0" >
+                                                        <label  for="opponent1"><?php echo $opp;?></label>
+                                                    </td>
+                                                    <?php endforeach; ?>
+                                            </tr>
 
-</section>
-<?php 
+                                            <tr class="col">
+                                                <!-- WHEN -->
+                                                
+                                                    <th class="text-center">
+                                                        <label>Date?</label>
+                                                    </th>
+                                                    <?php foreach($Date as $date): ?>
+                                                    <td class="pl-0 text-center">
+                                                        <label for="opponent1"><?php echo $date; ?></label>
+                                                    </td>
+                                                    <?php endforeach; ?>
+                                                    
+                                                
+                                            </tr>
+                                        
+                                        
+                                            <!-- WHEN -->
+                                            <tr class="col">
+                                                <th class="text-center">
+                                                    <label>Time?</label>
+                                                </th>
+                                                <?php foreach($Time as $time): ?>
+                                                <td class="pl-0 text-center">
+                                                    <label for="opponent1"><?php echo $time; ?></label>
+                                                </td>
+                                                <?php endforeach; ?>
+                                                
+                                            </tr>
+                                        
+                                        
+                                            <!-- WHERE -->
+                                            <tr class="col">
+                                                <th class="text-center">
+                                                    <label class="">Where?</label>
+                                                </th>
+                                                <?php foreach($Field as $field): ?>
+                                                <td class="pl-0 text-center">
+                                                    <label for="opponent1"><?php echo $field; ?></label>
+                                                </td>
+                                                <?php endforeach; ?>
+                                            </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                    <?php endif;?>
+                    
+                </div>
+            </div>
+
+        </section>
     
-
-?>
+    </div>
+</section>
 
 
 <!-- foreach had to be pasted in to work -->
