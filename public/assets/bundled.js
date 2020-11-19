@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_FormReset__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/FormReset */ \"./public/assets/modules/FormReset.js\");\n\n\nnew _modules_FormReset__WEBPACK_IMPORTED_MODULE_0__[\"default\"](); \n\n\n\n//# sourceURL=webpack:///./public/assets/App.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_FormReset__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/FormReset */ \"./public/assets/modules/FormReset.js\");\n\n\nnew _modules_FormReset__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\n\n\n\n//# sourceURL=webpack:///./public/assets/App.js?");
 
 /***/ }),
 
@@ -106,7 +106,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nclass FormReset{\n    constructor(){\n        console.log(\"form reset\");\n        this.form = document.querySelector('#form');\n        this.button = document.querySelector('#clear');\n        this.events();\n    }\n    events(){\n        document.getElementById('clear').addEventListener('click', ()=>this.clear());\n        \n    }\n    clear(){\n        this.form.reset();\n    }\n\n\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (FormReset);\n\n//# sourceURL=webpack:///./public/assets/modules/FormReset.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nclass FormReset{\n    constructor(){\n        console.log(\"form reset\");\n        this.form = document.querySelector('#form');\n        this.button = document.getElementById('clear');\n        console.log(this.button);\n        this.events();\n        \n    }\n    events(){\n        \n        this.button.addEventListener('click', ()=>this.clear());\n        \n    }\n    clear(){\n        this.form.reset();\n    }\n\n\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (FormReset);\n\n//# sourceURL=webpack:///./public/assets/modules/FormReset.js?");
 
 /***/ })
 

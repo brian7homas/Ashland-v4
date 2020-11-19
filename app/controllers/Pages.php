@@ -4,6 +4,7 @@ class Pages extends Controller{
     public function __construct(){
         // How we load models 
         // $this->postModel = $this->model('Post');
+        $this->adminpageModel = $this->model('AdminPage');
         
     }
     //defualt method
@@ -63,9 +64,73 @@ class Pages extends Controller{
             'description' => 'Find specific information about each game here.',
             
             'dropdown' => false,
-            'bg-img' => '/pics/maps-cover.jpg'
+            'bg-img' => '/pics/maps-cover.jpg',
+            
+            'team' => trim($_POST['team']),
+            'team_err' =>''
             
         ];
+        
+        
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            
+            
+            //check for team variable 
+            if(empty($data['team'])){
+                $data['team_err'] = 'Please select a team';
+            }
+            
+            
+            if($data['team'] != NULL && empty($data['team_err'])){
+                // echo $data['team'];
+                $teamid = $this->adminpageModel->getTeamID($data['team']);
+                if($teamid){
+                    $gameid = $this->adminpageModel->getGameID($teamid->teamid);
+                    if(!empty($teamid) && !empty($gameid)){
+                        //! use these arrays to bring game data to front end
+                        $teamNames = array();
+                        $gameDay = array();
+                        $gameTime = array();
+                        $field = array();
+                        //! provides gameid's to get game_data
+                        foreach($gameid as $key=>$value){
+                            //returns every gameid matching the currently selected team 
+                            $gamesid = $value->gameid;   
+                            $data['game_data']= $this->adminpageModel->getSchedule($gamesid, $data['team']);
+                            sort($data['game_data']);
+                            foreach($data['game_data'] as $key => $value){
+                                $teamNames[] = $value->team_name;
+                                $gameDay[] = $value->gm_date;
+                                $gameTime[] = $value->gm_time;
+                                $field[] = $value->fld_name;
+                                
+                                // $data['game_data'] = $value->team_name;
+                                $data['game_date'] = $value->gm_date;
+                            }
+                            // var_dump($data['game_data']);
+                            //? PASS THE VALUES IN TEAMNAMES TO GAME DATA ARRAY
+                            $data['game_date'] = $gameDay;
+                            //? PASS THE VALUES IN TEAMNAMES TO GAME DATA ARRAY
+                            $data['opp'] = $teamNames;
+                            //? PASS THE VALUES IN TEAMNAMES TO GAME DATA ARRAY
+                            $data['field'] = $field;
+                            
+                            
+                            // var_dump($field);
+                            // var_dump($gameTime);
+                            $data['game_time'] = $gameTime; 
+                            $data['field'] = $field; 
+                        }
+                    }
+                }
+                $this->view('pages/schedule', $data);
+            }
+            // DATA['TEAM'] IS NULL
+            $this->view('pages/schedule', $data);
+        }
+        //DEFAULT PAGE LOAD 
+        // POST FAILD/ NOT INITIATED
         $this->view('pages/schedule', $data);
     }
 

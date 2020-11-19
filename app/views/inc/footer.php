@@ -62,6 +62,7 @@
   
     <script src="<?php //echo URLROOT;  ?>/js/gsap.min.js"></script>
     <script src="<?php //echo URLROOT;  ?>/js/ScrollTrigger.min.js"></script>
+    <!-- <script src="bundled.js"></script> -->
     <script  src="<?php //echo URLROOT; ?>/assets/bundled.js"></script>
     
   <!-- Vendor JS Files -->

@@ -32,7 +32,7 @@ require APPROOT . '/views/inc/header.php';
       </div>
 
       <div class="col-lg-5 col-md-8">
-        <div class="form">
+        <div class="">
           <form action="<?php echo URLROOT; ?>/adminusers/login" method="post" role="form">
           
             <div class="form-group">

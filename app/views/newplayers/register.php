@@ -3,8 +3,8 @@ require APPROOT . '/views/inc/header.php';
 
 ?>
 
-<div id="main">
-    <div class="content">
+<div id="container">
+    <div class="container-md">
         <h2 class="headline-text">Register a New Player</h2>
         <p class="subheadline subheadline__large">Please fill out to register</p>
         <form class="user-form" action="<?php echo URLROOT; ?>/newplayers/register" method="POST">
@@ -113,7 +113,7 @@ require APPROOT . '/views/inc/header.php';
             </div>
             
             <div class="form-group form-group__button">
-                <input type="button" value="Cancel" >
+                <input id="clear" type="button" value="Cancel" >
                 <input type="submit" value="Register">
             </div>
         </form>
