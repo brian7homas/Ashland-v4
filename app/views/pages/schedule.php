@@ -12,8 +12,8 @@ require APPROOT . '/views/inc/header.php';
             </div>
 
             <div class="row form-group text-center py-3 justify-content-center">
-                <select name="team" id="" class="custom-select-sm">
-                    <option value="" selected disabled class="custom-select">Choose here</option>
+                <select name="team" id="schedule" class="custom-select-sm">
+                    <option value="" selected disabled class="custom-select primary">Choose here</option>
                     <option value="aardvarks">
                         Aardvarks
                     </option>
@@ -122,7 +122,7 @@ require APPROOT . '/views/inc/header.php';
                         for($row=0; $row<= 3;): 
                         ?>
 
-                <table class="table">
+                <table id="schedule-table" class="table">
                     <tr>
                         <th>
                             <label>Who?</label>

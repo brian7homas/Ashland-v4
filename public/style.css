@@ -1,10 +1,10 @@
-/* line 10, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
+/* line 12, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
 html, body {
   overflow-y: auto;
   overflow-x: hidden;
 }
 
-/* line 15, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
+/* line 17, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
 * {
   font-family: Futura;
   padding: 0;
@@ -13,12 +13,12 @@ html, body {
   box-sizing: border-box;
 }
 
-/* line 23, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
+/* line 25, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
 img {
   max-width: 100%;
 }
 
-/* line 26, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
+/* line 28, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
 li {
   list-style-type: none;
 }
@@ -126,6 +126,17 @@ li {
 /* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_wrapper.scss */
 #wrapper {
   position: relative;
+  background-color: #f7f7f7;
+}
+
+/* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_team.scss */
+#team {
+  padding: 0;
+}
+
+/* line 2, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_schedule-table.scss */
+#schedule-table label {
+  color: #000000;
 }
 
 /*# sourceMappingURL=style.css.map */

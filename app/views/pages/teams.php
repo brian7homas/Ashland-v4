@@ -10,29 +10,28 @@ require APPROOT . '/views/inc/header.php';
       Teams
     </h2>
 
-    <div class="row">
-      <div class="feature-col col-lg-4 col-xs-12">
-        <div class="card card-block text-center" style="background-image: url('<?php URLROOT; ?>/pics/dsc.jpg');background-repeat:no-repeat;background-size: cover;">
-          <div>
+    <div class="row h-100">
+      <div class="feature-col col-lg-4 col-xs-12 h-100">
+        <div class=" card card-block text-center" ="background-image: url('<?php URLROOT; ?>/pics/dsc.jpg');background-repeat:no-repeat;background-size: contain;">
+        <div>
             <div class="feature-icon">
-              <span class="fa fa-rocket"></span>
+              <span class="fa fa-envelope"></span>
             </div>
-          </div>
-
-          <div>
-            <h3>
-              Aardvarks
-            </h3>
-
-            <p>
-              Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
-            </p>
-          </div>
+        </div>
+        <div>
+          <h3>
+            Aardvarks
+          </h3 >
+            <img class="my-3" src="<?php echo URLROOT; ?>/pics/dsc.jpg" alt="">
+          <p>
+            Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
+          </p>
+        </div>
         </div>
       </div>
 
       <div class="feature-col col-lg-4 col-xs-12">
-      <div class="card card-block text-center" style="background-image: url('<?php URLROOT; ?>/pics/ateam.jpg');background-repeat:no-repeat;background-size: cover;">
+      <div class="card card-block text-center" ="background-image: url('<?php URLROOT; ?>/pics/ateam.jpg');background-repeat:no-repeat;background-size: cover;">
           <div>
             <div class="feature-icon">
               <span class="fa fa-envelope"></span>
@@ -43,7 +42,7 @@ require APPROOT . '/views/inc/header.php';
             <h3>
                 Antelopes
             </h3>
-
+            <img class="my-3" src="<?php echo URLROOT; ?>/pics/ateam.jpg" alt="">
             <p>
               Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
             </p>
@@ -52,7 +51,7 @@ require APPROOT . '/views/inc/header.php';
       </div>
 
       <div class="feature-col col-lg-4 col-xs-12">
-      <div class="card card-block text-center" style="background-image: url('<?php URLROOT; ?>/pics/bluedevils.jpg');background-repeat:no-repeat;background-size: cover;">
+      <div class="card card-block text-center" ="background-image: url('<?php URLROOT; ?>/pics/bluedevils.jpg');background-repeat:no-repeat;background-size: cover;">
           <div>
             <div class="feature-icon">
               <span class="fa fa-bell"></span>
@@ -63,7 +62,7 @@ require APPROOT . '/views/inc/header.php';
             <h3>
                 Broncos
             </h3>
-
+            <img class="my-3" src="<?php echo URLROOT; ?>/pics/bluedevils.jpg" alt="">
             <p>
               Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
             </p>
@@ -72,66 +71,7 @@ require APPROOT . '/views/inc/header.php';
       </div>
     </div>
 
-    <div class="row">
-      <div class="feature-col col-lg-4 col-xs-12">
-        <div class="card card-block text-center">
-          <div>
-            <div class="feature-icon">
-              <span class="fa fa-database"></span>
-            </div>
-          </div>
-
-          <div>
-            <h3>
-              Culdesacs
-            </h3>
-
-            <p>
-              Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="feature-col col-lg-4 col-xs-12">
-        <div class="card card-block text-center">
-          <div>
-            <div class="feature-icon">
-              <span class="fa fa-cutlery"></span>
-            </div>
-          </div>
-
-          <div>
-            <h3>
-                Boxers
-            </h3>
-
-            <p>
-              Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="feature-col col-lg-4 col-xs-12">
-        <div class="card card-block text-center">
-          <div>
-            <div class="feature-icon">
-              <span class="fa fa-dashboard"></span>
-            </div>
-          </div>
-
-          <div>
-            <h3>
-              Buffalos
-            </h3>
-            <p>
-              Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    
   </div>
 
 </section><!-- End Features Section -->
