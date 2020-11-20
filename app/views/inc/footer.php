@@ -1,3 +1,4 @@
+</div>
 </main>
 <!-- ======= Footer ======= -->
 <footer class="site-footer">
