@@ -24,7 +24,7 @@
             <ul class="list-inline">
                 
               <li class="list-inline-item">
-                <a href="index.html">Home</a>
+                <a href="<?php echo URLROOT; ?>">Home</a>
               </li>
 
               <li class="list-inline-item">

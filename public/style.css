@@ -9,7 +9,7 @@ html, body {
   font-family: Futura;
   padding: 0;
   margin: 0;
-  color: #380236;
+  color: #FCFFE8;
   box-sizing: border-box;
 }
 
@@ -105,6 +105,22 @@ li {
     font-size: 1.2rem;
     min-width: 100%;
   }
+}
+
+/* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_portfolio-grid.scss */
+.portfolio-grid {
+  background-color: #77C3C6;
+}
+
+/* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_card-title.scss */
+.card-title {
+  font-size: 2em;
+}
+
+/* line 4, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_card-title.scss */
+.card-title_h3-2 {
+  font-size: 2.5rem;
+  color: #FCFFE8;
 }
 
 /*# sourceMappingURL=style.css.map */

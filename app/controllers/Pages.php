@@ -20,7 +20,25 @@ class Pages extends Controller{
                 'signup' => 'Register',
                 // 'admin' => 'Admin'
                 'bg-img' => '/pics/cover.jpg',
-                'dropdown' => true
+                'dropdown' => true,
+                
+                //team data
+                'head_coach/1/name' => 'Mary Bruce',
+                'head_coach/1/title' => 'Head Coach',
+                'head_coach/1/description' => 'Mary spent time playing professional soccar as a player on the Portland Timbers.Head Coach',
+                
+                
+                'assistant_coach/1/name' => 'Kelly Jorden',
+                'assistant_coach/1/title' => 'Assistant Coach', 
+                'assistant_coach/1/description' => "Kelly is a 3rd year college student who was just nominated as MVP on her school's soccar team.",
+                
+                'head_coach/2/name' => 'John Smith',
+                'head_coach/2/title' => 'Head Coach',
+                'head_coach/2/description' => 'John is a former 8th grade science teacher with a passion for passing on his leadership skills',
+                
+                'assistant_coach/2/name' => 'Alex Summers',
+                'assistant_coach/2/title' => 'Assistant Coach',
+                'assistant_coach/2/description' => 'Alex brings charisma and personality. Oh and also some serious soccar skills',
                 ];        
         $this->view('pages/index', $data);
     }

@@ -18,153 +18,96 @@ require APPROOT . '/views/inc/header.php';
     </div>
 
     <div class="portfolio-grid">
-      <div class="row">
-        <div class="col-lg-3 col-sm-6 col-xs-12">
+      <div class="row justify-content-center">
+        <div class="col-lg-2 col-sm-6 col-xs-12">
           <div class="card card-block">
             <a href="<?php echo URLROOT; ?>/pages/teams"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/teams.jpg">
               <div class="portfolio-over">
                 <div>
-                  <h3 class="card-title">
+                  <h3 class="card-title_h3-2">
                     Teams
                   </h3>
-
-                  <p class="card-text">
-                    See all our teams
-                  </p>
                 </div>
               </div>
             </a>
           </div>
         </div>
 
-        <div class="col-lg-3 col-sm-6 col-xs-12">
+        <div class="col-lg-2 col-sm-6 col-xs-12">
           <div class="card card-block">
             <a href="<?php URLROOT ?>/pages/action"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/action.jpg">
               <div class="portfolio-over">
                 <div>
-                  <h3 class="card-title">
+                  <h3 class="card-title_h3-2">
                     Action
                   </h3>
 
-                  <p class="card-text">
-                    See some action and teamwork on gameday
-                  </p>
+                  
+                  
+                  
                 </div>
               </div>
             </a>
           </div>
         </div>
 
-        <div class="col-lg-3 col-sm-6 col-xs-12">
+        <div class="col-lg-2 col-sm-6 col-xs-12">
           <div class="card card-block">
           <a href="<?php URLROOT ?>/pages/maps"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/maps.jpg">
               <div class="portfolio-over">
                 <div>
-                  <h3 class="card-title">
+                  <h3 class="card-title_h3-2">
                     Maps
                   </h3>
 
-                  <p class="card-text">
-                    Find our facilities, fields and more
-                  </p>
+                  
+                  
+                  
                 </div>
               </div>
             </a>
           </div>
         </div>
 
-        <div class="col-lg-3 col-sm-6 col-xs-12">
+        <div class="col-lg-2 col-sm-6 col-xs-12">
           <div class="card card-block">
           <a href="<?php URLROOT ?>/pages/newplayers/register"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/signup.jpg">
               <div class="portfolio-over">
                 <div>
-                  <h3 class="card-title">
+                  <h3 class="card-title_h3-2">
                     Sign up
                   </h3>
 
-                  <p class="card-text">
-                    There is always room for more
-                  </p>
+                  
+                  
+                  
                 </div>
               </div>
             </a>
           </div>
         </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-3 col-sm-6 col-xs-12">
+        
+        <div class="col-lg-2 col-sm-6 col-xs-12">
           <div class="card card-block">
           <a href="<?php URLROOT ?>/pages/schedule"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/gm-schedule-cover.jpg">
               <div class="portfolio-over">
                 <div>
-                  <h3 class="card-title">
+                  <h3 class="card-title_h3-2">
                     Schedule
                   </h3>
 
-                  <p class="card-text">
-                    Find when and where your next game is
-                  </p>
+                  
+                  
+                  
                 </div>
               </div>
             </a>
           </div>
         </div>
-
-        <div class="col-lg-3 col-sm-6 col-xs-12">
-          <div class="card card-block">
-          <a href="<?php URLROOT ?>/pages/scheudle"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/gm-schedule-cover.jpg">
-              <div class="portfolio-over">
-                <div>
-                  <h3 class="card-title">
-                    The Dude Rockin'
-                  </h3>
-
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-sm-6 col-xs-12">
-          <div class="card card-block">
-          <a href="<?php URLROOT ?>/pages/scheudle"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/gm-schedule-cover.jpg">
-              <div class="portfolio-over">
-                <div>
-                  <h3 class="card-title">
-                    The Dude Rockin'
-                  </h3>
-
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-sm-6 col-xs-12">
-          <div class="card card-block">
-          <a href="<?php URLROOT ?>/pages/scheudle"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/gm-schedule-cover.jpg">
-              <div class="portfolio-over">
-                <div>
-                  <h3 class="card-title">
-                    The Dude Rockin'
-                  </h3>
-
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
+        
+        
       </div>
+
     </div>
   </section><!-- End Portfolio Section -->
   
@@ -177,9 +120,9 @@ require APPROOT . '/views/inc/header.php';
         <div class="row">
           <div class="col-sm-3 col-xs-6">
             <div class="card card-block">
-              <a href="#"><img alt="" class="team-img" src="assets/img/team-1.jpg">
+              <a href="#"><img alt="" class="team-img" src="<?php echo URLROOT;  ?>/pics/team-1.jpg">
                 <div class="card-title-wrap">
-                  <span class="card-title">Sergio Fez</span> <span class="card-text">Art Director</span>
+                  <span class="card-title"><?php echo $data['head_coach/1/name']; ?></span> <span class="card-text"><?php echo $data['head_coach/1/title']; ?></span>
                 </div>
 
                 <div class="team-over">
@@ -192,7 +135,7 @@ require APPROOT . '/views/inc/header.php';
                   </nav>
 
                   <p>
-                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
+                    <?php echo $data['head_coach/1/description']; ?>  
                   </p>
                 </div>
               </a>
@@ -201,9 +144,9 @@ require APPROOT . '/views/inc/header.php';
 
           <div class="col-sm-3 col-xs-6">
             <div class="card card-block">
-              <a href="#"><img alt="" class="team-img" src="assets/img/team-2.jpg">
+              <a href="#"><img alt="" class="team-img" src="<?php echo URLROOT;  ?>/pics/team-2.jpg">
                 <div class="card-title-wrap">
-                  <span class="card-title">Sergio Fez</span> <span class="card-text">Art Director</span>
+                  <span class="card-title"><?php echo $data['assistant_coach/1/name']; ?></span> <span class="card-text"><?php echo $data['assistant_coach/1/title']; ?></span>
                 </div>
 
                 <div class="team-over">
@@ -216,7 +159,7 @@ require APPROOT . '/views/inc/header.php';
                   </nav>
 
                   <p>
-                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
+                    <?php echo $data['assistant_coach/1/description']; ?>
                   </p>
                 </div>
               </a>
@@ -225,9 +168,9 @@ require APPROOT . '/views/inc/header.php';
 
           <div class="col-sm-3 col-xs-6">
             <div class="card card-block">
-              <a href="#"><img alt="" class="team-img" src="assets/img/team-3.jpg">
+              <a href="#"><img alt="" class="team-img" src="<?php echo URLROOT;  ?>/pics/team-3.jpg">
                 <div class="card-title-wrap">
-                  <span class="card-title">Sergio Fez</span> <span class="card-text">Art Director</span>
+                  <span class="card-title"><?php echo $data['head_coach/2/name']; ?></span> <span class="card-text"><?php echo $data['head_coach/2/title']; ?></span>
                 </div>
 
                 <div class="team-over">
@@ -240,7 +183,7 @@ require APPROOT . '/views/inc/header.php';
                   </nav>
 
                   <p>
-                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
+                    <?php echo $data['head_coach/2/description']; ?>
                   </p>
                 </div>
               </a>
@@ -249,9 +192,9 @@ require APPROOT . '/views/inc/header.php';
 
           <div class="col-sm-3 col-xs-6">
             <div class="card card-block">
-              <a href="#"><img alt="" class="team-img" src="assets/img/team-4.jpg">
+              <a href="#"><img alt="" class="team-img" src="<?php echo URLROOT;  ?>/pics/team-4.jpg">
                 <div class="card-title-wrap">
-                  <span class="card-title">Sergio Fez</span> <span class="card-text">Art Director</span>
+                  <span class="card-title"><?php echo $data['assistant_coach/2/name']; ?></span> <span class="card-text"><?php echo $data['assistant_coach/1/title']; ?></span>
                 </div>
 
                 <div class="team-over">
@@ -264,7 +207,7 @@ require APPROOT . '/views/inc/header.php';
                   </nav>
 
                   <p>
-                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
+                    <?php echo $data['assistant_coach/2/description'] ?>
                   </p>
                 </div>
               </a>
