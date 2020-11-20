@@ -40,10 +40,14 @@ class AdminPages extends Controller{
                             // Error values
                             'team_err' => '',
                             'error' => '',
+                            
+                            
                 ];
+                
                 // POST REQUEST RECIEVEED
                 if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+                    
                     $data = [
                         // post values
                         'currentTeam' => trim($_POST['currentTeam']),
@@ -57,13 +61,12 @@ class AdminPages extends Controller{
                         'team_err' => '',
                         'playerid' => '',
                         'team' => ''
-                        
                     ];
                     
-                    
                     //? MAKE SURE THE CURRENT TEAM IS NOT THE NEW TEAM 
-                    if($data['currentTeam'] === $data['newTeam']) {
-                        $data['team_err'] = 'Player cannot be moved to the same team';
+                    
+                    if(!empty($data['currentTeam']) && !empty($data['newTeam']) && $data['currentTeam'] === $data['newTeam']) {
+                        $data['team_err'] = 'Current team selection is the same value as new team selction';
                     }
                     
                     //? IF PLAYERS ARE NOT SELECTED 
@@ -118,13 +121,14 @@ class AdminPages extends Controller{
                             // TODO: THIS BLOCK NEEDS TO RUN ONLY WHEN THE NEWPLAYERS EVENT IS FIRED
                             // IF POST PLAYER OR DATA NEWTEAM ARE NOT SET
                             // echo "post player is empty or newteam data is empty";
-                            echo "line 121";
+                            // echo "line 121";
                             $this->view('adminPages/team', $data);
                         }
                         // ? DIRECTED BACK TO TEAM PAGE
-                        echo 'line 124';
+                        // echo 'line 124';
                         $this->view('adminPages/team', $data);
-                    }else{
+                    }
+                    else{
                         // ? IF A REGULAR TEAM IS SELECTED
                         // $this->adminpageModel->getTeam($data['currentTeam']);
                         //!  $data['team'] !!DO NOT REMOVE
@@ -166,7 +170,8 @@ class AdminPages extends Controller{
                             // var_dump($data['currentTeam']);
                             $data['team'] =  $this->adminpageModel->getTeam($data['currentTeam']);
                             $this->view('adminPages/team', $data);
-                        }else{
+                        }
+                        else{
                             //!error block IF NEW PLAYER IS SELCTED AND NO PLAYERS OR NEW TEAM IS SELECTED 
                             // TODO: THIS IS THE DEFAULT STATE OF THE PAGE WHEN NEWPLAYERS ARE VIEWD 
                             // TODO: THIS BLOCK NEEDS TO RUN ONLY WHEN THE NEWPLAYERS EVENT IS FIRED
@@ -189,7 +194,7 @@ class AdminPages extends Controller{
                     'newPlayers' => 'New Players',
                 ];
                 $data['team'] =  $this->adminpageModel->getTeam($_POST['currentTeam']);
-                echo "bottom of team function line 188";
+                // echo "bottom of team function line 188";
                 $this->view('adminPages/team', $data);
             }
             public function player(){

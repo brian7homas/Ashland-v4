@@ -4,7 +4,7 @@ require APPROOT . '/views/inc/header.php';
 
 ?>
 <!-- ======= Contact Section ======= -->
-<section id="contact">
+<section id="contact" class="">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
@@ -14,7 +14,7 @@ require APPROOT . '/views/inc/header.php';
       <a href="<?php echo URLROOT; ?>/adminpages/index">&lt&ltBack</a>
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center rounded-pill">
       <!-- <div class="col-lg-3 col-md-4">
         <div class="info">
           <div>
@@ -35,17 +35,17 @@ require APPROOT . '/views/inc/header.php';
         </div>
       </div> -->
 
-      <div class="col-lg-5 col-md-8">
-        <div class="form">
+      <div class="col-lg-12 col-md-8 col-sm-5 ">
+        <div class="form text-center rounded">
         
-          <form action="<?php echo URLROOT; ?>/adminpages/team" method="post" role="form">
+          <form action="<?php echo URLROOT; ?>/adminpages/team" method="POST" role="form" class="py-5">
             <span style="color:red"><?php   if(isset($data['team_err'])){echo $data['team_err'];}; ?></span>
-            <label class="subheadline__sm align-center margin-1" for="currentTeam" >
+            <label class="text-center h3 py-3" for="currentTeam" >
               Select a team
             </label>
             
-            <div class="form-group">
-                <select name="currentTeam">
+            <div class="form-group p-1">
+                <select name="currentTeam" class="custom-select-lg w-50">
                   <!-- <option value="" selected disabled hidden>Choose here</option> -->
                   <option <?php if($data['currentTeam'] == 'aardvarks'){echo "selected";} ?> value="aardvarks">
                       Aardvarks
@@ -70,15 +70,15 @@ require APPROOT . '/views/inc/header.php';
                   </option>
                 </select>
                 
-                <input class="" type="submit" value="See the team"/>   
-                
+                <!-- <input class="btn w-25" type="submit" value="See the team"/>    -->
+                <div class="text-center"><button class="btn my-2" type="submit">View team</button></div>
                 <span style="color: blue"><?php   if(isset($data['pla_info'])){echo $data['pla_info'];}; ?></span>
               <div class="validate"></div>
             </div>
             
-            <h1 class="color-pd"><?php echo $data['currentTeam'];?></h1> 
+            <h1 class="color-pd text-capitalize display-4"><?php echo $data['currentTeam'];?></h1> 
               
-            <div class="form-group text-center">
+            <div class="form-group">
               <?php
                 // CHECK FOR TEAM DATA 
                 // var_dump($data['team']);
@@ -94,20 +94,23 @@ require APPROOT . '/views/inc/header.php';
                             $playerid = $object->ID;
                         }
                         ?>
-                        <div class="row">
-                            <input type="checkbox" id="player" name="player[]" value="<?php echo $playerid; ?>">
-                            <label  class="color-pd" for="pla_fname" ><?php echo $playerFirstName; ?></label><br>
-                            <label  class="color-pd" for="pla_lname" ><?php echo $playerLastName; ?></label><br>
-                            <label  class="color-pd" for="pla_phone" ><?php echo $playerPhone; ?></label><br>
-                            <label  class="color-pd" for="pla_phone" ><?php echo $playerid; ?></label><br>
+                        <div class="row justify-content-start ml-5">
+                            <input class="" type="checkbox" id="player" name="player[]" value="<?php echo $playerid; ?>">
+                            <label  class="my-2 px-3" for="pla_fname" ><?php echo $playerFirstName; ?></label><br>
+                            <label  class="my-2 px-3" for="pla_lname" ><?php echo $playerLastName; ?></label><br>
+                            <label  class="my-2 px-3" for="pla_phone" ><?php echo $playerPhone; ?></label><br>
+                            <label  class="my-2 px-3" for="pla_phone" ><?php echo $playerid; ?></label><br>
                         </div>
                         
                     <?php endforeach;
                         }else if($data[player] != ''){
                           echo 'player moved';
                         }
-                        else{
-                            echo '<label> no players on this team</label>'  ;
+                        else if(empty($data['team'])){
+                          echo '<label class="text-danger"> No players on this team</label>';
+                        }
+                        else if($data['team'] == NULL){
+                            echo '<label> Select a team</label>'  ;
                         } ?>
             </div>
             
@@ -116,12 +119,12 @@ require APPROOT . '/views/inc/header.php';
             
             <div class="form-group">
               
-              <ul class="">
+              <ul class="py-3">
                 <li>
-                    <label class="" for="team" >
+                    <label class="mb-4" for="team" >
                         Team to move player to
                     </label>            
-                    <select name="newTeam">
+                    <select class="w-50 custom-select text-center" name="newTeam">
                         <option value="">Select a new team</option>
                         <option  <?php if($data['newTeam'] == 'aardvarks'){echo "selected";} ?> value="aardvarks">Aardvarks</option>
                         <option  <?php if($data['newTeam'] == 'antelopes'){echo "selected";} ?> value="antelopes">Antelopes</option>
@@ -130,17 +133,15 @@ require APPROOT . '/views/inc/header.php';
                         <option  <?php if($data['newTeam'] == 'buffalos'){echo "selected";} ?> value="buffalos">Buffalos</option>
                         <option  <?php if($data['newTeam'] == 'culdesacs'){echo "selected";} ?> value="culdesacs">Culdesacs</option>
                     </select>
-                    <input class="color-pd" type="submit" value="Move player"/>   
+                    
                 </li>
                 <li>
-                    <input name="delete" class="color-pd" type="submit" value="Delete selected" href="#">
+                    <input class="btn btn-sm bg-dark color-pd" type="submit" value="Move player"/>   
+                    <input name="delete" class="btn bg-dark color-pd" type="submit" value="Delete selected" href="#">
                 </li>
               </ul>
             </div>
             <?php endif; ?>
-            
-            
-            <div class="text-center"><button type="submit">Send Message</button></div>
           </form>
         </div>
       </div>

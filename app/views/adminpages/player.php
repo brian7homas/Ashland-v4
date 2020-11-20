@@ -19,16 +19,9 @@ require APPROOT . '/views/inc/header.php';
         </div>
         
         
-                <table role="table">
+                <table role="table ">
                     
-                    <thead role="rowgroup">
-                        <tr role="row" >
-                            <th role='columnheader' class="">Player ID</th>
-                            <th role='columnheader' class=" ">Team</th>
-                            <th role='columnheader' class=" ">First Name</th>
-                            <th role='columnheader' class=" ">Last Name</th>
-                        </tr> <!-- This is the first row -->
-                    </thead>
+                    
                     
                     <?php
                     // var_dump($data['player'][0]);
@@ -49,12 +42,12 @@ require APPROOT . '/views/inc/header.php';
                     ?>
                     
                         <!-- ! MOBILE html strucure -->
-                    <thead role="rowgroup">
-                        <tr role="row" >
+                    <thead role="rowgroup" class="my-5" >
+                        <tr role="row" class="">
                             <th role='columnheader' class="">Player ID</th>
-                            <th role='columnheader' class=" ">Team</th>
-                            <th role='columnheader' class=" ">First Name</th>
-                            <th role='columnheader' class=" ">Last Name</th>
+                            <th role='columnheader' class="">Team</th>
+                            <th role='columnheader' class="">First Name</th>
+                            <th role='columnheader' class="">Last Name</th>
                         </tr> <!-- This is the first row -->
                     </thead>
                     <form action="<?php echo URLROOT; ?>/adminpages/player" class="" method='POST'>
@@ -72,7 +65,7 @@ require APPROOT . '/views/inc/header.php';
                         <td role="cell" class="">
                         <?php echo $lastName; ?>
                         </td>
-                        <td role="cell" class="py-3">
+                        <td role="cell" class="py-3 no-gutters">
                             <button  class="btn" name="delete" type="" value="<?php echo $id; ?>" >Delete</button>
                             <button class="btn" name="edit" type="submit" value="<?php echo $id; ?>" >Edit</button>    
                         </td>

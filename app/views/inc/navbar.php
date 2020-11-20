@@ -37,13 +37,13 @@
                 <li><a class="user-nav-link" href="<?php echo URLROOT;?>/pages/teams">Teams</a></li>
                 <li><a class="user-nav-link" href="<?php echo URLROOT;?>/pages/action">Action</a></li>
                 <li><a class="user-nav-link" href="<?php echo URLROOT;?>/pages/schedule">Schedule</a></li>
-                <li class="menu-has-children"><a href="#">Drop Down 2</a>
+                <!-- <li class="menu-has-children"><a href="#">Drop Down 2</a>
                   <ul>
-                    <li><a class="user-nav-link" href="<?php echo URLROOT;?>/pages/teams">Teams</a></li>
-                    <li><a class="user-nav-link" href="<?php echo URLROOT;?>/pages/action">Action</a></li>
-                    <li><a class="user-nav-link" href="<?php echo URLROOT;?>/pages/schedule">Schedule</a></li>
+                    <li><a class="user-nav-link" href="<?php //echo URLROOT;?>/pages/teams">Teams</a></li>
+                    <li><a class="user-nav-link" href="<?php //echo URLROOT;?>/pages/action">Action</a></li>
+                    <li><a class="user-nav-link" href="<?php //echo URLROOT;?>/pages/schedule">Schedule</a></li>
                   </ul>
-                </li>
+                </li> -->
               </ul>
             </li>
           <?php endif; ?>

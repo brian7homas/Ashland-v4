@@ -57,13 +57,13 @@
   <!-- ======= Hero Section ======= -->
   <!-- <section class="hero" style="background-image: url(<?php //URLROOT; ?>/pics/cover.jpg);" > -->
   <section class="hero" style="background-image: url(<?php URLROOT;  echo  $data['bg-img']; ?>);" >
-    <div class="container text-center">
+  
+    <div class="container text-center">  
       <div class="row">
         <div class="col-md-12">
           <a class="hero-brand" href="index.html" title="Home"><img alt="Bell Logo" src="<?php  echo URLROOT ?>/public/img/smLogo@3x.png"></a>
         </div>
       </div>
-
       <div class="col-md-12">
         <h1>
           Ashland Soccar
