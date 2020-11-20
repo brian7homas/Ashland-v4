@@ -413,14 +413,14 @@ body.mobile-nav-active #mobile-nav-toggle {
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
-  display: table;
+  display:grid;
   position: relative;
-  background-image: url(../img/cover.jpg);
+  
   background-size: cover;
   padding: 150px 0;
   color: #fff;
   width: 100%;
-  height: 100vh;
+  
 }
 
 .hero:after {
