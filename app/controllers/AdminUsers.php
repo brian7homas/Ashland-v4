@@ -2,7 +2,7 @@
 
 class AdminUsers extends Controller{
     public function __construct(){
-        $this->adminModel = $this->model('AdminUser');
+        $this->adminModel = $this->model('Adminuser');
     }
     public function register(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){

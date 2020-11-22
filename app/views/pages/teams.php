@@ -12,7 +12,7 @@ require APPROOT . '/views/inc/header.php';
 
     <div class="row h-100">
       <div class="feature-col col-lg-4 col-xs-12 h-100">
-        <div class=" card card-block text-center" ="background-image: url('<?php URLROOT; ?>/pics/dsc.jpg');background-repeat:no-repeat;background-size: contain;">
+        <div class=" card card-block text-center" ="background-image: url('<?php echo URLROOT; ?>/pics/dsc.jpg');background-repeat:no-repeat;background-size: contain;">
         <div>
             <div class="feature-icon">
               <span class="fa fa-envelope"></span>
@@ -31,7 +31,7 @@ require APPROOT . '/views/inc/header.php';
       </div>
 
       <div class="feature-col col-lg-4 col-xs-12">
-      <div class="card card-block text-center" ="background-image: url('<?php URLROOT; ?>/pics/ateam.jpg');background-repeat:no-repeat;background-size: cover;">
+      <div class="card card-block text-center" ="background-image: url('<?php echo URLROOT; ?>/pics/ateam.jpg');background-repeat:no-repeat;background-size: cover;">
           <div>
             <div class="feature-icon">
               <span class="fa fa-envelope"></span>
@@ -51,7 +51,7 @@ require APPROOT . '/views/inc/header.php';
       </div>
 
       <div class="feature-col col-lg-4 col-xs-12">
-      <div class="card card-block text-center" ="background-image: url('<?php URLROOT; ?>/pics/bluedevils.jpg');background-repeat:no-repeat;background-size: cover;">
+      <div class="card card-block text-center" ="background-image: url('<?php echo URLROOT; ?>/pics/bluedevils.jpg');background-repeat:no-repeat;background-size: cover;">
           <div>
             <div class="feature-icon">
               <span class="fa fa-bell"></span>

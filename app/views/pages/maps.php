@@ -12,7 +12,7 @@ require APPROOT . '/views/inc/header.php';
 
     <div class="row">
       <div class="feature-col col-lg-4 col-xs-12">
-        <div class="card card-block text-center" style="min-height: 180px; background-image: url('<?php URLROOT; ?>/pics/map1.gif');background-repeat:no-repeat;background-size: contain; background-position: center">
+        <div class="card card-block text-center" style="min-height: 180px; background-image: url('<?php echo URLROOT; ?>/pics/map1.gif');background-repeat:no-repeat;background-size: contain; background-position: center">
           
           <div>
             <h3>
@@ -27,7 +27,7 @@ require APPROOT . '/views/inc/header.php';
       </div>
 
       <div class="feature-col col-lg-4 col-xs-12">
-      <div class="card card-block text-center" style="min-height: 180px;background-image: url('<?php URLROOT; ?>/pics/map2.gif');background-repeat:no-repeat;background-size: contain; background-position: center">
+      <div class="card card-block text-center" style="min-height: 180px;background-image: url('<?php echo URLROOT; ?>/pics/map2.gif');background-repeat:no-repeat;background-size: contain; background-position: center">
           <div>
             <h3>
                 Antelopes
@@ -39,7 +39,7 @@ require APPROOT . '/views/inc/header.php';
         </div>
       </div>
       <div class="feature-col col-lg-4 col-xs-12">
-      <div class="card card-block text-center" style="min-height: 180px; background-image: url('<?php URLROOT; ?>/pics/map3.gif');background-repeat:no-repeat;background-size: cover;background-position: center">
+      <div class="card card-block text-center" style="min-height: 180px; background-image: url('<?php echo URLROOT; ?>/pics/map3.gif');background-repeat:no-repeat;background-size: cover;background-position: center">
           <div>
             <h3>
                 Broncos
@@ -55,7 +55,7 @@ require APPROOT . '/views/inc/header.php';
 
     <div class="row">
       <div class="feature-col col-lg-4 col-xs-12">
-      <div class="card card-block text-center" style="min-height: 180px;background-image: url('<?php URLROOT; ?>/pics/map4.gif');background-repeat:no-repeat;background-size: cover;background-position: center">
+      <div class="card card-block text-center" style="min-height: 180px;background-image: url('<?php echo URLROOT; ?>/pics/map4.gif');background-repeat:no-repeat;background-size: cover;background-position: center">
           <div>
             <h3>
               Culdesacs
@@ -69,7 +69,7 @@ require APPROOT . '/views/inc/header.php';
       </div>
 
       <div class="feature-col col-lg-4 col-xs-12">
-      <div class="card card-block text-center" style="min-height: 180px;background-image: url('<?php URLROOT; ?>/pics/map5.gif');background-repeat:no-repeat;background-size: cover;background-position: center">
+      <div class="card card-block text-center" style="min-height: 180px;background-image: url('<?php echo URLROOT; ?>/pics/map5.gif');background-repeat:no-repeat;background-size: cover;background-position: center">
 
           <div>
             <h3>
@@ -84,7 +84,7 @@ require APPROOT . '/views/inc/header.php';
       </div>
 
       <div class="feature-col col-lg-4 col-xs-12">
-      <div class="card card-block text-center" style="min-height: 180px;background-image: url('<?php URLROOT; ?>/pics/map5.gif');background-repeat:no-repeat;background-size: cover;background-position: center">
+      <div class="card card-block text-center" style="min-height: 180px;background-image: url('<?php echo URLROOT; ?>/pics/map5.gif');background-repeat:no-repeat;background-size: cover;background-position: center">
           <div>
             <h3>
               Buffalos

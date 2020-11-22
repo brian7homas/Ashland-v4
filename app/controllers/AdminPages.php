@@ -5,8 +5,8 @@ class AdminPages extends Controller{
                 if(!isset($_SESSION['adminid'])){
                     redirect('adminusers/login');
                 }
-                $this->adminpageModel = $this->model('AdminPage');
-                $this->adminModel = $this->model('AdminUser');
+                $this->adminpageModel = $this->model('Adminpage');
+                $this->adminModel = $this->model('Adminuser');
             }
             public function index(){
                 $data = [
@@ -122,11 +122,11 @@ class AdminPages extends Controller{
                             // IF POST PLAYER OR DATA NEWTEAM ARE NOT SET
                             // echo "post player is empty or newteam data is empty";
                             // echo "line 121";
-                            $this->view('adminPages/team', $data);
+                            $this->view('adminpages/team', $data);
                         }
                         // ? DIRECTED BACK TO TEAM PAGE
                         // echo 'line 124';
-                        $this->view('adminPages/team', $data);
+                        $this->view('adminpages/team', $data);
                     }
                     else{
                         // ? IF A REGULAR TEAM IS SELECTED
@@ -169,7 +169,7 @@ class AdminPages extends Controller{
                             // keeps from needing to reload page to see delettion
                             // var_dump($data['currentTeam']);
                             $data['team'] =  $this->adminpageModel->getTeam($data['currentTeam']);
-                            $this->view('adminPages/team', $data);
+                            $this->view('adminpages/team', $data);
                         }
                         else{
                             //!error block IF NEW PLAYER IS SELCTED AND NO PLAYERS OR NEW TEAM IS SELECTED 
@@ -179,7 +179,7 @@ class AdminPages extends Controller{
                             // echo "post player is empty or newteam data is empty";
                             echo "Select players and a new team";
                             echo "else block line 173";
-                            $this->view('adminPages/team', $data);
+                            $this->view('adminpages/team', $data);
                         }
                     }
                     //reset newTeam var
@@ -195,7 +195,7 @@ class AdminPages extends Controller{
                 ];
                 $data['team'] =  $this->adminpageModel->getTeam($_POST['currentTeam']);
                 // echo "bottom of team function line 188";
-                $this->view('adminPages/team', $data);
+                $this->view('adminpages/team', $data);
             }
             public function player(){
                 $allTeams = $this->adminpageModel->getAllPlayers();
@@ -250,12 +250,12 @@ class AdminPages extends Controller{
                                 //TODO: add delete function and edit rewrite values to the database
                                 if($this->adminpageModel->getPlayer((int)$data['playerid'])){
                                     
-                                    $this->view('adminPages/editPlayer', $data);
+                                    $this->view('adminpages/editPlayer', $data);
                                     redirect('adminpages/editPlayer', $data);
                                     die();
                                 }else{
                                     echo "did not get player";
-                                    $this->view('adminPages/editPlayer', $data);
+                                    $this->view('adminpages/editPlayer', $data);
                                     die();
                                 }
                                 
@@ -269,13 +269,13 @@ class AdminPages extends Controller{
                             //? FROM THE EDIT PLAYER PAGE
                             echo "default page load";
                             if($data['edit_pla_fname']){
-                                $this->view('adminPages/player', $data);
+                                $this->view('adminpages/player', $data);
                             }
                             
                             
                         }
                 //? Default page load
-                $this->view('adminPages/player', $data);
+                $this->view('adminpages/player', $data);
             }
             public function editPlayer(){
                 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -389,7 +389,7 @@ class AdminPages extends Controller{
                             }
                         }
                     }
-                $this->view('adminPages/games', $data);
+                $this->view('adminpages/games', $data);
             }
             
             public function moveSelection($newTeam){

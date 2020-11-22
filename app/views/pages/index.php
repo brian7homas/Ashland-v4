@@ -35,7 +35,7 @@ require APPROOT . '/views/inc/header.php';
 
         <div class="col-lg-2 col-sm-6 col-xs-12">
           <div class="card card-block">
-            <a href="<?php URLROOT ?>/pages/action"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/action.jpg">
+            <a href="<?php echo URLROOT ?>/pages/action"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/action.jpg">
               <div class="portfolio-over">
                 <div>
                   <h3 class="card-title_h3-2">
@@ -53,7 +53,7 @@ require APPROOT . '/views/inc/header.php';
 
         <div class="col-lg-2 col-sm-6 col-xs-12">
           <div class="card card-block">
-          <a href="<?php URLROOT ?>/pages/maps"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/maps.jpg">
+          <a href="<?php echo URLROOT ?>/pages/maps"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/maps.jpg">
               <div class="portfolio-over">
                 <div>
                   <h3 class="card-title_h3-2">
@@ -71,7 +71,7 @@ require APPROOT . '/views/inc/header.php';
 
         <div class="col-lg-2 col-sm-6 col-xs-12">
           <div class="card card-block">
-          <a href="<?php URLROOT ?>/pages/newplayers/register"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/signup.jpg">
+          <a href="<?php echo URLROOT ?>/pages/newplayers/register"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/signup.jpg">
               <div class="portfolio-over">
                 <div>
                   <h3 class="card-title_h3-2">
@@ -89,7 +89,7 @@ require APPROOT . '/views/inc/header.php';
         
         <div class="col-lg-2 col-sm-6 col-xs-12">
           <div class="card card-block">
-          <a href="<?php URLROOT ?>/pages/schedule"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/gm-schedule-cover.jpg">
+          <a href="<?php echo URLROOT ?>/pages/schedule"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/gm-schedule-cover.jpg">
               <div class="portfolio-over">
                 <div>
                   <h3 class="card-title_h3-2">

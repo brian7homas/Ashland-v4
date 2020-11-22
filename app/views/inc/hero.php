@@ -1,7 +1,7 @@
 
   <!-- ======= Hero Section ======= -->
   <!-- <section class="hero" style="background-image: url(<?php //URLROOT; ?>/pics/cover.jpg);" > -->
-  <section class="hero" style="background-image: url(<?php URLROOT;  echo  $data['bg-img']; ?>);" >
+  <section class="hero" style="background-image: url(<?php echo URLROOT;  echo  $data['bg-img']; ?>);" >
   
     <div class="container text-center">  
     

@@ -4,7 +4,7 @@ class Pages extends Controller{
     public function __construct(){
         // How we load models 
         // $this->postModel = $this->model('Post');
-        $this->adminpageModel = $this->model('AdminPage');
+        $this->adminpageModel = $this->model('Adminpage');
         
     }
     //defualt method

@@ -3,7 +3,7 @@
 
 class NewPlayers extends Controller {
     public function __construct(){
-        $this->newplayerModel = $this->model('NewPlayer');
+        $this->newplayerModel = $this->model('Newplayer');
     }
     public function register(){
         //check for post request
