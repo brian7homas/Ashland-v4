@@ -22,14 +22,14 @@
         <section class="row justify-content-center">
             <div class="container">
                 <div class="form py-5">
-                    <form class="" action="<?php echo URLROOT;?>/adminpages/games" method='POST'>      
+                    <form class="row justify-content-center" action="<?php echo URLROOT;?>/adminpages/games" method='POST'>      
                         <?php
                             foreach($data['teams'] as $key => $value): 
                                 $team = $value->team_name;
                             ?>
-                                <div class="text-center m-2 py-2">
-                                    <label for="team" class="w-">
-                                        <input id="team" name="team" type="submit" class="display-4" style="cursor: hover; color: black; border:none" value='<?php echo $team?>'/>
+                                <div class="text-center m-1 py-1">
+                                    <label for="team" class="p-2">
+                                        <input id="team" name="team" type="submit" class="h1 px-5 m-3 " style="cursor: hover; color: black; border:none" value='<?php echo $team?>'/>
                                     </label>    
                                 </div>
                             <?php endforeach;?>    

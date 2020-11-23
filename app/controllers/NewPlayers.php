@@ -8,29 +8,33 @@ class NewPlayers extends Controller {
     public function register(){
         //check for post request
         $data = [
-                    'pla_lname' => trim($_POST['pla_lname']),
-                    'pla_fname' => trim($_POST['pla_fname']),
-                    'pla_phone' => trim($_POST['pla_phone']),
-                    'pla_email' => trim($_POST['pla_email']),
-                    'pla_par_lname' => trim($_POST['pla_par_lname']),
-                    'pla_par_fname' => trim($_POST['pla_par_fname']),
-                    'pla_add' => trim($_POST['pla_add']),
-                    'pla_city' => trim($_POST['pla_city']),
-                    'pla_state' => trim($_POST['pla_state']),
-                    'pla_zip' => trim($_POST['pla_zip']),
-                    'pla_bdate' => trim($_POST['pla_bdate']),
-                    'date_added' => trim($_POST['date_added']),
-                    'pla_lname_err' => '',
-                    'pla_fname_err' => '',
-                    'pla_phone_err' => '',
-                    'pla_email_err' => '',
-                    'pla_par_lname_err' => '',
-                    'pla_par_fname_err' => '',
-                    'pla_add_err' => '',
-                    'pla_city_err' => '',
-                    'pla_state_err' => '',
-                    'pla_zip_err' => '',
-                    'pla_bdate_err' => ''
+                // page data
+                'hero-button-text' => 'newplayer',
+                'hero-button-path' => '',                
+                
+                'pla_lname' => trim($_POST['pla_lname']),
+                'pla_fname' => trim($_POST['pla_fname']),
+                'pla_phone' => trim($_POST['pla_phone']),
+                'pla_email' => trim($_POST['pla_email']),
+                'pla_par_lname' => trim($_POST['pla_par_lname']),
+                'pla_par_fname' => trim($_POST['pla_par_fname']),
+                'pla_add' => trim($_POST['pla_add']),
+                'pla_city' => trim($_POST['pla_city']),
+                'pla_state' => trim($_POST['pla_state']),
+                'pla_zip' => trim($_POST['pla_zip']),
+                'pla_bdate' => trim($_POST['pla_bdate']),
+                'date_added' => trim($_POST['date_added']),
+                'pla_lname_err' => '',
+                'pla_fname_err' => '',
+                'pla_phone_err' => '',
+                'pla_email_err' => '',
+                'pla_par_lname_err' => '',
+                'pla_par_fname_err' => '',
+                'pla_add_err' => '',
+                'pla_city_err' => '',
+                'pla_state_err' => '',
+                'pla_zip_err' => '',
+                'pla_bdate_err' => ''
                 ];
 
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -91,15 +95,14 @@ class NewPlayers extends Controller {
                     $this->view('newplayers/newplayerreg', $data);
                 }else{
                     $this->view('newplayers/register', $data);
-                    echo "first else";
                 }
             //process form
             //sanitize data
-           
-
         }else{
             //init data
             $data = [
+                'hero-button-text' => 'Return Home',
+                'hero-button-path' => '',
                 'pla_lname' => '',
                 'pla_fname' => '', 
                 'pla_phone' => '',

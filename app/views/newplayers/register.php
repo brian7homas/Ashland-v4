@@ -5,13 +5,14 @@ require APPROOT . '/views/inc/header.php';
 
 <div id="container">
     <div class="container-md">
-        <h2 class="headline-text">Register a New Player</h2>
-        <p class="subheadline subheadline__large">Please fill out to register</p>
-        <form class="user-form" action="<?php echo URLROOT; ?>/newplayers/register" method="POST">
+        <h2 class="headline-text text-center">Register a New Player</h2>
+        <p class="subheadline subheadline__large text-center mb-4">Please fill out to register</p>
+        
+        <form class="form p-2 mt-3" action="<?php echo URLROOT; ?>/newplayers/register" method="POST">
             <div class="form-group">
                 <label for="pla_lname">Last Name: <sup class="fa">*</sup>
                 </label>
-                <input type="text" name="pla_lname" class="form-control
+                <input type="text" name="pla_lname" class="form-group__text form-control
                         <?php echo(!empty($data['pla_lname_err'])) ? 'is-invalid': ''; ?>"
                         value="<?php echo $data['pla_lname'];?>" />
                 <span class="invalid-feedback"><?php echo $data['pla_lname_err'];?></span>
@@ -96,27 +97,23 @@ require APPROOT . '/views/inc/header.php';
                         value="<?php echo $data['pla_bdate'];?>" />
                 <span class="invalid-feedback"><?php echo $data['pla_bdate_err'];?></span>
             </div>
-                
-            <!-- <div class="form-group form-group__button">
-                <div class="button button__position">
-                    <input type="submit" value="Register"  />
-                </div>
-            </div> -->
             
-            <div class="form-group form-group__hidden">
-                <label for="date_added">Date Added: <sup class="fa">*</sup>
-                    <input  name="date_added" class="form-control form-control-lg
+            <div  class="form-group form-group__hidden" style="display: none">
+                <label  for="date_added">Date Added: <sup class="fa">*</sup>
+                    <input  type="hidden" name="date_added" class="form-control form-control-lg
                         <?php echo(!empty($data['date_added_err'])) ? 'is-invalid': ''; ?>"
                         value="<?php echo date("Y-d-m");?>" />
                 </label>
                 <span class="invalid-feedback"><?php echo $data['date_added_err'];?></span>
             </div>
             
-            <div class="form-group form-group__button">
-                <input id="clear" type="button" value="Cancel" >
-                <input type="submit" value="Register">
+            <div class="form-group">
+                <button class="btn w-50 btn-sm" id="clear" type="button" value="Cancel" >Clear Form</button>
+                <button class="btn btn-sm" type="submit" value="Register">Register</button>
             </div>
+            
         </form>
+        
     </div>
 </div>
 

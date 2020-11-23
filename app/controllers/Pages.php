@@ -21,6 +21,8 @@ class Pages extends Controller{
                 // 'admin' => 'Admin'
                 'bg-img' => '/pics/cover.jpg',
                 'dropdown' => true,
+                'hero-button-text' => 'Register Player',
+                'hero-button-path' => '/newplayers/register',
                 
                 //team data
                 'head_coach/1/name' => 'Mary Bruce',
@@ -46,6 +48,8 @@ class Pages extends Controller{
         $data = [
             'title' => 'Teams',
             'description' => 'Modify team data here.',
+            'hero-button-text' => 'Register Player',
+            'hero-button-path' => '/newplayers/register',
             
             //dropdown only appears on pages not page/index
             'dropdown' => false,
@@ -58,6 +62,8 @@ class Pages extends Controller{
         $data = [
             'title' => 'ACTION',
             'description' => 'See some of the action!!',
+            'hero-button-text' => 'Register Player',
+            'hero-button-path' => '/newplayers/register',
             
             'dropdown' => false,
             'bg-img' => '/pics/action_cover.jpg'
@@ -69,6 +75,8 @@ class Pages extends Controller{
         $data = [
             'title' => 'Maps',
             'description' => 'Find Where Your Next Game Is',
+            'hero-button-text' => 'Register Player',
+            'hero-button-path' => '/newplayers/register',
             
             'dropdown' => false,
             'bg-img' => '/pics/maps-cover.jpg'
@@ -80,6 +88,8 @@ class Pages extends Controller{
         $data = [
             'title' => 'Schedules',
             'description' => 'Find specific information about each game here.',
+            'hero-button-text' => 'Register Player',
+            'hero-button-path' => '/newplayers/register',
             
             'dropdown' => false,
             'bg-img' => '/pics/maps-cover.jpg',

@@ -65,7 +65,7 @@
 
       <div id="logo" class="pull-left">
         <a href="<?php if($_SESSION['adminid']){echo URLROOT . "/adminpages/index";}else{echo URLROOT;} ?>"><img
-            class="logo" src="<?php  echo URLROOT ?>/public/img/smLogo.png" /></a>
+            class="logo" src="<?php  echo URLROOT ?>/public/svg/LOGO.svg" /></a>
         <!-- Uncomment below if you prefer to use a text image -->
         <!--<h1><a href="#hero">Bell</a></h1>-->
       </div>
@@ -98,13 +98,6 @@
                 <li><a class="user-nav-link" href="<?php echo URLROOT;?>/pages/teams">Teams</a></li>
                 <li><a class="user-nav-link" href="<?php echo URLROOT;?>/pages/action">Action</a></li>
                 <li><a class="user-nav-link" href="<?php echo URLROOT;?>/pages/schedule">Schedule</a></li>
-                <!-- <li class="menu-has-children"><a href="#">Drop Down 2</a>
-                  <ul>
-                    <li><a class="user-nav-link" href="<?php //echo URLROOT;?>/pages/teams">Teams</a></li>
-                    <li><a class="user-nav-link" href="<?php //echo URLROOT;?>/pages/action">Action</a></li>
-                    <li><a class="user-nav-link" href="<?php //echo URLROOT;?>/pages/schedule">Schedule</a></li>
-                  </ul>
-                </li> -->
               </ul>
             </li>
           <?php endif; ?>

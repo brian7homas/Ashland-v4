@@ -18,7 +18,9 @@ require APPROOT . '/views/inc/header.php';
     </div>
 
     <div class="portfolio-grid">
-      <div class="row justify-content-center">
+
+      <div class="row w-100 d-flex justify-content-lg-center">
+      
         <div class="col-lg-2 col-sm-6 col-xs-12">
           <div class="card card-block">
             <a href="<?php echo URLROOT; ?>/pages/teams"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/teams.jpg">
@@ -41,10 +43,6 @@ require APPROOT . '/views/inc/header.php';
                   <h3 class="card-title_h3-2">
                     Action
                   </h3>
-
-                  
-                  
-                  
                 </div>
               </div>
             </a>
@@ -59,35 +57,13 @@ require APPROOT . '/views/inc/header.php';
                   <h3 class="card-title_h3-2">
                     Maps
                   </h3>
-
-                  
-                  
-                  
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-sm-6 col-xs-12">
-          <div class="card card-block">
-          <a href="<?php echo URLROOT ?>/pages/newplayers/register"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/signup.jpg">
-              <div class="portfolio-over">
-                <div>
-                  <h3 class="card-title_h3-2">
-                    Sign up
-                  </h3>
-
-                  
-                  
-                  
                 </div>
               </div>
             </a>
           </div>
         </div>
         
-        <div class="col-lg-2 col-sm-6 col-xs-12">
+        <div class="col-lg-2 col-md col-sm-6 col-xs-12 ">
           <div class="card card-block">
           <a href="<?php echo URLROOT ?>/pages/schedule"  data-gall="portfolioGallery"><img alt="" src="<?php echo URLROOT;  ?>/pics/gm-schedule-cover.jpg">
               <div class="portfolio-over">
@@ -95,10 +71,6 @@ require APPROOT . '/views/inc/header.php';
                   <h3 class="card-title_h3-2">
                     Schedule
                   </h3>
-
-                  
-                  
-                  
                 </div>
               </div>
             </a>
@@ -117,7 +89,7 @@ require APPROOT . '/views/inc/header.php';
           Meet our team
         </h2>
 
-        <div class="row">
+        <div class="d-block d-sm-flex">
           <div class="col-sm-3 col-xs-6">
             <div class="card card-block">
               <a href="#"><img alt="" class="team-img" src="<?php echo URLROOT;  ?>/pics/team-1.jpg">

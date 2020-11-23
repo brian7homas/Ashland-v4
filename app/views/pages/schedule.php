@@ -8,7 +8,7 @@ require APPROOT . '/views/inc/header.php';
 
             <div class="form-group text-center">
                 <label><strong class="display-3 text-capitalize"><?php echo $data['team']; ?></strong></label>
-                <p class="py-4">Select a team to dynamically see what teams will be facing off</p>
+                <p class="py-4 px-2">Select a team to dynamically see what teams will be facing off</p>
             </div>
 
             <div class="row form-group text-center py-3 justify-content-center">
@@ -37,7 +37,7 @@ require APPROOT . '/views/inc/header.php';
             </div>
 
             <div class="form-group row justify-content-center">
-                <button class="btn">View team schedule</button>
+                <button class="btn mb-5">View team schedule</button>
             </div>
 
             <?php 

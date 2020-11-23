@@ -1,7 +1,5 @@
 <?php 
 require APPROOT . '/views/inc/header.php'; 
-// echo "editPlayer.php";
-var_dump($data['edit_team_name']);
 
 ?>
 
@@ -10,23 +8,23 @@ var_dump($data['edit_team_name']);
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h2 class="section-title">
+                <h2 class="display-4 p-2 mb-5">
                     <?php echo $data['editTitle']; ?>
                 </h2>
-                <h4>
+                <h4 class="h4">
                     <?php echo $data['editInfo'];; ?>
                 </h4>
             </div>
-            <a href="<?php echo URLROOT; ?>/adminpages/player">&lt&ltBack</a>
+            <a class="nav-menu-container" href="<?php echo URLROOT; ?>/adminpages/player">&lt&ltBack</a>
         </div>
     </div>
-</section>
+
 
 <section class="row justify-content-center">
     
         <div class="col-lg-5 col-med-8">
-            <h1 class="headline-text headline-text-center">Edit <?php echo $data['edit_pla_fname'];; ?></h1>
-            <div class="form">
+            <h1 class="headline-text text-center mb-5">Edit: <strong><?php echo $data['edit_pla_fname'];; ?></strong></h1>
+            <div class="form p-2">
                 <form id="form" class="" method='POST' role="form" action="<?php echo URLROOT;; ?>/adminpages/editPlayer ">     
                 <div class="form-group">
                     <label for="">First Name: </label>
@@ -97,24 +95,16 @@ var_dump($data['edit_team_name']);
                 </div>
                 
                 
-                <div class="form-group">
-                  <textarea class="form-control" name="edit_message" rows="5"  data-msg="Please write something for us" placeholder=""></textarea>
-                  <div class="validate"></div>
-                </div>
-                <div class="mb-3">
-                  <!-- <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div> -->
-                </div>
-                <div class="text-center">
-                    <button type="reset" id='clear'>Reset</button>
-                    <button type="submit">Submit Changes</button>
+                
+                <div class="row justify-content-center my-0 mx-auto">
+                    <button class="btn " type="reset" id='clear'>Reset</button>
+                    <button class="btn" type="submit">Submit</button>
                 </div>
                     
                 </form>
             </div>
     </div>
 </section>
-
+</section>
 <?php require APPROOT . '/views/inc/footer.php'; ;
 ?>

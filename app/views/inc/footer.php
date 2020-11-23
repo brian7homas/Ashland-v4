@@ -23,28 +23,14 @@
 
           <div class="col-lg-6 col-xs-12 text-lg-right text-center">
             <ul class="list-inline">
-                
               <li class="list-inline-item">
                 <a href="<?php echo URLROOT; ?>">Home</a>
               </li>
-
-              <li class="list-inline-item">
-                <a href="#about">About Us</a>
-              </li>
-
               <li class="list-inline-item">
                 <a href="#features">Features</a>
               </li>
-
               <li class="list-inline-item">
-                <a href="#portfolio">Portfolio</a>
-              </li>
-
-              <li class="list-inline-item">
-                <a href="#team">Team</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#contact">Contact</a>
+                <a href="#">Portfolio</a>
               </li>
               <?php if($_SESSION['adminid']): ?>
                 <li class="list-inline-item">
@@ -64,7 +50,7 @@
     <script src="<?php echo URLROOT;  ?>/js/gsap.min.js"></script>
     <script src="<?php echo URLROOT;  ?>/js/ScrollTrigger.min.js"></script>
     <!-- <script src="bundled.js"></script> -->
-    <script  src="<?php echo URLROOT; ?>/assets/bundled.js"></script>
+    <script  src="<?php //echo URLROOT; ?>/assets/bundled.js"></script>
     
   <!-- Vendor JS Files -->
   <script src="<?php echo URLROOT; ?>/assets/vendor/jquery/jquery.min.js"></script>

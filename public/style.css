@@ -4,21 +4,21 @@ html, body {
   overflow-x: hidden;
 }
 
-/* line 17, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
+/* line 18, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
 * {
   font-family: Futura;
   padding: 0;
   margin: 0;
-  color: #FCFFE8;
+  color: #000000;
   box-sizing: border-box;
 }
 
-/* line 25, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
+/* line 26, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
 img {
   max-width: 100%;
 }
 
-/* line 28, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
+/* line 29, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
 li {
   list-style-type: none;
 }
@@ -136,6 +136,21 @@ li {
 
 /* line 2, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_schedule-table.scss */
 #schedule-table label {
+  color: #000000;
+}
+
+/* line 2, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_hero.scss */
+.hero__headline {
+  color: #FCFFE8;
+}
+
+/* line 5, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_hero.scss */
+.hero-logo {
+  transform: scale(0.2);
+}
+
+/* line 2, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_form-group.scss */
+.form-group__text {
   color: #000000;
 }
 

@@ -4,7 +4,7 @@ require APPROOT . '/views/inc/header.php';
 ?>
 
 <section id="">
-    <div class="container">
+    <div class="container p-5">
         <div class="row">
             <div class="col-md-12 text-center">
                 <h2 class="section-title">
@@ -65,8 +65,8 @@ require APPROOT . '/views/inc/header.php';
                         <td role="cell" class="">
                         <?php echo $lastName; ?>
                         </td>
-                        <td role="cell" class="py-3 no-gutters">
-                            <button  class="btn" name="delete" type="" value="<?php echo $id; ?>" >Delete</button>
+                        <td role="cell" class="py-3 row justify-content-start no-gutters">
+                            <button  class="btn " name="delete" type="" value="<?php echo $id; ?>" >Delete</button>
                             <button class="btn" name="edit" type="submit" value="<?php echo $id; ?>" >Edit</button>    
                         </td>
                         

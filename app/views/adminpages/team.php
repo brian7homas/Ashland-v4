@@ -8,44 +8,24 @@ require APPROOT . '/views/inc/header.php';
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h2 class="section-title"><?php echo $data['title']; ?></h2>
-        <h4><?php echo $data['description']; ?></h4>
+        <h2 class="display-4"><?php echo $data['title']; ?></h2>
+        <h4 class="h4"><?php echo $data['description']; ?></h4>
       </div>
       <a href="<?php echo URLROOT; ?>/adminpages/index">&lt&ltBack</a>
     </div>
 
-    <div class="row justify-content-center rounded-pill">
-      <!-- <div class="col-lg-3 col-md-4">
-        <div class="info">
-          <div>
-            <i class="fa fa-map-marker"></i>
-            <p>A108 Adam Street<br>New York, NY 535022</p>
-          </div>
-
-          <div>
-            <i class="fa fa-envelope"></i>
-            <p>info@example.com</p>
-          </div>
-
-          <div>
-            <i class="fa fa-phone"></i>
-            <p>+1 5589 55488 55s</p>
-          </div>
-
-        </div>
-      </div> -->
-
+    <div class="row justify-content-center ">
       <div class="col-lg-12 col-md-8 col-sm-5 ">
-        <div class="form text-center rounded">
+        <div class="form text-center ">
         
           <form action="<?php echo URLROOT; ?>/adminpages/team" method="POST" role="form" class="py-5">
             <span style="color:red"><?php   if(isset($data['team_err'])){echo $data['team_err'];}; ?></span>
-            <label class="text-center h3 py-3" for="currentTeam" >
+            <label class="text-center h3 py-3 h2" for="currentTeam" >
               Select a team
             </label>
             
-            <div class="form-group p-1">
-                <select name="currentTeam" class="custom-select-lg w-50">
+            <div class="form-group">
+                <select name="currentTeam" class="custom-select-lg w-50 m-3">
                   <!-- <option value="" selected disabled hidden>Choose here</option> -->
                   <option <?php if($data['currentTeam'] == 'aardvarks'){echo "selected";} ?> value="aardvarks">
                       Aardvarks
@@ -78,7 +58,7 @@ require APPROOT . '/views/inc/header.php';
             
             <h1 class="color-pd text-capitalize display-4"><?php echo $data['currentTeam'];?></h1> 
               
-            <div class="form-group">
+            <div class="row p-5 justify-content-center ">
               <?php
                 // CHECK FOR TEAM DATA 
                 // var_dump($data['team']);
@@ -94,12 +74,21 @@ require APPROOT . '/views/inc/header.php';
                             $playerid = $object->ID;
                         }
                         ?>
-                        <div class="row justify-content-start ml-5">
-                            <input class="" type="checkbox" id="player" name="player[]" value="<?php echo $playerid; ?>">
-                            <label  class="my-2 px-3" for="pla_fname" ><?php echo $playerFirstName; ?></label><br>
-                            <label  class="my-2 px-3" for="pla_lname" ><?php echo $playerLastName; ?></label><br>
-                            <label  class="my-2 px-3" for="pla_phone" ><?php echo $playerPhone; ?></label><br>
-                            <label  class="my-2 px-3" for="pla_phone" ><?php echo $playerid; ?></label><br>
+                        
+                          
+                        <div class="col-12">  
+                          <input class="d-inline-block" type="checkbox" id="player" name="player[]" value="<?php echo $playerid; ?>">  
+                          
+                          <label  class="" for="pla_fname" ><?php echo $playerFirstName; ?></label>
+                            
+                          <label  class="" for="pla_lname" ><?php echo $playerLastName; ?></label>
+                            
+                            
+                          <label  class="" for="pla_phone" ><?php echo $playerPhone; ?></label>
+                            
+                            
+                          <label  class="" for="pla_phone" ><?php echo $playerid; ?></label>
+                        
                         </div>
                         
                     <?php endforeach;

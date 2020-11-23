@@ -15,14 +15,15 @@ class AdminPage{
         $player = (int)$player;
         $team = (int)$team;
         //! TEST
-        //! var_dump($player);
-        //! var_dump($team);
-        
+        ! var_dump($player);
+        ! var_dump($team);
+        echo "inside move New player funciton";
         try{
         $this->db->query('INSERT INTO player (playerid, pla_lname, pla_fname, pla_phone, pla_par_lname, pla_par_fname, pla_add, pla_city, pla_state, pla_zip, pla_bdate, teamid)
                           SELECT '. $player . ', pla_lname, pla_fname, pla_phone, pla_par_lname, pla_par_fname, pla_add, pla_city, pla_state, pla_zip, pla_bdate,'. $team .
                           ' FROM new_player_tmp');
         $this->db->bind(':playerid', $data['team'][$player]->ID);
+        var_dump($data['team'][$player]->ID);
         $this->db->bind(':pla_lname', $data['team'][$player]->pla_lname);
         $this->db->bind(':pla_fname', $data['team'][$player]->pla_fname);
         $this->db->bind(':pla_phone', $data['team'][$player]->pla_phone);
