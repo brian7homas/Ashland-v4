@@ -10,6 +10,9 @@ class AdminPages extends Controller{
             }
             public function index(){
                 $data = [
+                        'bg-img' => '/img/admin-index.jpg', 
+                        'main-inst' => "This is where you can select what part of the database you can manipulate", 
+                        
                         'title' => 'Ashland admin',
                         'description' => 'This is the admin page',
                         'error' => 'general error'
@@ -19,14 +22,8 @@ class AdminPages extends Controller{
             public function team(){    
                 $teams = $this->adminpageModel->getTeams();
                         sort($teams);
+                        
                 $data = [
-                            // page data
-                            'title' => 'Team Manager',
-                            'description' => 'This page allows you to add/remove and view players on a specific team.',
-                            'dropdown' => 'Select a Team',
-                            'newPlayers' => 'New Players',
-                            'team' => '',
-                            
                             
                             // from the $teams array
                             'aardvarks' => $teams[0]->team_name,
@@ -35,12 +32,12 @@ class AdminPages extends Controller{
                             'broncos' => $teams[3]->team_name,
                             'buffalos' => $teams[4]->team_name,
                             'culdesacs' => $teams[5]->team_name,
-                            'team_name' => $teams->team_name, 
+                            // 'team_name' => $teams->team_name, 
                             
                             // Error values
                             'team_err' => '',
                             'error' => '',
-                            
+                            'newTeamID' => ''
                             
                 ];
                 
@@ -49,46 +46,52 @@ class AdminPages extends Controller{
                     $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
                     
                     $data = [
+                        'bg-img' => '/img/admin-team.jpg', 
+                        'main-inst' => "This is where you can select what part of the database you can manipulate", 
                         // post values
                         'currentTeam' => trim($_POST['currentTeam']),
                         'newTeam' => trim($_POST['newTeam']),
-                        'player' => trim($_POST['player[]']),
                         'newTeamID' => '',
                         'newPlayerID' => '',
                         'pla_lname' => '',
                         'post_err' => '',
-                        'pla_info' => '',
+                        
                         'team_err' => '',
                         'playerid' => '',
                         'team' => ''
                     ];
                     
-                    //? MAKE SURE THE CURRENT TEAM IS NOT THE NEW TEAM 
-                    
+                    //?             ERROR CHECK FOR CURRRENT TEAM AND NEW TEAM
                     if(!empty($data['currentTeam']) && !empty($data['newTeam']) && $data['currentTeam'] === $data['newTeam']) {
                         $data['team_err'] = 'Current team selection is the same value as new team selction';
                     }
                     
-                    //? IF PLAYERS ARE NOT SELECTED 
-                    if(empty($_POST['player'])){
-                        $data['pla_info'] = 'Select Player(s) to move from ..';
-                    }
-                    //? MAIN FORK (LAYER 1)
-                    // IF CURRENT TEAM  IS SET TO NEW PLAYERS
+                    
+                    //?
+                    //? IF NEWPLAYERS IS SELCTED
+                    //?
                     if($data['currentTeam'] == 'newPlayers'){
+                        
                         // ? IF NEW PLAYERS ARE SELECTED    
-                        //! TEAM VARIABLE HAS TO BE SET
-                        // STORE ALL NEW PLAYERS 
-                        //!  $data['team'] !!DO NOT REMOVE
+                        // GET ALL NEW PLAYERS
                         $data['team'] = $this->adminpageModel->getNewPlayers();
                         
+                        // ERROR CHECK
+                        if(empty($data['newTeam'])){
+                            $data['team_err'] = "You'll need to select a new team also";
+                        }
                         // If players are selected and there is a selection for the new team AND delete is not selected
-                        //? ANOTHER FORK IF NEW PLYAERS ARE SELECT AND A NEW TEAM IS SELECTED (LAYER 2)
+                        //? New Players -> Selected players checkboxes -> New team is also selected
                         //? AND POST VALUE DELETE IS NOT SET
-                        if($_POST['player'] != '' AND $data['newTeam'] != '' AND !isset($_POST['delete'])){ 
-                            
+                        if(!empty($data['newTeam']) AND !isset($_POST['delete'])){ 
+                            //$data['newTeam']  is holding selected playerid and new team id
                             // GET TEAM teamid FROM team_name
                             $data['newTeamID'] = $this->adminpageModel->getTeamID($data['newTeam']);
+                            //?$data['newTeamID'] is set to an object containing the new team id
+                            if(!empty($_POST['player'])){
+                                $data['team_err'] = 'Players need to be selected';
+                            }
+                            
                             // INSERT INTO SELECT foreach player selected
                             foreach($_POST['player'] as $data['newPlayerID']){
                                 $this->adminpageModel->moveNewPlayer($data); 
@@ -104,10 +107,9 @@ class AdminPages extends Controller{
                                 unset($_POST['player']);
                             }
                             $data['team'] = $this->adminpageModel->getNewPlayers();
-                        }//? IF PLAYERS ARE SELECTED AND DELETE VALUE EXISTS IN POST VARIABLE
+                        }
+                        //? DELETE NEW PLAYER
                         elseif($_POST['player'] != '' AND $_POST['delete']){
-                            // $player = (int)$_POST['player'];
-                            // var_dump($_POST['player']);
                             unset($data['newTeam']);
                             foreach($_POST['player'] as $data['playerid']){
                                 $this->adminpageModel->deleteNewPlayer($data['playerid']);
@@ -115,16 +117,10 @@ class AdminPages extends Controller{
                             // keeps from needing to reload page to see delettion
                             $data['team'] = $this->adminpageModel->getNewPlayers();
                         }else{
-                            //!error block IF NEW PLAYER IS SELCTED AND NO PLAYERS OR NEW TEAM IS SELECTED 
-                            // TODO: THIS IS THE DEFAULT STATE OF THE PAGE WHEN NEWPLAYERS ARE VIEWD 
-                            // TODO: THIS BLOCK NEEDS TO RUN ONLY WHEN THE NEWPLAYERS EVENT IS FIRED
-                            // IF POST PLAYER OR DATA NEWTEAM ARE NOT SET
-                            // echo "post player is empty or newteam data is empty";
-                            // echo "line 121";
+                            
                             $this->view('adminpages/team', $data);
                         }
-                        // ? DIRECTED BACK TO TEAM PAGE
-                        // echo 'line 124';
+                        // ? DIRECTED BACK TO TEAM PAGE FROM EITHER DELETEING OR MOVING FROM THE NEW PLAYERS TABLE
                         $this->view('adminpages/team', $data);
                     }
                     else{
@@ -150,8 +146,9 @@ class AdminPages extends Controller{
                                 //unset player selections
                                 unset($_POST['player']);
                             }
+                            //?GETS THE CURRENT TEAM SO YOU DONT NEED TO REFRESH THE PAGE TO SEE PLAYER MOVED
                             $data['team'] =  $this->adminpageModel->getTeam($data['currentTeam']);
-                        }
+                        } //!            END SUCCESSFUL PLAYER MOVE
                         //? IF PLAYERS ARE SELECTED AND POST VALUE DELETE EXIST (DELEETE SUBMITTED)
                         elseif($_POST['player'] != '' AND $_POST['delete']){
                             // $player = (int)$_POST['player'];
@@ -181,7 +178,10 @@ class AdminPages extends Controller{
                     //reset player selections
                     $_POST['player'] = '';
                 }
+                //?DEFAULT PAGE DATA WHEN IT FIRST LOADS
                 $data = [
+                    'bg-img' => '/img/admin-team.jpg', 
+                    'main-inst' => 'Select a team from the 1st dropdown, use checkboxes to select players and the last dropdown to move them.', 
                     'title' => 'Team Manager',
                     'description' => 'This page allows you to add/remove and view players on a specific team.',
                     'dropdown' => 'Select a Team',
@@ -196,6 +196,8 @@ class AdminPages extends Controller{
                 $allTeams = $this->adminpageModel->getAllPlayers();
                 $data = [
                         // page values
+                        'bg-img' => '/img/admin-player.jpg', 
+                        'main-inst' => 'Select a team from the 1st dropdown, use checkboxes to select players and the last dropdown to move them.', 
                         'title' => 'Player Manager',
                         'add' => 'Add players',
                         'remove' => 'Remove players',
@@ -306,6 +308,8 @@ class AdminPages extends Controller{
                 $teams = $this->adminpageModel->getTeams();
                 sort($teams);
                 $data = [
+                        'bg-img' => '/img/admin-game.jpg', 
+                        'main-inst' => 'See game data pulled in from the MySQL database.', 
                         'title' => 'Game Manager',
                         'add' => 'Add players',
                         'remove' => 'Remove players',

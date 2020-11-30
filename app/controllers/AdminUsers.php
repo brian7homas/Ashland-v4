@@ -92,6 +92,10 @@ class AdminUsers extends Controller{
       }
         else{
           $data =[
+            // default page data
+            'title' => 'Admin registration',
+            'main-inst' => 'Register an admin account to use the database.',
+            'bg-img' => '/img/admin-register.jpg',
             
             'ad_fname' => '',
             'ad_lname' => '',

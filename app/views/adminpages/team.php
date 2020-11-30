@@ -52,7 +52,7 @@ require APPROOT . '/views/inc/header.php';
                 
                 <!-- <input class="btn w-25" type="submit" value="See the team"/>    -->
                 <div class="text-center"><button class="btn my-2" type="submit">View team</button></div>
-                <span style="color: blue"><?php   if(isset($data['pla_info'])){echo $data['pla_info'];}; ?></span>
+                <span style="color: blue"><?php   if(!empty($data['pla_info'])){echo $data['pla_info'];}; ?></span>
               <div class="validate"></div>
             </div>
             
@@ -95,11 +95,12 @@ require APPROOT . '/views/inc/header.php';
                         }else if($data[player] != ''){
                           echo 'player moved';
                         }
-                        else if(empty($data['team'])){
+                        else if(!empty($data['team'])){
                           echo '<label class="text-danger"> No players on this team</label>';
                         }
-                        else if($data['team'] == NULL){
+                        else if($data['team'] == NULL ){
                             echo '<label> Select a team</label>'  ;
+                            var_dump(empty($data['team']));
                         } ?>
             </div>
             

@@ -1,7 +1,7 @@
 </div>
 </main>
 <!-- ======= Footer ======= -->
-<footer class="site-footer">
+<footer class="site-footer footer">
     <div class="bottom">
       <div class="container">
         <div class="row">
