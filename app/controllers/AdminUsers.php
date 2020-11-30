@@ -190,6 +190,7 @@ class AdminUsers extends Controller{
         $data =[    
           // page info
           'title' => 'Admin login',
+          'bg-img' => '/img/login-bg.jpg',
           
           'ad_username' => '',
           'ad_password' => '',

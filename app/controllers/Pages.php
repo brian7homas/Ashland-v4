@@ -12,7 +12,11 @@ class Pages extends Controller{
         if(isLoggedIn()){
             redirect('adminpages/index');
         }
-        $data = ['title' => 'Ashland',
+        $data = [
+                // User info
+                'main-inst' => 'Use the button below to register a player, then register a an admin account to view/alter players.', 
+                
+                'title' => 'Ashland',
                 'description' => 'Welcome to the Ashland Valley Soccer League Web Site - Your source for complete information on League game schedules, registration, field directions, and photos of recent games and teams.',
                 'teams' => 'Teams',
                 'action' => 'Action',

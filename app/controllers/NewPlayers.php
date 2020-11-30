@@ -12,6 +12,8 @@ class NewPlayers extends Controller {
                 'hero-button-text' => 'newplayer',
                 'hero-button-path' => '',                
                 
+                
+                
                 'pla_lname' => trim($_POST['pla_lname']),
                 'pla_fname' => trim($_POST['pla_fname']),
                 'pla_phone' => trim($_POST['pla_phone']),
@@ -91,8 +93,9 @@ class NewPlayers extends Controller {
                 if(empty($data['pla_lname_err']) && empty($data['pla_fname_err']) && empty($data['pla_phone_err']) && empty($data['pla_email_err']) && empty($data['pla_par_lname_err']) && empty($data['pla_par_fname_err']) && empty($data['pla_add_err']) && empty($data['pla_city_err']) && empty($data['pla_state_err']) && empty($data['pla_zip_err']) && empty($data['pla_bdate_err'])){
                     
                     $this->newplayerModel->add_tmp_player($Last_Name, $First_Name, $Phone, $Email, $Parent_Last_Name, $Parent_First_Name, $Address, $City, $State, $Zip, $DOB);
+                    flash('register_success','You did it '.$data['pla_fname'] . ' will be contacted at ' . $data['pla_email']);
                     
-                    $this->view('newplayers/newplayerreg', $data);
+                    redirect('newplayers/register');
                 }else{
                     $this->view('newplayers/register', $data);
                 }
@@ -101,6 +104,9 @@ class NewPlayers extends Controller {
         }else{
             //init data
             $data = [
+                'bg-img' => '/img/newplayer-register.jpg',
+                'main-inst' => 'Fill out the form below to register a new player.',
+                
                 'hero-button-text' => 'Return Home',
                 'hero-button-path' => '',
                 'pla_lname' => '',
@@ -131,4 +137,19 @@ class NewPlayers extends Controller {
             $this->view('newplayers/register', $data);
         }
     }
+    
+    public function createUserSession($user){
+        //setting user id to session variable
+        $_SESSION['user_id'] =$user->id;
+        $_SESSION['user_email'] =$user->email;
+        $_SESSION['user_name'] =$user->name;
+        redirect('post');
+      }
+      public function logout(){
+        unset($_SESSION['user_id']);
+        unset($_SESSION['user_email']);
+        unset($_SESSION['user_name']);
+        session_destroy();
+        redirect('users/login');
+      }
 }

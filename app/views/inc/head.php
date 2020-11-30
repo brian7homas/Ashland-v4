@@ -72,25 +72,20 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-        <?php if($_SESSION['adminid'] OR $_SESSION['user_name']): ?>
+        <?php if($_SESSION['adminid']): ?>
           <li><a class="nav-link" href="#">How's it going?
             <?php echo $_SESSION['user_name']; echo $_SESSION['ad_username']; ?> </a></li>
           <li><a class="nav-link" href="<?php 
             if(isset($_SESSION)){
-                switch(true){
-                    case ($_SESSION['adminid']):
-                        echo URLROOT . "/adminusers/logout";
-                        break;
-                    case($_SESSION['user_name']):
-                        echo URLROOT . "/users/logout";
-                }
+              if($_SESSION['adminid']){
+                echo URLROOT . "/adminusers/logout";
+              }
             }
             ?>">Logout
             </a></li>
             <?php  endelse; else: ?>
             
           <li><a class="user-nav-link" href="<?php echo URLROOT;?>/newplayers/register">New players</a></li>
-          <li><a class="user-nav-link" href="<?php echo URLROOT;?>/users/login">Users Login</a></li>
           <li><a class="user-nav-link" href="<?php echo URLROOT;?>/adminusers/login">Admin Login</a></li>
           <?php if(!$data['dropdown']):?>
             <li class="menu-has-children"><a>Explore</a>
@@ -101,7 +96,6 @@
               </ul>
             </li>
           <?php endif; ?>
-          <li><a href="#contact">Contact Us</a></li>
         </ul>
       </nav>
       <!-- #nav-menu-container -->

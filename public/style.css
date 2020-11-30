@@ -154,4 +154,27 @@ li {
   color: #000000;
 }
 
+/* line 2, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_newplayer-register.scss */
+.newplayer-register {
+  margin: 4rem 0 4rem 0;
+  border-radius: 3px;
+}
+
+/* line 6, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_newplayer-register.scss */
+.newplayer-register__button-container {
+  padding: 1em;
+}
+
+/* line 9, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_newplayer-register.scss */
+.newplayer-register__button-container button {
+  margin: 2em auto;
+}
+
+@media only screen and (min-width: 1200px) {
+  /* line 9, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_newplayer-register.scss */
+  .newplayer-register__button-container button {
+    margin: auto 4em;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
