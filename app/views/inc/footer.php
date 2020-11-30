@@ -1,7 +1,7 @@
 </div>
 </main>
 <!-- ======= Footer ======= -->
-<footer class="site-footer">
+<footer class="site-footer footer">
     <div class="bottom">
       <div class="container">
         <div class="row">
@@ -47,10 +47,10 @@
 
   <a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a>
   
-    <script src="<?php echo URLROOT;  ?>/js/gsap.min.js"></script>
-    <script src="<?php echo URLROOT;  ?>/js/ScrollTrigger.min.js"></script>
+    <script src="<?php echo URLROOT;  ?>/assets/js/gsap.min.js"></script>
+    <script src="<?php echo URLROOT;  ?>/assets/js/ScrollTrigger.min.js"></script>
     <!-- <script src="bundled.js"></script> -->
-    <script  src="<?php //echo URLROOT; ?>/assets/bundled.js"></script>
+    <script  src="<?php echo URLROOT; ?>/assets/bundled.js"></script>
     
   <!-- Vendor JS Files -->
   <script src="<?php echo URLROOT; ?>/assets/vendor/jquery/jquery.min.js"></script>

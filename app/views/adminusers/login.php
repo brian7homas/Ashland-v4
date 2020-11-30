@@ -2,7 +2,7 @@
 require APPROOT . '/views/inc/header.php';
 
 ?>
-<section id="contact">
+<section id="contact" class="admin-login">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
@@ -12,6 +12,7 @@ require APPROOT . '/views/inc/header.php';
 
     <div class="row justify-content-center">
       <div class="col-lg-3 col-md-4">
+      
         <div class="info">
           <div>
             <i class="fa fa-map-marker"></i>
@@ -29,10 +30,11 @@ require APPROOT . '/views/inc/header.php';
           </div>
 
         </div>
+        
       </div>
 
       <div class="col-lg-5 col-md-8">
-        <div class="">
+        <div>
           <form action="<?php echo URLROOT; ?>/adminusers/login" method="post" role="form">
           
             <div class="form-group">
@@ -46,10 +48,11 @@ require APPROOT . '/views/inc/header.php';
             </div>
             
             
-            <div class="mb-3">
-                
+            
+            <div class="row justify-content-center admin-login__button-container ">
+              <button class="btn" type="submit" value="Login">Login</button>
+              <button href="<?php echo URLROOT; ?>/adminusers/register" class="btn">No accoun? Register here.</button>
             </div>
-            <div class="text-center"><input type="submit" value="Login"></input></div>
           </form>
         </div>
       </div>

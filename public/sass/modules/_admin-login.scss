@@ -1,0 +1,21 @@
+.admin-login{
+    margin-bottom: 100px;
+    &__button-container{
+        padding: 1em;
+        flex-direction: column;
+        @include respond-to(medium-screens){
+            flex-direction: row;
+        }
+        @include respond-to(wide-screens){
+            flex-direction: row;
+        }
+        button{
+            margin: 2em auto;
+            
+            
+        }
+        a{
+            margin: 0;
+        }
+    }
+}

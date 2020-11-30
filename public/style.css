@@ -154,4 +154,72 @@ li {
   color: #000000;
 }
 
+/* line 2, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_newplayer-register.scss */
+.newplayer-register {
+  margin: 4rem 0 4rem 0;
+  border-radius: 3px;
+}
+
+/* line 6, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_newplayer-register.scss */
+.newplayer-register__button-container {
+  padding: 1em;
+}
+
+/* line 9, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_newplayer-register.scss */
+.newplayer-register__button-container button {
+  margin: 2em auto;
+}
+
+@media only screen and (min-width: 1200px) {
+  /* line 9, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_newplayer-register.scss */
+  .newplayer-register__button-container button {
+    margin: auto 4em;
+  }
+}
+
+/* line 3, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-register.scss */
+.admin-register__title {
+  text-align: center;
+}
+
+/* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-login.scss */
+.admin-login {
+  margin-bottom: 100px;
+}
+
+/* line 3, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-login.scss */
+.admin-login__button-container {
+  padding: 1em;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 599px) and (max-width: 1199px) {
+  /* line 3, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-login.scss */
+  .admin-login__button-container {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  /* line 3, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-login.scss */
+  .admin-login__button-container {
+    flex-direction: row;
+  }
+}
+
+/* line 12, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-login.scss */
+.admin-login__button-container button {
+  margin: 2em auto;
+}
+
+/* line 17, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-login.scss */
+.admin-login__button-container a {
+  margin: 0;
+}
+
+/* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_footer.scss */
+.footer {
+  margin-top: 100px;
+}
+
 /*# sourceMappingURL=style.css.map */

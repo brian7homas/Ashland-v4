@@ -1,7 +1,7 @@
 
 <!-- ======= Hero Section ======= -->
 <!-- <section class="hero" style="background-image: url(<?php //URLROOT; ?>/pics/cover.jpg);" > -->
-<section class="hero" style="background-image: url(<?php echo URLROOT;  echo  $data['bg-img']; ?>);">
+<section class="hero" style="background-repeat: no-repeat; background-position: center center; background-image: url(<?php echo URLROOT;  echo  $data['bg-img']; ?>);">
 
     <div class="container text-center">
 
@@ -14,7 +14,7 @@
             </h1>
 
             <p class="tagline">
-                This is a powerful theme with some great features that you can use in your future projects.
+                <?php echo $data['main-inst']; ?>
             </p>
                 <?php if(strstr($view,'adminusers') != TRUE AND strstr($view, 'adminpages') != TRUE ):?>
               <a class="btn btn-full scrollto" href="<?php echo URLROOT . $data['hero-button-path']; ?>">
