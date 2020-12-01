@@ -91,7 +91,7 @@ require APPROOT . '/views/inc/header.php';
             <div class="form-group">
                 <label for="pla_bdate">Date of Birth: <sup class="fa">*</sup>
                 </label>
-                <input type="date" name="pla_bdate" class="form-control form-control-lg
+                <input placeholder="YYY-MM-DD" type="date" name="pla_bdate" class="form-control form-control-lg
                         <?php echo(!empty($data['pla_bdate_err'])) ? 'is-invalid': ''; ?>"
                         value="<?php echo $data['pla_bdate'];?>" />
                 <span class="invalid-feedback"><?php echo $data['pla_bdate_err'];?></span>

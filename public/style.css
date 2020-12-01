@@ -217,6 +217,81 @@ li {
   margin: 0;
 }
 
+/* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+.admin-team {
+  padding: 1em;
+  min-width: 100%;
+}
+
+/* line 5, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+.admin-team table {
+  display: block;
+}
+
+/* line 9, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+.admin-team tbody {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 13, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+.admin-team tr {
+  width: 100%;
+  border: 1px solid;
+}
+
+/* line 17, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+.admin-team tr label {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+  font-size: small;
+}
+
+/* line 25, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+.admin-team th {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 599px) and (max-width: 1199px) {
+  /* line 25, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+  .admin-team th {
+    flex-flow: row;
+  }
+}
+
+/* line 34, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+.admin-team__player-info {
+  display: block;
+}
+
+@media only screen and (min-width: 599px) and (max-width: 1199px) {
+  /* line 34, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+  .admin-team__player-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  /* line 34, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+  .admin-team__player-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+/* line 48, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+.admin-team__checkbox {
+  padding: 100%;
+  height: 100%;
+  width: 30%;
+}
+
 /* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_footer.scss */
 .footer {
   margin-top: 100px;

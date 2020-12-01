@@ -1,0 +1,56 @@
+.admin-team{
+    padding:1em;
+    min-width: 100%;
+
+    table{
+        display: block;
+        
+    }
+    tbody{
+        display: flex;
+        justify-content: center;
+    }
+    tr{ 
+        width: 100%;
+        border: 1px solid;
+        
+        label{
+            display:inline-block;
+            width:100%;
+            text-align: right;
+            font-size: small;
+            
+        }
+    }
+    th{
+        display:flex;  
+        align-items:center;
+        justify-content: space-between;
+        @include respond-to(medium-screens){
+            flex-flow: row ;
+        }
+
+    }
+    &__player-info{
+        display:block;
+        @include respond-to(medium-screens){
+            display:flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        @include respond-to(wide-screens){
+            display:flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+    }
+    &__checkbox{
+        padding: 100%;
+        height: 100%;
+        width: 30%;
+    }
+    #player{
+        
+    }
+}
