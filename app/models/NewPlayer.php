@@ -4,6 +4,7 @@
       $this->db = new Database;
     }
       public function add_tmp_player($Last_Name, $First_Name, $Phone, $Email, $Parent_Last_Name, $Parent_First_Name, $Address, $City, $State, $Zip, $DOB){
+          
           $todays = date('Y-m-d');
           $query = "insert into new_player_tmp(pla_lname, pla_fname, pla_phone, pla_email,  pla_par_lname, pla_par_fname, pla_add, pla_city, pla_state, pla_zip, pla_bdate, date_added)values( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
           //the two following lines should be unquoted to troubleshoot the SQL statement if the
@@ -32,7 +33,6 @@
           }
           
           return true;
-
       }
 
 

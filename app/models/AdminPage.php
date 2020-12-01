@@ -15,15 +15,13 @@ class AdminPage{
         $player = (int)$player;
         $team = (int)$team;
         //! TEST
-         var_dump($player);
-         var_dump($team);
+         
         echo "inside move New player funciton";
         try{
         $this->db->query('INSERT INTO player (playerid, pla_lname, pla_fname, pla_phone, pla_par_lname, pla_par_fname, pla_add, pla_city, pla_state, pla_zip, pla_bdate, teamid)
                           SELECT '. $player . ', pla_lname, pla_fname, pla_phone, pla_par_lname, pla_par_fname, pla_add, pla_city, pla_state, pla_zip, pla_bdate,'. $team .
                           ' FROM new_player_tmp');
         $this->db->bind(':playerid', $data['team'][$player]->ID);
-        var_dump($data['team'][$player]->ID);
         $this->db->bind(':pla_lname', $data['team'][$player]->pla_lname);
         $this->db->bind(':pla_fname', $data['team'][$player]->pla_fname);
         $this->db->bind(':pla_phone', $data['team'][$player]->pla_phone);
@@ -92,8 +90,6 @@ class AdminPage{
     public function updatePlayer($playerid,  $newTeamID){
       
       try{
-        var_dump($playerid);
-        var_dump($newTeamID);
         $this->db->query('UPDATE player SET teamid = :newTeamID WHERE playerid = :playerid');
         $this->db->bind(':playerid', $playerid);
         $this->db->bind(':newTeamID', $newTeamID);
@@ -109,24 +105,22 @@ class AdminPage{
     
     // delete player 
     public function deletePlayer($playerid){
+      
       try{
-        var_dump($playerid);
-      $this->db->query('DELETE FROM player WHERE playerid = :playerid');
-      $this->db->bind(':playerid', $playerid);
-      if($this->db->execute()){
-        return true;
-        } else {
-          return false;
-        }
+          $this->db->query('DELETE FROM player WHERE playerid = :playerid');
+          $this->db->bind(':playerid', $playerid);
+          if($this->db->execute()){
+            return true;
+            } else {
+            return false;
+          }
       }catch(Exception $e){
         echo $e->getMessage();
       }
-      
-    }//end deletePlayer
+    }//end of delete player
     
     public function deleteNewPlayer($playerid){
       try{
-      // var_dump($playerid);
       $this->db->query('DELETE FROM new_player_tmp WHERE ID =' . $playerid);
       $this->db->bind(':ID', $playerid);
       if($this->db->execute()){

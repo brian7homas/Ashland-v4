@@ -19,177 +19,134 @@ class AdminPages extends Controller{
                         ];        
                 $this->view('adminpages/index', $data);
             }
-            public function team(){    
-                $teams = $this->adminpageModel->getTeams();
-                        sort($teams);
-                        
+            public function team(){
                 $data = [
-                            
-                            // from the $teams array
-                            'aardvarks' => $teams[0]->team_name,
-                            'antelopes' => $teams[1]->team_name,
-                            'boxers' => $teams[2]->team_name,
-                            'broncos' => $teams[3]->team_name,
-                            'buffalos' => $teams[4]->team_name,
-                            'culdesacs' => $teams[5]->team_name,
-                            // 'team_name' => $teams->team_name, 
-                            
-                            // Error values
-                            'team_err' => '',
-                            'error' => '',
-                            'newTeamID' => ''
-                            
+                    'bg-img' => '/img/admin-team.jpg', 
+                    'main-inst' => 'Select a team from the 1st dropdown, use checkboxes to select players and the last dropdown to move them.', 
+                    'btn-text-currentTeam' => 'View current team',
+                    'btn-text-newSelection' => '',
                 ];
-                
-                // POST REQUEST RECIEVEED
                 if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
                     
                     $data = [
                         'bg-img' => '/img/admin-team.jpg', 
-                        'main-inst' => "This is where you can select what part of the database you can manipulate", 
-                        // post values
+                        'main-inst' => 'Select a team from the 1st dropdown, use checkboxes to select players and the last dropdown to move them.', 
+                        'btn-text-newSelection' => 'Select new current team',
+                        // from the $teams array
+                        'aardvarks' => $teams[0]->team_name,
+                        'antelopes' => $teams[1]->team_name,
+                        'boxers' => $teams[2]->team_name,
+                        'broncos' => $teams[3]->team_name,
+                        'buffalos' => $teams[4]->team_name,
+                        'culdesacs' => $teams[5]->team_name,
+
+                        'error' => '',
+                        'newTeamID' => '',
+                        
                         'currentTeam' => trim($_POST['currentTeam']),
                         'newTeam' => trim($_POST['newTeam']),
-                        'newTeamID' => '',
-                        'newPlayerID' => '',
-                        'pla_lname' => '',
-                        'post_err' => '',
-                        
-                        'team_err' => '',
-                        'playerid' => '',
-                        'team' => ''
+                        'team_err' => '', 
                     ];
                     
-                    //?             ERROR CHECK FOR CURRRENT TEAM AND NEW TEAM
-                    if(!empty($data['currentTeam']) && !empty($data['newTeam']) && $data['currentTeam'] === $data['newTeam']) {
-                        $data['team_err'] = 'Current team selection is the same value as new team selction';
+                    //switch check for what value is stored inside of currentTeam selction
+                    //will load newplayers table or team teable based on selection
+                    try{
+                        switch (true) {
+                            case (!empty($data['currentTeam'] AND $data['currentTeam'] != 'newPlayers')):
+                                $data['team'] =  $this->adminpageModel->getTeam($data['currentTeam']);
+                                $reloadTeam = TRUE;
+                                break;
+                            case (!empty($data['currentTeam'] and $data['currentTeam'] == 'newPlayers')):
+                                $data['team'] = $this->adminpageModel->getNewPlayers();
+                                $reloadNewplayers = TRUE;
+                                break;
+                        }
+                    }catch(Exception $e){
+                        echo $e->getMessage();
+                        $data['team_err'] = 'Something went wrong';
                     }
                     
-                    
-                    //?
-                    //? IF NEWPLAYERS IS SELCTED
-                    //?
-                    if($data['currentTeam'] == 'newPlayers'){
-                        
-                        // ? IF NEW PLAYERS ARE SELECTED    
-                        // GET ALL NEW PLAYERS
-                        $data['team'] = $this->adminpageModel->getNewPlayers();
-                        
-                        // ERROR CHECK
-                        if(empty($data['newTeam'])){
-                            $data['team_err'] = "You'll need to select a new team also";
+                    // if delete is selected
+                    // in_array checks for Delete selcted string.. value in the team.php input element
+                    if(in_array('Delete selected', $_REQUEST, TRUE)){
+                        foreach($_POST['player'] as $data['playerid']){
+                            if($data['currentTeam'] != 'newPlayers'){
+                                $this->adminpageModel->deletePlayer($data['playerid']);
+                                $reloadNewplayers = FALSE;
+                                }elseif($data['currentTeam'] == 'newPlayers'){
+                                    $this->adminpageModel->deleteNewPlayer($data['playerid']);
+                                    $reloadTeam = FALSE;
+                            }
                         }
-                        // If players are selected and there is a selection for the new team AND delete is not selected
-                        //? New Players -> Selected players checkboxes -> New team is also selected
-                        //? AND POST VALUE DELETE IS NOT SET
-                        if(!empty($data['newTeam']) AND !isset($_POST['delete'])){ 
-                            //$data['newTeam']  is holding selected playerid and new team id
-                            // GET TEAM teamid FROM team_name
-                            $data['newTeamID'] = $this->adminpageModel->getTeamID($data['newTeam']);
-                            //?$data['newTeamID'] is set to an object containing the new team id
-                            if(!empty($_POST['player'])){
-                                $data['team_err'] = 'Players need to be selected';
-                            }
-                            
-                            // INSERT INTO SELECT foreach player selected
-                            foreach($_POST['player'] as $data['newPlayerID']){
-                                $this->adminpageModel->moveNewPlayer($data); 
-                                $player = $data['newPlayerID'];
-                                $player = (int)$player;
-                                $this->adminpageModel->deleteNewPlayer($player);
-                            } 
-                            // If the $_POST variable is set 
-                            if(isset($_POST)){
-                                //unset newTeam var
-                                unset($data['newTeam']);
-                                //unset player selections
-                                unset($_POST['player']);
-                            }
+                        // Reload currentTeam without having to reload page
+                        if($reloadNewplayers == TRUE){
                             $data['team'] = $this->adminpageModel->getNewPlayers();
                         }
-                        //? DELETE NEW PLAYER
-                        elseif($_POST['player'] != '' AND $_POST['delete']){
-                            unset($data['newTeam']);
-                            foreach($_POST['player'] as $data['playerid']){
-                                $this->adminpageModel->deleteNewPlayer($data['playerid']);
-                            }
-                            // keeps from needing to reload page to see delettion
-                            $data['team'] = $this->adminpageModel->getNewPlayers();
-                        }else{
-                            
-                            $this->view('adminpages/team', $data);
+                        if($reloadTeam == TRUE){
+                            $data['team'] = $this->adminpageModel->getTeam($data['currentTeam']);
                         }
-                        // ? DIRECTED BACK TO TEAM PAGE FROM EITHER DELETEING OR MOVING FROM THE NEW PLAYERS TABLE
                         $this->view('adminpages/team', $data);
                     }
-                    else{
-                        // ? IF A REGULAR TEAM IS SELECTED
-                        // $this->adminpageModel->getTeam($data['currentTeam']);
-                        //!  $data['team'] !!DO NOT REMOVE
-                        $data['team'] =  $this->adminpageModel->getTeam($data['currentTeam']);
-                        //? IF A REGULAR TEAM AND A NEW TEAM ARE SELECTED
-                        if(!empty($_POST['player']) AND !empty($data['newTeam'])){ 
-                            // GET TEAM teamid FROM team_name
-                            $data['newTeamID'] = $this->adminpageModel->getTeamID($data['newTeam']);
-                            // INSERT INTO SELECT foreach player selected
-                            foreach($_POST['player'] as $data['newPlayerID']){
-                                // return playerid's -- convert to int
+                    
+                    
+                    if(in_array("Move player", $_REQUEST, TRUE)){
+                        if(empty($data['newTeam'])){
+                            $data['team_err'] = "select players";
+                        }
+                        
+                        $data['newTeamID'] = $this->adminpageModel->getTeamID($data['newTeam']);
+                        foreach($_POST['player'] as $data['newPlayerID']){
+                            if($data['currentTeam'] != 'newPlayers'){
                                 $player = (int)$data['newPlayerID'];
                                 $team = (int)$data['newTeamID']->teamid; 
                                 $this->adminpageModel->updatePlayer($player, $team); 
-                            } 
-                            // Reset the newTeam and player $data variables the next selection wont be affected  
-                            if(isset($_POST)){
-                                //unset newTeam var
-                                unset($data['newTeam']);
-                                //unset player selections
-                                unset($_POST['player']);
+                            }elseif($data['currentTeam'] == 'newPlayers'){
+                                $this->adminpageModel->moveNewPlayer($data); 
+                                $player = $data['newPlayerID'];
+                                $player = (int)$player;
+                                $this->adminpageModel->deleteNewPlayer($player);    
                             }
-                            //?GETS THE CURRENT TEAM SO YOU DONT NEED TO REFRESH THE PAGE TO SEE PLAYER MOVED
-                            $data['team'] =  $this->adminpageModel->getTeam($data['currentTeam']);
-                        } //!            END SUCCESSFUL PLAYER MOVE
-                        //? IF PLAYERS ARE SELECTED AND POST VALUE DELETE EXIST (DELEETE SUBMITTED)
-                        elseif($_POST['player'] != '' AND $_POST['delete']){
-                            // $player = (int)$_POST['player'];
-                            // var_dump($_POST['player']);
-                            foreach($_POST['player'] as $data['playerid']){
-                                (int)$data['playerid'];
-                                $this->adminpageModel->deletePlayer($data['playerid']);
-                            }
-                            // keeps from needing to reload page to see delettion
-                            // var_dump($data['currentTeam']);
-                            $data['team'] =  $this->adminpageModel->getTeam($data['currentTeam']);
-                            $this->view('adminpages/team', $data);
+                            
                         }
-                        else{
-                            //!error block IF NEW PLAYER IS SELCTED AND NO PLAYERS OR NEW TEAM IS SELECTED 
-                            // TODO: THIS IS THE DEFAULT STATE OF THE PAGE WHEN NEWPLAYERS ARE VIEWD 
-                            // TODO: THIS BLOCK NEEDS TO RUN ONLY WHEN THE NEWPLAYERS EVENT IS FIRED
-                            // IF POST PLAYER OR DATA NEWTEAM ARE NOT SET
-                            // echo "post player is empty or newteam data is empty";
-                            // echo "Select players and a new team";
-                            // echo "else block line 173";
-                            $this->view('adminpages/team', $data);
+                        if($reloadNewplayers == TRUE){
+                            $data['team'] = $this->adminpageModel->getNewPlayers();
                         }
+                        if($reloadTeam == TRUE){
+                            $data['team'] = $this->adminpageModel->getTeam($data['currentTeam']);
+                        }
+                        $this->view('adminpages/team', $data);
                     }
-                    //reset newTeam var
-                    $data['newTeam'] = '';
-                    //reset player selections
-                    $_POST['player'] = '';
+                    
+                }//end of post request
+                
+                if(isset($_POST)){
+                    //unset newTeam var
+                    unset($data['newTeam']);
+                    //unset player selections
+                    unset($_POST['player']);
                 }
-                //?DEFAULT PAGE DATA WHEN IT FIRST LOADS
-                $data = [
-                    'bg-img' => '/img/admin-team.jpg', 
-                    'main-inst' => 'Select a team from the 1st dropdown, use checkboxes to select players and the last dropdown to move them.', 
-                    'title' => 'Team Manager',
-                    'description' => 'This page allows you to add/remove and view players on a specific team.',
-                    'dropdown' => 'Select a Team',
-                    'newPlayers' => 'New Players',
-                    'team' => NULL
-                ];
-                $data['team'] =  $this->adminpageModel->getTeam($_POST['currentTeam']);
-                // echo "bottom of team function line 188";
+                
+                // $data = [
+                //     'bg-img' => '/img/admin-team.jpg', 
+                //     'main-inst' => 'Select a team from the 1st dropdown, use checkboxes to select players and the last dropdown to move them.', 
+                //     // from the $teams array
+                //     'aardvarks' => $teams[0]->team_name,
+                //     'antelopes' => $teams[1]->team_name,
+                //     'boxers' => $teams[2]->team_name,
+                //     'broncos' => $teams[3]->team_name,
+                //     'buffalos' => $teams[4]->team_name,
+                //     'culdesacs' => $teams[5]->team_name,
+
+                //     'error' => '',
+                //     'newTeamID' => '',
+                    
+                //     'currentTeam' => trim($_POST['currentTeam']),
+                //     'newTeam' => trim($_POST['newTeam']),
+                //     'team_err' => '', 
+                // ];
+                $teams = $this->adminpageModel->getTeams();
+                        sort($teams);
                 $this->view('adminpages/team', $data);
             }
             public function player(){
@@ -256,7 +213,7 @@ class AdminPages extends Controller{
                                 
                             }
                             if($data['delete']){
-                                var_dump($data['edit_playerid']);
+                                // var_dump($data['edit_playerid']);
                                 $this->adminpageModel->deletePlayer((int)$data['edit_playerid']);
                                 $this->view('adminpages/player', $data);
                             }
