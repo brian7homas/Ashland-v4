@@ -2,7 +2,9 @@
 require APPROOT . '/views/inc/header.php';
 
 ?>
-<section id="contact" class="admin-login">
+<?php flash('register_success');?>
+<section id="contact" class="">
+  
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
@@ -35,24 +37,25 @@ require APPROOT . '/views/inc/header.php';
 
       <div class="col-lg-5 col-md-8">
         <div>
-          <form action="<?php echo URLROOT; ?>/adminusers/login" method="post" role="form">
+          <form action="<?php echo URLROOT; ?>/adminusers/login" method="post" role="form" class="admin-login">
           
             <div class="form-group">
-              <input autofocus type="text" name="ad_username" class="user-form form-control" <?php echo(!empty($data['ad_username_err'])) ? 'is-invalid': ''; ?>" value="<?php echo $data['ad_username'];?>" />
+              <input autofocus  placeholder="Username" ="text" name="ad_username" class="user-form form-control" <?php echo(!empty($data['ad_username_err'])) ? 'is-invalid': ''; ?>" value="<?php echo $data['ad_username'];?>" />
               <div class="validate"></div>
             </div>
             
             <div class="form-group">
-              <input type="password" name="ad_password" class="user-form form-control" <?php echo(!empty($data['ad_password_err'])) ? 'is-invalid': ''; ?>" value="<?php echo $data['ad_password'];?>" />
+              <input type="password" placeholder="Password" name="ad_password" class="user-form form-control" <?php echo(!empty($data['ad_password_err'])) ? 'is-invalid': ''; ?>" value="<?php echo $data['ad_password'];?>" />
               <div class="validate"></div>
             </div>
             
             
             
-            <div class="row justify-content-center admin-login__button-container ">
+            <div class="admin-login__button-container">
               <button class="btn" type="submit" value="Login">Login</button>
-              <button href="<?php echo URLROOT; ?>/adminusers/register" class="btn">No accoun? Register here.</button>
+              <a href="<?php echo URLROOT; ?>/adminusers/register">No accoun? Register here.</a>
             </div>
+            
           </form>
         </div>
       </div>

@@ -17,34 +17,42 @@ require APPROOT . '/views/inc/header.php';
             <div class=" ">
                 <div class="form text-center">
 
-                    <form action="<?php echo URLROOT; ?>/adminpages/team" method="POST" role="form" class="py-5">
+                    <form action="<?php echo URLROOT; ?>/adminpages/team" method="POST" role="form" class="admin-team">
                         <div class="form-group">
-                            <label for="currentTeam"><p>Current Team</p></label>
-                            <select name="currentTeam" class="custom-select-lg w-50 m-3">
-                                <option <?php if($data['currentTeam'] == 'aardvarks'){echo "selected";} ?> value="aardvarks">
+                            <label for="currentTeam">
+                                <p>Current Team</p>
+                            </label>
+                            <select name="currentTeam" class="custom-select-lg w-100 m-3">
+                                <option <?php if($data['currentTeam'] == 'aardvarks'){echo "selected";} ?>
+                                    value="aardvarks">
                                     Aardvarks
                                 </option>
-                                <option <?php if($data['currentTeam'] == 'antelopes'){echo "selected";} ?> value="antelopes">
+                                <option <?php if($data['currentTeam'] == 'antelopes'){echo "selected";} ?>
+                                    value="antelopes">
                                     Antelopes
                                 </option>
                                 <option <?php if($data['currentTeam'] == 'boxers'){echo "selected";} ?> value="boxers">
                                     Boxers
                                 </option>
-                                <option <?php if($data['currentTeam'] == 'broncos'){echo "selected";} ?> value="broncos">
+                                <option <?php if($data['currentTeam'] == 'broncos'){echo "selected";} ?>
+                                    value="broncos">
                                     Broncos
                                 </option>
-                                <option <?php if($data['currentTeam'] == 'buffalos'){echo "selected";} ?> value="buffalos">
+                                <option <?php if($data['currentTeam'] == 'buffalos'){echo "selected";} ?>
+                                    value="buffalos">
                                     Buffalos
                                 </option>
-                                <option <?php if($data['currentTeam'] == 'culdesacs'){echo "selected";} ?> value="culdesacs">
+                                <option <?php if($data['currentTeam'] == 'culdesacs'){echo "selected";} ?>
+                                    value="culdesacs">
                                     Culdesacs
                                 </option>
-                                <option <?php if($data['currentTeam'] == 'newPlayers'){echo "selected";} ?> value="newPlayers">
+                                <option <?php if($data['currentTeam'] == 'newPlayers'){echo "selected";} ?>
+                                    value="newPlayers">
                                     New Players
                                 </option>
                             </select>
                             <div class="text-center">
-                                <button id="currentTeam" class="btn my-2" type="submit" value="currentTeam">
+                                <button id="currentTeam" class="btn" type="submit" value="currentTeam">
                                     <?php 
                                             
                                             if(empty($data['btn-text-newSelection'])){
@@ -64,7 +72,7 @@ require APPROOT . '/views/inc/header.php';
                         <h1 class="color-pd text-capitalize display-4">
                             <?php 
                                 if(empty($data['currentTeam'])){
-                                    echo $data['main-inst'];
+                                    echo $data['default-team'];
                                 }else{
                                     echo $data['currentTeam'];
                                 }
@@ -89,18 +97,22 @@ require APPROOT . '/views/inc/header.php';
                                 ?>
 
 
-                            <table  id="" class="table admin-team">
+                            <table id="" class="table ">
                                 <tbody>
-                                    <tr class="">
-                                        <th class=''>
-                                            <input class="admin-team__checkbox" type="checkbox" id="player" name="player[]" value="<?php echo $playerid; ?>" />
-                                            <div class="admin-team__player-info">
-                                                <label  class="" for="pla_fname"><?php echo $playerFirstName; ?></label>
-                                                <label  class="" for="pla_lname"><?php echo $playerLastName; ?></label>
-                                                <label  class="" for="pla_phone"><?php echo $playerPhone; ?></label>
-                                                <label  class="" for="pla_phone"><?php echo $playerid; ?></label>
+                                    <tr>
+                                        <th>
+                                            <div class="admin-team__checkbox">
+                                                <input class="admin-team__checkbox" type="checkbox" id="player"
+                                                    name="player[]" value="<?php echo $playerid; ?>" />
                                             </div>
-                                            
+                                            <div class="admin-team__player-info">
+
+                                                <label class="" for="pla_fname"><?php echo $playerFirstName; ?></label>
+                                                <label class="" for="pla_lname"><?php echo $playerLastName; ?></label>
+                                                <label class="" for="pla_phone"><?php echo $playerPhone; ?></label>
+                                                <label class="" for="pla_phone"><?php echo $playerid; ?></label>
+                                            </div>
+
                                         </th>
                                     </tr>
                                 </tbody>
@@ -117,7 +129,7 @@ require APPROOT . '/views/inc/header.php';
                     if(!empty($data['currentTeam'])):?>
 
                         <label class="text-center">Select players from above to move them to a selcted team
-                            below</label>
+                            below, or delete them</label>
 
                         <div class="form-group">
 
@@ -126,7 +138,7 @@ require APPROOT . '/views/inc/header.php';
                                     <label class="mb-4" for="team">
                                         <p>New Team</p>
                                     </label>
-                                    <select class="w-50 custom-select text-center" name="newTeam">
+                                    <select class="w-50 custom-select text-center my-3" name="newTeam">
                                         <option value="">Select a new team</option>
                                         <option <?php if($data['newTeam'] == 'aardvarks'){echo "selected";} ?>
                                             value="aardvarks">Aardvarks</option>
@@ -143,12 +155,10 @@ require APPROOT . '/views/inc/header.php';
                                     </select>
 
                                 </li>
-                                <li>
-                                    <button class="btn" name="move" type="submit" value="Move player">Move Player</button>
-                                    <!-- <input name="move" class="btn btn-sm bg-primary color-pd" type="submit"
-                                        value="Move player" /> -->
-                                    <input name="delete" class="btn bg-dark color-pd" type="submit"
-                                        value="Delete selected" href="#">
+                                <li class="mt-5">
+                                    <button class="btn" name="move" type="submit" value="Move player">Move
+                                        Player</button>
+                                    <button class="btn" name='delete' type='submit' value="Delete selected">Delete</button>
                                 </li>
                             </ul>
                         </div>

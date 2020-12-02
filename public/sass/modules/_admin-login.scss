@@ -1,21 +1,29 @@
 .admin-login{
-    margin-bottom: 100px;
+    padding: 2em;
     &__button-container{
-        padding: 1em;
+        margin-top:5em;
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        width: 100%;
         @include respond-to(medium-screens){
             flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+        @include respond-to(large-screens){
+            flex-direction: row;
+            justify-content: space-between;
+            width: 120%;
         }
         @include respond-to(wide-screens){
             flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
         }
+        
         button{
-            margin: 2em auto;
-            
-            
-        }
-        a{
-            margin: 0;
+            margin-bottom: 1.9em;
         }
     }
 }

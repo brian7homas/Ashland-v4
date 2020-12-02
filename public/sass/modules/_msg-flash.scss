@@ -1,0 +1,16 @@
+#msg-flash{
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+    animation: msg 6s ease-in 2s;
+    transform-origin: center top;
+    transform: translateY(-3em);
+}
+@keyframes msg {
+    0% {transform: translateY(-3em);}
+    25% {transform: translateY(0em);}
+    75% {transform: translateY(0em);}
+    100% {transform: translateY(-4em); display: none;}
+}

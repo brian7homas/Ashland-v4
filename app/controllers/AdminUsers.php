@@ -76,10 +76,10 @@ class AdminUsers extends Controller{
         
         //register user
         if($this->adminModel->register($data)){
-            flash('register_success', "You are registered and can log in");
+          flash('register_success','You did it '.$data['ad_fname'] . ' you may login.' );
             // echo "testing AFTER THE ADMINMODEL CALL";
             //REDIRECT TAKES YOU TO BLANK PAGE
-            $this->view("adminusers/login");
+            // $this->view("adminusers/login", $data);
             redirect( 'adminusers/login');
         }else{
           die("Could not register user. ");
@@ -118,8 +118,6 @@ class AdminUsers extends Controller{
       
       // Check for POST
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        
-        
         // Process form
         // Sanitize POST data
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -128,6 +126,9 @@ class AdminUsers extends Controller{
         $data =[
           // page info
           'title' => 'Admin login',
+          'bg-img' => '/img/login-bg.jpg',
+          'main-inst' => 'Login as an administrator',
+          
           
           'ad_username' => trim($_POST['ad_username']),
           'ad_password' => trim($_POST['ad_password']),
@@ -191,10 +192,11 @@ class AdminUsers extends Controller{
       }
       } else {
         // Init data
-        $data =[    
+        $data =[
           // page info
           'title' => 'Admin login',
           'bg-img' => '/img/login-bg.jpg',
+          'main-inst' => 'Login as an administrator',
           
           'ad_username' => '',
           'ad_password' => '',

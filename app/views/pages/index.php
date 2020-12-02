@@ -4,7 +4,7 @@ require APPROOT . '/views/inc/header.php';
 ?>
 
 
-
+<?php flash('register_success'); ?>
 <section class="portfolio" id="portfolio">
 
     <div class="container text-center">

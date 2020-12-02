@@ -1,6 +1,27 @@
-.admin-register{
-    
-    &__title{
-        text-align: center;
+.admin-register{ 
+    padding: 2em;
+    &__button-container{
+        margin-top:2.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include respond-to(medium-screens){
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+        @include respond-to(large-screens){
+            flex-direction: row;
+            justify-content: space-between;
+            width: 130%;
+        }
+        @include respond-to(wide-screens){
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+        button{
+            margin-bottom: 2em;
+        }
     }
 }

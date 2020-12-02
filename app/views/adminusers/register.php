@@ -3,6 +3,7 @@ require APPROOT . '/views/inc/header.php';
 
 ?>
 <section id="contact">
+<?php flash('register_success'); ?>
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -11,6 +12,7 @@ require APPROOT . '/views/inc/header.php';
         </div>
 
         <div class="row justify-content-center">
+            <!-- info -->
             <div class="col-lg-3 col-md-4">
 
                 <div class="info">
@@ -35,10 +37,9 @@ require APPROOT . '/views/inc/header.php';
 
             <div class="col-lg-5 col-md-8">
                 <div>
-                    <form action="<?php echo URLROOT; ?>/adminusers/register" method="post" role="form">
+                    <form action="<?php echo URLROOT; ?>/adminusers/register" method="post" role="form" class="admin-register">
 
                         <div class="form-group">
-                            
                             <input type="hidden" name="adminid" class="form-control form-control-lg 
                             <?php echo(!empty($data['adminid_err'])) ? 'is-invalid': ''; ?>"
                             value="<?php echo $data['adminid_err'];?>" />
@@ -86,17 +87,13 @@ require APPROOT . '/views/inc/header.php';
                                 value="<?php echo $data['ad_confirm_password'];?>" />                                
                             <span class="invalid-feedback"><?php echo $data['ad_confirm_password_err'];?></span>
                         </div>
-
-
-                        <div class="mb-3">
-
-                        </div>
-                        <div class="text-center">
+                        <div class="admin-register__button-container">
                             <button class="btn" type="submit">Register</button>
-                            <a href="<?php echo URLROOT; ?>/adminusers/login" class="btn btn-sm">Have an account? Login
+                            <a href="<?php echo URLROOT; ?>/adminusers/login" >Have an account? Login
                                 here.</a>
                         </div>
                     </form>
+                    
                 </div>
             </div>
 

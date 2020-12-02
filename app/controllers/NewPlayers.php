@@ -93,9 +93,9 @@ class NewPlayers extends Controller {
                 if(empty($data['pla_lname_err']) && empty($data['pla_fname_err']) && empty($data['pla_phone_err']) && empty($data['pla_email_err']) && empty($data['pla_par_lname_err']) && empty($data['pla_par_fname_err']) && empty($data['pla_add_err']) && empty($data['pla_city_err']) && empty($data['pla_state_err']) && empty($data['pla_zip_err']) && empty($data['pla_bdate_err'])){
                     
                     $this->newplayerModel->add_tmp_player($Last_Name, $First_Name, $Phone, $Email, $Parent_Last_Name, $Parent_First_Name, $Address, $City, $State, $Zip, $DOB);
-                    flash('register_success','You did it '.$data['pla_fname'] . ' will be contacted at ' . $data['pla_email']);
-                    
-                    redirect('newplayers/register');
+                    flash('register_success','You did it '.$data['pla_fname'] . ' will be contacted at ' . $data['pla_email'] . ' you can now create an admin account to view your player!');
+                    // $this->view('pages/index', $data);
+                    redirect('pages/index');
                 }else{
                     $this->view('newplayers/register', $data);
                 }

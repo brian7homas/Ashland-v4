@@ -6,7 +6,7 @@ require APPROOT . '/views/inc/header.php';
 <div id="container">
     <div class="container-md ">
 
-        <?php flash('register_success'); ?>
+        
         <form id="form" class="form p-2 newplayer-register" action="<?php echo URLROOT; ?>/newplayers/register" method="POST">
             <div class="form-group">
                 <label for="pla_lname">Last Name: <sup class="fa">*</sup>

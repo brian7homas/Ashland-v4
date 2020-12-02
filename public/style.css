@@ -1,10 +1,4 @@
-/* line 12, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
-html, body {
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-/* line 18, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
+/* line 13, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
 * {
   font-family: Futura;
   padding: 0;
@@ -13,14 +7,60 @@ html, body {
   box-sizing: border-box;
 }
 
+/* line 21, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
+html, body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #FCFFE8;
+}
+
 /* line 26, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
+#contact, #container, .portfolio {
+  min-height: 100%;
+  background-color: #FCFFE8;
+}
+
+/* line 30, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
+#main {
+  height: 100%;
+}
+
+/* line 34, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
 img {
   max-width: 100%;
 }
 
-/* line 29, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
+/* line 38, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/base/_config.scss */
 li {
   list-style-type: none;
+}
+
+/* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_msg-flash.scss */
+#msg-flash {
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+  animation: msg 6s ease-in 2s;
+  transform-origin: center top;
+  transform: translateY(-3em);
+}
+
+@keyframes msg {
+  0% {
+    transform: translateY(-3em);
+  }
+  25% {
+    transform: translateY(0em);
+  }
+  75% {
+    transform: translateY(0em);
+  }
+  100% {
+    transform: translateY(-4em);
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 767px), (min-device-width: 768px) and (max-device-width: 1920px) {
@@ -91,7 +131,7 @@ li {
   font-size: .6rem;
 }
 
-@media only screen and (min-width: 599px) and (max-width: 1199px) {
+@media only screen and (min-width: 767px) and (max-width: 991px) {
   /* line 9, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_games-table.scss */
   .games-table td {
     font-size: 1rem;
@@ -109,7 +149,7 @@ li {
 
 /* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_portfolio-grid.scss */
 .portfolio-grid {
-  background-color: #77C3C6;
+  background-color: #FCFFE8;
 }
 
 /* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_card-title.scss */
@@ -126,7 +166,7 @@ li {
 /* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_wrapper.scss */
 #wrapper {
   position: relative;
-  background-color: #f7f7f7;
+  background-color: #FCFFE8;
 }
 
 /* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_team.scss */
@@ -139,12 +179,17 @@ li {
   color: #000000;
 }
 
-/* line 2, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_hero.scss */
+/* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_hero.scss */
+.hero {
+  z-index: 2;
+}
+
+/* line 3, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_hero.scss */
 .hero__headline {
   color: #FCFFE8;
 }
 
-/* line 5, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_hero.scss */
+/* line 6, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_hero.scss */
 .hero-logo {
   transform: scale(0.2);
 }
@@ -177,26 +222,80 @@ li {
   }
 }
 
+/* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-register.scss */
+.admin-register {
+  padding: 2em;
+}
+
 /* line 3, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-register.scss */
-.admin-register__title {
-  text-align: center;
+.admin-register__button-container {
+  margin-top: 2.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+  /* line 3, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-register.scss */
+  .admin-register__button-container {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  /* line 3, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-register.scss */
+  .admin-register__button-container {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 130%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  /* line 3, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-register.scss */
+  .admin-register__button-container {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+/* line 23, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-register.scss */
+.admin-register__button-container button {
+  margin-bottom: 2em;
 }
 
 /* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-login.scss */
 .admin-login {
-  margin-bottom: 100px;
+  padding: 2em;
 }
 
 /* line 3, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-login.scss */
 .admin-login__button-container {
-  padding: 1em;
+  margin-top: 5em;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-@media only screen and (min-width: 599px) and (max-width: 1199px) {
+@media only screen and (min-width: 767px) and (max-width: 991px) {
   /* line 3, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-login.scss */
   .admin-login__button-container {
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  /* line 3, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-login.scss */
+  .admin-login__button-container {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 120%;
   }
 }
 
@@ -204,43 +303,46 @@ li {
   /* line 3, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-login.scss */
   .admin-login__button-container {
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 
-/* line 12, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-login.scss */
+/* line 25, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-login.scss */
 .admin-login__button-container button {
-  margin: 2em auto;
-}
-
-/* line 17, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-login.scss */
-.admin-login__button-container a {
-  margin: 0;
+  margin-bottom: 1.9em;
 }
 
 /* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
 .admin-team {
-  padding: 1em;
+  padding: 2em;
   min-width: 100%;
 }
 
-/* line 5, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+/* line 4, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+.admin-team .form-group {
+  padding: 0 4em;
+}
+
+/* line 7, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
 .admin-team table {
+  padding: 2em;
   display: block;
 }
 
-/* line 9, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+/* line 12, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
 .admin-team tbody {
   display: flex;
   justify-content: center;
 }
 
-/* line 13, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+/* line 16, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
 .admin-team tr {
   width: 100%;
   border: 1px solid;
 }
 
-/* line 17, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+/* line 20, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
 .admin-team tr label {
   display: inline-block;
   width: 100%;
@@ -248,27 +350,27 @@ li {
   font-size: small;
 }
 
-/* line 25, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+/* line 28, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
 .admin-team th {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-@media only screen and (min-width: 599px) and (max-width: 1199px) {
-  /* line 25, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+  /* line 28, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
   .admin-team th {
     flex-flow: row;
   }
 }
 
-/* line 34, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+/* line 38, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
 .admin-team__player-info {
   display: block;
 }
 
-@media only screen and (min-width: 599px) and (max-width: 1199px) {
-  /* line 34, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+  /* line 38, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
   .admin-team__player-info {
     display: flex;
     justify-content: space-between;
@@ -277,7 +379,7 @@ li {
 }
 
 @media only screen and (min-width: 1200px) {
-  /* line 34, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+  /* line 38, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
   .admin-team__player-info {
     display: flex;
     justify-content: space-between;
@@ -285,11 +387,16 @@ li {
   }
 }
 
-/* line 48, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+/* line 52, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
 .admin-team__checkbox {
-  padding: 100%;
-  height: 100%;
-  width: 30%;
+  position: relative;
+  padding: 3rem;
+  z-index: 1;
+}
+
+/* line 56, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_admin-team.scss */
+.admin-team__checkbox input {
+  padding: 3em;
 }
 
 /* line 1, ../../../../../Users/brianthomas/code/Ashland-soccar-app/Ashland-v4/public/sass/modules/_footer.scss */

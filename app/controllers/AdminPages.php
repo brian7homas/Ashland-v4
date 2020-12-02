@@ -23,7 +23,8 @@ class AdminPages extends Controller{
                 $data = [
                     'bg-img' => '/img/admin-team.jpg', 
                     'main-inst' => 'Select a team from the 1st dropdown, use checkboxes to select players and the last dropdown to move them.', 
-                    'btn-text-currentTeam' => 'View current team',
+                    'default-team' => 'No team is selected', 
+                    'btn-text-currentTeam' => 'select',
                     'btn-text-newSelection' => '',
                 ];
                 if($_SERVER['REQUEST_METHOD'] == 'POST'){
