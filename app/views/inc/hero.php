@@ -14,7 +14,7 @@
             </h1>
 
             <p class="tagline">
-                <?php echo $data['main-inst']; ?>
+                <?php echo $data['description']; ?>
             </p>
                 <?php if(strstr($view,'adminusers') != TRUE AND strstr($view, 'adminpages') != TRUE ):?>
               <a class="btn btn-full scrollto" href="<?php echo URLROOT . $data['hero-button-path']; ?>">
